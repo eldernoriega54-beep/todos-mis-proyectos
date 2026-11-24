@@ -1,0 +1,3026 @@
+[
+    {
+        "id": 1,
+        "nombre": "At&T Building",
+        "categoria": "Accesorios",
+        "precio_lempiras": 167.66,
+        "imagen": "assets/img/catalogo/AT&T Building.png",
+        "archivo_stl": "./accesorios 3d\\stl-files-main\\AT&T Building.stl"
+    },
+    {
+        "id": 2,
+        "nombre": "Bridgestone Arena",
+        "categoria": "Accesorios",
+        "precio_lempiras": 247.18,
+        "imagen": "assets/img/catalogo/Bridgestone Arena.png",
+        "archivo_stl": "./accesorios 3d\\stl-files-main\\Bridgestone Arena.stl"
+    },
+    {
+        "id": 3,
+        "nombre": "Nashville Predators Logo",
+        "categoria": "Accesorios",
+        "precio_lempiras": 280.4,
+        "imagen": "assets/img/catalogo/Nashville_Predators_logo.png",
+        "archivo_stl": "./accesorios 3d\\stl-files-main\\Nashville_Predators_logo.stl"
+    },
+    {
+        "id": 4,
+        "nombre": "Raven Tools",
+        "categoria": "Accesorios",
+        "precio_lempiras": 345.28,
+        "imagen": "assets/img/catalogo/Raven Tools.png",
+        "archivo_stl": "./accesorios 3d\\stl-files-main\\Raven Tools.stl"
+    },
+    {
+        "id": 5,
+        "nombre": "Flipper Zero Cc1101 Board Case Bottom",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 458.16,
+        "imagen": "assets/img/catalogo/Flipper_Zero_CC1101_Board_Case_Bottom.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - CC1101 Board by TehRabbitt - Case\\Flipper_Zero_CC1101_Board_Case_Bottom.stl"
+    },
+    {
+        "id": 6,
+        "nombre": "Flipper Zero Cc1101 Board Case Full",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 490.85,
+        "imagen": "assets/img/catalogo/Flipper_Zero_CC1101_Board_Case_Full.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - CC1101 Board by TehRabbitt - Case\\Flipper_Zero_CC1101_Board_Case_Full.stl"
+    },
+    {
+        "id": 7,
+        "nombre": "Flipper Zero Cc1101 Board Case Top",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 155.9,
+        "imagen": "assets/img/catalogo/Flipper_Zero_CC1101_Board_Case_Top.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - CC1101 Board by TehRabbitt - Case\\Flipper_Zero_CC1101_Board_Case_Top.stl"
+    },
+    {
+        "id": 8,
+        "nombre": "Flipper Zero Cc1101 Case Pin Boot Cover",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 131.36,
+        "imagen": "assets/img/catalogo/Flipper_Zero_CC1101_Case_Pin_Boot_Cover.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - CC1101 Board by TehRabbitt - Case Pin Boot Cover\\Flipper_Zero_CC1101_Case_Pin_Boot_Cover.stl"
+    },
+    {
+        "id": 9,
+        "nombre": "Flipper Zero Cc1101 Case Pin Boot Cover Label",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 399.62,
+        "imagen": "assets/img/catalogo/Flipper_Zero_CC1101_Case_Pin_Boot_Cover_Label.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - CC1101 Board by TehRabbitt - Case Pin Boot Cover\\Flipper_Zero_CC1101_Case_Pin_Boot_Cover_Label.stl"
+    },
+    {
+        "id": 10,
+        "nombre": "Flipper Zero Desk Stand",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 199.44,
+        "imagen": "assets/img/catalogo/Flipper-Zero-Desk-Stand.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Desk Stand\\Flipper-Zero-Desk-Stand.stl"
+    },
+    {
+        "id": 11,
+        "nombre": "Flipper Zero Infrared Ir Blaster Case",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 207.39,
+        "imagen": "assets/img/catalogo/flipper-zero-infrared-ir-blaster-case.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Infrared (IR) Blaster Case\\flipper-zero-infrared-ir-blaster-case.stl"
+    },
+    {
+        "id": 12,
+        "nombre": "Flipper Zero Infrared Ir Blaster Case Boot Cover",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 202.51,
+        "imagen": "assets/img/catalogo/flipper-zero-infrared-ir-blaster-case-boot-cover.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Infrared (IR) Blaster Case Boot Cover\\flipper-zero-infrared-ir-blaster-case-boot-cover.stl"
+    },
+    {
+        "id": 13,
+        "nombre": "Buttons",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 150.74,
+        "imagen": "assets/img/catalogo/Buttons.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\Buttons.stl"
+    },
+    {
+        "id": 14,
+        "nombre": "Cover",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 74.7,
+        "imagen": "assets/img/catalogo/Cover.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\Cover.stl"
+    },
+    {
+        "id": 15,
+        "nombre": "Md Antenna Only",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 64.26,
+        "imagen": "assets/img/catalogo/MD_Antenna_Only.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\MD_Antenna_Only.stl"
+    },
+    {
+        "id": 16,
+        "nombre": "Md Bare",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 318.75,
+        "imagen": "assets/img/catalogo/MD_Bare.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\MD_Bare.stl"
+    },
+    {
+        "id": 17,
+        "nombre": "Md Full",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 376.92,
+        "imagen": "assets/img/catalogo/MD_Full.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\MD_Full.stl"
+    },
+    {
+        "id": 18,
+        "nombre": "Md Sd Only",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 154.91,
+        "imagen": "assets/img/catalogo/MD_SD_Only.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\MD_SD_Only.stl"
+    },
+    {
+        "id": 19,
+        "nombre": "Xl Antenna Only",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 110.0,
+        "imagen": "assets/img/catalogo/XL_Antenna_Only.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\XL_Antenna_Only.stl"
+    },
+    {
+        "id": 20,
+        "nombre": "Xl Bare",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 419.38,
+        "imagen": "assets/img/catalogo/XL_Bare.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\XL_Bare.stl"
+    },
+    {
+        "id": 21,
+        "nombre": "Xl Full",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 470.9,
+        "imagen": "assets/img/catalogo/XL_Full.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\XL_Full.stl"
+    },
+    {
+        "id": 22,
+        "nombre": "Xl Sd Only",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 96.07,
+        "imagen": "assets/img/catalogo/XL_SD_Only.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - Minimalist WiFi Dev Board Case (GPS + SD)\\XL_SD_Only.stl"
+    },
+    {
+        "id": 23,
+        "nombre": "Flipper Zero Wifi Dev Board Case Bottom",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 490.75,
+        "imagen": "assets/img/catalogo/Flipper_Zero_WiFi_Dev_Board_Case_Bottom.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - WiFi Dev Board Case\\Flipper_Zero_WiFi_Dev_Board_Case_Bottom.stl"
+    },
+    {
+        "id": 24,
+        "nombre": "Flipper Zero Wifi Dev Board Case Top",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 457.78,
+        "imagen": "assets/img/catalogo/Flipper_Zero_WiFi_Dev_Board_Case_Top.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - WiFi Dev Board Case\\Flipper_Zero_WiFi_Dev_Board_Case_Top.stl"
+    },
+    {
+        "id": 25,
+        "nombre": "Flipper Zero Wifi Dev Board Case Top Closed",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 58.96,
+        "imagen": "assets/img/catalogo/Flipper_Zero_WiFi_Dev_Board_Case_Top_Closed.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - WiFi Dev Board Case\\Flipper_Zero_WiFi_Dev_Board_Case_Top_Closed.stl"
+    },
+    {
+        "id": 26,
+        "nombre": "Flipper Zero Wifi Dev Board Case Boot Cover",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 152.08,
+        "imagen": "assets/img/catalogo/Flipper_Zero_WiFi_Dev_Board_Case_Boot_Cover.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - WiFi Dev Board Case Boot Cover\\Flipper_Zero_WiFi_Dev_Board_Case_Boot_Cover.stl"
+    },
+    {
+        "id": 27,
+        "nombre": "Flipper Zero Wifi Dev Board Case Boot Cover Esp32",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 377.28,
+        "imagen": "assets/img/catalogo/Flipper_Zero_WiFi_Dev_Board_Case_Boot_Cover_esp32.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - WiFi Dev Board Case Boot Cover\\Flipper_Zero_WiFi_Dev_Board_Case_Boot_Cover_esp32.stl"
+    },
+    {
+        "id": 28,
+        "nombre": "Flipper Zero Wifi Dev Board Case Boot Cover Evil Portal",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 99.51,
+        "imagen": "assets/img/catalogo/Flipper_Zero_WiFi_Dev_Board_Case_Boot_Cover_Evil_Portal.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - WiFi Dev Board Case Boot Cover\\Flipper_Zero_WiFi_Dev_Board_Case_Boot_Cover_Evil_Portal.stl"
+    },
+    {
+        "id": 29,
+        "nombre": "Flipper Zero Wifi Dev Board Case Boot Cover Marauder",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 312.2,
+        "imagen": "assets/img/catalogo/Flipper_Zero_WiFi_Dev_Board_Case_Boot_Cover_Marauder.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Flipper Zero - WiFi Dev Board Case Boot Cover\\Flipper_Zero_WiFi_Dev_Board_Case_Boot_Cover_Marauder.stl"
+    },
+    {
+        "id": 30,
+        "nombre": "Guy Fawkes Half Mask",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 114.7,
+        "imagen": "assets/img/catalogo/Guy Fawkes Half Mask.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Guy Fawkes Half Mask\\Guy Fawkes Half Mask.stl"
+    },
+    {
+        "id": 31,
+        "nombre": "Switch Game Cartridge Panel Wall Mount",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 305.59,
+        "imagen": "assets/img/catalogo/Switch Game Cartridge Panel Wall Mount.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Switch Game Cartridge Panel\\Switch Game Cartridge Panel Wall Mount.stl"
+    },
+    {
+        "id": 32,
+        "nombre": "Switch Game Cartridge Panel",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 142.2,
+        "imagen": "assets/img/catalogo/Switch Game Cartridge Panel.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Switch Game Cartridge Panel\\Switch Game Cartridge Panel.stl"
+    },
+    {
+        "id": 33,
+        "nombre": "Switch Game Cartridge Panel (Slim) Wall Mount",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 420.92,
+        "imagen": "assets/img/catalogo/Switch Game Cartridge Panel (slim) Wall Mount.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Switch Game Cartridge Panel (slim)\\Switch Game Cartridge Panel (slim) Wall Mount.stl"
+    },
+    {
+        "id": 34,
+        "nombre": "Switch Game Cartridge Panel (Slim)",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 354.1,
+        "imagen": "assets/img/catalogo/Switch Game Cartridge Panel (slim).png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Switch Game Cartridge Panel (slim)\\Switch Game Cartridge Panel (slim).stl"
+    },
+    {
+        "id": 35,
+        "nombre": "Witcher Emblem Key Hook",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 253.5,
+        "imagen": "assets/img/catalogo/Witcher Emblem Key Hook.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\Witcher Emblem Key Hook\\Witcher Emblem Key Hook.stl"
+    },
+    {
+        "id": 36,
+        "nombre": "Zerodock Display Mount",
+        "categoria": "Carcasas y Soportes",
+        "precio_lempiras": 139.64,
+        "imagen": "assets/img/catalogo/ZeroDock-Display-Mount.png",
+        "archivo_stl": "./carcasas y soportes 3d\\3D-Printing-main\\ZeroDock Display Mount\\ZeroDock-Display-Mount.stl"
+    },
+    {
+        "id": 37,
+        "nombre": "Apollo 11   Landing Site",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 413.96,
+        "imagen": "assets/img/catalogo/Apollo 11 - Landing Site.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Apollo 11 - Landing Site\\Apollo 11 - Landing Site.stl"
+    },
+    {
+        "id": 38,
+        "nombre": "Apollo 12   Landing Site",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 55.98,
+        "imagen": "assets/img/catalogo/Apollo 12 - Landing Site.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Apollo 12 - Landing Site\\Apollo 12 - Landing Site.stl"
+    },
+    {
+        "id": 39,
+        "nombre": "Apollo 14   Landing Site",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 396.16,
+        "imagen": "assets/img/catalogo/Apollo 14 - Landing Site.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Apollo 14 - Landing Site\\Apollo 14 - Landing Site.stl"
+    },
+    {
+        "id": 40,
+        "nombre": "Apollo 15   Landing Site",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 61.18,
+        "imagen": "assets/img/catalogo/Apollo 15 - Landing Site.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Apollo 15 - Landing Site\\Apollo 15 - Landing Site.stl"
+    },
+    {
+        "id": 41,
+        "nombre": "Apollo 16   Landing Site",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 111.83,
+        "imagen": "assets/img/catalogo/Apollo 16 - Landing Site.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Apollo 16 - Landing Site\\Apollo 16 - Landing Site.stl"
+    },
+    {
+        "id": 42,
+        "nombre": "Apollo 17   Landing Site",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 242.23,
+        "imagen": "assets/img/catalogo/Apollo 17 - Landing Site.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Apollo 17 - Landing Site\\Apollo 17 - Landing Site.stl"
+    },
+    {
+        "id": 43,
+        "nombre": "Asteroid 101955 Bennu",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 247.32,
+        "imagen": "assets/img/catalogo/Asteroid 101955 Bennu.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 101955 Bennu\\Asteroid 101955 Bennu.stl"
+    },
+    {
+        "id": 44,
+        "nombre": "Asteroid 1620 Geographos",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 466.98,
+        "imagen": "assets/img/catalogo/Asteroid 1620 Geographos.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 1620 Geographos\\Asteroid 1620 Geographos.stl"
+    },
+    {
+        "id": 45,
+        "nombre": "Asteroid 216 Kleopatra",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 236.95,
+        "imagen": "assets/img/catalogo/Asteroid 216 Kleopatra.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 216 Kleopatra\\Asteroid 216 Kleopatra.stl"
+    },
+    {
+        "id": 46,
+        "nombre": "Asteroid 25143 Itokawa",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 412.62,
+        "imagen": "assets/img/catalogo/Asteroid 25143 Itokawa.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 25143 Itokawa\\Asteroid 25143 Itokawa.stl"
+    },
+    {
+        "id": 47,
+        "nombre": "Asteroid 4 Vesta (A) (East Globe Hollow)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 175.51,
+        "imagen": "assets/img/catalogo/Asteroid 4 Vesta (A) (East Globe Hollow).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 4 Vesta (A)\\Asteroid 4 Vesta (A) (East Globe Hollow).stl"
+    },
+    {
+        "id": 48,
+        "nombre": "Asteroid 4 Vesta (A) (West Globe Hollow)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 442.09,
+        "imagen": "assets/img/catalogo/Asteroid 4 Vesta (A) (West Globe Hollow).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 4 Vesta (A)\\Asteroid 4 Vesta (A) (West Globe Hollow).stl"
+    },
+    {
+        "id": 49,
+        "nombre": "Asteroid 4 Vesta (A)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 419.19,
+        "imagen": "assets/img/catalogo/Asteroid 4 Vesta (A).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 4 Vesta (A)\\Asteroid 4 Vesta (A).stl"
+    },
+    {
+        "id": 50,
+        "nombre": "Asteroid 4 Vesta (B)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 378.42,
+        "imagen": "assets/img/catalogo/Asteroid 4 Vesta (B).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 4 Vesta (B)\\Asteroid 4 Vesta (B).stl"
+    },
+    {
+        "id": 51,
+        "nombre": "Asteroid 4179 Toutatis",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 347.8,
+        "imagen": "assets/img/catalogo/Asteroid 4179 Toutatis.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 4179 Toutatis\\Asteroid 4179 Toutatis.stl"
+    },
+    {
+        "id": 52,
+        "nombre": "Asteroid 433 Eros",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 235.07,
+        "imagen": "assets/img/catalogo/Asteroid 433 Eros.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 433 Eros\\Asteroid 433 Eros.stl"
+    },
+    {
+        "id": 53,
+        "nombre": "Asteroid 4486 Mithra",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 258.9,
+        "imagen": "assets/img/catalogo/Asteroid 4486 Mithra.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 4486 Mithra\\Asteroid 4486 Mithra.stl"
+    },
+    {
+        "id": 54,
+        "nombre": "Asteroid 6489 Golevka",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 337.58,
+        "imagen": "assets/img/catalogo/Asteroid 6489 Golevka.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 6489 Golevka\\Asteroid 6489 Golevka.stl"
+    },
+    {
+        "id": 55,
+        "nombre": "Asteroid 8567 1996 Hw1",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 117.52,
+        "imagen": "assets/img/catalogo/Asteroid 8567 1996 HW1.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Asteroid 8567 1996 HW1\\Asteroid 8567 1996 HW1.stl"
+    },
+    {
+        "id": 56,
+        "nombre": "Azimuth Track",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 301.68,
+        "imagen": "assets/img/catalogo/Azimuth track.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Beam Waveguide Deep Space Station Antenna\\Azimuth track.stl"
+    },
+    {
+        "id": 57,
+        "nombre": "Elevation Assembly",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 307.4,
+        "imagen": "assets/img/catalogo/Elevation assembly.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Beam Waveguide Deep Space Station Antenna\\Elevation assembly.stl"
+    },
+    {
+        "id": 58,
+        "nombre": "Lower Alidade",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 316.47,
+        "imagen": "assets/img/catalogo/Lower alidade.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Beam Waveguide Deep Space Station Antenna\\Lower alidade.stl"
+    },
+    {
+        "id": 59,
+        "nombre": "Main Reflector",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 354.26,
+        "imagen": "assets/img/catalogo/Main reflector.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Beam Waveguide Deep Space Station Antenna\\Main reflector.stl"
+    },
+    {
+        "id": 60,
+        "nombre": "Quadrapod",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 322.33,
+        "imagen": "assets/img/catalogo/Quadrapod.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Beam Waveguide Deep Space Station Antenna\\Quadrapod.stl"
+    },
+    {
+        "id": 61,
+        "nombre": "Upper Alidade",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 56.47,
+        "imagen": "assets/img/catalogo/Upper alidade.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Beam Waveguide Deep Space Station Antenna\\Upper alidade.stl"
+    },
+    {
+        "id": 62,
+        "nombre": "Block Island",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 145.95,
+        "imagen": "assets/img/catalogo/Block Island.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Block Island\\Block Island.stl"
+    },
+    {
+        "id": 63,
+        "nombre": "Chandra Base",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 150.58,
+        "imagen": "assets/img/catalogo/Chandra base.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Chandra X-ray Observatory\\Chandra base.stl"
+    },
+    {
+        "id": 64,
+        "nombre": "Chandra Cover",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 340.01,
+        "imagen": "assets/img/catalogo/Chandra cover.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Chandra X-ray Observatory\\Chandra cover.stl"
+    },
+    {
+        "id": 65,
+        "nombre": "Chandra Cylinder",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 212.34,
+        "imagen": "assets/img/catalogo/Chandra cylinder.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Chandra X-ray Observatory\\Chandra cylinder.stl"
+    },
+    {
+        "id": 66,
+        "nombre": "Chandra Panel",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 383.08,
+        "imagen": "assets/img/catalogo/Chandra panel.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Chandra X-ray Observatory\\Chandra panel.stl"
+    },
+    {
+        "id": 67,
+        "nombre": "Chandra Top",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 204.85,
+        "imagen": "assets/img/catalogo/Chandra top.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Chandra X-ray Observatory\\Chandra top.stl"
+    },
+    {
+        "id": 68,
+        "nombre": "Crab Nebula (Disc)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 372.82,
+        "imagen": "assets/img/catalogo/Crab Nebula (disc).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Crab Nebula\\Crab Nebula (disc).stl"
+    },
+    {
+        "id": 69,
+        "nombre": "Crab Nebula (Jet 1)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 487.1,
+        "imagen": "assets/img/catalogo/Crab Nebula (jet 1).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Crab Nebula\\Crab Nebula (jet 1).stl"
+    },
+    {
+        "id": 70,
+        "nombre": "Crab Nebula (Jet 2)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 318.93,
+        "imagen": "assets/img/catalogo/Crab Nebula (jet 2).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Crab Nebula\\Crab Nebula (jet 2).stl"
+    },
+    {
+        "id": 71,
+        "nombre": "Cubesat Bottom",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 122.57,
+        "imagen": "assets/img/catalogo/CubeSat bottom.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\CubeSat\\CubeSat bottom.stl"
+    },
+    {
+        "id": 72,
+        "nombre": "Cubesat Middle",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 298.43,
+        "imagen": "assets/img/catalogo/CubeSat middle.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\CubeSat\\CubeSat middle.stl"
+    },
+    {
+        "id": 73,
+        "nombre": "Cubesat Top",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 180.98,
+        "imagen": "assets/img/catalogo/CubeSat top.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\CubeSat\\CubeSat top.stl"
+    },
+    {
+        "id": 74,
+        "nombre": "Curiosity Landing Site",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 410.71,
+        "imagen": "assets/img/catalogo/Curiosity Landing Site.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Curiosity Landing Site\\Curiosity Landing Site.stl"
+    },
+    {
+        "id": 75,
+        "nombre": "1 Body",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 362.61,
+        "imagen": "assets/img/catalogo/1-body.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Curiosity Rover (Detailed)\\1-body.stl"
+    },
+    {
+        "id": 76,
+        "nombre": "2 Components",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 140.41,
+        "imagen": "assets/img/catalogo/2-components.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Curiosity Rover (Detailed)\\2-components.stl"
+    },
+    {
+        "id": 77,
+        "nombre": "3 Pins And Hubs",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 284.34,
+        "imagen": "assets/img/catalogo/3-pins-and-hubs.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Curiosity Rover (Detailed)\\3-pins-and-hubs.stl"
+    },
+    {
+        "id": 78,
+        "nombre": "4 Wheels",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 58.14,
+        "imagen": "assets/img/catalogo/4-wheels.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Curiosity Rover (Detailed)\\4-wheels.stl"
+    },
+    {
+        "id": 79,
+        "nombre": "Curiosity (200Um)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 325.69,
+        "imagen": "assets/img/catalogo/Curiosity (200uM).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Curiosity Rover (Simplified)\\Curiosity (200uM).stl"
+    },
+    {
+        "id": 80,
+        "nombre": "Curiosity Rover Path",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 54.85,
+        "imagen": "assets/img/catalogo/Curiosity Rover Path.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Curiosity Rover Path\\Curiosity Rover Path.stl"
+    },
+    {
+        "id": 81,
+        "nombre": "Cyclone Global Navigation Satellite System (Cygnss)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 174.74,
+        "imagen": "assets/img/catalogo/Cyclone Global Navigation Satellite System (CYGNSS).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Cyclone Global Navigation Satellite System (CYGNSS)\\Cyclone Global Navigation Satellite System (CYGNSS).stl"
+    },
+    {
+        "id": 82,
+        "nombre": "Dg Tau",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 336.63,
+        "imagen": "assets/img/catalogo/DG Tau.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\DG Tau\\DG Tau.stl"
+    },
+    {
+        "id": 83,
+        "nombre": "Double Asteroid Redirection Test (Dart)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 452.11,
+        "imagen": "assets/img/catalogo/Double Asteroid Redirection Test (DART).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Double Asteroid Redirection Test (DART)\\Double Asteroid Redirection Test (DART).stl"
+    },
+    {
+        "id": 84,
+        "nombre": "Alabama",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 302.41,
+        "imagen": "assets/img/catalogo/Alabama.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Alabama.stl"
+    },
+    {
+        "id": 85,
+        "nombre": "Alaska",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 307.81,
+        "imagen": "assets/img/catalogo/Alaska.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Alaska.stl"
+    },
+    {
+        "id": 86,
+        "nombre": "Arizona",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 100.29,
+        "imagen": "assets/img/catalogo/Arizona.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Arizona.stl"
+    },
+    {
+        "id": 87,
+        "nombre": "Arkansas",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 413.45,
+        "imagen": "assets/img/catalogo/Arkansas.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Arkansas.stl"
+    },
+    {
+        "id": 88,
+        "nombre": "California",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 103.52,
+        "imagen": "assets/img/catalogo/California.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\California.stl"
+    },
+    {
+        "id": 89,
+        "nombre": "Colorado",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 308.2,
+        "imagen": "assets/img/catalogo/Colorado.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Colorado.stl"
+    },
+    {
+        "id": 90,
+        "nombre": "Connecticut",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 371.0,
+        "imagen": "assets/img/catalogo/Connecticut.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Connecticut.stl"
+    },
+    {
+        "id": 91,
+        "nombre": "Delaware",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 140.38,
+        "imagen": "assets/img/catalogo/Delaware.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Delaware.stl"
+    },
+    {
+        "id": 92,
+        "nombre": "Florida",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 283.4,
+        "imagen": "assets/img/catalogo/Florida.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Florida.stl"
+    },
+    {
+        "id": 93,
+        "nombre": "Georgia",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 73.83,
+        "imagen": "assets/img/catalogo/Georgia.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Georgia.stl"
+    },
+    {
+        "id": 94,
+        "nombre": "Hawaii",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 461.47,
+        "imagen": "assets/img/catalogo/Hawaii.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Hawaii.stl"
+    },
+    {
+        "id": 95,
+        "nombre": "Idaho",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 426.09,
+        "imagen": "assets/img/catalogo/Idaho.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Idaho.stl"
+    },
+    {
+        "id": 96,
+        "nombre": "Illinois",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 139.58,
+        "imagen": "assets/img/catalogo/Illinois.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Illinois.stl"
+    },
+    {
+        "id": 97,
+        "nombre": "Indiana",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 458.36,
+        "imagen": "assets/img/catalogo/Indiana.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Indiana.stl"
+    },
+    {
+        "id": 98,
+        "nombre": "Iowa",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 392.18,
+        "imagen": "assets/img/catalogo/Iowa.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Iowa.stl"
+    },
+    {
+        "id": 99,
+        "nombre": "Kansas",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 301.5,
+        "imagen": "assets/img/catalogo/Kansas.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Kansas.stl"
+    },
+    {
+        "id": 100,
+        "nombre": "Kentucky",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 407.97,
+        "imagen": "assets/img/catalogo/Kentucky.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Kentucky.stl"
+    },
+    {
+        "id": 101,
+        "nombre": "Louisiana",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 148.41,
+        "imagen": "assets/img/catalogo/Louisiana.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Louisiana.stl"
+    },
+    {
+        "id": 102,
+        "nombre": "Maine",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 373.93,
+        "imagen": "assets/img/catalogo/Maine.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Maine.stl"
+    },
+    {
+        "id": 103,
+        "nombre": "Maryland",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 240.96,
+        "imagen": "assets/img/catalogo/Maryland.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Maryland.stl"
+    },
+    {
+        "id": 104,
+        "nombre": "Massachusetts",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 404.94,
+        "imagen": "assets/img/catalogo/Massachusetts.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Massachusetts.stl"
+    },
+    {
+        "id": 105,
+        "nombre": "Michigan",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 58.41,
+        "imagen": "assets/img/catalogo/Michigan.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Michigan.stl"
+    },
+    {
+        "id": 106,
+        "nombre": "Minnesota",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 77.55,
+        "imagen": "assets/img/catalogo/Minnesota.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Minnesota.stl"
+    },
+    {
+        "id": 107,
+        "nombre": "Mississippi",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 300.78,
+        "imagen": "assets/img/catalogo/Mississippi.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Mississippi.stl"
+    },
+    {
+        "id": 108,
+        "nombre": "Missouri",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 366.74,
+        "imagen": "assets/img/catalogo/Missouri.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Missouri.stl"
+    },
+    {
+        "id": 109,
+        "nombre": "Montana",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 226.0,
+        "imagen": "assets/img/catalogo/Montana.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Montana.stl"
+    },
+    {
+        "id": 110,
+        "nombre": "Nebraska",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 95.81,
+        "imagen": "assets/img/catalogo/Nebraska.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Nebraska.stl"
+    },
+    {
+        "id": 111,
+        "nombre": "Nevada",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 178.11,
+        "imagen": "assets/img/catalogo/Nevada.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Nevada.stl"
+    },
+    {
+        "id": 112,
+        "nombre": "New Hampshire",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 120.45,
+        "imagen": "assets/img/catalogo/New Hampshire.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\New Hampshire.stl"
+    },
+    {
+        "id": 113,
+        "nombre": "New Jersey",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 449.63,
+        "imagen": "assets/img/catalogo/New Jersey.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\New Jersey.stl"
+    },
+    {
+        "id": 114,
+        "nombre": "New Mexico",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 142.15,
+        "imagen": "assets/img/catalogo/New Mexico.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\New Mexico.stl"
+    },
+    {
+        "id": 115,
+        "nombre": "New York",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 488.16,
+        "imagen": "assets/img/catalogo/New York.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\New York.stl"
+    },
+    {
+        "id": 116,
+        "nombre": "North Carolina",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 446.92,
+        "imagen": "assets/img/catalogo/North Carolina.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\North Carolina.stl"
+    },
+    {
+        "id": 117,
+        "nombre": "North Dakota",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 266.86,
+        "imagen": "assets/img/catalogo/North Dakota.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\North Dakota.stl"
+    },
+    {
+        "id": 118,
+        "nombre": "Ohio",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 322.33,
+        "imagen": "assets/img/catalogo/Ohio.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Ohio.stl"
+    },
+    {
+        "id": 119,
+        "nombre": "Oklahoma",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 60.51,
+        "imagen": "assets/img/catalogo/Oklahoma.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Oklahoma.stl"
+    },
+    {
+        "id": 120,
+        "nombre": "Oregon",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 121.61,
+        "imagen": "assets/img/catalogo/Oregon.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Oregon.stl"
+    },
+    {
+        "id": 121,
+        "nombre": "Pennsylvania",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 327.11,
+        "imagen": "assets/img/catalogo/Pennsylvania.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Pennsylvania.stl"
+    },
+    {
+        "id": 122,
+        "nombre": "Puerto Rico",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 423.03,
+        "imagen": "assets/img/catalogo/Puerto Rico.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Puerto Rico.stl"
+    },
+    {
+        "id": 123,
+        "nombre": "Rhode Island",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 155.04,
+        "imagen": "assets/img/catalogo/Rhode Island.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Rhode Island.stl"
+    },
+    {
+        "id": 124,
+        "nombre": "South Carolina",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 108.37,
+        "imagen": "assets/img/catalogo/South Carolina.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\South Carolina.stl"
+    },
+    {
+        "id": 125,
+        "nombre": "South Dakota",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 365.33,
+        "imagen": "assets/img/catalogo/South Dakota.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\South Dakota.stl"
+    },
+    {
+        "id": 126,
+        "nombre": "Tennessee",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 365.33,
+        "imagen": "assets/img/catalogo/Tennessee.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Tennessee.stl"
+    },
+    {
+        "id": 127,
+        "nombre": "Texas",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 74.9,
+        "imagen": "assets/img/catalogo/Texas.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Texas.stl"
+    },
+    {
+        "id": 128,
+        "nombre": "Us Virgin Islands",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 295.35,
+        "imagen": "assets/img/catalogo/US Virgin Islands.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\US Virgin Islands.stl"
+    },
+    {
+        "id": 129,
+        "nombre": "Usa",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 306.88,
+        "imagen": "assets/img/catalogo/USA.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\USA.stl"
+    },
+    {
+        "id": 130,
+        "nombre": "Utah",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 300.67,
+        "imagen": "assets/img/catalogo/Utah.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Utah.stl"
+    },
+    {
+        "id": 131,
+        "nombre": "Vermont",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 269.51,
+        "imagen": "assets/img/catalogo/Vermont.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Vermont.stl"
+    },
+    {
+        "id": 132,
+        "nombre": "Virginia",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 471.82,
+        "imagen": "assets/img/catalogo/Virginia.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Virginia.stl"
+    },
+    {
+        "id": 133,
+        "nombre": "Washington Dc",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 226.19,
+        "imagen": "assets/img/catalogo/Washington DC.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Washington DC.stl"
+    },
+    {
+        "id": 134,
+        "nombre": "Washington",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 461.07,
+        "imagen": "assets/img/catalogo/Washington.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Washington.stl"
+    },
+    {
+        "id": 135,
+        "nombre": "West Virginia",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 286.02,
+        "imagen": "assets/img/catalogo/West Virginia.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\West Virginia.stl"
+    },
+    {
+        "id": 136,
+        "nombre": "Wisconsin",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 410.56,
+        "imagen": "assets/img/catalogo/Wisconsin.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Wisconsin.stl"
+    },
+    {
+        "id": 137,
+        "nombre": "Wyoming",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 259.41,
+        "imagen": "assets/img/catalogo/Wyoming.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eclipse 2017\\Wyoming.stl"
+    },
+    {
+        "id": 138,
+        "nombre": "Eta Carinae Homunculus Nebula",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 87.41,
+        "imagen": "assets/img/catalogo/Eta Carinae Homunculus Nebula.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula\\Eta Carinae Homunculus Nebula.stl"
+    },
+    {
+        "id": 139,
+        "nombre": "Apastronhighmdotprimarywind",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 194.85,
+        "imagen": "assets/img/catalogo/ApastronHighMdotPrimaryWind.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (High Mass-Loss Rate)\\ApastronHighMdotPrimaryWind.stl"
+    },
+    {
+        "id": 140,
+        "nombre": "Apastronhighmdotwwcr",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 217.66,
+        "imagen": "assets/img/catalogo/ApastronHighMdotWWCR.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (High Mass-Loss Rate)\\ApastronHighMdotWWCR.stl"
+    },
+    {
+        "id": 141,
+        "nombre": "Periastronhighmdotprimarywind",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 325.63,
+        "imagen": "assets/img/catalogo/PeriastronHighMdotPrimaryWind.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (High Mass-Loss Rate)\\PeriastronHighMdotPrimaryWind.stl"
+    },
+    {
+        "id": 142,
+        "nombre": "Periastronhighmdotwwcr",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 406.24,
+        "imagen": "assets/img/catalogo/PeriastronHighMdotWWCR.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (High Mass-Loss Rate)\\PeriastronHighMdotWWCR.stl"
+    },
+    {
+        "id": 143,
+        "nombre": "Phase1P045Highmdotprimarywind",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 190.63,
+        "imagen": "assets/img/catalogo/Phase1p045HighMdotPrimaryWind.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (High Mass-Loss Rate)\\Phase1p045HighMdotPrimaryWind.stl"
+    },
+    {
+        "id": 144,
+        "nombre": "Phase1P045Highmdotwwcr",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 419.44,
+        "imagen": "assets/img/catalogo/Phase1p045HighMdotWWCR.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (High Mass-Loss Rate)\\Phase1p045HighMdotWWCR.stl"
+    },
+    {
+        "id": 145,
+        "nombre": "Apastronlowmdotprimarywind",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 191.56,
+        "imagen": "assets/img/catalogo/ApastronLowMdotPrimaryWind.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (Low Mass-Loss Rate)\\ApastronLowMdotPrimaryWind.stl"
+    },
+    {
+        "id": 146,
+        "nombre": "Apastronlowmdotwwcr",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 333.01,
+        "imagen": "assets/img/catalogo/ApastronLowMdotWWCR.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (Low Mass-Loss Rate)\\ApastronLowMdotWWCR.stl"
+    },
+    {
+        "id": 147,
+        "nombre": "Periastronlowmdotprimarywind",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 259.39,
+        "imagen": "assets/img/catalogo/PeriastronLowMdotPrimaryWind.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (Low Mass-Loss Rate)\\PeriastronLowMdotPrimaryWind.stl"
+    },
+    {
+        "id": 148,
+        "nombre": "Periastronlowmdotwwcr",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 447.07,
+        "imagen": "assets/img/catalogo/PeriastronLowMdotWWCR.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (Low Mass-Loss Rate)\\PeriastronLowMdotWWCR.stl"
+    },
+    {
+        "id": 149,
+        "nombre": "Phase1P045Lowmdotprimarywind",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 356.31,
+        "imagen": "assets/img/catalogo/Phase1p045LowMdotPrimaryWind.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (Low Mass-Loss Rate)\\Phase1p045LowMdotPrimaryWind.stl"
+    },
+    {
+        "id": 150,
+        "nombre": "Phase1P045Lowmdotwwcr",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 196.87,
+        "imagen": "assets/img/catalogo/Phase1p045LowMdotWWCR.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Eta Carinae Homunculus Nebula (Low Mass-Loss Rate)\\Phase1p045LowMdotWWCR.stl"
+    },
+    {
+        "id": 151,
+        "nombre": "Europa 203A",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 295.03,
+        "imagen": "assets/img/catalogo/europa-203a.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Europa Orbiter\\europa-203a.stl"
+    },
+    {
+        "id": 152,
+        "nombre": "Europa 204 Rp",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 391.03,
+        "imagen": "assets/img/catalogo/europa-204-rp.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Europa Orbiter\\europa-204-rp.stl"
+    },
+    {
+        "id": 153,
+        "nombre": "Europa 205 Rp",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 369.94,
+        "imagen": "assets/img/catalogo/europa-205-rp.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Europa Orbiter\\europa-205-rp.stl"
+    },
+    {
+        "id": 154,
+        "nombre": "Europa 206 Rp",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 146.17,
+        "imagen": "assets/img/catalogo/europa-206-rp.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Europa Orbiter\\europa-206-rp.stl"
+    },
+    {
+        "id": 155,
+        "nombre": "Europa 207",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 123.72,
+        "imagen": "assets/img/catalogo/europa-207.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Europa Orbiter\\europa-207.stl"
+    },
+    {
+        "id": 156,
+        "nombre": "01 Side A",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 445.02,
+        "imagen": "assets/img/catalogo/01_side_a.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Explorer 1\\01_side_a.stl"
+    },
+    {
+        "id": 157,
+        "nombre": "02 Side B",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 236.25,
+        "imagen": "assets/img/catalogo/02_side_b.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Explorer 1\\02_side_b.stl"
+    },
+    {
+        "id": 158,
+        "nombre": "03 Connector Abs",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 308.02,
+        "imagen": "assets/img/catalogo/03_connector_ABS.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Explorer 1\\03_connector_ABS.stl"
+    },
+    {
+        "id": 159,
+        "nombre": "03 Connector Pla",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 471.75,
+        "imagen": "assets/img/catalogo/03_connector_PLA.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Explorer 1\\03_connector_PLA.stl"
+    },
+    {
+        "id": 160,
+        "nombre": "04 Nozzle Abs",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 370.06,
+        "imagen": "assets/img/catalogo/04_nozzle_ABS.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Explorer 1\\04_nozzle_ABS.stl"
+    },
+    {
+        "id": 161,
+        "nombre": "04 Nozzle Pla",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 464.59,
+        "imagen": "assets/img/catalogo/04_nozzle_PLA.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Explorer 1\\04_nozzle_PLA.stl"
+    },
+    {
+        "id": 162,
+        "nombre": "05 Cone Abs",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 374.39,
+        "imagen": "assets/img/catalogo/05_cone_ABS.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Explorer 1\\05_cone_ABS.stl"
+    },
+    {
+        "id": 163,
+        "nombre": "05 Cone Pla",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 491.66,
+        "imagen": "assets/img/catalogo/05_cone_PLA.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Explorer 1\\05_cone_PLA.stl"
+    },
+    {
+        "id": 164,
+        "nombre": "Fablab Manufacturing Artifact",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 273.36,
+        "imagen": "assets/img/catalogo/FabLab manufacturing artifact.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Fablab\\FabLab manufacturing artifact.stl"
+    },
+    {
+        "id": 165,
+        "nombre": "Reference Part",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 269.09,
+        "imagen": "assets/img/catalogo/Reference part.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Fablab\\Reference part.stl"
+    },
+    {
+        "id": 166,
+        "nombre": "Gale Crater",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 205.07,
+        "imagen": "assets/img/catalogo/Gale Crater.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Gale Crater\\Gale Crater.stl"
+    },
+    {
+        "id": 167,
+        "nombre": "Galileo Probe",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 366.72,
+        "imagen": "assets/img/catalogo/Galileo probe.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Galileo\\Galileo probe.stl"
+    },
+    {
+        "id": 168,
+        "nombre": "Galileo Stowed",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 307.92,
+        "imagen": "assets/img/catalogo/Galileo stowed.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Galileo\\Galileo stowed.stl"
+    },
+    {
+        "id": 169,
+        "nombre": "Galileo With Armature",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 230.43,
+        "imagen": "assets/img/catalogo/Galileo with armature.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Galileo\\Galileo with armature.stl"
+    },
+    {
+        "id": 170,
+        "nombre": "Galileo Without Probe",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 272.65,
+        "imagen": "assets/img/catalogo/Galileo without probe.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Galileo\\Galileo without probe.stl"
+    },
+    {
+        "id": 171,
+        "nombre": "Galileo",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 363.8,
+        "imagen": "assets/img/catalogo/Galileo.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Galileo\\Galileo.stl"
+    },
+    {
+        "id": 172,
+        "nombre": "Hubble 25Th Medallion (No Back)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 138.62,
+        "imagen": "assets/img/catalogo/Hubble 25th medallion (no back).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble 25th Anniversary Medallion\\Hubble 25th medallion (no back).stl"
+    },
+    {
+        "id": 173,
+        "nombre": "Hubble 25Th Medallion",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 218.14,
+        "imagen": "assets/img/catalogo/Hubble 25th medallion.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble 25th Anniversary Medallion\\Hubble 25th medallion.stl"
+    },
+    {
+        "id": 174,
+        "nombre": "Base",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 389.87,
+        "imagen": "assets/img/catalogo/Base.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble 25th Anniversary Model\\Base.stl"
+    },
+    {
+        "id": 175,
+        "nombre": "Body Coupler",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 301.37,
+        "imagen": "assets/img/catalogo/Body coupler.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble 25th Anniversary Model\\Body coupler.stl"
+    },
+    {
+        "id": 176,
+        "nombre": "Cover Hatch",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 425.65,
+        "imagen": "assets/img/catalogo/Cover hatch.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble 25th Anniversary Model\\Cover hatch.stl"
+    },
+    {
+        "id": 177,
+        "nombre": "Main Body",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 82.72,
+        "imagen": "assets/img/catalogo/Main body.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble 25th Anniversary Model\\Main body.stl"
+    },
+    {
+        "id": 178,
+        "nombre": "Radio Dishes",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 284.41,
+        "imagen": "assets/img/catalogo/Radio dishes.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble 25th Anniversary Model\\Radio dishes.stl"
+    },
+    {
+        "id": 179,
+        "nombre": "Solar Panels",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 138.83,
+        "imagen": "assets/img/catalogo/Solar panels.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble 25th Anniversary Model\\Solar panels.stl"
+    },
+    {
+        "id": 180,
+        "nombre": "All Pieces",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 113.39,
+        "imagen": "assets/img/catalogo/All pieces.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble Space Telescope\\All pieces.stl"
+    },
+    {
+        "id": 181,
+        "nombre": "Base",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 399.13,
+        "imagen": "assets/img/catalogo/Base.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble Space Telescope\\Base.stl"
+    },
+    {
+        "id": 182,
+        "nombre": "Body Coupler",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 452.28,
+        "imagen": "assets/img/catalogo/Body coupler.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble Space Telescope\\Body coupler.stl"
+    },
+    {
+        "id": 183,
+        "nombre": "Cover Hatch",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 428.71,
+        "imagen": "assets/img/catalogo/Cover hatch.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble Space Telescope\\Cover hatch.stl"
+    },
+    {
+        "id": 184,
+        "nombre": "Main Body",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 342.79,
+        "imagen": "assets/img/catalogo/Main body.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble Space Telescope\\Main body.stl"
+    },
+    {
+        "id": 185,
+        "nombre": "Radio Dishes",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 263.4,
+        "imagen": "assets/img/catalogo/Radio dishes.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble Space Telescope\\Radio dishes.stl"
+    },
+    {
+        "id": 186,
+        "nombre": "Solar Panels",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 186.38,
+        "imagen": "assets/img/catalogo/Solar panels.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hubble Space Telescope\\Solar panels.stl"
+    },
+    {
+        "id": 187,
+        "nombre": "Hurricane Julio (Small)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 166.79,
+        "imagen": "assets/img/catalogo/Hurricane Julio (small).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hurricane Julio\\Hurricane Julio (small).stl"
+    },
+    {
+        "id": 188,
+        "nombre": "Hurricane Julio",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 473.78,
+        "imagen": "assets/img/catalogo/Hurricane Julio.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hurricane Julio\\Hurricane Julio.stl"
+    },
+    {
+        "id": 189,
+        "nombre": "Hurricane Katrina (Small)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 52.45,
+        "imagen": "assets/img/catalogo/Hurricane Katrina (small).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hurricane Katrina\\Hurricane Katrina (small).stl"
+    },
+    {
+        "id": 190,
+        "nombre": "Hurricane Katrina",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 376.06,
+        "imagen": "assets/img/catalogo/Hurricane Katrina.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hurricane Katrina\\Hurricane Katrina.stl"
+    },
+    {
+        "id": 191,
+        "nombre": "Hurricane Sandy (Small)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 232.91,
+        "imagen": "assets/img/catalogo/Hurricane Sandy (small).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hurricane Sandy\\Hurricane Sandy (small).stl"
+    },
+    {
+        "id": 192,
+        "nombre": "Hurricane Sandy",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 495.75,
+        "imagen": "assets/img/catalogo/Hurricane Sandy.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Hurricane Sandy\\Hurricane Sandy.stl"
+    },
+    {
+        "id": 193,
+        "nombre": "001   Ftc",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 271.96,
+        "imagen": "assets/img/catalogo/001 - FTC.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\001 - FTC.stl"
+    },
+    {
+        "id": 194,
+        "nombre": "002   First Part",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 161.25,
+        "imagen": "assets/img/catalogo/002 - First Part.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\002 - First Part.stl"
+    },
+    {
+        "id": 195,
+        "nombre": "003   Column",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 340.49,
+        "imagen": "assets/img/catalogo/003 - Column.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\003 - Column.stl"
+    },
+    {
+        "id": 196,
+        "nombre": "004   Tensile",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 86.78,
+        "imagen": "assets/img/catalogo/004 - Tensile.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\004 - Tensile.stl"
+    },
+    {
+        "id": 197,
+        "nombre": "005   Compression",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 487.26,
+        "imagen": "assets/img/catalogo/005 - Compression.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\005 - Compression.stl"
+    },
+    {
+        "id": 198,
+        "nombre": "006   Flexural",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 328.86,
+        "imagen": "assets/img/catalogo/006 - Flexural.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\006 - Flexural.stl"
+    },
+    {
+        "id": 199,
+        "nombre": "007   Range",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 321.08,
+        "imagen": "assets/img/catalogo/007 - Range.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\007 - Range.stl"
+    },
+    {
+        "id": 200,
+        "nombre": "008   Torque",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 177.99,
+        "imagen": "assets/img/catalogo/008 - Torque.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\008 - Torque.stl"
+    },
+    {
+        "id": 201,
+        "nombre": "009   Iss Crew",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 315.36,
+        "imagen": "assets/img/catalogo/009 - ISS Crew.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\009 - ISS Crew.stl"
+    },
+    {
+        "id": 202,
+        "nombre": "010   Cubesat",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 176.95,
+        "imagen": "assets/img/catalogo/010 - Cubesat.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\010 - Cubesat.stl"
+    },
+    {
+        "id": 203,
+        "nombre": "011   Zerog1",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 420.54,
+        "imagen": "assets/img/catalogo/011 - ZeroG1.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\011 - ZeroG1.stl"
+    },
+    {
+        "id": 204,
+        "nombre": "019   Zerog2",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 148.98,
+        "imagen": "assets/img/catalogo/019 - ZeroG2.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\019 - ZeroG2.stl"
+    },
+    {
+        "id": 205,
+        "nombre": "020  Container",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 381.39,
+        "imagen": "assets/img/catalogo/020 -Container.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\020 -Container.stl"
+    },
+    {
+        "id": 206,
+        "nombre": "021   Wire Tie",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 321.81,
+        "imagen": "assets/img/catalogo/021 - Wire Tie.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\021 - Wire Tie.stl"
+    },
+    {
+        "id": 207,
+        "nombre": "Wrench",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 146.0,
+        "imagen": "assets/img/catalogo/wrench.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Space Station Tools\\wrench.stl"
+    },
+    {
+        "id": 208,
+        "nombre": "Core 2",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 51.34,
+        "imagen": "assets/img/catalogo/Core 2.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Sun-Earth Explorer-3\\Core 2.stl"
+    },
+    {
+        "id": 209,
+        "nombre": "Exboom (Empty)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 218.13,
+        "imagen": "assets/img/catalogo/Exboom (empty).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Sun-Earth Explorer-3\\Exboom (empty).stl"
+    },
+    {
+        "id": 210,
+        "nombre": "Exboom1",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 120.01,
+        "imagen": "assets/img/catalogo/Exboom1.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Sun-Earth Explorer-3\\Exboom1.stl"
+    },
+    {
+        "id": 211,
+        "nombre": "Exboom2",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 287.64,
+        "imagen": "assets/img/catalogo/Exboom2.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Sun-Earth Explorer-3\\Exboom2.stl"
+    },
+    {
+        "id": 212,
+        "nombre": "Inertia Boom",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 384.43,
+        "imagen": "assets/img/catalogo/Inertia boom.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Sun-Earth Explorer-3\\Inertia boom.stl"
+    },
+    {
+        "id": 213,
+        "nombre": "Rad Antenna",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 95.35,
+        "imagen": "assets/img/catalogo/Rad antenna.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Sun-Earth Explorer-3\\Rad antenna.stl"
+    },
+    {
+        "id": 214,
+        "nombre": "Thruster",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 235.78,
+        "imagen": "assets/img/catalogo/Thruster.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\International Sun-Earth Explorer-3\\Thruster.stl"
+    },
+    {
+        "id": 215,
+        "nombre": "All Pieces (With Supports)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 367.44,
+        "imagen": "assets/img/catalogo/All pieces (with supports).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\James Webb Space Telescope\\All pieces (with supports).stl"
+    },
+    {
+        "id": 216,
+        "nombre": "All Pieces (Without Supports)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 221.73,
+        "imagen": "assets/img/catalogo/All pieces (without supports).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\James Webb Space Telescope\\All pieces (without supports).stl"
+    },
+    {
+        "id": 217,
+        "nombre": "Body",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 183.0,
+        "imagen": "assets/img/catalogo/Body.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\James Webb Space Telescope\\Body.stl"
+    },
+    {
+        "id": 218,
+        "nombre": "Dish",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 109.95,
+        "imagen": "assets/img/catalogo/Dish.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\James Webb Space Telescope\\Dish.stl"
+    },
+    {
+        "id": 219,
+        "nombre": "Alphasat Terminal   Antenna Feed",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 358.94,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Antenna Feed.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Antenna Feed.stl"
+    },
+    {
+        "id": 220,
+        "nombre": "Alphasat Terminal   Base",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 56.36,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Base.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Base.stl"
+    },
+    {
+        "id": 221,
+        "nombre": "Alphasat Terminal   Ka Band Reflector Mount",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 403.98,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Ka-Band Reflector Mount.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Ka-Band Reflector Mount.stl"
+    },
+    {
+        "id": 222,
+        "nombre": "Alphasat Terminal   Ka Band Reflector",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 93.5,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Ka-Band Reflector.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Ka-Band Reflector.stl"
+    },
+    {
+        "id": 223,
+        "nombre": "Alphasat Terminal   Positioner Arm",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 110.92,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Positioner Arm.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Positioner Arm.stl"
+    },
+    {
+        "id": 224,
+        "nombre": "Alphasat Terminal   Positioner Body",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 423.6,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Positioner Body.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Positioner Body.stl"
+    },
+    {
+        "id": 225,
+        "nombre": "Alphasat Terminal   Post",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 466.0,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Post.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Post.stl"
+    },
+    {
+        "id": 226,
+        "nombre": "Alphasat Terminal   Rf Electronics Box",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 496.68,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - RF Electronics Box.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - RF Electronics Box.stl"
+    },
+    {
+        "id": 227,
+        "nombre": "Alphasat Terminal   Sub Reflector A",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 473.07,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Sub-Reflector A.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Sub-Reflector A.stl"
+    },
+    {
+        "id": 228,
+        "nombre": "Alphasat Terminal   Sub Reflector B",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 181.36,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Sub-Reflector B.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Sub-Reflector B.stl"
+    },
+    {
+        "id": 229,
+        "nombre": "Alphasat Terminal   Sub Reflector C",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 296.44,
+        "imagen": "assets/img/catalogo/Alphasat Terminal - Sub-Reflector C.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Ka-Band Satellite Beacon Receiver\\Alphasat Terminal - Sub-Reflector C.stl"
+    },
+    {
+        "id": 230,
+        "nombre": "Base",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 488.49,
+        "imagen": "assets/img/catalogo/base.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Kepler 1-33 scale\\base.stl"
+    },
+    {
+        "id": 231,
+        "nombre": "Photometer",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 220.84,
+        "imagen": "assets/img/catalogo/photometer.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Kepler 1-33 scale\\photometer.stl"
+    },
+    {
+        "id": 232,
+        "nombre": "Solar Array",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 320.79,
+        "imagen": "assets/img/catalogo/solar array.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Kepler 1-33 scale\\solar array.stl"
+    },
+    {
+        "id": 233,
+        "nombre": "Stand",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 339.98,
+        "imagen": "assets/img/catalogo/stand.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Kepler 1-33 scale\\stand.stl"
+    },
+    {
+        "id": 234,
+        "nombre": "Sun Shield",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 214.1,
+        "imagen": "assets/img/catalogo/sun shield.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Kepler 1-33 scale\\sun shield.stl"
+    },
+    {
+        "id": 235,
+        "nombre": "Landsat 9",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 350.01,
+        "imagen": "assets/img/catalogo/Landsat 9.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Landsat 9\\Landsat 9.stl"
+    },
+    {
+        "id": 236,
+        "nombre": "Charge Management System",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 333.72,
+        "imagen": "assets/img/catalogo/Charge management system.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Charge management system.stl"
+    },
+    {
+        "id": 237,
+        "nombre": "Cmd And Data Handling",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 166.65,
+        "imagen": "assets/img/catalogo/Cmd and data handling.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Cmd and data handling.stl"
+    },
+    {
+        "id": 238,
+        "nombre": "Combined Bottom Boxes",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 101.9,
+        "imagen": "assets/img/catalogo/Combined bottom boxes.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Combined bottom boxes.stl"
+    },
+    {
+        "id": 239,
+        "nombre": "Grs Tank",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 82.92,
+        "imagen": "assets/img/catalogo/GRS tank.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\GRS tank.stl"
+    },
+    {
+        "id": 240,
+        "nombre": "Grs Unit",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 240.89,
+        "imagen": "assets/img/catalogo/GRS unit.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\GRS unit.stl"
+    },
+    {
+        "id": 241,
+        "nombre": "Left Side Panel",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 438.48,
+        "imagen": "assets/img/catalogo/Left side panel.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Left side panel.stl"
+    },
+    {
+        "id": 242,
+        "nombre": "Lisa Control Electronics",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 217.26,
+        "imagen": "assets/img/catalogo/LISA control electronics.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\LISA control electronics.stl"
+    },
+    {
+        "id": 243,
+        "nombre": "Optics Bench",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 458.25,
+        "imagen": "assets/img/catalogo/Optics bench.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Optics bench.stl"
+    },
+    {
+        "id": 244,
+        "nombre": "Pse And Battery",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 59.57,
+        "imagen": "assets/img/catalogo/PSE and battery.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\PSE and battery.stl"
+    },
+    {
+        "id": 245,
+        "nombre": "Right Side Panel",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 123.52,
+        "imagen": "assets/img/catalogo/Right side panel.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Right side panel.stl"
+    },
+    {
+        "id": 246,
+        "nombre": "Satellite Dish",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 182.26,
+        "imagen": "assets/img/catalogo/Satellite dish.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Satellite dish.stl"
+    },
+    {
+        "id": 247,
+        "nombre": "Solar Panel",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 368.71,
+        "imagen": "assets/img/catalogo/Solar panel.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Solar panel.stl"
+    },
+    {
+        "id": 248,
+        "nombre": "Spacecraft Base",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 196.4,
+        "imagen": "assets/img/catalogo/Spacecraft base.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Spacecraft base.stl"
+    },
+    {
+        "id": 249,
+        "nombre": "Spacecraft Top",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 382.69,
+        "imagen": "assets/img/catalogo/Spacecraft top.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Spacecraft top.stl"
+    },
+    {
+        "id": 250,
+        "nombre": "Telescope",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 149.75,
+        "imagen": "assets/img/catalogo/Telescope.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Telescope.stl"
+    },
+    {
+        "id": 251,
+        "nombre": "Thruster",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 333.55,
+        "imagen": "assets/img/catalogo/Thruster.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Laser Interferometer Space Antenna (LISA)\\Thruster.stl"
+    },
+    {
+        "id": 252,
+        "nombre": "Linne Crater",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 104.62,
+        "imagen": "assets/img/catalogo/Linne Crater.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Linne Crater\\Linne Crater.stl"
+    },
+    {
+        "id": 253,
+        "nombre": "Mars   Gale Crater",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 384.04,
+        "imagen": "assets/img/catalogo/Mars - Gale Crater.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Gale Crater\\Mars - Gale Crater.stl"
+    },
+    {
+        "id": 254,
+        "nombre": "Mars   Pahrump Hills 1",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 300.66,
+        "imagen": "assets/img/catalogo/Mars - Pahrump Hills 1.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Pahrump Hills\\Mars - Pahrump Hills 1.stl"
+    },
+    {
+        "id": 255,
+        "nombre": "Mars   Pahrump Hills 2",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 170.62,
+        "imagen": "assets/img/catalogo/Mars - Pahrump Hills 2.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Pahrump Hills\\Mars - Pahrump Hills 2.stl"
+    },
+    {
+        "id": 256,
+        "nombre": "Mars   Spirit Landing Site",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 165.7,
+        "imagen": "assets/img/catalogo/Mars - Spirit Landing Site.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Spirit Landing Site\\Mars - Spirit Landing Site.stl"
+    },
+    {
+        "id": 257,
+        "nombre": "Mars   Spirit Rover Path",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 294.96,
+        "imagen": "assets/img/catalogo/Mars - Spirit Rover Path.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Spirit Rover Path\\Mars - Spirit Rover Path.stl"
+    },
+    {
+        "id": 258,
+        "nombre": "Mars   Tharsis",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 97.64,
+        "imagen": "assets/img/catalogo/Mars - Tharsis.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Tharsis\\Mars - Tharsis.stl"
+    },
+    {
+        "id": 259,
+        "nombre": "Mars   Valles Marineris (Part 1)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 412.25,
+        "imagen": "assets/img/catalogo/Mars - Valles Marineris (part 1).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Valles Marineris\\Mars - Valles Marineris (part 1).stl"
+    },
+    {
+        "id": 260,
+        "nombre": "Mars   Valles Marineris (Part 2)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 479.63,
+        "imagen": "assets/img/catalogo/Mars - Valles Marineris (part 2).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Valles Marineris\\Mars - Valles Marineris (part 2).stl"
+    },
+    {
+        "id": 261,
+        "nombre": "Mars   Valles Marineris (Part 3)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 187.35,
+        "imagen": "assets/img/catalogo/Mars - Valles Marineris (part 3).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Valles Marineris\\Mars - Valles Marineris (part 3).stl"
+    },
+    {
+        "id": 262,
+        "nombre": "Mars   Valles Marineris (B)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 312.53,
+        "imagen": "assets/img/catalogo/Mars - Valles Marineris (B).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Valles Marineris (B)\\Mars - Valles Marineris (B).stl"
+    },
+    {
+        "id": 263,
+        "nombre": "Mars   Valles Marineris (C)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 445.2,
+        "imagen": "assets/img/catalogo/Mars - Valles Marineris (C).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Valles Marineris (C)\\Mars - Valles Marineris (C).stl"
+    },
+    {
+        "id": 264,
+        "nombre": "Mars   Victoria Crater",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 316.06,
+        "imagen": "assets/img/catalogo/Mars - Victoria Crater.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars - Victoria Crater\\Mars - Victoria Crater.stl"
+    },
+    {
+        "id": 265,
+        "nombre": "Mars 2020 5 Inch Wheel",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 57.81,
+        "imagen": "assets/img/catalogo/Mars 2020 5 inch wheel.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars 2020 5 inch wheel\\Mars 2020 5 inch wheel.stl"
+    },
+    {
+        "id": 266,
+        "nombre": "Mars 2020 Sample Tube",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 485.21,
+        "imagen": "assets/img/catalogo/Mars 2020 sample tube.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars 2020 sample tube\\Mars 2020 sample tube.stl"
+    },
+    {
+        "id": 267,
+        "nombre": "Antenna Bottom 01",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 247.44,
+        "imagen": "assets/img/catalogo/antenna_bottom_01.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars Reconnaissance Orbiter\\antenna_bottom_01.stl"
+    },
+    {
+        "id": 268,
+        "nombre": "Antenna Bottom 02",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 402.47,
+        "imagen": "assets/img/catalogo/antenna_bottom_02.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars Reconnaissance Orbiter\\antenna_bottom_02.stl"
+    },
+    {
+        "id": 269,
+        "nombre": "Bus 01",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 204.51,
+        "imagen": "assets/img/catalogo/bus_01.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars Reconnaissance Orbiter\\bus_01.stl"
+    },
+    {
+        "id": 270,
+        "nombre": "Bus 02",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 84.49,
+        "imagen": "assets/img/catalogo/bus_02.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars Reconnaissance Orbiter\\bus_02.stl"
+    },
+    {
+        "id": 271,
+        "nombre": "Connectors",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 200.03,
+        "imagen": "assets/img/catalogo/connectors.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars Reconnaissance Orbiter\\connectors.stl"
+    },
+    {
+        "id": 272,
+        "nombre": "Instruments Bottom",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 100.95,
+        "imagen": "assets/img/catalogo/instruments_bottom.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars Reconnaissance Orbiter\\instruments_bottom.stl"
+    },
+    {
+        "id": 273,
+        "nombre": "Solar Panel L",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 66.32,
+        "imagen": "assets/img/catalogo/solar panel_L.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars Reconnaissance Orbiter\\solar panel_L.stl"
+    },
+    {
+        "id": 274,
+        "nombre": "Solar Panel R",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 468.8,
+        "imagen": "assets/img/catalogo/solar panel_R.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars Reconnaissance Orbiter\\solar panel_R.stl"
+    },
+    {
+        "id": 275,
+        "nombre": "Top",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 104.84,
+        "imagen": "assets/img/catalogo/top.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Mars Reconnaissance Orbiter\\top.stl"
+    },
+    {
+        "id": 276,
+        "nombre": "Moon (Far Side)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 123.23,
+        "imagen": "assets/img/catalogo/Moon (far side).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Moon\\Moon (far side).stl"
+    },
+    {
+        "id": 277,
+        "nombre": "Moon (Near Side)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 331.43,
+        "imagen": "assets/img/catalogo/Moon (near side).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Moon\\Moon (near side).stl"
+    },
+    {
+        "id": 278,
+        "nombre": "Moon   Aristarchus Region",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 198.77,
+        "imagen": "assets/img/catalogo/Moon - Aristarchus Region.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Moon - Aristarchus Region\\Moon - Aristarchus Region.stl"
+    },
+    {
+        "id": 279,
+        "nombre": "Moon   Copernicus Crater",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 239.96,
+        "imagen": "assets/img/catalogo/Moon - Copernicus Crater.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Moon - Copernicus Crater\\Moon - Copernicus Crater.stl"
+    },
+    {
+        "id": 280,
+        "nombre": "Moon   Gassendi Crater",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 249.03,
+        "imagen": "assets/img/catalogo/Moon - Gassendi Crater.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Moon - Gassendi Crater\\Moon - Gassendi Crater.stl"
+    },
+    {
+        "id": 281,
+        "nombre": "Moon   Mount Hadley",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 229.88,
+        "imagen": "assets/img/catalogo/Moon - Mount Hadley.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Moon - Mount Hadley\\Moon - Mount Hadley.stl"
+    },
+    {
+        "id": 282,
+        "nombre": "Moon   Tycho",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 117.67,
+        "imagen": "assets/img/catalogo/Moon - Tycho.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Moon - Tycho\\Moon - Tycho.stl"
+    },
+    {
+        "id": 283,
+        "nombre": "Multi Purpose Precision Maintenance Tool",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 459.43,
+        "imagen": "assets/img/catalogo/Multi-Purpose Precision Maintenance Tool.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Multi-Purpose Precision Maintenance Tool\\Multi-Purpose Precision Maintenance Tool.stl"
+    },
+    {
+        "id": 284,
+        "nombre": "Nancy Grace Roman Space Telescope",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 246.56,
+        "imagen": "assets/img/catalogo/Nancy Grace Roman Space Telescope.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Nancy Grace Roman Space Telescope\\Nancy Grace Roman Space Telescope.stl"
+    },
+    {
+        "id": 285,
+        "nombre": "Nasa Insignia (Back)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 172.21,
+        "imagen": "assets/img/catalogo/NASA Insignia (back).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\NASA Insignia\\NASA Insignia (back).stl"
+    },
+    {
+        "id": 286,
+        "nombre": "Nasa Insignia (Front)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 196.12,
+        "imagen": "assets/img/catalogo/NASA Insignia (front).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\NASA Insignia\\NASA Insignia (front).stl"
+    },
+    {
+        "id": 287,
+        "nombre": "Nasa Insignia (Stand)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 216.03,
+        "imagen": "assets/img/catalogo/NASA Insignia (stand).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\NASA Insignia\\NASA Insignia (stand).stl"
+    },
+    {
+        "id": 288,
+        "nombre": "7399 05 Rp Antenna",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 80.75,
+        "imagen": "assets/img/catalogo/7399_05_rp_antenna.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\New Horizons\\7399_05_rp_antenna.stl"
+    },
+    {
+        "id": 289,
+        "nombre": "7399 05 Rp Body",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 343.21,
+        "imagen": "assets/img/catalogo/7399_05_rp_body.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\New Horizons\\7399_05_rp_body.stl"
+    },
+    {
+        "id": 290,
+        "nombre": "7399 05 Rp Body L",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 376.96,
+        "imagen": "assets/img/catalogo/7399_05_rp_body_l.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\New Horizons\\7399_05_rp_body_l.stl"
+    },
+    {
+        "id": 291,
+        "nombre": "7399 05 Rp Body R",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 162.71,
+        "imagen": "assets/img/catalogo/7399_05_rp_body_r.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\New Horizons\\7399_05_rp_body_r.stl"
+    },
+    {
+        "id": 292,
+        "nombre": "7399 05 Rp Rtg",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 193.76,
+        "imagen": "assets/img/catalogo/7399_05_rp_rtg.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\New Horizons\\7399_05_rp_rtg.stl"
+    },
+    {
+        "id": 293,
+        "nombre": "Niac Titan Sub (Aft Cone Upright)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 99.45,
+        "imagen": "assets/img/catalogo/NIAC Titan Sub (aft cone upright).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\NIAC Titan Sub\\NIAC Titan Sub (aft cone upright).stl"
+    },
+    {
+        "id": 294,
+        "nombre": "Niac Titan Sub (Main Body Upright)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 123.58,
+        "imagen": "assets/img/catalogo/NIAC Titan Sub (main body upright).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\NIAC Titan Sub\\NIAC Titan Sub (main body upright).stl"
+    },
+    {
+        "id": 295,
+        "nombre": "Opportunity Landing Site",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 487.81,
+        "imagen": "assets/img/catalogo/Opportunity Landing Site.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Opportunity Landing Site\\Opportunity Landing Site.stl"
+    },
+    {
+        "id": 296,
+        "nombre": "Orion Capsule (No Fbc)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 282.8,
+        "imagen": "assets/img/catalogo/Orion Capsule (no fbc).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Orion Capsule\\Orion Capsule (no fbc).stl"
+    },
+    {
+        "id": 297,
+        "nombre": "Orion Capsule (Plug)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 274.22,
+        "imagen": "assets/img/catalogo/Orion Capsule (plug).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Orion Capsule\\Orion Capsule (plug).stl"
+    },
+    {
+        "id": 298,
+        "nombre": "Orion Capsule (Stand)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 174.35,
+        "imagen": "assets/img/catalogo/Orion Capsule (stand).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Orion Capsule\\Orion Capsule (stand).stl"
+    },
+    {
+        "id": 299,
+        "nombre": "Pillars Of Creation (Full)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 176.99,
+        "imagen": "assets/img/catalogo/Pillars of Creation (full).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Pillars of Creation\\Pillars of Creation (full).stl"
+    },
+    {
+        "id": 300,
+        "nombre": "Pillars Of Creation (Mini)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 105.25,
+        "imagen": "assets/img/catalogo/Pillars of Creation (mini).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Pillars of Creation\\Pillars of Creation (mini).stl"
+    },
+    {
+        "id": 301,
+        "nombre": "Pillars Of Creation (Pillar 1A)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 144.82,
+        "imagen": "assets/img/catalogo/Pillars of Creation (pillar 1A).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Pillars of Creation\\Pillars of Creation (pillar 1A).stl"
+    },
+    {
+        "id": 302,
+        "nombre": "Pillars Of Creation (Pillar 1B)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 206.87,
+        "imagen": "assets/img/catalogo/Pillars of Creation (pillar 1B).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Pillars of Creation\\Pillars of Creation (pillar 1B).stl"
+    },
+    {
+        "id": 303,
+        "nombre": "Pillars Of Creation (Pillar 2)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 194.47,
+        "imagen": "assets/img/catalogo/Pillars of Creation (pillar 2).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Pillars of Creation\\Pillars of Creation (pillar 2).stl"
+    },
+    {
+        "id": 304,
+        "nombre": "Pillars Of Creation (Pillar 3)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 131.72,
+        "imagen": "assets/img/catalogo/Pillars of Creation (pillar 3).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Pillars of Creation\\Pillars of Creation (pillar 3).stl"
+    },
+    {
+        "id": 305,
+        "nombre": "Pillars Of Creation (Positions)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 443.93,
+        "imagen": "assets/img/catalogo/Pillars of Creation (positions).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Pillars of Creation\\Pillars of Creation (positions).stl"
+    },
+    {
+        "id": 306,
+        "nombre": "Bottom Part A",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 128.47,
+        "imagen": "assets/img/catalogo/bottom part a.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V - Stage 1\\bottom part a.stl"
+    },
+    {
+        "id": 307,
+        "nombre": "Bottom Part B",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 271.3,
+        "imagen": "assets/img/catalogo/bottom part b.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V - Stage 1\\bottom part b.stl"
+    },
+    {
+        "id": 308,
+        "nombre": "Top Part A",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 187.38,
+        "imagen": "assets/img/catalogo/top part a.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V - Stage 1\\top part a.stl"
+    },
+    {
+        "id": 309,
+        "nombre": "Top Part B",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 486.41,
+        "imagen": "assets/img/catalogo/top part b.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V - Stage 1\\top part b.stl"
+    },
+    {
+        "id": 310,
+        "nombre": "Bottom",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 289.7,
+        "imagen": "assets/img/catalogo/bottom.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V - Stage 2\\bottom.stl"
+    },
+    {
+        "id": 311,
+        "nombre": "Joining Cube",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 445.79,
+        "imagen": "assets/img/catalogo/joining cube.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V - Stage 2\\joining cube.stl"
+    },
+    {
+        "id": 312,
+        "nombre": "Top",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 413.11,
+        "imagen": "assets/img/catalogo/top.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V - Stage 2\\top.stl"
+    },
+    {
+        "id": 313,
+        "nombre": "Command Moduel",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 204.43,
+        "imagen": "assets/img/catalogo/command moduel.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\command moduel.stl"
+    },
+    {
+        "id": 314,
+        "nombre": "Escape Tower",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 441.02,
+        "imagen": "assets/img/catalogo/escape tower.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\escape tower.stl"
+    },
+    {
+        "id": 315,
+        "nombre": "Fin (Print 4)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 52.09,
+        "imagen": "assets/img/catalogo/fin (print 4).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\fin (print 4).stl"
+    },
+    {
+        "id": 316,
+        "nombre": "Lem Shroud",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 60.29,
+        "imagen": "assets/img/catalogo/lem shroud.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\lem shroud.stl"
+    },
+    {
+        "id": 317,
+        "nombre": "S Ic Bottom",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 257.21,
+        "imagen": "assets/img/catalogo/S-IC bottom.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\S-IC bottom.stl"
+    },
+    {
+        "id": 318,
+        "nombre": "S Ic Joining Cube",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 305.96,
+        "imagen": "assets/img/catalogo/S-IC joining cube.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\S-IC joining cube.stl"
+    },
+    {
+        "id": 319,
+        "nombre": "S Ic Top",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 216.81,
+        "imagen": "assets/img/catalogo/S-IC top.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\S-IC top.stl"
+    },
+    {
+        "id": 320,
+        "nombre": "S Ii",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 451.02,
+        "imagen": "assets/img/catalogo/S-II.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\S-II.stl"
+    },
+    {
+        "id": 321,
+        "nombre": "S Iv B",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 164.41,
+        "imagen": "assets/img/catalogo/S-IV b.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\S-IV b.stl"
+    },
+    {
+        "id": 322,
+        "nombre": "Service Module",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 317.88,
+        "imagen": "assets/img/catalogo/service module.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\service module.stl"
+    },
+    {
+        "id": 323,
+        "nombre": "Stage 1 2 Coupler V2",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 393.89,
+        "imagen": "assets/img/catalogo/stage 1-2 coupler v2.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\stage 1-2 coupler v2.stl"
+    },
+    {
+        "id": 324,
+        "nombre": "Stage 1 2 Coupler",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 112.79,
+        "imagen": "assets/img/catalogo/stage 1-2 coupler.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Saturn V Rocket\\stage 1-2 coupler.stl"
+    },
+    {
+        "id": 325,
+        "nombre": "Blast Quarter Globe",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 497.06,
+        "imagen": "assets/img/catalogo/Blast quarter globe.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SN 1006\\Blast quarter globe.stl"
+    },
+    {
+        "id": 326,
+        "nombre": "Ejecta Full Globe",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 62.31,
+        "imagen": "assets/img/catalogo/Ejecta full globe.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SN 1006\\Ejecta full globe.stl"
+    },
+    {
+        "id": 327,
+        "nombre": "Ejecta Quarter Globe",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 325.51,
+        "imagen": "assets/img/catalogo/Ejecta quarter globe.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SN 1006\\Ejecta quarter globe.stl"
+    },
+    {
+        "id": 328,
+        "nombre": "Combined",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 325.78,
+        "imagen": "assets/img/catalogo/Combined.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SN 1987A\\Combined.stl"
+    },
+    {
+        "id": 329,
+        "nombre": "Ring Debris",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 344.18,
+        "imagen": "assets/img/catalogo/Ring debris.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SN 1987A\\Ring debris.stl"
+    },
+    {
+        "id": 330,
+        "nombre": "Ring",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 200.4,
+        "imagen": "assets/img/catalogo/Ring.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SN 1987A\\Ring.stl"
+    },
+    {
+        "id": 331,
+        "nombre": "Fuselage Top",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 240.61,
+        "imagen": "assets/img/catalogo/Fuselage top.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SOFIA\\Fuselage top.stl"
+    },
+    {
+        "id": 332,
+        "nombre": "Instrument",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 385.93,
+        "imagen": "assets/img/catalogo/Instrument.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SOFIA\\Instrument.stl"
+    },
+    {
+        "id": 333,
+        "nombre": "Left Wing",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 378.63,
+        "imagen": "assets/img/catalogo/Left wing.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SOFIA\\Left wing.stl"
+    },
+    {
+        "id": 334,
+        "nombre": "Nose Section",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 417.7,
+        "imagen": "assets/img/catalogo/Nose section.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SOFIA\\Nose section.stl"
+    },
+    {
+        "id": 335,
+        "nombre": "Right Wing",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 239.52,
+        "imagen": "assets/img/catalogo/Right wing.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SOFIA\\Right wing.stl"
+    },
+    {
+        "id": 336,
+        "nombre": "Tail Section",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 406.92,
+        "imagen": "assets/img/catalogo/Tail section.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SOFIA\\Tail section.stl"
+    },
+    {
+        "id": 337,
+        "nombre": "Telescope Cavity Closed",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 116.02,
+        "imagen": "assets/img/catalogo/Telescope cavity closed.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SOFIA\\Telescope cavity closed.stl"
+    },
+    {
+        "id": 338,
+        "nombre": "Telescope Cavity Open",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 193.23,
+        "imagen": "assets/img/catalogo/Telescope cavity open.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\SOFIA\\Telescope cavity open.stl"
+    },
+    {
+        "id": 339,
+        "nombre": "All Parts",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 399.41,
+        "imagen": "assets/img/catalogo/All parts.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Solar and Heliospheric Observatory (SOHO)\\All parts.stl"
+    },
+    {
+        "id": 340,
+        "nombre": "Part 1",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 340.43,
+        "imagen": "assets/img/catalogo/Part 1.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Solar and Heliospheric Observatory (SOHO)\\Part 1.stl"
+    },
+    {
+        "id": 341,
+        "nombre": "Part 2",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 261.88,
+        "imagen": "assets/img/catalogo/Part 2.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Solar and Heliospheric Observatory (SOHO)\\Part 2.stl"
+    },
+    {
+        "id": 342,
+        "nombre": "Part 3",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 178.4,
+        "imagen": "assets/img/catalogo/Part 3.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Solar and Heliospheric Observatory (SOHO)\\Part 3.stl"
+    },
+    {
+        "id": 343,
+        "nombre": "Space Launch System (Sls) Block 1",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 124.13,
+        "imagen": "assets/img/catalogo/Space Launch System (SLS) Block 1.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Space Launch System (SLS) Block 1\\Space Launch System (SLS) Block 1.stl"
+    },
+    {
+        "id": 344,
+        "nombre": "Tycho Supernova Remnant (Left Inner)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 463.1,
+        "imagen": "assets/img/catalogo/Tycho Supernova Remnant (left inner).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Tycho Supernova Remnant\\Tycho Supernova Remnant (left inner).stl"
+    },
+    {
+        "id": 345,
+        "nombre": "Tycho Supernova Remnant (Left Outer)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 132.87,
+        "imagen": "assets/img/catalogo/Tycho Supernova Remnant (left outer).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Tycho Supernova Remnant\\Tycho Supernova Remnant (left outer).stl"
+    },
+    {
+        "id": 346,
+        "nombre": "Tycho Supernova Remnant (Right Inner)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 80.89,
+        "imagen": "assets/img/catalogo/Tycho Supernova Remnant (right inner).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Tycho Supernova Remnant\\Tycho Supernova Remnant (right inner).stl"
+    },
+    {
+        "id": 347,
+        "nombre": "Tycho Supernova Remnant (Right Outer)",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 194.37,
+        "imagen": "assets/img/catalogo/Tycho Supernova Remnant (right outer).png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Tycho Supernova Remnant\\Tycho Supernova Remnant (right outer).stl"
+    },
+    {
+        "id": 348,
+        "nombre": "U Scorpii",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 125.43,
+        "imagen": "assets/img/catalogo/U Scorpii.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\U Scorpii\\U Scorpii.stl"
+    },
+    {
+        "id": 349,
+        "nombre": "Vesta   Numisia",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 485.01,
+        "imagen": "assets/img/catalogo/Vesta - Numisia.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Vesta - Numisia\\Vesta - Numisia.stl"
+    },
+    {
+        "id": 350,
+        "nombre": "Vesta   Rheasilvia",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 202.75,
+        "imagen": "assets/img/catalogo/Vesta - Rheasilvia.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Vesta - Rheasilvia\\Vesta - Rheasilvia.stl"
+    },
+    {
+        "id": 351,
+        "nombre": "Vesta   Snowman Craters",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 255.75,
+        "imagen": "assets/img/catalogo/Vesta - Snowman Craters.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Vesta - Snowman Craters\\Vesta - Snowman Craters.stl"
+    },
+    {
+        "id": 352,
+        "nombre": "Viking 40Th Anniversary Emblem",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 409.06,
+        "imagen": "assets/img/catalogo/Viking 40th Anniversary Emblem.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking 40th Anniversary Emblem\\Viking 40th Anniversary Emblem.stl"
+    },
+    {
+        "id": 353,
+        "nombre": "3D Foot X 3",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 200.73,
+        "imagen": "assets/img/catalogo/3D Foot x 3.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\3D Foot x 3.stl"
+    },
+    {
+        "id": 354,
+        "nombre": "Bottom",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 306.72,
+        "imagen": "assets/img/catalogo/Bottom.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\Bottom.stl"
+    },
+    {
+        "id": 355,
+        "nombre": "Dish Part A",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 393.44,
+        "imagen": "assets/img/catalogo/Dish part A.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\Dish part A.stl"
+    },
+    {
+        "id": 356,
+        "nombre": "Dish Part B",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 109.59,
+        "imagen": "assets/img/catalogo/Dish part B.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\Dish part B.stl"
+    },
+    {
+        "id": 357,
+        "nombre": "Leg X 3",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 56.65,
+        "imagen": "assets/img/catalogo/Leg x 3.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\Leg x 3.stl"
+    },
+    {
+        "id": 358,
+        "nombre": "Tool1 A",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 210.05,
+        "imagen": "assets/img/catalogo/Tool1 A.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\Tool1 A.stl"
+    },
+    {
+        "id": 359,
+        "nombre": "Tool1 B",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 158.19,
+        "imagen": "assets/img/catalogo/Tool1 B.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\Tool1 B.stl"
+    },
+    {
+        "id": 360,
+        "nombre": "Tool1 C",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 67.67,
+        "imagen": "assets/img/catalogo/Tool1 C.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\Tool1 C.stl"
+    },
+    {
+        "id": 361,
+        "nombre": "Tool2",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 178.51,
+        "imagen": "assets/img/catalogo/Tool2.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\Tool2.stl"
+    },
+    {
+        "id": 362,
+        "nombre": "Top",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 468.2,
+        "imagen": "assets/img/catalogo/Top.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Viking Lander\\Top.stl"
+    },
+    {
+        "id": 363,
+        "nombre": "Arm Left 01",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 480.43,
+        "imagen": "assets/img/catalogo/arm_left_01.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\arm_left_01.stl"
+    },
+    {
+        "id": 364,
+        "nombre": "Arm Left 02",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 112.61,
+        "imagen": "assets/img/catalogo/arm_left_02.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\arm_left_02.stl"
+    },
+    {
+        "id": 365,
+        "nombre": "Arm Right 01",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 251.11,
+        "imagen": "assets/img/catalogo/arm_right_01.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\arm_right_01.stl"
+    },
+    {
+        "id": 366,
+        "nombre": "Arm Right 02",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 126.79,
+        "imagen": "assets/img/catalogo/arm_right_02.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\arm_right_02.stl"
+    },
+    {
+        "id": 367,
+        "nombre": "Boom 01",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 210.1,
+        "imagen": "assets/img/catalogo/boom_01.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\boom_01.stl"
+    },
+    {
+        "id": 368,
+        "nombre": "Boom 02",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 334.98,
+        "imagen": "assets/img/catalogo/boom_02.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\boom_02.stl"
+    },
+    {
+        "id": 369,
+        "nombre": "Boom 03",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 338.89,
+        "imagen": "assets/img/catalogo/boom_03.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\boom_03.stl"
+    },
+    {
+        "id": 370,
+        "nombre": "Bus",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 332.89,
+        "imagen": "assets/img/catalogo/bus.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\bus.stl"
+    },
+    {
+        "id": 371,
+        "nombre": "Dish",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 278.14,
+        "imagen": "assets/img/catalogo/dish.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\dish.stl"
+    },
+    {
+        "id": 372,
+        "nombre": "Instrument 01",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 353.26,
+        "imagen": "assets/img/catalogo/instrument_01.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\instrument_01.stl"
+    },
+    {
+        "id": 373,
+        "nombre": "Instrument 02",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 475.69,
+        "imagen": "assets/img/catalogo/instrument_02.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\instrument_02.stl"
+    },
+    {
+        "id": 374,
+        "nombre": "Instrument 03",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 264.02,
+        "imagen": "assets/img/catalogo/instrument_03.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\instrument_03.stl"
+    },
+    {
+        "id": 375,
+        "nombre": "Legs",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 73.84,
+        "imagen": "assets/img/catalogo/legs.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\legs.stl"
+    },
+    {
+        "id": 376,
+        "nombre": "Pins",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 445.99,
+        "imagen": "assets/img/catalogo/pins.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\pins.stl"
+    },
+    {
+        "id": 377,
+        "nombre": "Stand",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 178.93,
+        "imagen": "assets/img/catalogo/stand.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Voyager\\stand.stl"
+    },
+    {
+        "id": 378,
+        "nombre": "Wrench",
+        "categoria": "NASA 3D",
+        "precio_lempiras": 166.99,
+        "imagen": "assets/img/catalogo/Wrench.png",
+        "archivo_stl": "./NASA-3D-Resources-master\\NASA-3D-Resources-master\\3D Printing\\Wrench\\Wrench.stl"
+    }
+]

@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            const errDiv = document.createElement('div');
+            errDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:red;color:white;z-index:999999;padding:20px;font-family:monospace;white-space:pre-wrap;';
+            errDiv.textContent = 'ERROR: ' + msg + '\n' + url + ' Line: ' + lineNo;
+            if (error && error.stack) errDiv.textContent += '\n\n' + error.stack;
+            document.body.appendChild(errDiv);
+            document.getElementById('loading-screen').style.display = 'none';
+            return false;
+        };
+        window.addEventListener('unhandledrejection', function(event) {
+            const errDiv = document.createElement('div');
+            errDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:darkred;color:white;z-index:999999;padding:20px;font-family:monospace;white-space:pre-wrap;';
+            errDiv.textContent = 'PROMISE REJECTION: ' + (event.reason ? event.reason.stack || event.reason : 'Unknown');
+            document.body.appendChild(errDiv);
+            document.getElementById('loading-screen').style.display = 'none';
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Diseñado por ti, creado por todos</title>
+    <meta name="description" content="Vexel 3D: La plataforma de diseño de vestimenta más innovadora. Diseña camisetas y pantalones con herramientas profesionales.">
+    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="imagenes de la app/isologo.png">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body data-theme="dark">
+
+    
+    <div id="loading-screen">
+        <div class="loading-bg-blur"></div>
+        <div class="loading-content">
+            <img src="imagenes de la app/isotipovexel3d.png" class="logo-v-img" alt="Vexel 3D">
+            <p class="loading-label">Cargando Vexel 3D...</p>
+        </div>
+    </div>
+
+    
+    <div id="terms-modal" class="modal-overlay hidden">
+        <div class="modal-box modal-box-scroll modal-box-500">
+            <div class="modal-header">
+                <h3>Términos y Condiciones</h3>
+            </div>
+            <div class="modal-body-text">
+                <p>Bienvenido a Vexel 3D.</p>
+                <p>Al utilizar nuestra plataforma de diseño 3D y 2D, aceptas los siguientes términos:</p>
+                <ul>
+                    <li>Eres responsable de los diseños que creas. No subas contenido ofensivo o con derechos de autor ajenos.</li>
+                    <li>Vexel 3D almacena tus diseños localmente en tu dispositivo. Si borras los datos de tu navegador, perderás tus proyectos.</li>
+                    <li>Nuestra IA es una herramienta de asistencia. Los resultados generados pueden no ser perfectos y deben ser revisados antes de producción.</li>
+                    <li>Nos reservamos el derecho a modificar la plataforma en cualquier momento para mejorar tu experiencia.</li>
+                </ul>
+                <button id="btn-accept-terms" class="btn-primary-full">Aceptar y Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="elementos-modal" class="modal-overlay hidden">
+        <div class="modal-box modal-box-scroll">
+            <div class="modal-header">
+                <h3>Elementos Gráficos</h3>
+                <button id="close-elementos-modal" class="modal-close" title="Cerrar" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-category="filled">Rellenos</button>
+                <button class="modal-tab" data-category="outline">Contornos</button>
+            </div>
+            <div id="elementos-grid" class="elementos-icons-grid elementos-grid-padding"></div>
+        </div>
+    </div>
+
+    
+    <div id="shape-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Agregar Forma</h3>
+                <button id="close-shape-modal" class="modal-close" title="Cerrar" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="shapes-grid">
+                <button class="shape-btn" data-shape="rect" title="Rectángulo">
+                    <svg viewBox="0 0 60 50"><rect x="5" y="10" width="50" height="30" rx="4" fill="currentColor"/></svg>
+                    <span>Rectángulo</span>
+                </button>
+                <button class="shape-btn" data-shape="circle" title="Círculo">
+                    <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="currentColor"/></svg>
+                    <span>Círculo</span>
+                </button>
+                <button class="shape-btn" data-shape="triangle" title="Triángulo">
+                    <svg viewBox="0 0 60 60"><polygon points="30,5 55,55 5,55" fill="currentColor"/></svg>
+                    <span>Triángulo</span>
+                </button>
+                <button class="shape-btn" data-shape="star" title="Estrella">
+                    <svg viewBox="0 0 60 60"><polygon points="30,5 36,22 55,22 40,34 46,52 30,42 14,52 20,34 5,22 24,22" fill="currentColor"/></svg>
+                    <span>Estrella</span>
+                </button>
+                <button class="shape-btn" data-shape="line" title="Línea">
+                    <svg viewBox="0 0 60 60"><line x1="5" y1="30" x2="55" y2="30" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+                    <span>Línea</span>
+                </button>
+                <button class="shape-btn" data-shape="hexagon" title="Hexágono">
+                    <svg viewBox="0 0 60 60"><polygon points="30,5 52,17 52,43 30,55 8,43 8,17" fill="currentColor"/></svg>
+                    <span>Hexágono</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="marcos-modal" class="modal-overlay hidden">
+        <div class="modal-box modal-box-scroll" style="max-width:540px; max-height:88vh;">
+            <div class="modal-header">
+                <h3><i class="fa-regular fa-image" style="margin-right:8px;color:var(--accent)"></i>Marcos</h3>
+                <button id="close-marcos-modal" class="modal-close" title="Cerrar" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <p style="color:var(--text-secondary);font-size:0.82rem;text-align:center;margin:0 0 14px;padding:0 8px;">
+                Haz clic para añadir. Luego <strong style="color:#E040FB;">arrastra una imagen</strong> sobre el marco para rellenarlo.
+            </p>
+
+            
+            <svg width="0" height="0" style="position:absolute">
+                <defs>
+                    
+                    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#87CEEB"/>
+                        <stop offset="100%" stop-color="#c8e6f5"/>
+                    </linearGradient>
+                    
+                    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#5a9e5a"/>
+                        <stop offset="100%" stop-color="#3d7a3d"/>
+                    </linearGradient>
+                    
+                    <clipPath id="clip-sq"><rect x="0" y="0" width="60" height="60" rx="6"/></clipPath>
+                    
+                    <clipPath id="clip-ci"><circle cx="30" cy="30" r="28"/></clipPath>
+                    
+                    <clipPath id="clip-ls"><rect x="0" y="0" width="80" height="52" rx="5"/></clipPath>
+                    
+                    <clipPath id="clip-po"><rect x="0" y="0" width="52" height="76" rx="5"/></clipPath>
+                    
+                    <clipPath id="clip-ph"><rect x="0" y="0" width="32" height="52" rx="3"/></clipPath>
+                    
+                    <clipPath id="clip-lp"><rect x="0" y="0" width="56" height="36" rx="2"/></clipPath>
+                    
+                    <clipPath id="clip-tb"><rect x="0" y="0" width="44" height="60" rx="4"/></clipPath>
+                    
+                    <clipPath id="clip-mo"><rect x="0" y="0" width="66" height="44" rx="2"/></clipPath>
+                    
+                    <clipPath id="clip-fm"><rect x="0" y="0" width="36" height="62" rx="2"/></clipPath>
+                    
+                    <clipPath id="clip-pl"><rect x="0" y="0" width="44" height="44" rx="2"/></clipPath>
+                    
+                    <clipPath id="clip-tr"><polygon points="30,2 58,58 2,58"/></clipPath>
+                    
+                    <clipPath id="clip-hx"><polygon points="30,2 56,16 56,44 30,58 4,44 4,16"/></clipPath>
+                    
+                    <clipPath id="clip-di"><polygon points="30,2 58,30 30,58 2,30"/></clipPath>
+                </defs>
+            </svg>
+
+            
+            <h5 class="marcos-section-title">Formas básicas</h5>
+            <div class="grid-marcos">
+
+                
+                <button class="marco-btn" data-shape="square" title="Cuadrado">
+                    <svg viewBox="0 0 60 60" width="70" height="70">
+                        <g clip-path="url(#clip-sq)">
+                            <rect width="60" height="60" fill="url(#sky)"/>
+                            <ellipse cx="15" cy="16" rx="10" ry="7" fill="white" opacity=".85"/>
+                            <ellipse cx="40" cy="12" rx="13" ry="8" fill="white" opacity=".9"/>
+                            <ellipse cx="28" cy="19" rx="8" ry="5" fill="white" opacity=".7"/>
+                            <rect y="38" width="60" height="22" fill="url(#grass)"/>
+                            <ellipse cx="30" cy="38" rx="30" ry="6" fill="#4a8a4a"/>
+                        </g>
+                        <rect width="60" height="60" rx="6" fill="none" stroke="#E040FB" stroke-width="2"/>
+                    </svg>
+                    <span>Cuadrado</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="square" title="Redondeado" style="--extra-rx:16px">
+                    <svg viewBox="0 0 60 60" width="70" height="70">
+                        <defs><clipPath id="clip-rd"><rect width="60" height="60" rx="18"/></clipPath></defs>
+                        <g clip-path="url(#clip-rd)">
+                            <rect width="60" height="60" fill="url(#sky)"/>
+                            <ellipse cx="20" cy="15" rx="12" ry="8" fill="white" opacity=".85"/>
+                            <ellipse cx="44" cy="11" rx="11" ry="7" fill="white" opacity=".9"/>
+                            <rect y="38" width="60" height="22" fill="url(#grass)"/>
+                            <ellipse cx="30" cy="38" rx="30" ry="6" fill="#4a8a4a"/>
+                        </g>
+                        <rect width="60" height="60" rx="18" fill="none" stroke="#E040FB" stroke-width="2"/>
+                    </svg>
+                    <span>Redondeado</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="circle" title="Círculo">
+                    <svg viewBox="0 0 60 60" width="70" height="70">
+                        <g clip-path="url(#clip-ci)">
+                            <rect width="60" height="60" fill="url(#sky)"/>
+                            <ellipse cx="15" cy="15" rx="11" ry="7" fill="white" opacity=".85"/>
+                            <ellipse cx="40" cy="11" rx="13" ry="8" fill="white" opacity=".9"/>
+                            <rect y="36" width="60" height="24" fill="url(#grass)"/>
+                            <ellipse cx="30" cy="36" rx="30" ry="6" fill="#4a8a4a"/>
+                        </g>
+                        <circle cx="30" cy="30" r="28" fill="none" stroke="#E040FB" stroke-width="2"/>
+                    </svg>
+                    <span>Círculo</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="triangle" title="Triángulo">
+                    <svg viewBox="0 0 60 60" width="70" height="70">
+                        <g clip-path="url(#clip-tr)">
+                            <rect width="60" height="60" fill="url(#sky)"/>
+                            <ellipse cx="30" cy="22" rx="10" ry="6" fill="white" opacity=".8"/>
+                            <rect y="40" width="60" height="20" fill="url(#grass)"/>
+                            <ellipse cx="30" cy="40" rx="30" ry="5" fill="#4a8a4a"/>
+                        </g>
+                        <polygon points="30,2 58,58 2,58" fill="none" stroke="#E040FB" stroke-width="2"/>
+                    </svg>
+                    <span>Triángulo</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="hexagon" title="Hexágono">
+                    <svg viewBox="0 0 60 60" width="70" height="70">
+                        <g clip-path="url(#clip-hx)">
+                            <rect width="60" height="60" fill="url(#sky)"/>
+                            <ellipse cx="15" cy="16" rx="9" ry="6" fill="white" opacity=".85"/>
+                            <ellipse cx="40" cy="12" rx="11" ry="7" fill="white" opacity=".9"/>
+                            <rect y="36" width="60" height="24" fill="url(#grass)"/>
+                            <ellipse cx="30" cy="36" rx="30" ry="6" fill="#4a8a4a"/>
+                        </g>
+                        <polygon points="30,2 56,16 56,44 30,58 4,44 4,16" fill="none" stroke="#E040FB" stroke-width="2"/>
+                    </svg>
+                    <span>Hexágono</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="diamond" title="Diamante">
+                    <svg viewBox="0 0 60 60" width="70" height="70">
+                        <g clip-path="url(#clip-di)">
+                            <rect width="60" height="60" fill="url(#sky)"/>
+                            <ellipse cx="30" cy="18" rx="11" ry="7" fill="white" opacity=".9"/>
+                            <rect y="34" width="60" height="26" fill="url(#grass)"/>
+                            <ellipse cx="30" cy="34" rx="30" ry="6" fill="#4a8a4a"/>
+                        </g>
+                        <polygon points="30,2 58,30 30,58 2,30" fill="none" stroke="#E040FB" stroke-width="2"/>
+                    </svg>
+                    <span>Diamante</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="landscape" title="Horizontal" style="grid-column:span 2">
+                    <svg viewBox="0 0 80 52" width="100" height="65">
+                        <g clip-path="url(#clip-ls)">
+                            <rect width="80" height="52" fill="url(#sky)"/>
+                            <ellipse cx="18" cy="14" rx="13" ry="8" fill="white" opacity=".85"/>
+                            <ellipse cx="52" cy="10" rx="16" ry="9" fill="white" opacity=".9"/>
+                            <ellipse cx="33" cy="18" rx="10" ry="6" fill="white" opacity=".7"/>
+                            <rect y="34" width="80" height="18" fill="url(#grass)"/>
+                            <ellipse cx="40" cy="34" rx="42" ry="7" fill="#4a8a4a"/>
+                        </g>
+                        <rect width="80" height="52" rx="5" fill="none" stroke="#E040FB" stroke-width="2"/>
+                    </svg>
+                    <span>Horizontal</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="portrait" title="Vertical">
+                    <svg viewBox="0 0 52 76" width="55" height="80">
+                        <g clip-path="url(#clip-po)">
+                            <rect width="52" height="76" fill="url(#sky)"/>
+                            <ellipse cx="14" cy="18" rx="11" ry="7" fill="white" opacity=".85"/>
+                            <ellipse cx="38" cy="14" rx="12" ry="8" fill="white" opacity=".9"/>
+                            <rect y="50" width="52" height="26" fill="url(#grass)"/>
+                            <ellipse cx="26" cy="50" rx="28" ry="7" fill="#4a8a4a"/>
+                        </g>
+                        <rect width="52" height="76" rx="5" fill="none" stroke="#E040FB" stroke-width="2"/>
+                    </svg>
+                    <span>Vertical</span>
+                </button>
+
+            </div>
+
+            
+            <h5 class="marcos-section-title">Dispositivos</h5>
+            <div class="grid-marcos">
+
+                
+                <button class="marco-btn" data-shape="cellphone" title="Celular">
+                    <svg viewBox="0 0 44 76" width="48" height="80">
+                        
+                        <rect x="0" y="0" width="44" height="76" rx="9" fill="#1a1a1a"/>
+                        
+                        <g transform="translate(5,7)">
+                            <clipPath id="clip-phx"><rect width="34" height="54" rx="3"/></clipPath>
+                            <g clip-path="url(#clip-phx)">
+                                <rect width="34" height="54" fill="url(#sky)"/>
+                                <ellipse cx="10" cy="12" rx="8" ry="5" fill="white" opacity=".85"/>
+                                <ellipse cx="26" cy="9" rx="10" ry="6" fill="white" opacity=".9"/>
+                                <rect y="35" width="34" height="19" fill="url(#grass)"/>
+                                <ellipse cx="17" cy="35" rx="19" ry="5" fill="#4a8a4a"/>
+                            </g>
+                            <rect width="34" height="54" rx="3" fill="none" stroke="#E040FB" stroke-width="1.5"/>
+                        </g>
+                        
+                        <rect x="14" y="2.5" width="16" height="3" rx="1.5" fill="#333"/>
+                        <circle cx="30" cy="4" r="1.5" fill="#444"/>
+                        <rect x="12" y="69.5" width="20" height="3" rx="1.5" fill="#333"/>
+                        
+                        <rect x="-2" y="20" width="3" height="12" rx="1.5" fill="#2a2a2a"/>
+                        <rect x="43" y="25" width="3" height="16" rx="1.5" fill="#2a2a2a"/>
+                    </svg>
+                    <span>Celular</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="laptop" title="Laptop" style="grid-column:span 2">
+                    <svg viewBox="0 0 90 66" width="100" height="73">
+                        
+                        <rect x="5" y="0" width="80" height="50" rx="5" fill="#111"/>
+                        <g transform="translate(9,4)">
+                            <clipPath id="clip-lpx"><rect width="72" height="40" rx="2"/></clipPath>
+                            <g clip-path="url(#clip-lpx)">
+                                <rect width="72" height="40" fill="url(#sky)"/>
+                                <ellipse cx="20" cy="12" rx="16" ry="9" fill="white" opacity=".85"/>
+                                <ellipse cx="55" cy="9" rx="18" ry="10" fill="white" opacity=".9"/>
+                                <rect y="26" width="72" height="14" fill="url(#grass)"/>
+                                <ellipse cx="36" cy="26" rx="38" ry="6" fill="#4a8a4a"/>
+                            </g>
+                            <rect width="72" height="40" rx="2" fill="none" stroke="#E040FB" stroke-width="1.5"/>
+                        </g>
+                        <circle cx="45" cy="3" r="1.5" fill="#444"/>
+                        
+                        <path d="M0,50 L10,50 Q14,60 22,60 L68,60 Q76,60 80,50 L90,50 Z" fill="#222"/>
+                        <rect x="32" y="53" width="26" height="5" rx="2" fill="#333"/>
+                    </svg>
+                    <span>Laptop</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="tablet" title="Tablet">
+                    <svg viewBox="0 0 54 74" width="58" height="80">
+                        <rect x="0" y="0" width="54" height="74" rx="7" fill="#1a1a1a"/>
+                        <g transform="translate(5,7)">
+                            <clipPath id="clip-tbx"><rect width="44" height="58" rx="3"/></clipPath>
+                            <g clip-path="url(#clip-tbx)">
+                                <rect width="44" height="58" fill="url(#sky)"/>
+                                <ellipse cx="14" cy="14" rx="11" ry="7" fill="white" opacity=".85"/>
+                                <ellipse cx="35" cy="10" rx="13" ry="8" fill="white" opacity=".9"/>
+                                <rect y="38" width="44" height="20" fill="url(#grass)"/>
+                                <ellipse cx="22" cy="38" rx="24" ry="6" fill="#4a8a4a"/>
+                            </g>
+                            <rect width="44" height="58" rx="3" fill="none" stroke="#E040FB" stroke-width="1.5"/>
+                        </g>
+                        <circle cx="27" cy="69" r="3" fill="#333"/>
+                    </svg>
+                    <span>Tablet</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="monitor" title="Monitor" style="grid-column:span 2">
+                    <svg viewBox="0 0 88 72" width="96" height="78">
+                        
+                        <rect x="0" y="0" width="88" height="60" rx="6" fill="#111"/>
+                        <g transform="translate(4,4)">
+                            <clipPath id="clip-mox"><rect width="80" height="50" rx="3"/></clipPath>
+                            <g clip-path="url(#clip-mox)">
+                                <rect width="80" height="50" fill="url(#sky)"/>
+                                <ellipse cx="22" cy="13" rx="16" ry="9" fill="white" opacity=".85"/>
+                                <ellipse cx="60" cy="9" rx="18" ry="10" fill="white" opacity=".9"/>
+                                <rect y="32" width="80" height="18" fill="url(#grass)"/>
+                                <ellipse cx="40" cy="32" rx="42" ry="7" fill="#4a8a4a"/>
+                            </g>
+                            <rect width="80" height="50" rx="3" fill="none" stroke="#E040FB" stroke-width="1.5"/>
+                        </g>
+                        
+                        <rect x="36" y="60" width="16" height="8" fill="#333"/>
+                        <rect x="26" y="68" width="36" height="4" rx="2" fill="#444"/>
+                    </svg>
+                    <span>Monitor</span>
+                </button>
+
+            </div>
+
+            
+            <h5 class="marcos-section-title">Películas y Fotografías</h5>
+            <div class="grid-marcos">
+
+                
+                <button class="marco-btn" data-shape="polaroid" title="Polaroid">
+                    <svg viewBox="0 0 64 78" width="68" height="82">
+                        
+                        <rect x="0" y="0" width="64" height="78" rx="4" fill="#f5f0e8" stroke="#ddd" stroke-width="1"/>
+                        
+                        <g transform="translate(6,5)">
+                            <clipPath id="clip-plx"><rect width="52" height="50" rx="2"/></clipPath>
+                            <g clip-path="url(#clip-plx)">
+                                <rect width="52" height="50" fill="url(#sky)"/>
+                                <ellipse cx="16" cy="13" rx="13" ry="8" fill="white" opacity=".85"/>
+                                <ellipse cx="40" cy="9" rx="15" ry="9" fill="white" opacity=".9"/>
+                                <rect y="32" width="52" height="18" fill="url(#grass)"/>
+                                <ellipse cx="26" cy="32" rx="28" ry="6" fill="#4a8a4a"/>
+                            </g>
+                        </g>
+                        
+                        <rect x="10" y="62" width="36" height="4" rx="2" fill="#e0d8cc"/>
+                        <rect x="10" y="69" width="22" height="3" rx="1.5" fill="#e0d8cc"/>
+                    </svg>
+                    <span>Polaroid</span>
+                </button>
+
+                
+                <button class="marco-btn" data-shape="film" title="Tira de Película" style="grid-column:span 2">
+                    <svg viewBox="0 0 90 68" width="100" height="75">
+                        
+                        <rect width="90" height="68" fill="#0a0a0a"/>
+                        
+                        <rect x="2" y="6" width="8" height="10" rx="2" fill="#333"/>
+                        <rect x="2" y="21" width="8" height="10" rx="2" fill="#333"/>
+                        <rect x="2" y="36" width="8" height="10" rx="2" fill="#333"/>
+                        <rect x="2" y="51" width="8" height="10" rx="2" fill="#333"/>
+                        
+                        <rect x="80" y="6" width="8" height="10" rx="2" fill="#333"/>
+                        <rect x="80" y="21" width="8" height="10" rx="2" fill="#333"/>
+                        <rect x="80" y="36" width="8" height="10" rx="2" fill="#333"/>
+                        <rect x="80" y="51" width="8" height="10" rx="2" fill="#333"/>
+                        
+                        <g transform="translate(14,5)">
+                            <clipPath id="clip-fmx"><rect width="62" height="58" rx="2"/></clipPath>
+                            <g clip-path="url(#clip-fmx)">
+                                <rect width="62" height="58" fill="url(#sky)"/>
+                                <ellipse cx="18" cy="14" rx="14" ry="9" fill="white" opacity=".85"/>
+                                <ellipse cx="48" cy="10" rx="17" ry="10" fill="white" opacity=".9"/>
+                                <rect y="38" width="62" height="20" fill="url(#grass)"/>
+                                <ellipse cx="31" cy="38" rx="33" ry="7" fill="#4a8a4a"/>
+                            </g>
+                            <rect width="62" height="58" rx="2" fill="none" stroke="#E040FB" stroke-width="1.5"/>
+                        </g>
+                    </svg>
+                    <span>Tira de Película</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="app-container hidden">
+
+        
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <img src="imagenes de la app/isologo.png" class="sidebar-logo-img" alt="Vexel 3D">
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li class="nav-item active" data-target="home" id="nav-home">
+                    <i class="fa-solid fa-house-chimney"></i><span>Inicio</span>
+                </li>
+                <li class="nav-item" data-target="mydesigns" id="nav-mydesigns">
+                    <i class="fa-solid fa-folder-open"></i><span>Mis Diseños</span>
+                </li>
+                <li class="nav-item" data-target="settings" id="nav-settings">
+                    <i class="fa-solid fa-gear"></i><span>Configuración</span>
+                </li>
+            </ul>
+            <button id="btn-create-new" class="create-btn">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Crear Diseño</span>
+            </button>
+        </nav>
+
+        
+        <main class="main-content">
+
+            
+            <section id="view-home" class="view-section active">
+                <header class="view-header">
+                    <div>
+                        <h2>Inicio</h2>
+                        <p class="view-subtitle">Bienvenido a Vexel 3D</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-icon" title="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <div class="user-avatar-mini" title="Mi perfil"><i class="fa-solid fa-user"></i></div>
+                    </div>
+                </header>
+                <div class="home-content">
+                    <div class="hero-banner">
+                        <div class="hero-text">
+                            <h1>Diseña tu ropa.<br>Hazla única.</h1>
+                            <p>Crea camisetas personalizadas con herramientas profesionales de diseño vectorial.</p>
+                            <button id="hero-create-btn" class="btn-primary-hero">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> Crear Diseño
+                            </button>
+                        </div>
+                    </div>
+                    <div class="garments-section">
+                        <h3>Selecciona una prenda</h3>
+                        <div class="garments-grid" id="garments-grid"></div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="view-mydesigns" class="view-section hidden">
+                <header class="view-header">
+                    <div><h2>Mis Diseños</h2><p class="view-subtitle">Tus proyectos guardados localmente</p></div>
+                </header>
+                <div class="community-feed" id="mydesigns-feed">
+                    <p class="empty-state"><i class="fa-regular fa-folder-open"></i><br>Aún no tienes diseños guardados</p>
+                </div>
+            </section>
+
+            
+            <section id="view-settings" class="view-section hidden">
+                <header class="view-header"><div><h2>Configuración de Vexel 3D</h2></div></header>
+                <div class="settings-content">
+                    
+                    <div class="settings-section">
+                        <h3>Apariencia del Sistema</h3>
+                        <div class="settings-group">
+                            <div class="permission-row">
+                                <div><strong>Color de Acento</strong><p>Personaliza el color principal</p></div>
+                                <div class="accent-options">
+                                    <button class="accent-opt accent-color-purple active" data-color="#4A148C" title="Púrpura"></button>
+                                    <button class="accent-opt accent-color-blue" data-color="#1565C0" title="Azul"></button>
+                                    <button class="accent-opt accent-color-teal" data-color="#00695C" title="Verde"></button>
+                                    <button class="accent-opt accent-color-red" data-color="#B71C1C" title="Rojo"></button>
+                                    <button class="accent-opt accent-color-orange" data-color="#E65100" title="Naranja"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Notificaciones</h3>
+                        <div class="settings-group">
+                            <div class="permission-row">
+                                <div><strong>Notificaciones Push</strong><p>Recibe avisos sobre tus diseños e IA</p></div>
+                                <button id="btn-request-notifications" class="btn-primary-sm">Activar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Aplicación</h3>
+                        <div class="settings-group">
+                            <div class="permission-row">
+                                <div><strong>Instalar Vexel 3D</strong><p>Instala la app en tu dispositivo para acceso rápido</p></div>
+                                <button id="btn-install-pwa" class="btn-primary-sm">Instalar App</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Acerca de Vexel 3D</h3>
+                        <div class="settings-group info-text">
+                            <p><strong>Creadores:</strong> Elder Noriega, Erick Jafet, Maycol Martinez.</p>
+                            <p><strong>Tecnologías y Librerías:</strong></p>
+                            <ul>
+                                <li><strong>Three.js:</strong> Motor de renderizado 3D.</li>
+                                <li><strong>Fabric.js:</strong> Motor de lienzo vectorial 2D.</li>
+                                <li><strong>Iconify (api.iconify.design):</strong> Proveedor de iconos vectoriales (MDI, FontAwesome, etc).</li>
+                                <li><strong>Google Fonts:</strong> Licencias abiertas de fuentes tipográficas (Inter, Roboto, etc).</li>
+                            </ul>
+                            <p><strong>Agradecimientos Especiales:</strong> Google AI (Gemini API) por el motor de inteligencia artificial, y GitHub por el alojamiento de recursos.</p>
+                            <p class="about-note">Versión 2.0.1 - © 2026 Vexel 3D. Todos los derechos reservados sobre la marca.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            
+            <section id="view-editor" class="view-section hidden">
+                <div class="editor-wrapper">
+                    
+                    <header class="editor-header">
+                        <button id="btn-back-home" class="btn-editor-back"><i class="fa-solid fa-chevron-left"></i> Volver</button>
+                        <div class="editor-title-group">
+                            <span class="editor-garment-label" id="editor-garment-label">Manga Corta</span>
+                            <div class="side-switcher">
+                                <button class="side-btn active" id="btn-side-front" data-side="front">
+                                    <i class="fa-solid fa-shirt"></i> Frente
+                                </button>
+                                <button class="side-btn" id="btn-side-back" data-side="back">
+                                    <i class="fa-solid fa-shirt fa-flip-horizontal"></i> Espalda
+                                </button>
+                            </div>
+                        </div>
+                        <div class="editor-header-actions">
+                            <button id="btn-toggle-3d" class="btn-editor-action">
+                                <i class="fa-solid fa-cube"></i> Vista 3D
+                            </button>
+                            <button id="btn-save-design" class="btn-editor-save">
+                                <i class="fa-solid fa-floppy-disk"></i> Guardar
+                            </button>
+                        </div>
+                    </header>
+
+                    <div class="editor-body">
+                        
+                        <aside class="editor-tools-left">
+                            <div class="tool-section">
+                                <h5>Prenda</h5>
+                                <select id="garment-selector" class="garment-select" aria-label="Seleccionar prenda">
+                                    <option value="shirt-short">Manga Corta</option>
+                                    <option value="shirt-long">Manga Larga</option>
+                                    <option value="shirt-sleeveless">Sin Mangas</option>
+                                    <option value="shirt-collar">Manga Larga Cuello</option>
+                                    <option value="shirt-polo">Polo</option>
+                                    <option value="pants-long">Pantalón Largo</option>
+                                    <option value="pants-short">Short</option>
+                                    <option value="blank">Lienzo en Blanco</option>
+                                </select>
+                            </div>
+
+                            <div class="tools-divider"></div>
+
+                            <div class="tool-section">
+                                <h5>Herramientas</h5>
+                                <div class="tools-grid">
+                                    
+                                    <button class="tool-btn active" id="tool-select" title="Selección Única">
+                                        <i class="fa-solid fa-arrow-pointer"></i>
+                                        <span>Selección</span>
+                                    </button>
+                                    <button class="tool-btn" id="tool-group-select" title="Selección Múltiple">
+                                        <i class="fa-solid fa-object-group"></i>
+                                        <span>Múltiple</span>
+                                    </button>
+                                    <button class="tool-btn" id="tool-pencil" title="Lápiz Libre">
+                                        <i class="fa-solid fa-pencil"></i>
+                                        <span>Lápiz</span>
+                                    </button>
+                                    <button class="tool-btn" id="tool-slice" title="Dividir SVG">
+                                        <i class="fa-solid fa-scissors"></i>
+                                        <span>Cortar</span>
+                                    </button>
+                                    <button class="tool-btn" id="tool-curve" title="Curvar Línea de Corte">
+                                        <i class="fa-solid fa-bezier-curve"></i>
+                                        <span>Curva</span>
+                                    </button>
+                                    <button class="tool-btn" id="tool-group-objects" title="Agrupar Objetos">
+                                        <i class="fa-solid fa-link"></i>
+                                        <span>Agrupar</span>
+                                    </button>
+                                    
+                                    <button class="tool-btn" id="tool-text" title="Añadir Texto">
+                                        <i class="fa-solid fa-font"></i>
+                                        <span>Texto</span>
+                                    </button>
+                                    <button class="tool-btn" id="tool-shape" title="Añadir Forma">
+                                        <i class="fa-solid fa-shapes"></i>
+                                        <span>Forma</span>
+                                    </button>
+                                    <label class="tool-btn" for="tool-upload" title="Importar imagen o SVG">
+                                        <i class="fa-solid fa-image"></i>
+                                        <span>Importar</span>
+                                    </label>
+                                    <input type="file" id="tool-upload" accept="image/png,image/jpeg,image/svg+xml,image/gif" class="hidden">
+                                    <button class="tool-btn" id="tool-text-arch" title="Texto curvado">
+                                        <i class="fa-solid fa-text-slash"></i>
+                                        <span>Curvar</span>
+                                    </button>
+                                    <button class="tool-btn" id="tool-elementos" title="Elementos Gráficos">
+                                        <i class="fa-solid fa-shapes"></i>
+                                        <span>Elementos</span>
+                                    </button>
+                                    <button class="tool-btn" id="tool-marcos" title="Añadir Marco">
+                                        <i class="fa-regular fa-image"></i>
+                                        <span>Marcos</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="tools-divider"></div>
+
+                            
+                            <div class="tool-section hidden" id="properties-panel">
+                                <h5>Propiedades</h5>
+                                <div class="prop-row">
+                                    <label for="prop-fill">Color de relleno</label>
+                                    <input type="color" id="prop-fill" value="#4A148C" class="prop-color">
+                                </div>
+                                <div class="prop-row" id="stroke-row">
+                                    <label for="prop-stroke">Borde</label>
+                                    <input type="color" id="prop-stroke" value="#000000" class="prop-color">
+                                    <label for="prop-stroke-width" class="sr-only">Ancho del borde</label>
+                                    <input type="number" id="prop-stroke-width" min="0" max="20" value="0" class="prop-number" aria-label="Ancho del borde">
+                                </div>
+                                <div class="prop-row" id="opacity-row">
+                                    <label for="prop-opacity">Opacidad <span id="opacity-label">100%</span></label>
+                                    <input type="range" id="prop-opacity" min="0" max="100" value="100" class="prop-range" aria-label="Opacidad">
+                                </div>
+                                <div class="prop-row hidden" id="text-props-row">
+                                    <label for="prop-font-size">Tamaño de fuente</label>
+                                    <input type="number" id="prop-font-size" min="8" max="200" value="40" class="prop-number" aria-label="Tamaño de fuente">
+                                </div>
+                                <div class="prop-row hidden" id="text-font-row">
+                                    <label for="prop-font-family">Fuente</label>
+                                    <select id="prop-font-family" class="prop-select" aria-label="Seleccionar fuente">
+                                        <option value="Inter">Inter (Predeterminada)</option>
+                                        <option value="Product Sans">Product Sans (Google)</option>
+                                        <option value="Netflix Sans">Netflix Sans</option>
+                                        <option value="Spotify Mix">Spotify Mix</option>
+                                        <option value="Samsung Sharp Sans">Samsung Sharp Sans</option>
+                                        <option value="Cocon">Cocon</option>
+                                        <option value="Adobe Clean">Adobe Clean</option>
+                                        <option value="Sohne">Sohne</option>
+                                        <option value="Android Euclid">Android Euclid</option>
+                                        <option value="serif">Serif</option>
+                                        <option value="monospace">Monospace</option>
+                                    </select>
+                                </div>
+                                <div class="prop-row hidden" id="text-bold-row">
+                                    <label>Estilo</label>
+                                    <div class="text-style-btns">
+                                        <button id="prop-bold" class="text-style-btn" title="Negrita"><b>B</b></button>
+                                        <button id="prop-italic" class="text-style-btn" title="Cursiva"><i>I</i></button>
+                                        <button id="prop-underline" class="text-style-btn" title="Subrayado"><u>U</u></button>
+                                    </div>
+                                </div>
+                                <button id="tool-delete" class="btn-delete-obj">
+                                    <i class="fa-solid fa-trash"></i> Eliminar
+                                </button>
+                            </div>
+
+                            
+                            <div class="tool-section" id="no-selection-hint">
+                                <p class="hint-text"><i class="fa-regular fa-hand-pointer"></i> Selecciona un objeto en el lienzo para ver sus propiedades.</p>
+                            </div>
+                        </aside>
+
+                        
+                        <div class="editor-canvas-area">
+                            <div class="canvas-wrapper" id="canvas-wrapper">
+                                <canvas id="design-canvas"></canvas>
+
+                                
+                                <div id="float-bubble" class="float-bubble hidden">
+                                    <div class="float-bubble-tabs">
+                                        <button class="fbub-tab active" data-ftab="position"><i class="fa-solid fa-arrows-up-down-left-right"></i> Posición</button>
+                                        <button class="fbub-tab" data-ftab="layers"><i class="fa-solid fa-layer-group"></i> Capas</button>
+                                        <button class="fbub-tab" data-ftab="fonts"><i class="fa-solid fa-font"></i> Fuentes</button>
+                                    </div>
+                                    <div class="fbub-panel active" id="fbub-position">
+                                        <div class="fbub-row">
+                                            <label for="fbub-x">X</label><input type="number" id="fbub-x" class="fbub-input" step="1" aria-label="Posición X">
+                                            <label for="fbub-y">Y</label><input type="number" id="fbub-y" class="fbub-input" step="1" aria-label="Posición Y">
+                                        </div>
+                                        <div class="fbub-row">
+                                            <label for="fbub-w">W</label><input type="number" id="fbub-w" class="fbub-input" step="1" min="1" aria-label="Ancho">
+                                            <label for="fbub-h">H</label><input type="number" id="fbub-h" class="fbub-input" step="1" min="1" aria-label="Alto">
+                                        </div>
+                                        <div class="fbub-row">
+                                            <label for="fbub-angle">Ángulo</label><input type="number" id="fbub-angle" class="fbub-input" step="1" min="-360" max="360" aria-label="Ángulo de rotación">
+                                        </div>
+                                        <div class="fbub-row fbub-align-row">
+                                            <button class="fbub-align-btn" data-align="left" title="Izquierda"><i class="fa-solid fa-align-left"></i></button>
+                                            <button class="fbub-align-btn" data-align="center-h" title="Centro H"><i class="fa-solid fa-align-center"></i></button>
+                                            <button class="fbub-align-btn" data-align="right" title="Derecha"><i class="fa-solid fa-align-right"></i></button>
+                                            <button class="fbub-align-btn" data-align="top" title="Arriba"><i class="fa-solid fa-arrows-up-to-line"></i></button>
+                                            <button class="fbub-align-btn" data-align="center-v" title="Centro V"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                                            <button class="fbub-align-btn" data-align="bottom" title="Abajo"><i class="fa-solid fa-arrows-down-to-line"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="fbub-panel" id="fbub-layers">
+                                        <div class="fbub-layers-list" id="fbub-layers-list"></div>
+                                    </div>
+                                    <div class="fbub-panel" id="fbub-fonts">
+                                        <input type="text" id="fbub-font-search" class="fbub-search" placeholder="Buscar fuente...">
+                                        <div class="fbub-fonts-list" id="fbub-fonts-list"></div>
+                                    </div>
+                                </div>
+
+                                
+                                <div id="3d-overlay" class="threed-overlay hidden">
+                                    <div id="3d-viewer-container" class="threed-viewer-container"></div>
+                                    <div class="threed-controls-bar">
+                                        <button id="btn-close-3d" class="threed-ctrl-btn" title="Volver a 2D">
+                                            <i class="fa-solid fa-pen-to-square"></i> Volver a 2D
+                                        </button>
+                                        <button class="threed-ctrl-btn" id="btn-3d-zoom-in" title="Acercar">
+                                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                        </button>
+                                        <button class="threed-ctrl-btn" id="btn-3d-zoom-out" title="Alejar">
+                                            <i class="fa-solid fa-magnifying-glass-minus"></i>
+                                        </button>
+                                        <span class="threed-hint"><i class="fa-solid fa-mouse"></i> Clic derecho para rotar · Rueda para zoom</span>
+                                    </div>
+                                    
+                                    <div id="panel-3d-color" class="panel-3d-color">
+                                        <i class="fa-solid fa-fill-drip panel-icon"></i>
+                                        <span class="panel-label">Color de prenda:</span>
+                                        <input type="color" id="input-3d-color" value="#ffffff" title="Color de prenda" aria-label="Color de prenda">
+                                        <div id="swatches-3d">
+                                            
+                                            <div class="swatch-dot" data-color="#ffffff" title="Blanco"></div>
+                                            <div class="swatch-dot" data-color="#000000" title="Negro"></div>
+                                            <div class="swatch-dot" data-color="#ef4444" title="Rojo"></div>
+                                            <div class="swatch-dot" data-color="#3b82f6" title="Azul"></div>
+                                            <div class="swatch-dot" data-color="#22c55e" title="Verde"></div>
+                                            <div class="swatch-dot" data-color="#f59e0b" title="Amarillo"></div>
+                                            <div class="swatch-dot" data-color="#8b5cf6" title="Morado"></div>
+                                            <div class="swatch-dot" data-color="#ec4899" title="Rosa"></div>
+                                            <div class="swatch-dot" data-color="#f97316" title="Naranja"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div id="ai-loading-overlay" class="ai-loading-overlay hidden">
+                                    <div class="ai-loading-content">
+                                        <div class="spinner"></div>
+                                        <img src="imagenes de la app/isologo.png" class="ai-logo-spinner" alt="Vexel AI">
+                                        <p>IA Vexel procesando tu diseño...</p>
+                                    </div>
+                                </div>
+
+                                
+                                <button id="btn-ai-fab" class="ai-fab" title="Asistente IA Vexel">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        
+                        <aside class="editor-tools-right">
+                            <button class="quick-action" id="qa-undo" title="Deshacer (Ctrl+Z)"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button class="quick-action" id="qa-redo" title="Rehacer (Ctrl+Y)"><i class="fa-solid fa-rotate-right"></i></button>
+                            <div class="qa-divider"></div>
+                            <button class="quick-action accent-action" id="qa-layers" title="Capas"><i class="fa-solid fa-layer-group"></i></button>
+                            <div class="qa-divider"></div>
+                            <button class="quick-action" id="qa-front" title="Traer al frente"><i class="fa-solid fa-bring-front"></i></button>
+                            <button class="quick-action" id="qa-back" title="Enviar al fondo"><i class="fa-regular fa-clone"></i></button>
+                            <div class="qa-divider"></div>
+                            <button class="quick-action" id="qa-flip-h" title="Voltear horizontal"><i class="fa-solid fa-left-right"></i></button>
+                            <button class="quick-action" id="qa-flip-v" title="Voltear vertical"><i class="fa-solid fa-up-down"></i></button>
+                            <div class="qa-divider"></div>
+                            <button class="quick-action" id="qa-zoom-in" title="Acercar"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                            <button class="quick-action" id="qa-zoom-out" title="Alejar"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                        </aside>
+
+                        
+                        <aside id="layers-sidebar" class="layers-sidebar hidden">
+                            <div class="layers-sidebar-header">
+                                <h3><i class="fa-solid fa-layer-group"></i> Capas</h3>
+                                <button id="btn-close-layers" class="btn-icon" title="Cerrar capas"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="layers-sidebar-hint">Arrastra para reordenar · Clic para seleccionar</div>
+                            <div id="layers-panel-list" class="layers-panel-list"></div>
+                            <div class="layers-sidebar-actions">
+                                <button id="lyr-bring-front" class="lyr-action-btn" title="Traer al frente">
+                                    <i class="fa-solid fa-angle-double-up"></i> Al frente
+                                </button>
+                                <button id="lyr-bring-fwd" class="lyr-action-btn" title="Subir una capa">
+                                    <i class="fa-solid fa-angle-up"></i> Subir
+                                </button>
+                                <button id="lyr-send-bwd" class="lyr-action-btn" title="Bajar una capa">
+                                    <i class="fa-solid fa-angle-down"></i> Bajar
+                                </button>
+                                <button id="lyr-send-back" class="lyr-action-btn" title="Enviar al fondo">
+                                    <i class="fa-solid fa-angle-double-down"></i> Al fondo
+                                </button>
+                            </div>
+                        </aside>
+
+                        
+                        <aside id="ai-sidebar" class="ai-sidebar hidden">
+                            <div class="ai-sidebar-header">
+                                <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Asistente IA</h3>
+                                <button id="btn-close-ai" class="btn-icon" aria-label="Cerrar asistente IA" title="Cerrar asistente IA"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div id="ai-chat-area" class="ai-chat-area">
+                                <div class="ai-msg ai-msg-system">
+                                    <p>¡Hola! Soy la IA de Vexel. Dime cómo quieres tu diseño.</p>
+                                </div>
+                            </div>
+                            <div class="ai-input-area">
+                                <input type="text" id="ai-input" placeholder="Escribe tu idea aquí..." autocomplete="off">
+                                <button id="btn-ai-send" title="Enviar"><i class="fa-solid fa-paper-plane"></i></button>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    
+    <div id="export-modal" class="modal-overlay hidden">
+        <div class="modal-box modal-box-scroll modal-box-export">
+            <div class="modal-header">
+                <h3>Exportar Diseño</h3>
+                <button id="close-export-modal" class="modal-close" aria-label="Cerrar modal de exportación" title="Cerrar modal de exportación"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body-inner">
+                <h4 class="export-heading">Compartir</h4>
+                <div class="export-grid-3">
+                    <button class="export-opt-btn" data-format="png">
+                        <i class="fa-regular fa-image export-icon color-blue"></i>
+                        <div class="export-title">PNG 2D</div>
+                        <div class="export-note">Diseño plano para redes sociales</div>
+                    </button>
+                    <button class="export-opt-btn" data-format="svg">
+                        <i class="fa-solid fa-bezier-curve export-icon color-yellow"></i>
+                        <div class="export-title">SVG</div>
+                        <div class="export-note">Calidad vectorial infinita</div>
+                    </button>
+                    <button class="export-opt-btn" data-format="png3d">
+                        <i class="fa-solid fa-cube export-icon" style="color:#a78bfa;"></i>
+                        <div class="export-title">PNG 3D</div>
+                        <div class="export-note">Captura del modelo 3D</div>
+                    </button>
+                </div>
+
+                <h4 class="export-heading">Estilos Especiales</h4>
+                <div class="export-grid-3">
+                    <button class="export-opt-btn" data-format="ghibli">
+                        <i class="fa-solid fa-wind export-icon" style="color:#6ee7b7;"></i>
+                        <div class="export-title">Ghibli 3D</div>
+                        <div class="export-note">Estilo acuarela Studio Ghibli</div>
+                    </button>
+                    <button class="export-opt-btn" disabled>
+                        <i class="fa-solid fa-video export-icon color-grey"></i>
+                        <div class="export-title">MP4</div>
+                        <div class="export-note soon-badge">Próximamente</div>
+                    </button>
+                    <button class="export-opt-btn" disabled>
+                        <i class="fa-brands fa-instagram export-icon color-grey"></i>
+                        <div class="export-title">Stories</div>
+                        <div class="export-note soon-badge">Próximamente</div>
+                    </button>
+                </div>
+
+                <h4 class="export-heading">Producción</h4>
+                <div class="export-grid-2">
+                    <button class="export-opt-btn" data-format="jpg">
+                        <i class="fa-solid fa-print export-icon color-green"></i>
+                        <div class="export-title">JPG de Producción</div>
+                        <div class="export-note">Para impresión. Formulario opcional.</div>
+                    </button>
+                    <button class="export-opt-btn" data-format="json">
+                        <i class="fa-solid fa-file-code export-icon color-purple"></i>
+                        <div class="export-title">JSON de Producción</div>
+                        <div class="export-note">Datos para máquinas. Formulario obligatorio.</div>
+                    </button>
+                </div>
+
+                <div id="export-production-form" class="hidden export-production-form">
+                    <div class="export-form-header">
+                        <h5 class="export-form-title"><i class="fa-solid fa-clipboard-list"></i> Datos de Producción</h5>
+                        <span id="form-required-badge" class="form-required-badge"></span>
+                    </div>
+                    <div class="export-form-grid">
+                        <div class="export-form-row">
+                            <div>
+                                <label class="form-label" for="prod-fabric">Tipo de tela</label>
+                                <select id="prod-fabric" class="prop-input">
+                                    <option value="">Selecciona...</option>
+                                    <option value="Algodón">Algodón 100%</option>
+                                    <option value="Poliéster">Poliéster</option>
+                                    <option value="Mezcla">Mezcla (Algodón/Poliéster)</option>
+                                    <option value="Lino">Lino</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label" for="prod-size">Talla</label>
+                                <select id="prod-size" class="prop-input">
+                                    <option value="">Selecciona...</option>
+                                    <option value="XS">XS (Extra Pequeño)</option>
+                                    <option value="S">S (Pequeño)</option>
+                                    <option value="M">M (Mediano)</option>
+                                    <option value="L">L (Grande)</option>
+                                    <option value="XL">XL (Extra Grande)</option>
+                                    <option value="XXL">XXL</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label" for="prod-desc">Descripción o Notas Adicionales</label>
+                            <textarea id="prod-desc" class="prop-input prop-textarea" placeholder="Instrucciones específicas para el taller o área de impresión..."></textarea>
+                        </div>
+                    </div>
+                    <button id="btn-confirm-export" class="btn-primary-full"><i class="fa-solid fa-file-export btn-icon-inline"></i> Exportar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="elementos%20graficos/icons-data.js"></script>
+    <script src="marcos.js?v=65"></script>
+    <script src="viewer3d.js?v=65"></script>
+    <script src="ai-module.js?v=65"></script>
+    <script src="app.js?v=65"></script>
+</body>
+</html>

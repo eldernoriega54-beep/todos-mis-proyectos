@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Misión</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <img src="app vexel/imagenes de la app/isologo.png" alt="Vexel 3D">
+            <span>Vexel 3D</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html" class="active">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mision.html" class="active">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="proposito.html">Propósito</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="productos.html">Productos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="productos.html">Ver Catálogo</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="obtener.html">Obtener para ti</a></li>
+                </ul>
+            </li>
+            <li><a href="plan_estrategico.html">Plan Estratégico</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper mt-80">
+        <section class="about-section glass-panel scroll-reveal">
+            <div style="text-align: center;">
+                <i class="fa-solid fa-rocket" style="font-size: 4rem; color: var(--accent); margin-bottom: 20px;"></i>
+                <h1 style="font-size: 3rem; margin-bottom: 20px;">Nuestra Misión</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; line-height: 1.8; margin-bottom: 30px;">
+                    Liderar la revolución en la industria textil mediante la integración de inteligencia artificial, robótica avanzada y software de diseño hiper-preciso. En Vexel 3D, nuestra misión es erradicar las ineficiencias de la manufactura tradicional, empoderando a creadores y empresas con herramientas que transforman instantáneamente una idea digital en una prenda física tangible y de calidad superior, minimizando el impacto ambiental a través del cálculo algorítmico exacto de los materiales.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; text-align: left;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid var(--accent);">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: white;">Eficiencia Digital</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Traducimos el diseño conceptual directamente al lenguaje de nuestras máquinas automatizadas, eliminando intermediarios y errores de patronaje.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #00d2ff;">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: white;">Innovación Material</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Desarrollamos algoritmos que predicen la elasticidad y tensión de la fibra, asegurando que cada prenda no solo luzca bien, sino que rinda excepcionalmente.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #ff007a;">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: white;">Sostenibilidad Activa</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Nuestra tecnología de corte guiada por IA optimiza el uso de la tela, logrando reducir el desperdicio textil casi a un cero absoluto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer" style="position: absolute; bottom: 0; width: 100%;">
+        <p>&copy; 2026 Vexel 3D â€” Innovación Textil y Robótica | <a href="contacto.html" style="color:var(--accent)">Contáctanos</a></p>
+    </footer>
+
+    <script src="landing.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,138 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// 1. DATA BLOCK: DB_ATRI
+// Se define primero para que los siguientes bloques puedan usarlo
+// ─────────────────────────────────────────────────────────────────────────────
+DATA_BLOCK "DB_ATRI"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+NON_RETAIN
+
+STRUCT
+    ReleNivel1    : BOOL;
+    ReleNivel2    : BOOL;
+    ReleNivel3    : BOOL;
+    LamparaVerde    : BOOL;
+    LamparaAmarilla : BOOL;
+    LamparaRoja     : BOOL;
+    NivelActual   : INT;
+    ConexionActiva  : BOOL;
+    ErrorConexion   : BOOL;
+    CodigoError     : WORD;
+END_STRUCT;
+
+BEGIN
+    ReleNivel1    := FALSE;
+    ReleNivel2    := FALSE;
+    ReleNivel3    := FALSE;
+    LamparaVerde    := FALSE;
+    LamparaAmarilla := FALSE;
+    LamparaRoja     := FALSE;
+    NivelActual   := 0;
+    ConexionActiva  := FALSE;
+    ErrorConexion   := FALSE;
+    CodigoError     := 16#0000;
+END_DATA_BLOCK
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 2. FUNCTION BLOCK: FB_EnviarAlerta
+// ─────────────────────────────────────────────────────────────────────────────
+FUNCTION_BLOCK "FB_EnviarAlerta"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+
+VAR_INPUT
+    nivel : INT;
+END_VAR
+
+VAR
+    instTSEND_C    : TSEND_C;
+    conexionConfig : TCON_IP_V4;
+    datoEnvio      : ARRAY[0..3] OF BYTE;
+    nivelAnterior  : INT := -1;
+    contadorCiclos : INT := 0;
+END_VAR
+
+VAR_TEMP
+    tempReq : BOOL;
+END_VAR
+
+BEGIN
+    #datoEnvio[0] := 16#41; // 'A'
+    #datoEnvio[1] := 16#54; // 'T'
+    #datoEnvio[2] := 16#52; // 'R'
+    #datoEnvio[3] := INT_TO_BYTE(#nivel);
+
+    #conexionConfig.InterfaceId := 64; 
+    #conexionConfig.ID          := 1;
+    #conexionConfig.ConnectionType := 16#11; // TCP
+    #conexionConfig.ActiveEstablished := TRUE;
+    #conexionConfig.RemoteAddress.ADDR[1] := 192;
+    #conexionConfig.RemoteAddress.ADDR[2] := 168;
+    #conexionConfig.RemoteAddress.ADDR[3] := 1;
+    #conexionConfig.RemoteAddress.ADDR[4] := 7; 
+    #conexionConfig.RemotePort  := 5000;
+    #conexionConfig.LocalPort   := 2000;
+
+    #contadorCiclos := #contadorCiclos + 1;
+    IF #contadorCiclos >= 100 THEN
+        #contadorCiclos := 0;
+    END_IF;
+
+    tempReq := (#nivel <> #nivelAnterior) OR (#contadorCiclos = 0);
+    #nivelAnterior := #nivel;
+
+    #instTSEND_C(
+        REQ  := tempReq,
+        CONT := TRUE,
+        LEN  := 4,
+        CONNECT := #conexionConfig,
+        DATA := #datoEnvio,
+        DONE => "DB_ATRI".ConexionActiva,
+        ERROR => "DB_ATRI".ErrorConexion,
+        STATUS => "DB_ATRI".CodigoError
+    );
+END_FUNCTION_BLOCK
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 3. FUNCTION: FC_ATRI_Logica
+// Lógica principal separada del OB1 para evitar conflictos
+// ─────────────────────────────────────────────────────────────────────────────
+FUNCTION "FC_ATRI_Logica" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+
+BEGIN
+    // Actualizar DB con estado de las entradas físicas (I0.0 a I0.2)
+    "DB_ATRI".ReleNivel1 := %I0.0;
+    "DB_ATRI".ReleNivel2 := %I0.1;
+    "DB_ATRI".ReleNivel3 := %I0.2;
+
+    IF "DB_ATRI".ReleNivel3 THEN
+        "DB_ATRI".LamparaRoja     := TRUE;
+        "DB_ATRI".LamparaAmarilla := FALSE;
+        "DB_ATRI".LamparaVerde    := FALSE;
+        "DB_ATRI".NivelActual     := 3;
+    ELSIF "DB_ATRI".ReleNivel2 THEN
+        "DB_ATRI".LamparaRoja     := FALSE;
+        "DB_ATRI".LamparaAmarilla := TRUE;
+        "DB_ATRI".LamparaVerde    := FALSE;
+        "DB_ATRI".NivelActual     := 2;
+    ELSIF "DB_ATRI".ReleNivel1 THEN
+        "DB_ATRI".LamparaRoja     := FALSE;
+        "DB_ATRI".LamparaAmarilla := FALSE;
+        "DB_ATRI".LamparaVerde    := TRUE;
+        "DB_ATRI".NivelActual     := 1;
+    ELSE
+        "DB_ATRI".LamparaRoja     := FALSE;
+        "DB_ATRI".LamparaAmarilla := FALSE;
+        "DB_ATRI".LamparaVerde    := FALSE;
+        "DB_ATRI".NivelActual     := 0;
+    END_IF;
+
+    // Escribir a salidas físicas (Q0.0 a Q0.2)
+    %Q0.0 := "DB_ATRI".LamparaVerde;
+    %Q0.1 := "DB_ATRI".LamparaAmarilla;
+    %Q0.2 := "DB_ATRI".LamparaRoja;
+END_FUNCTION

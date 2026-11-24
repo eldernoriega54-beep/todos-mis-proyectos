@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Biométrico - Robótica CEMG</title>
+    <link rel="manifest" href="manifest_registro.json">
+    <meta name="theme-color" content="#007FFF">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="js/face-register.js?v=20261003b"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .spinner { border: 3px solid rgba(0,127,255,0.2); border-left-color: #007FFF; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; display:inline-block; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Gradiente del hero */
+        .hero-gradient {
+            background: linear-gradient(135deg, #007FFF 0%, #0050cc 40%, #003a99 100%);
+        }
+        /* Tarjetas con borde de luz azul */
+        .card-glow {
+            box-shadow: 0 0 0 1px rgba(0,127,255,0.15), 0 8px 32px rgba(0,127,255,0.1);
+        }
+        /* Input focus */
+        input:focus {
+            outline: none;
+            border-color: #007FFF !important;
+            box-shadow: 0 0 0 3px rgba(0,127,255,0.15);
+        }
+        /* Scan line animación */
+        @keyframes scanline {
+            0% { top: 0%; } 100% { top: 100%; }
+        }
+        .scan-line {
+            position: absolute;
+            left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+            animation: scanline 2s linear infinite;
+            box-shadow: 0 0 12px #00d4ff;
+        }
+        /* Corners del visor */
+        .corner { position: absolute; width: 20px; height: 20px; border-color: #007FFF; border-style: solid; }
+        .corner-tl { top: 10px; left: 10px; border-width: 3px 0 0 3px; border-radius: 4px 0 0 0; }
+        .corner-tr { top: 10px; right: 10px; border-width: 3px 3px 0 0; border-radius: 0 4px 0 0; }
+        .corner-bl { bottom: 10px; left: 10px; border-width: 0 0 3px 3px; border-radius: 0 0 0 4px; }
+        .corner-br { bottom: 10px; right: 10px; border-width: 0 3px 3px 0; border-radius: 0 0 4px 0; }
+    </style>
+</head>
+<body class="min-h-screen" style="background: linear-gradient(160deg, #e8f4ff 0%, #f0f7ff 50%, #e0ecff 100%);">
+
+    <!-- HEADER -->
+    <div class="hero-gradient text-white py-8 px-6 shadow-xl">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/30">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-blue-200 text-xs font-semibold tracking-widest uppercase">C.E.M.G. Eduardo Hernández Chávez</p>
+                    <h1 class="text-xl font-bold leading-tight">Carrera de Robótica — Registro</h1>
+                </div>
+            </div>
+            <span class="hidden sm:block bg-white/20 border border-white/30 text-white text-xs font-bold px-4 py-1.5 rounded-full backdrop-blur-sm">
+                🔵 Kiosco de Registro
+            </span>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="max-w-5xl mx-auto px-4 py-8">
+
+        <!-- Intro card -->
+        <div class="bg-white rounded-3xl card-glow p-6 mb-6 flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#007FFF,#00c6ff)">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+            </div>
+            <div>
+                <h2 class="font-bold text-gray-900 text-base">Bienvenido al Kiosco de Votación</h2>
+                <p class="text-sm text-gray-500 mt-1">Regista tu rostro una sola vez, luego el sistema te reconocerá automáticamente para que puedas emitir tu voto. El proceso tarda menos de 30 segundos.</p>
+            </div>
+        </div>
+
+        <!-- Grid principal -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Columna CÁMARA -->
+            <div class="bg-white rounded-3xl card-glow overflow-hidden">
+                <div class="p-5 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-xl flex items-center justify-center" style="background:#e0f0ff">
+                            <svg class="w-4 h-4" style="color:#007FFF" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.867v6.266a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h2 class="font-bold text-gray-800">Cámara en vivo</h2>
+                        <span class="ml-auto flex items-center gap-1.5 text-xs text-gray-400">
+                            <span class="w-2 h-2 bg-red-400 rounded-full" id="cam-status-dot"></span>
+                            <span id="cam-status-text">Apagada</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="p-5">
+                    <!-- Visor de cámara -->
+                    <div class="relative w-full aspect-video bg-gray-950 rounded-2xl overflow-hidden shadow-inner" id="cam-wrapper">
+                        <video id="videoElement" autoplay muted playsinline class="w-full h-full object-cover" style="transform:scaleX(-1)"></video>
+                        <canvas id="overlay"></canvas>
+                        <!-- Corners -->
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-tr"></div>
+                        <div class="corner corner-bl"></div>
+                        <div class="corner corner-br"></div>
+                        <!-- Scan line (solo si cámara activa) -->
+                        <div class="scan-line hidden" id="scan-line-el"></div>
+                        <!-- Overlay apagado -->
+                        <div id="cam-off-overlay" class="absolute inset-0 flex flex-col items-center justify-center text-gray-500">
+                            <svg class="w-12 h-12 mb-2 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.069A1 1 0 0121 8.867v6.266a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                            <p class="text-xs opacity-50">Presiona el botón para encender</p>
+                        </div>
+                    </div>
+
+                    <button id="btn-start-camera"
+                        class="mt-4 w-full py-2.5 text-white text-sm font-semibold rounded-xl transition-all shadow-md"
+                        style="background:linear-gradient(135deg,#007FFF,#00aaff)"
+                        onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        📷 Encender Cámara
+                    </button>
+
+                    <!-- Tips -->
+                    <div class="mt-4 grid grid-cols-3 gap-2 text-center">
+                        <div class="bg-gray-50 rounded-xl p-3">
+                            <div class="flex justify-center mb-1">
+                                <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                </svg>
+                            </div>
+                            <p class="text-xs text-gray-500">Buena iluminación</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-3">
+                            <div class="flex justify-center mb-1">
+                                <svg class="w-6 h-6" style="color:#007FFF" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </div>
+                            <p class="text-xs text-gray-500">Mira al frente</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-3">
+                            <div class="flex justify-center mb-1">
+                                <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+                                </svg>
+                            </div>
+                            <p class="text-xs text-gray-500">Sin lentes oscuros</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna FORMULARIO -->
+            <div class="bg-white rounded-3xl card-glow overflow-hidden">
+                <div class="p-5 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-xl flex items-center justify-center" style="background:#e0f0ff">
+                            <svg class="w-4 h-4" style="color:#007FFF" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                        <h2 class="font-bold text-gray-800">Tus datos</h2>
+                    </div>
+                </div>
+
+                <div class="p-5 space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5">Nombre Completo <span style="color:#007FFF">*</span></label>
+                        <input type="text" id="input-name" placeholder="Ej. Juan Pérez"
+                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all text-sm"
+                            style="transition: border-color 0.2s">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5">Correo Electrónico <span style="color:#007FFF">*</span></label>
+                        <input type="email" id="input-email" placeholder="tucorreo@gmail.com"
+                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all text-sm">
+                        <p class="text-xs text-gray-400 mt-1">Gmail, Hotmail, Yahoo o cualquier correo</p>
+                    </div>
+
+                    <!-- Pasos -->
+                    <div class="rounded-2xl p-4 mt-1" style="background:linear-gradient(135deg,#e8f4ff,#f0f7ff); border: 1px solid #007FFF20">
+                        <h3 class="text-xs font-bold mb-3" style="color:#005fcc">¿Cómo funciona?</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#007FFF">1</div>
+                                <p class="text-xs text-gray-600">Escribe tu nombre y correo.</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#007FFF">2</div>
+                                <p class="text-xs text-gray-600">Enciende la cámara y mira de frente.</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#007FFF">3</div>
+                                <p class="text-xs text-gray-600">Presiona el botón de registro.</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style="background:#00aaff">4</div>
+                                <p class="text-xs text-gray-600">¡Listo! Se abrirá tu boleta de votación.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="btn-register"
+                        class="w-full py-3.5 text-white font-bold rounded-xl shadow-lg transition-all text-sm disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        style="background:linear-gradient(135deg,#007FFF,#0050cc)"
+                        disabled>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                        Registrar Rostro y Votar
+                    </button>
+                    <div id="status-message" class="text-sm font-medium text-center hidden mt-2"></div>
+
+                    <div class="text-center pt-2 border-t border-gray-100">
+                        <p class="text-xs text-gray-400">¿Ya registraste tu rostro antes?
+                            <a href="index.html" class="font-semibold hover:underline" style="color:#007FFF">Identifícate aquí →</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(() => {});
+            });
+        }
+    </script>
+</body>
+</html>

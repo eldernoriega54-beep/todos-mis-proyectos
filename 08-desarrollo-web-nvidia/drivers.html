@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Descarga de Drivers - NVIDIA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .drivers-form { background: #222; padding: 30px; border-radius: 8px; margin-top: 20px; border: 1px solid #333;}
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--nvidia-green);}
+        .form-group select { width: 100%; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; }
+        .btn-search { background: var(--nvidia-green); color: black; padding: 12px 25px; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; display: inline-block;}
+        .btn-search:hover { background: white; }
+        .resultados-driver { margin-top: 30px; display: none; background: #1a1a1a; padding: 20px; border-left: 4px solid var(--nvidia-green); border-radius: 4px;}
+        .driver-info { margin-bottom: 10px; }
+        .driver-info span { color: white; font-weight: bold; }
+        .btn-download { display: inline-block; background: var(--nvidia-green); color: black; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 4px; margin-top: 15px;}
+        .btn-download:hover { background: white; }
+    </style>
+</head>
+<body>
+    <div class="video-bg-global"><video id="bg-video" autoplay muted playsinline loop></video></div>
+    <div class="glass-overlay-global"></div>
+
+    <nav class="navbar">
+        <div class="logo-nav"><a href="index.html"><img src="assets/images/logo-white.png" alt="NVIDIA Logo" height="40"></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.php">Productos</a></li>
+            <li class="dropdown"><a href="mision.html">Quiénes Somos <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="rubro.html">Rubro</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="cambios_logo.html">Rediseño de Marca <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="cambios_logo.html">Cambios en el logo</a></li>
+                    <li><a href="paleta_colores.html">Paleta de Colores</a></li>
+                    <li><a href="fuentes.html">Fuentes</a></li>
+                    <li><a href="mockup.html">Mock Up</a></li>
+                    <li><a href="flayers.html">Flayers</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="drivers.html">Drivers</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+        </ul>
+        <div class="nav-extra"><a href="mis_pedidos.php"><i class="fas fa-shopping-cart"></i> Mis Pedidos</a></div>
+    </nav>
+
+    <div class="container drivers-container" style="max-width: 800px; margin: 100px auto 40px; padding: 20px;">
+        <h2 style="color:var(--nvidia-green); font-size: 2.5rem; text-align: center;"><i class="fas fa-download"></i> Descarga de Drivers Oficiales</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Selecciona los detalles de tu producto para encontrar el controlador más reciente y optimizado.</p>
+
+        <div class="drivers-form scroll-fade-up">
+            <div class="form-group">
+                <label>Tipo de Producto</label>
+                <select id="tipo"><option>GeForce</option><option>NVIDIA RTX / Quadro</option><option>Data Center / Tesla</option></select>
+            </div>
+            <div class="form-group">
+                <label>Serie del Producto</label>
+                <select id="serie"><option>GeForce RTX 40 Series</option><option>GeForce RTX 30 Series</option><option>GeForce RTX 20 Series</option></select>
+            </div>
+            <div class="form-group">
+                <label>Sistema Operativo</label>
+                <select id="os"><option value="win11">Windows 11</option><option value="win10">Windows 10 64-bit</option><option value="linux64">Linux 64-bit</option></select>
+            </div>
+            
+            <button class="btn-search" onclick="buscarDrivers()"><i class="fas fa-search"></i> Buscar</button>
+        </div>
+
+        <div id="resultados" class="resultados-driver scroll-fade-up delay-1">
+            <h3 style="color:var(--nvidia-green); margin-bottom:15px;">Resultados de la búsqueda:</h3>
+            <div class="driver-info">Versión: <span>551.86 WHQL</span></div>
+            <div class="driver-info">Fecha de publicación: <span>2026.03.19</span></div>
+            <div class="driver-info">Sistema Operativo: <span id="res-os">Windows 11</span></div>
+            <div class="driver-info">Tamaño: <span>665.4 MB</span></div>
+            <br>
+            <a href="assets/nvidia-driver-551.exe" id="btn-download" class="btn-download" download><i class="fas fa-download"></i> Descargar Ahora</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="yt-link"><a href="https://youtu.be/11Y3B33oCLE?si=ZqJsjY-ohoyAka-N" target="_blank"><i class="fab fa-youtube"></i> Ver Video</a></div>
+            <div class="whatsapp-btn"><a href="https://wa.me/50497580983" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Contacto</a></div>
+        </div>
+        <div class="copyright">&copy; 2026 NVIDIA.</div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        function buscarDrivers() {
+            var osSelect = document.getElementById("os");
+            var osValue = osSelect.value;
+            var osName = osSelect.options[osSelect.selectedIndex].text;
+            document.getElementById("res-os").innerText = osName;
+            document.getElementById("resultados").style.display = "block";
+            
+            var downloadBtn = document.getElementById("btn-download");
+            if(osValue === 'linux64') {
+                downloadBtn.href = "assets/nvidia-driver-linux.run";
+            } else {
+                downloadBtn.href = "assets/nvidia-driver-551.exe";
+            }
+        }
+    </script>
+</body>
+</html>

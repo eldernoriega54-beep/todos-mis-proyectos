@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="400" height="480">
+  <!-- Camisa manga larga realista -->
+  <path d="
+    M 145,20
+    C 160,14 175,10 200,10
+    C 225,10 240,14 255,20
+    L 285,28
+    C 310,35 340,55 365,80
+    L 385,130
+    L 370,380
+    L 340,380
+    L 315,108
+    L 315,440
+    L 85,440
+    L 85,108
+    L 60,380
+    L 30,380
+    L 15,130
+    L 35,80
+    C 60,55 90,35 115,28
+    Z
+    M 145,20
+    C 155,40 165,55 200,60
+    C 235,55 245,40 255,20
+  " fill="#f8f8f8" stroke="#e0e0e0" stroke-width="2" stroke-linejoin="round"/>
+</svg>

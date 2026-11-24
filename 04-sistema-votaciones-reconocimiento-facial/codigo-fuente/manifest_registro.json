@@ -1,0 +1,19 @@
+{
+    "id": "/registro/",
+    "name": "Registro Biométrico Estudiantil",
+    "short_name": "Registro",
+    "description": "Estación de captura de rostros",
+    "start_url": "/registro.html",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#f97316",
+    "icons": [
+        {
+            "src": "icons/icon_registro.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

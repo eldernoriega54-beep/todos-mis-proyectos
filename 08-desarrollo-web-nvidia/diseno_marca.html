@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>RediseÃ±o de Marca - NVIDIA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { padding-top: 80px; }
+        .section-title { text-align: center; margin: 40px 0 20px; color: var(--nvidia-green); font-size: 2.5rem;}
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .grid-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .img-card { background: #222; padding: 15px; border-radius: 8px; text-align: center; }
+        .img-card img { max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #444; }
+        .color-box { width: 100px; height: 100px; display: inline-block; margin: 10px; border-radius: 50%; border: 2px solid white; }
+    </style>
+</head>
+<body>
+    <!-- Video Background Global -->
+    <div class="video-bg-global">
+        <video id="bg-video" autoplay muted playsinline></video>
+    </div>
+    <div class="glass-overlay-global"></div>
+
+    <!-- Navbar (Copiada para HTML) -->
+    <nav class="navbar">
+        <div class="logo-nav">
+            <a href="index.html"><img src="assets/images/logo-white.png" alt="NVIDIA Logo" height="40"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.php">Productos</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html">QuiÃ©nes Somos <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="quienes_somos.html#mision">MisiÃ³n</a></li>
+                    <li><a href="quienes_somos.html#vision">VisiÃ³n</a></li>
+                    <li><a href="quienes_somos.html#historia">Historia</a></li>
+                    <li><a href="quienes_somos.html#rubro">Rubro</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="diseno_marca.html">RediseÃ±o de Marca <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="diseno_marca.html#logo">Cambios en el logo</a></li>
+                    <li><a href="diseno_marca.html#colores">Paleta de Colores</a></li>
+                    <li><a href="diseno_marca.html#fuentes">Fuentes</a></li>
+                    <li><a href="diseno_marca.html#mockup">Mock Up</a></li>
+                    <li><a href="diseno_marca.html#flayers">Flayers</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="drivers.html">Drivers</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+        </ul>
+        <div class="nav-extra">
+            <a href="mis_pedidos.php"><i class="fas fa-shopping-cart"></i> Mis Pedidos</a>
+        </div>
+    </nav>
+
+    <div class="content-container">
+        
+        <div id="logo">
+            <h2 class="section-title">Cambios en el Logo</h2>
+            <div class="grid-images" style="grid-template-columns: 1fr 1fr;">
+                <div class="img-card">
+                    <h3>Logo Principal</h3>
+                    <img src="assets/images/Nvidia Logo idea1.png" alt="Logo Principal">
+                </div>
+                <div class="img-card">
+                    <h3>VariaciÃ³n en Blanco (Sin fondo)</h3>
+                    <img src="assets/images/logo-white.png" alt="Logo Blanco" style="background: #111;">
+                </div>
+            </div>
+        </div>
+
+        <div id="colores" style="text-align: center; margin-top: 50px;">
+            <h2 class="section-title">Paleta de Colores</h2>
+            <div>
+                <div class="color-box" style="background-color: #76b900;"></div>
+                <p>NVIDIA Green (#76b900)</p>
+            </div>
+            <div>
+                <div class="color-box" style="background-color: #000000;"></div>
+                <p>Black (#000000)</p>
+            </div>
+            <div>
+                <div class="color-box" style="background-color: #ffffff;"></div>
+                <p>White (#ffffff)</p>
+            </div>
+        </div>
+
+        <div id="fuentes" style="margin-top: 50px; text-align: center;">
+            <h2 class="section-title">Fuentes</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 10px;">Primaria: <strong>Segoe UI / Helvetica Neue</strong></p>
+            <p>Utilizada para garantizar una lectura clara, moderna y tÃ©cnica en todas nuestras plataformas y materiales visuales.</p>
+        </div>
+
+        <div id="mockup">
+            <h2 class="section-title">Mock Ups</h2>
+            <div class="grid-images">
+                <div class="img-card">
+                    <img src="assets/images/mock up.png" alt="Mock Up">
+                </div>
+                <div class="img-card">
+                    <img src="assets/images/mock up sin fondo.png" alt="Mock Up Sin Fondo">
+                </div>
+                <div class="img-card">
+                    <img src="assets/images/muck up nvidia.png" alt="Mockup Nvidia">
+                </div>
+                <div class="img-card">
+                    <img src="assets/images/etiqueta.png" alt="Etiqueta">
+                </div>
+            </div>
+        </div>
+
+        <div id="flayers">
+            <h2 class="section-title">Flayers y Publicidad</h2>
+            <div class="grid-images">
+                <div class="img-card">
+                    <img src="assets/images/flayer1.png" alt="Flayer 1">
+                </div>
+                <div class="img-card">
+                    <img src="assets/images/flayer2.png" alt="Flayer 2">
+                </div>
+                <div class="img-card">
+                    <img src="assets/images/flayer3.png" alt="Flayer 3">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="yt-link">
+                <a href="https://youtu.be/11Y3B33oCLE?si=ZqJsjY-ohoyAka-N" target="_blank">
+                    <i class="fab fa-youtube"></i> Ver Video (Â¡Muy pronto!)
+                </a>
+            </div>
+            <div class="whatsapp-btn">
+                <a href="https://wa.me/50497580983" target="_blank" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Contacto: 97580983
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 NVIDIA Corporation. Todos los derechos reservados. Proyecto con fines educativos.
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

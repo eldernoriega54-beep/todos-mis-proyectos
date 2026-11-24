@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>QuiÃ©nes Somos - NVIDIA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { padding-top: 80px; }
+        .content-section { max-width: 1000px; margin: 40px auto; padding: 20px; background: #222; border-radius: 8px; border-left: 5px solid var(--nvidia-green); margin-bottom: 30px; }
+        h2 { color: var(--nvidia-green); margin-bottom: 15px; }
+        p { line-height: 1.6; color: #ddd; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <!-- Video Background Global -->
+    <div class="video-bg-global">
+        <video id="bg-video" autoplay muted playsinline></video>
+    </div>
+    <div class="glass-overlay-global"></div>
+
+    <!-- Navbar (Copiada para archivo HTML) -->
+    <nav class="navbar">
+        <div class="logo-nav">
+            <a href="index.html"><img src="assets/images/logo-white.png" alt="NVIDIA Logo" height="40"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.php">Productos</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html">QuiÃ©nes Somos <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="quienes_somos.html#mision">MisiÃ³n</a></li>
+                    <li><a href="quienes_somos.html#vision">VisiÃ³n</a></li>
+                    <li><a href="quienes_somos.html#historia">Historia</a></li>
+                    <li><a href="quienes_somos.html#rubro">Rubro</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="diseno_marca.html">RediseÃ±o de Marca <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="diseno_marca.html#logo">Cambios en el logo</a></li>
+                    <li><a href="diseno_marca.html#colores">Paleta de Colores</a></li>
+                    <li><a href="diseno_marca.html#fuentes">Fuentes</a></li>
+                    <li><a href="diseno_marca.html#mockup">Mock Up</a></li>
+                    <li><a href="diseno_marca.html#flayers">Flayers</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="drivers.html">Drivers</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+        </ul>
+        <div class="nav-extra">
+            <a href="mis_pedidos.php"><i class="fas fa-shopping-cart"></i> Mis Pedidos</a>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <h1 style="text-align: center; margin-bottom: 40px;">Acerca de NVIDIA</h1>
+
+        <div id="mision" class="content-section">
+            <h2>MisiÃ³n</h2>
+            <p>Nuestra misiÃ³n es ser la fuerza motriz del cÃ¡lculo visual y de inteligencia artificial en todo el mundo, proporcionando tecnologÃ­as avanzadas para resolver los retos mÃ¡s complejos del planeta.</p>
+        </div>
+
+        <div id="vision" class="content-section">
+            <h2>VisiÃ³n</h2>
+            <p>Visualizamos un futuro donde la IA y el renderizado avanzado se fusionen, permitiendo a la humanidad descubrir nuevos medicamentos, simular el clima mundial, y revolucionar todas las industrias mediante herramientas tecnolÃ³gicas de vanguardia impulsadas por nuestras plataformas de aceleraciÃ³n.</p>
+        </div>
+
+        <div id="historia" class="content-section">
+            <h2>Historia</h2>
+            <p>NVIDIA fue fundada en 1993 por Jensen Huang, Chris Malachowsky y Curtis Priem con la visiÃ³n de que el PC algÃºn dÃ­a se convertirÃ­a en un dispositivo para el disfrute de juegos y contenido multimedia. En 1999, la invenciÃ³n de la GPU por parte de NVIDIA desencadenÃ³ el crecimiento del mercado de juegos de PC y ha redefinido los grÃ¡ficos por computadora modernos, revolucionando la computaciÃ³n paralela y recientemente encendiendo la era de la IA moderna.</p>
+        </div>
+
+        <div id="rubro" class="content-section">
+            <h2>Rubro</h2>
+            <p>Nos dedicamos a la tecnologÃ­a y computaciÃ³n acelerada. Nuestro rubro abarca la creaciÃ³n de Unidades de Procesamiento GrÃ¡fico (GPUs), interfaces de programaciÃ³n (APIs) para la ciencia de datos y computaciÃ³n de alto rendimiento, y sistemas en chip (SoC) para los mercados de computaciÃ³n mÃ³vil y automotriz. Recientemente, nos hemos consolidado como el principal proveedor de hardware de Inteligencia Artificial para centros de datos.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="yt-link">
+                <a href="https://youtu.be/11Y3B33oCLE?si=ZqJsjY-ohoyAka-N" target="_blank">
+                    <i class="fab fa-youtube"></i> Ver Video (Â¡Muy pronto!)
+                </a>
+            </div>
+            <div class="whatsapp-btn">
+                <a href="https://wa.me/50497580983" target="_blank" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Contacto: 97580983
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 NVIDIA Corporation. Todos los derechos reservados. Proyecto con fines educativos.
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

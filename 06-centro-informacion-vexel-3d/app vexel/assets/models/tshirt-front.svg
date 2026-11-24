@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="400" height="480">
+  <!-- Camisa manga corta realista -->
+  <path d="
+    M 145,20
+    C 160,14 175,10 200,10
+    C 225,10 240,14 255,20
+    L 285,28
+    C 310,35 340,55 360,75
+    L 380,95
+    L 340,130
+    L 315,108
+    L 315,440
+    L 85,440
+    L 85,108
+    L 60,130
+    L 20,95
+    L 40,75
+    C 60,55 90,35 115,28
+    Z
+    M 145,20
+    C 155,40 165,55 200,60
+    C 235,55 245,40 255,20
+  " fill="#f8f8f8" stroke="#e0e0e0" stroke-width="2" stroke-linejoin="round"/>
+</svg>

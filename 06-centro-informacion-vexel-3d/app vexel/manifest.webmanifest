@@ -1,0 +1,22 @@
+{
+  "name": "Vexel 3D",
+  "short_name": "Vexel3D",
+  "description": "Diseña ropa única con Vexel 3D.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#0D0D18",
+  "theme_color": "#4A148C",
+  "icons": [
+    {
+      "src": "imagenes de la app/isologo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "imagenes de la app/isologo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

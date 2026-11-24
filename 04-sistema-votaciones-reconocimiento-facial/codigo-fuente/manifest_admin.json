@@ -1,0 +1,19 @@
+{
+    "id": "/admin/",
+    "name": "Panel de Control Electoral",
+    "short_name": "Control Admin",
+    "description": "Sistema de gestión y resultados",
+    "start_url": "/admin_login.html",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ef4444",
+    "icons": [
+        {
+            "src": "icons/icon_admin.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

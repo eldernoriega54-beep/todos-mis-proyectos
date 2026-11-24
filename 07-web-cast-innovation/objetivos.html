@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetivos - CAST Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header { margin-top: 150px; text-align: center; }
+        .checklist-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: rgba(20, 24, 30, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checklist-item:last-child { border-bottom: none; }
+        .checklist-item:hover { background: rgba(255,255,255,0.05); border-radius: 10px; }
+        .checkbox {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--text-muted);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .check-mark {
+            color: #25d366;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .checklist-item.checked .checkbox { border-color: #25d366; background: rgba(37, 211, 102, 0.1); }
+        .checklist-item.checked .check-mark { opacity: 1; transform: scale(1); }
+        .checklist-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+        .checklist-item.checked .checklist-text { color: white; }
+        .progress-bar-container {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #25d366;
+            transition: width 0.5s ease;
+        }
+        .progress-text {
+            text-align: right;
+            margin-top: 10px;
+            color: #25d366;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprende_programar.html" class="dropdown-item">Aprende a programar</a>
+                <a href="conexiones.html" class="dropdown-item">Conexiones con un robot</a>
+                <a href="union.html" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html" class="dropdown-item">Ver modelos</a>
+                <a href="saber_mas_modelos.html" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="valores.html" class="dropdown-item">Valores</a>
+                <a href="mision_vision.html" class="dropdown-item">Misión y Visión</a>
+                <a href="objetivos.html" class="dropdown-item">Objetivos</a>
+                <a href="plan_estrategico.html" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-background-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_114817.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="background: rgba(13, 15, 18, 0.85);"></div>
+    </div>
+
+    <main class="content-wrapper">
+        <div class="page-header scroll-reveal">
+            <h1 class="main-title">Nuestros Objetivos</h1>
+            <p class="tagline">Marca las casillas para visualizar nuestras metas cumplidas</p>
+        </div>
+
+        <section class="checklist-container scroll-reveal">
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"><span class="check-mark">✔</span></div>
+                <div class="checklist-text">Aumentar la retención y motivación estudiantil mediante el aprendizaje práctico.</div>
+            </div>
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"><span class="check-mark">✔</span></div>
+                <div class="checklist-text">Proporcionar formación y acompañamiento continuo sin costo adicional a los docentes.</div>
+            </div>
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"><span class="check-mark">✔</span></div>
+                <div class="checklist-text">Diferenciar las propuestas educativas ofreciendo currículos alineados al siglo XXI.</div>
+            </div>
+
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+            <div class="progress-text" id="progress-text">Progreso: 0%</div>
+        </section>
+
+        <footer><p>&copy; 2026 CAST Innovation. Todos los derechos reservados.</p></footer>
+    </main>
+
+    <script>
+        function toggleCheck(el) {
+            el.classList.toggle('checked');
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.checklist-item').length;
+            const checked = document.querySelectorAll('.checklist-item.checked').length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            document.getElementById('progress').style.width = percentage + '%';
+            document.getElementById('progress-text').innerText = 'Progreso: ' + percentage + '%';
+        }
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-reveal");
+            scrollElements.forEach(el => el.classList.add("visible"));
+        });
+    </script>
+</body>
+</html>

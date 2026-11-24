@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Propósito</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(224, 64, 251, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            min-width: 200px;
+            box-shadow: 0 0 20px rgba(224, 64, 251, 0.1);
+        }
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <img src="app vexel/imagenes de la app/isologo.png" alt="Vexel 3D">
+            <span>Vexel 3D</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html" class="active">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="proposito.html" class="active">Propósito</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="productos.html">Productos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="productos.html">Ver Catálogo</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="obtener.html">Obtener para ti</a></li>
+                </ul>
+            </li>
+            <li><a href="plan_estrategico.html">Plan Estratégico</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper mt-80">
+        <section class="about-section glass-panel scroll-reveal">
+            <div style="text-align: center;">
+                <i class="fa-solid fa-bullseye" style="font-size: 4rem; color: var(--accent); margin-bottom: 20px;"></i>
+                <h1 style="font-size: 3rem; margin-bottom: 20px;">Nuestro Propósito</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; line-height: 1.8; margin-bottom: 30px;">
+                    Democratizar el acceso al diseño y manufactura textil de alta tecnología. Buscamos eliminar las barreras técnicas que impiden que los diseñadores vean sus ideas materializadas exactamente como las imaginan. A través del software Vexel 3D, nuestra meta es asegurar que cualquier persona, sin importar sus conocimientos técnicos de corte y confección, pueda lanzar productos que compitan en calidad con las mejores marcas del mundo.
+                </p>
+
+                <div style="display: flex; gap: 20px; justify-content: center; max-width: 900px; margin: 0 auto 50px auto; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px; background: rgba(255,255,255,0.02); padding: 20px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); text-align: left;">
+                        <h4 style="color: white; margin-bottom: 10px;"><i class="fa-solid fa-bolt" style="color: var(--accent);"></i> Empoderamiento</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Darle a cada individuo el poder de una fábrica entera en su navegador web.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px; background: rgba(255,255,255,0.02); padding: 20px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); text-align: left;">
+                        <h4 style="color: white; margin-bottom: 10px;"><i class="fa-solid fa-code-branch" style="color: #00d2ff;"></i> Transparencia</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Hacer visible cada parte del proceso, desde la generación de la idea hasta la entrega.</p>
+                    </div>
+                </div>
+                
+                <div class="stats-container" id="stats-section">
+                    <div class="stat-box scroll-reveal" style="transition-delay: 0.2s;">
+                        <span class="stat-number" data-target="500" data-suffix="+">0</span>
+                        <span class="stat-label">Diseños Creados</span>
+                    </div>
+                    <div class="stat-box scroll-reveal" style="transition-delay: 0.4s;">
+                        <span class="stat-number" data-target="98" data-suffix="%">0</span>
+                        <span class="stat-label">Satisfacción</span>
+                    </div>
+                    <div class="stat-box scroll-reveal" style="transition-delay: 0.6s;">
+                        <span class="stat-number" data-target="10" data-suffix="">0</span>
+                        <span class="stat-label">Modelos de Prenda</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 Vexel 3D — Innovación Textil y Robótica | <a href="contacto.html" style="color:var(--accent)">Contáctanos</a></p>
+    </footer>
+
+    <script src="landing.js"></script>
+    <script>
+        // Animación de los contadores cuando son visibles
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 100; // Velocidad de conteo
+        let started = false;
+
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const suffix = counter.getAttribute('data-suffix') || '';
+                    const count = +counter.innerText.replace(/\D/g, ''); // Quitar no-numeros
+                    
+                    const inc = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc) + suffix;
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target + suffix;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting && !started) {
+                started = true;
+                startCounters();
+            }
+        }, { threshold: 0.5 });
+
+        const statsSection = document.getElementById('stats-section');
+        if (statsSection) {
+            sectionObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html>

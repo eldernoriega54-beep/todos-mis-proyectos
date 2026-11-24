@@ -1,0 +1,19 @@
+{
+    "id": "/login/",
+    "name": "Urna de Votación Institucional",
+    "short_name": "Urna",
+    "description": "Sistema de login con reconocimiento facial para votaciones",
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4f46e5",
+    "icons": [
+        {
+            "src": "icons/icon_votar.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

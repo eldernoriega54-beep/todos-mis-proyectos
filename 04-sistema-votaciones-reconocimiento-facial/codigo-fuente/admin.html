@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Supremo</title>
+    <link rel="manifest" href="manifest_admin.json">
+    <meta name="theme-color" content="#ef4444">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn .25s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media print {
+    /* Ocultar elementos no necesarios */
+    aside, 
+    .md\\:hidden.bg-gray-900, 
+    #mobile-overlay,
+    button:not(.print-btn),
+    .mobile-nav,
+    select,
+    input[type="file"],
+    input[type="text"],
+    #tab-votos-detallados,
+    #tab-candidatos,
+    #tab-admins,
+    .glass-panel .flex.items-center.justify-between button,
+    .glass-panel .mt-3.pt-3 button {
+        display: none !important;
+    }
+
+    /* Mostrar solo el dashboard y forzar fondo blanco */
+    body {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    main {
+        padding: 20px !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Asegurar que las secciones ocupen todo el ancho */
+    #tab-dashboard {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* Ocultar estadísticas superiores (opcional, quítalo si quieres imprimirlas) */
+    .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-4 {
+        display: none !important;
+    }
+
+    /* Optimizar la gráfica para impresión */
+    #resultsChart {
+        max-height: 400px !important;
+        width: 100% !important;
+    }
+
+    /* Asegurar que la tabla del ranking se vea completa */
+    .glass-panel {
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 20px !important;
+        height: auto !important;
+    }
+
+    /* Forzar colores oscuros para legibilidad en blanco y negro */
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    th, td {
+        border: 1px solid #333 !important;
+        padding: 8px !important;
+        color: black !important;
+        background: white !important;
+    }
+
+    th {
+        background-color: #f3f4f6 !important;
+        font-weight: bold !important;
+    }
+
+    /* Evitar que la tabla se corte entre páginas */
+    tr {
+        page-break-inside: avoid;
+    }
+
+    /* Ajustar el layout de las dos columnas */
+    .grid.grid-cols-1.xl\\:grid-cols-2 {
+        display: block !important;
+    }
+
+    .xl\\:grid-cols-2 > div {
+        width: 100% !important;
+        margin-bottom: 30px !important;
+    }
+
+    /* Mostrar título de impresión */
+    .print-title {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+    }
+
+    /* Información de la elección */
+    .election-info-print {
+        display: block !important;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+    }
+}
+
+/* Ocultar elementos de impresión en pantalla normal */
+.print-title,
+.election-info-print {
+    display: none;
+}
+
+
+
+/* Estilos específicos para impresión de Votos Detallados */
+@media print {
+    /* Mostrar solo la sección de votos detallados cuando se active */
+    #tab-votos-detallados {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* Ocultar elementos de Votos Detallados que no queremos en el PDF */
+    #tab-votos-detallados .no-print,
+    #tab-votos-detallados #csv-upload,
+    #tab-votos-detallados #csv-upload + label,
+    #tab-votos-detallados #search-voters,
+    #tab-votos-detallados button:not(.print-btn) {
+        display: none !important;
+    }
+
+    /* Header de impresión para votantes */
+    .voters-print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 3px double #333;
+    }
+
+    .voters-print-header h2 {
+        font-size: 22pt !important;
+        font-weight: bold !important;
+        margin-bottom: 8px !important;
+        color: #000 !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .voters-print-header .print-meta {
+        font-size: 11pt;
+        color: #555;
+        margin-top: 5px;
+        line-height: 1.6;
+    }
+
+    /* Ajustar la tabla para impresión larga */
+    #tab-votos-detallados table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        font-size: 10pt !important;
+        margin-top: 10px;
+    }
+
+    /* Repetir encabezados en cada página */
+    #tab-votos-detallados thead {
+        display: table-header-group !important;
+    }
+
+    #tab-votos-detallados tbody tr {
+        page-break-inside: avoid !important;
+        border-bottom: 1px solid #ccc !important;
+    }
+
+    #tab-votos-detallados th,
+    #tab-votos-detallados td {
+        border: 1px solid #333 !important;
+        padding: 8px 6px !important;
+        color: #000 !important;
+        background: #fff !important;
+        vertical-align: middle !important;
+    }
+
+    #tab-votos-detallados th {
+        background-color: #e5e7eb !important;
+        font-weight: bold !important;
+        text-transform: uppercase !important;
+        font-size: 9pt !important;
+        letter-spacing: 0.5px;
+    }
+
+    /* Ocultar la columna de acciones al imprimir */
+    #tab-votos-detallados th:last-child,
+    #tab-votos-detallados td:last-child {
+        display: none !important;
+    }
+
+    /* Ajustar anchos de columnas restantes */
+    #tab-votos-detallados td:nth-child(1) { width: 10% !important; }
+    #tab-votos-detallados td:nth-child(2) { width: 40% !important; }
+    #tab-votos-detallados td:nth-child(3) { width: 35% !important; }
+    #tab-votos-detallados td:nth-child(4) { width: 15% !important; text-align: center !important; }
+
+    /* Ocultar el panel de filtros completamente al imprimir */
+    #tab-votos-detallados > div.mb-4 {
+        display: none !important;
+    }
+
+    /* Ocultar otros tabs */
+    #tab-dashboard, #tab-candidatos, #tab-admins {
+        display: none !important;
+    }
+
+    /* Ajustar el main para impresión */
+    main {
+        padding: 15px !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Ocultar sidebar y menú móvil */
+    aside, .md\\:hidden.bg-gray-900, #mobile-overlay {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+    }
+
+    /* Ajustar colores de estado para impresión en B/N */
+    .text-green-600 {
+        color: #000 !important;
+        font-weight: bold !important;
+    }
+    
+    .text-gray-500 {
+        color: #666 !important;
+    }
+
+    .bg-green-50, .bg-gray-100 {
+        background: none !important;
+        border: 1px solid #999 !important;
+        padding: 2px 6px !important;
+        border-radius: 3px !important;
+    }
+}
+
+/* Ocultar el header de impresión en pantalla normal */
+.voters-print-header {
+    display: none;
+}
+
+/* Asegurar que no-print funcione correctamente */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+
+    </style>
+
+    <script>
+        if (!localStorage.getItem('admin_token')) {
+            window.location.href = 'admin_login.html';
+        }
+
+        function logout() {
+            localStorage.removeItem('admin_token');
+            localStorage.removeItem('admin_user');
+            window.location.href = 'admin_login.html';
+        }
+
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            const isOpen = !sidebar.classList.contains('-translate-x-full');
+
+            if (isOpen) {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            } else {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col md:flex-row text-gray-800">
+
+    <div class="md:hidden bg-gray-900 text-white flex items-center justify-between px-4 h-14 sticky top-0 z-50 shadow-lg">
+        <button onclick="toggleMobileMenu()" class="p-2 hover:bg-gray-800 rounded-lg transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+        <h2 class="text-sm font-bold">Admin<span class="text-indigo-400">Panel</span></h2>
+
+        <button onclick="logout()" class="p-2 hover:bg-gray-800 rounded-lg transition text-red-400">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                </path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-50 hidden md:hidden" onclick="toggleMobileMenu()"></div>
+
+    <aside id="mobile-sidebar"
+        class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white flex flex-col shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 md:hidden">
+        <div class="p-6 border-b border-gray-800 flex items-center justify-between">
+            <div>
+                <h2 class="text-xl font-bold tracking-tight">Admin<span class="text-indigo-400">Panel</span></h2>
+                <p class="text-xs text-gray-400 mt-1">Usuario:
+                    <span class="current-user-display font-semibold text-white"></span>
+                </p>
+            </div>
+
+            <button onclick="toggleMobileMenu()" class="p-1.5 hover:bg-gray-800 rounded-lg text-gray-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <nav class="flex-grow p-4 space-y-2">
+            <button onclick="switchTab('dashboard');toggleMobileMenu();"
+                class="mobile-nav w-full text-left px-4 py-3 bg-indigo-600 rounded-xl font-medium transition"
+                data-tab="dashboard">📈 Dashboard</button>
+
+            <button onclick="switchTab('votos-detallados');toggleMobileMenu();"
+                class="mobile-nav w-full text-left px-4 py-3 hover:bg-gray-800 rounded-xl font-medium transition text-gray-300"
+                data-tab="votos-detallados">📋 Votos Detall.</button>
+
+            <button onclick="switchTab('candidatos');toggleMobileMenu();"
+                class="mobile-nav w-full text-left px-4 py-3 hover:bg-gray-800 rounded-xl font-medium transition text-gray-300"
+                data-tab="candidatos">🗳️ Votación</button>
+
+            <button onclick="switchTab('admins');toggleMobileMenu();"
+                class="mobile-nav w-full text-left px-4 py-3 hover:bg-gray-800 rounded-xl font-medium transition text-gray-300"
+                data-tab="admins">🔐 Administradores</button>
+        </nav>
+
+        <div class="p-4 border-t border-gray-800">
+            <button onclick="logout()"
+                class="w-full py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg font-medium transition">
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+
+    <aside class="w-64 bg-gray-900 text-white flex-col shadow-xl hidden md:flex sticky top-0 h-screen flex-shrink-0">
+        <div class="p-6 border-b border-gray-800">
+            <h2 class="text-xl font-bold tracking-tight">Admin<span class="text-indigo-400">Panel</span></h2>
+            <p class="text-xs text-gray-400 mt-1">Usuario:
+                <span id="current-user" class="current-user-display font-semibold text-white"></span>
+            </p>
+        </div>
+
+        <nav class="flex-grow p-4 space-y-2">
+            <button onclick="switchTab('dashboard')" id="nav-dashboard"
+                class="w-full text-left px-4 py-3 bg-indigo-600 rounded-xl font-medium transition">
+                📈 Dashboard
+            </button>
+
+            <button onclick="switchTab('votos-detallados')" id="nav-votos-detallados"
+                class="w-full text-left px-4 py-3 hover:bg-gray-800 rounded-xl font-medium transition text-gray-300">
+                📋 Votos Detallados
+            </button>
+
+            <button onclick="switchTab('candidatos')" id="nav-candidatos"
+                class="w-full text-left px-4 py-3 hover:bg-gray-800 rounded-xl font-medium transition text-gray-300">
+                🗳️ Votación
+            </button>
+
+            <button onclick="switchTab('admins')" id="nav-admins"
+                class="w-full text-left px-4 py-3 hover:bg-gray-800 rounded-xl font-medium transition text-gray-300">
+                🔐 Administradores
+            </button>
+        </nav>
+
+        <div class="p-4 border-t border-gray-800">
+            <button onclick="logout()"
+                class="w-full py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg font-medium transition">
+                Cerrar Sesión
+            </button>
+        </div>
+    </aside>
+
+    <main class="flex-grow p-6 md:p-10 overflow-y-auto">
+        <section id="tab-dashboard" class="block animate-fade-in">
+    <!-- Título solo visible al imprimir -->
+    <div class="print-title">
+        REPORTE DE RESULTADOS ELECTORALES
+        <div class="text-sm font-normal mt-2" id="print-date"></div>
+    </div>
+    
+    <div class="election-info-print" id="election-print-name"></div>
+
+    <div class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 no-print">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-900">Monitor de Resultados</h1>
+            <p class="text-gray-500">Resultados en tiempo real por tema de debate</p>
+        </div>
+
+        <div class="flex gap-3 items-center">
+            <select id="dashboard-election-select" onchange="loadDashboardResults()"
+                class="bg-white border text-sm font-bold border-gray-300 text-gray-900 rounded-xl focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 shadow-sm">
+                <option value="">Selecciona un Tema...</option>
+            </select>
+            
+            <!-- BOTÓN IMPRIMIR -->
+            <button onclick="printResults()" 
+                class="print-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2.5 rounded-xl font-bold shadow-sm transition flex items-center gap-2 whitespace-nowrap">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                </svg>
+                Imprimir Reporte
+            </button>
+        </div>
+    </div>
+
+    <!-- Estadísticas (se ocultarán al imprimir) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 no-print">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div class="text-sm font-medium text-gray-500">Total Registrados</div>
+            <div class="text-3xl font-bold text-indigo-600 mt-2" id="stat-users">0</div>
+            <div class="text-xs text-gray-400 mt-1">votantes en padrón</div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div class="text-sm font-medium text-gray-500">Votos Emitidos</div>
+            <div class="text-3xl font-bold text-green-600 mt-2" id="stat-votes">0</div>
+            <div class="text-xs text-gray-400 mt-1" id="stat-votes-fraction">de 0 registrados</div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div class="text-sm font-medium text-gray-500">Pendientes de Votar</div>
+            <div class="text-3xl font-bold text-purple-600 mt-2" id="stat-pending">0</div>
+            <div class="text-xs text-gray-400 mt-1" id="stat-pending-detail">aún no han votado</div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div class="text-sm font-medium text-gray-500">Participación Real</div>
+            <div class="text-3xl font-bold text-amber-600 mt-2" id="stat-participation">0%</div>
+            <div class="text-xs text-gray-400 mt-1" id="stat-participation-detail">0 de 0</div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <div class="glass-panel shadow-sm rounded-2xl border border-gray-100 p-6 flex flex-col h-[460px]">
+            <div class="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
+                <h3 class="text-lg font-bold text-gray-800">Gráfica de Votos</h3>
+                <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full font-semibold no-print">
+                    En tiempo real
+                </span>
+            </div>
+
+            <p class="text-sm text-gray-500 mb-4 no-print">
+                Tema: <span id="chart-title-detail" class="font-semibold text-gray-700">Seleccione un tema</span>
+            </p>
+
+            <div class="relative flex-grow">
+                <canvas id="resultsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="glass-panel shadow-sm rounded-2xl border border-gray-100 p-6 flex flex-col h-[460px]">
+            <div class="flex justify-between items-center mb-4 border-b border-gray-100 pb-3">
+                <h3 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                    <span class="text-2xl no-print">🏛️</span>
+                    <div>
+                        <div>Asignación de Puestos por Ranking</div>
+                        <div class="text-xs font-normal text-gray-500 no-print">Los 7 cargos principales según votos</div>
+                    </div>
+                </h3>
+
+                <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full font-semibold no-print">
+                    Top 7
+                </span>
+            </div>
+
+            <div class="overflow-y-auto flex-grow pr-2 custom-scrollbar">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-50 sticky top-0 z-10">
+                        <tr>
+                            <th class="py-3 px-3 text-xs font-semibold text-gray-500 uppercase border-b border-gray-200">Puesto</th>
+                            <th class="py-3 px-3 text-xs font-semibold text-gray-500 uppercase border-b border-gray-200">Candidato</th>
+                            <th class="py-3 px-3 text-xs font-semibold text-gray-500 uppercase border-b border-gray-200 text-right">Votos</th>
+                            <th class="py-3 px-3 text-xs font-semibold text-gray-500 uppercase border-b border-gray-200 text-right">%</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="government-ranking-body" class="divide-y divide-gray-100">
+                        <tr>
+                            <td colspan="4" class="py-8 text-center text-gray-400 text-sm">
+                                Selecciona un tema para ver la asignación de puestos...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-500 flex justify-between items-center no-print">
+                <span>Actualizado: <span id="last-update-time">--:--</span></span>
+
+                <button onclick="loadDashboardResults()"
+                    class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                        </path>
+                    </svg>
+                    Actualizar
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section id="tab-votos-detallados" class="hidden animate-fade-in">
+    <!-- Header visible solo al imprimir -->
+    <div class="voters-print-header">
+        <h2>REPORTE DE VOTANTES REGISTRADOS</h2>
+        <div class="print-meta" id="voters-print-meta"></div>
+    </div>
+
+    <div class="mb-4 flex flex-col md:flex-row md:items-end justify-between gap-4 no-print">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-900">Registro de Votos</h1>
+            <p class="text-gray-500">Listado completo y detallado de cada estudiante registrado y su estatus de voto</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-3 w-full md:w-auto">
+            <div class="relative">
+                <input type="file" id="csv-upload" accept=".csv, .xlsx" class="hidden"
+                    onchange="uploadUsersCSV(event)">
+                <label for="csv-upload"
+                    class="cursor-pointer inline-flex items-center justify-center px-4 py-2 bg-green-50 text-green-700 hover:bg-green-100 font-semibold rounded-xl border border-green-200 transition text-sm w-full">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                    </svg>
+                    Importar Excel/CSV
+                </label>
+            </div>
+            
+            <button onclick="addManualUser()" class="inline-flex items-center justify-center px-4 py-2 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 font-semibold rounded-xl border border-indigo-200 transition text-sm w-full">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                Agregar Alumno
+            </button>
+
+
+            <!-- BOTÓN IMPRIMIR/GUARDAR PDF -->
+            <button onclick="printVotersTable()" 
+                class="print-btn inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-sm transition text-sm">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                </svg>
+                Imprimir / PDF
+            </button>
+
+            <div class="w-full md:w-72">
+                <input type="text" id="search-voters" oninput="filterUsers()"
+                    placeholder="🔍 Buscar por nombre o correo..."
+                    class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none text-sm placeholder-gray-400">
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-panel shadow-sm rounded-2xl border border-gray-100 overflow-hidden mt-6">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-gray-50 border-b border-gray-100">
+                    <th class="py-4 px-6 text-xs font-semibold text-gray-500 uppercase">ID</th>
+                    <th class="py-4 px-6 text-xs font-semibold text-gray-500 uppercase">Nombre</th>
+                    <th class="py-4 px-6 text-xs font-semibold text-gray-500 uppercase">Correo</th>
+                    <th class="py-4 px-6 text-xs font-semibold text-gray-500 uppercase">Votó</th>
+                    <th class="py-4 px-6 text-xs font-semibold text-gray-500 uppercase text-center no-print">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="users-table-body" class="divide-y divide-gray-100 bg-white"></tbody>
+        </table>
+    </div>
+</section>
+
+
+        <section id="tab-candidatos" class="hidden animate-fade-in relative">
+            <div class="mb-8 flex justify-between items-end">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Gestión de Varios Temas</h1>
+                    <p class="text-gray-500">Configura temas de debate (elecciones) y administra sus candidatos</p>
+                </div>
+            </div>
+
+            <div id="elections-view">
+                <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 mb-8 flex flex-col sm:flex-row items-center gap-4 shadow-sm">
+                    <div class="flex-1 w-full">
+                        <label class="block text-sm font-bold text-indigo-900 mb-1">Crear Nuevo Tema de Debate</label>
+                        <input type="text" id="new-election-title" placeholder="Ej: Votaciones Presidente 2026"
+                            class="w-full px-4 py-3 rounded-xl border border-indigo-200 focus:ring-2 focus:ring-indigo-500 outline-none transition text-sm bg-white">
+                    </div>
+
+                    <button onclick="addElection()"
+                        class="w-full sm:w-auto px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-md transition whitespace-nowrap mt-4 sm:mt-5 text-sm">
+                        ➕ Añadir Tema
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="elections-grid"></div>
+            </div>
+
+            <div id="candidates-view" class="hidden">
+                <div class="flex items-center gap-3 mb-6">
+                    <button onclick="goBackToElections()"
+                        class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded-xl transition text-sm">
+                        ← Volver a Temas
+                    </button>
+
+                    <h2 class="text-2xl font-bold text-gray-900" id="current-election-title">Tema: ...</h2>
+                </div>
+
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                    <div class="xl:col-span-1 glass-panel p-6 rounded-2xl border border-gray-200 shadow-sm h-fit">
+                        <h3 class="font-bold text-lg mb-4">Añadir Candidato</h3>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                                <input type="text" id="cand-nombre"
+                                    class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Propuesta</label>
+                                <textarea id="cand-propuesta" rows="3"
+                                    class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Foto del Candidato</label>
+                                <input type="file" id="cand-foto" accept="image/*"
+                                    class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                            </div>
+
+                            <button onclick="addCandidate()" id="btn-add-cand"
+                                class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition">
+                                Guardar Candidato
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="xl:col-span-2">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="candidates-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-admins" class="hidden animate-fade-in">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-900">Seguridad y Administradores</h1>
+                <p class="text-gray-500">Registrar rostros de admins o crear nuevos</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-1 max-w-lg mx-auto gap-8">
+                <div class="glass-panel p-6 rounded-2xl border border-gray-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4">Crear Nuevo Administrador</h3>
+                    <div class="space-y-4">
+                        <input type="text" id="new-admin-user" placeholder="Usuario"
+                            class="w-full px-4 py-2 rounded-xl border border-gray-300">
+
+                        <input type="password" id="new-admin-pass" placeholder="Contraseña"
+                            class="w-full px-4 py-2 rounded-xl border border-gray-300">
+
+                        <button onclick="createAdmin()"
+                            class="w-full py-3 bg-gray-900 hover:bg-black text-white font-semibold rounded-xl">
+                            Crear Admin
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script defer src="js/admin-panel.js?v=20260924203949"></script>
+</body>
+
+</html>

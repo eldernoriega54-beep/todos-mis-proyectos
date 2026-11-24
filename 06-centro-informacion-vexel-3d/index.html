@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Inicio</title>
+    <meta name="description" content="Vexel 3D: Plataforma de diseño textil inteligente con IA, visualización 3D y manufactura automatizada.">
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <img src="app vexel/imagenes de la app/isologo.png" alt="Vexel 3D">
+            <span>Vexel 3D</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="proposito.html">Propósito</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="productos.html">Productos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="productos.html">Ver Catálogo</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="obtener.html">Obtener para ti</a></li>
+                </ul>
+            </li>
+            <li><a href="plan_estrategico.html">Plan Estratégico</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper">
+        <section class="hero-section glass-panel scroll-reveal">
+            <img src="app vexel/imagenes de la app/isotipovexel3d.png" class="hero-logo" alt="Vexel 3D Icon">
+            <h1>Vexel 3D</h1>
+            <h2>La Nueva Frontera de la Ingeniería Textil</h2>
+            <p>Vexel 3D no es solo una empresa de manufactura; es una plataforma de tecnología integrada que transforma el proceso textil desde la conceptualización hasta la entrega final. Fusionamos robótica avanzada, inteligencia artificial y software propietario que controla cada fibra y cada proceso de producción.</p>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:10px;">
+                <a href="app vexel/index.html" class="btn-download d-inline-flex"><i class="fa-solid fa-pen-to-square"></i> Abrir Editor</a>
+                <a href="obtener.html" class="btn-download d-inline-flex" style="background:rgba(255,255,255,0.05);"><i class="fa-solid fa-download"></i> Obtener la App</a>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="glass-panel scroll-reveal">
+                <h3><i class="fa-solid fa-microchip" style="color:var(--accent);margin-right:10px;"></i>El Software: Núcleo de la Automatización</h3>
+                <p>El corazón de Vexel 3D es nuestra plataforma de software especializado, una arquitectura de control que gestiona la producción textil con precisión quirúrgica.</p>
+                <ul>
+                    <li><strong>Gestión de Patrones Dinámicos:</strong> Algoritmos que optimizan el uso de materiales, reduciendo el desperdicio casi a cero.</li>
+                    <li><strong>Control de Producción:</strong> Integrado a la maquinaria, monitorea la tensión de las fibras y la integridad estructural.</li>
+                    <li><strong>Interfaz de Usuario (UX):</strong> Permite manipular marcos de producción elásticos con facilidad.</li>
+                </ul>
+            </div>
+            <div class="glass-panel scroll-reveal">
+                <h3><i class="fa-solid fa-brain" style="color:var(--accent);margin-right:10px;"></i>IA y Optimización de Producción</h3>
+                <p>En Vexel 3D, la Inteligencia Artificial no es un complemento, es nuestra herramienta de predicción y diseño.</p>
+                <ul>
+                    <li><strong>Predicción de Demanda:</strong> Ajusta las líneas de producción antes de formalizar pedidos.</li>
+                    <li><strong>Control de Calidad:</strong> Visión artificial mediante sensores para detectar imperfecciones microscópicas.</li>
+                    <li><strong>Diseño Vectorial IA:</strong> Genera diseños profesionales en segundos directamente sobre las prendas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Features Row -->
+        <section style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:60px;" class="scroll-reveal">
+            <div class="glass-panel" style="text-align:center;padding:30px;">
+                <i class="fa-solid fa-cube" style="font-size:2.5rem;color:var(--accent);margin-bottom:15px;display:block;"></i>
+                <h4>Vista 3D en Tiempo Real</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:8px;">Visualiza tu diseño en un modelo 3D interactivo antes de producirlo.</p>
+            </div>
+            <div class="glass-panel" style="text-align:center;padding:30px;">
+                <i class="fa-solid fa-wand-magic-sparkles" style="font-size:2.5rem;color:var(--accent);margin-bottom:15px;display:block;"></i>
+                <h4>IA de Diseño Vectorial</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:8px;">La IA crea diseños profesionales con formas, iconos y texto en segundos.</p>
+            </div>
+            <div class="glass-panel" style="text-align:center;padding:30px;">
+                <i class="fa-solid fa-sliders" style="font-size:2.5rem;color:var(--accent);margin-bottom:15px;display:block;"></i>
+                <h4>100% Personalizable</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:8px;">Control total de colores, tipografías, gráficos y posicionamiento.</p>
+            </div>
+        </section>
+
+        <div class="text-center mt-50 scroll-reveal">
+            <a href="obtener.html" class="btn-download d-inline-flex text-lg px-40"><i class="fa-solid fa-download"></i> Obtener para ti</a>
+        </div>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 Vexel 3D â€” Innovación Textil y Robótica | <a href="contacto.html" style="color:var(--accent)">Contáctanos</a></p>
+    </footer>
+
+    <script src="landing.js"></script>
+</body>
+</html>
+

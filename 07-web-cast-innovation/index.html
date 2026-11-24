@@ -1,0 +1,268 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAST Innovation - Robótica y Tecnología</title>
+    <meta name="description" content="Soluciones Educativas en Robótica y Tecnología. Potencia el aprendizaje con tecnología real.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tagline-margin { margin-bottom: 3rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación Global -->
+    <nav class="global-nav">
+        <div class="nav-item">
+            <a href="index.html" class="nav-link">Inicio</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprende_programar.html" class="dropdown-item">Aprende a programar</a>
+                <a href="conexiones.html" class="dropdown-item">Conexiones con un robot</a>
+                <a href="union.html" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html" class="dropdown-item">Ver modelos</a>
+                <a href="saber_mas_modelos.html" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="valores.html" class="dropdown-item">Valores</a>
+                <a href="mision_vision.html" class="dropdown-item">Misión y Visión</a>
+                <a href="objetivos.html" class="dropdown-item">Objetivos</a>
+                <a href="plan_estrategico.html" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor del video de fondo -->
+    <div class="video-background-container">
+        <!-- Reproductor principal de video -->
+        <video id="bg-video" autoplay muted playsinline>
+            <source src="videos/20260418_115308.mp4" type="video/mp4">
+        </video>
+        <!-- Superposición para oscurecer un poco el video y dar mejor contraste -->
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Contenido principal que se desliza por encima -->
+    <main class="content-wrapper">
+        
+        <!-- Sección de Inicio (Hero) -->
+        <section class="hero-section" id="hero">
+            <div class="hero-content fade-in-up">
+                <h1 class="main-title">CAST INNOVATION</h1>
+                <h2 class="subtitle">Soluciones Educativas en Robótica y Tecnología</h2>
+                <p class="tagline">¡Potencia el aprendizaje con tecnología real!</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>Descubre Más</span>
+                <svg class="animated-arrow" viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Sección Acerca de / Problema y Solución -->
+        <section class="about-section scroll-reveal" id="about">
+            <div class="glass-card">
+                <h2 class="section-title">El puente hacia las competencias del futuro</h2>
+                <div class="two-columns">
+                    <div class="column">
+                        <h3>El Desafío</h3>
+                        <p>La educación está cambiando impulsada por las demandas del mercado laboral. Es complejo dirigir la educación cuando los conceptos tradicionales quedan pronto obsoletos.</p>
+                    </div>
+                    <div class="column highlight-column">
+                        <h3>La Solución STEM</h3>
+                        <p>Los expertos aconsejan desplazar la educación hacia el desarrollo de la creatividad, el pensamiento crítico y la resolución de problemas mediante la robótica.</p>
+                    </div>
+                </div>
+                <p class="quote">Nuestra responsabilidad como educadores es orientar a los niños y jóvenes para el aprovechamiento positivo de la tecnología.</p>
+            </div>
+        </section>
+
+        <!-- Sección de Metodología -->
+        <section class="methodology-section scroll-reveal" id="methodology">
+            <h2 class="section-title text-center">El Marco Metodológico "4C"</h2>
+            <div class="grid-4c">
+                <div class="card-4c glass-card delay-1">
+                    <div class="icon-4c">🔗</div>
+                    <h3>Conectar</h3>
+                    <p>Introducción del tema mediante situaciones cotidianas para despertar preguntas.</p>
+                </div>
+                <div class="card-4c glass-card delay-2">
+                    <div class="icon-4c">🛠️</div>
+                    <h3>Construir</h3>
+                    <p>Actividad práctica. El estudiante experimenta, explora y construye un modelo físico.</p>
+                </div>
+                <div class="card-4c glass-card delay-3">
+                    <div class="icon-4c">👁️</div>
+                    <h3>Contemplar</h3>
+                    <p>Reflexión. Los estudiantes analizan lo aprendido, comparten puntos de vista y debaten.</p>
+                </div>
+                <div class="card-4c glass-card delay-4">
+                    <div class="icon-4c">🚀</div>
+                    <h3>Continuar</h3>
+                    <p>Extensión. El reto resuelto da paso a una nueva tarea motivadora, fomentando la curiosidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Habilidades y Beneficios (Burbujas Fluidas) -->
+        <section class="bubbles-section scroll-reveal" id="skills">
+            <h2 class="section-title text-center">Desarrollo Integral</h2>
+            <p class="text-center tagline tagline-margin">Toca o haz clic en las burbujas para descubrir más.</p>
+            
+            <div class="bubbles-container">
+                <!-- Burbuja 1: Izquierda -->
+                <div class="bubble-row left">
+                    <div class="fluid-bubble" onclick="this.classList.toggle('active')">
+                        <div class="bubble-icon">💻</div>
+                        <div class="bubble-content">
+                            <span class="bubble-title">Habilidades Técnicas</span>
+                            <div class="bubble-desc">
+                                Fomentamos la lógica numérica, fundamentos matemáticos y la iniciación temprana a la programación mediante tecnología interactiva.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burbuja 2: Derecha -->
+                <div class="bubble-row right">
+                    <div class="fluid-bubble" onclick="this.classList.toggle('active')">
+                        <div class="bubble-icon">🤝</div>
+                        <div class="bubble-content">
+                            <span class="bubble-title">Habilidades de Comportamiento</span>
+                            <div class="bubble-desc">
+                                Promovemos el trabajo en equipo, la gestión de la frustración, la autoconfianza y el uso responsable de la tecnología.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burbuja 3: Izquierda -->
+                <div class="bubble-row left">
+                    <div class="fluid-bubble" onclick="this.classList.toggle('active')">
+                        <div class="bubble-icon">🏫</div>
+                        <div class="bubble-content">
+                            <span class="bubble-title">Beneficios Institucionales</span>
+                            <div class="bubble-desc">
+                                Posiciona la propuesta educativa de tu centro con innovación real, tangible y alineada a las competencias del siglo XXI.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burbuja 4: Derecha -->
+                <div class="bubble-row right">
+                    <div class="fluid-bubble" onclick="this.classList.toggle('active')">
+                        <div class="bubble-icon">👨‍👩‍👧‍👦</div>
+                        <div class="bubble-content">
+                            <span class="bubble-title">Motivación y Demanda</span>
+                            <div class="bubble-desc">
+                                Aumenta la retención estudiantil a través del aprendizaje práctico y ofrece a las familias una educación de vanguardia.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Niveles Educativos -->
+        <section class="levels-section scroll-reveal" id="levels">
+            <h2 class="section-title text-center">Matriz de Implementación por Niveles</h2>
+            
+            <div class="level-card glass-card level-1">
+                <div class="level-header">
+                    <span class="level-badge">Nivel 1</span>
+                    <h3>Descubrimiento y Lógica</h3>
+                </div>
+                <div class="level-body">
+                    <p><strong>Edades:</strong> Prebásica - 1er grado (4-8 años)</p>
+                    <p><strong>Tecnología:</strong> Blue-Bot + Tablet</p>
+                    <p>Introducción temprana a la direccionalidad, retención de memoria y secuenciación espacial mediante el juego físico con tapetes temáticos.</p>
+                </div>
+            </div>
+
+            <div class="level-card glass-card level-2">
+                <div class="level-header">
+                    <span class="level-badge">Nivel 2</span>
+                    <h3>Construcción y Resolución</h3>
+                </div>
+                <div class="level-body">
+                    <p><strong>Edades:</strong> 2do - 6to grado (6-10 años)</p>
+                    <p><strong>Tecnología:</strong> Kit LEGO® Education SPIKE™ Essential Set 45345 + Tablet</p>
+                    <p>Transición al ensamblaje mecánico y programación por bloques, fomentando el diálogo constructivo para resolver problemas en mesas de trabajo especializadas.</p>
+                </div>
+            </div>
+
+            <div class="level-card glass-card level-3">
+                <div class="level-header">
+                    <span class="level-badge">Nivel 3</span>
+                    <h3>Ingeniería y Programación Avanzada</h3>
+                </div>
+                <div class="level-body">
+                    <p><strong>Edades:</strong> 7mo - 9no grado (11+ años)</p>
+                    <p><strong>Tecnología:</strong> Kit LEGO Education SPIKE Prime + Tablet</p>
+                    <p>Mecánica compleja, programación avanzada, diseño iterativo y preparación para desafíos tecnológicos del mundo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section class="contact-section scroll-reveal" id="contact">
+            <div class="glass-card contact-wrapper">
+                <h2 class="section-title text-center">Construyamos el Futuro de su Centro Educativo</h2>
+                <p class="text-center">Diseñamos un plan ajustado a la realidad de su centro para asegurar una implementación sostenible y efectiva.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-person">
+                        <strong>Jose Edgardo Caballero Carranza</strong><br>
+                        Contact Node
+                    </div>
+                    
+                    <div class="contact-actions">
+                        <a href="https://wa.me/50432718291" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            Contactar por WhatsApp (+504 3271-8291)
+                        </a>
+                        <a href="https://wa.me/50499786365" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            Contactar por WhatsApp (+504 9978-6365)
+                        </a>
+                    </div>
+                    
+                    <div class="contact-emails">
+                        <p>📧 castinnovationnfoo@gmail.com</p>
+                        <p>📧 castinnovation@proton.me</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 CAST Innovation. Todos los derechos reservados.</p>
+        </footer>
+
+    </main>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>

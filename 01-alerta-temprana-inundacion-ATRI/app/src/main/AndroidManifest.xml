@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- RED: Conexión a internet para mapas y clima -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- RED: Ubicación GPS exacta -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- RED: Vibración y alarma de audio -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- RED: Mantener pantalla encendida durante alerta -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- RED: Mostrar sobre pantalla de bloqueo (CRÍTICO para alerta roja) -->
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- RED: Notificaciones push (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- RED: Recibir señales aunque la app esté cerrada -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="A.T.R.I."
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ATRI"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="A.T.R.I."
+            android:theme="@style/Theme.ATRI">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- La actividad de alerta roja puede encenderse sobre la pantalla de bloqueo -->
+        <activity
+            android:name=".RedAlertActivity"
+            android:exported="true"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ATRI" />
+
+        <!-- Receptor de alertas del simulador / PLC -->
+        <receiver
+            android:name=".AlertReceiver"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="com.example.atri.ACTION_ALERT" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>

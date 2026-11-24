@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NVIDIA - Liderazgo en IA y Gráficos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .home-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: rgba(30, 30, 30, 0.9);
+            border-left: 4px solid var(--nvidia-green);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(118, 185, 0, 0.2);
+        }
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--nvidia-green);
+            margin-bottom: 20px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--nvidia-green);
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .cta-btn:hover {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background Global -->
+    <div class="video-bg-global">
+        <video id="bg-video" autoplay muted playsinline loop></video>
+    </div>
+    <div class="glass-overlay-global"></div>
+
+    <nav class="navbar">
+        <div class="logo-nav">
+            <a href="index.html"><img src="assets/images/logo-white.png" alt="NVIDIA Logo" height="40"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.php">Productos</a></li>
+            <li class="dropdown">
+                <a href="mision.html">Quiénes Somos <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="rubro.html">Rubro</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="cambios_logo.html">Rediseño de Marca <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="cambios_logo.html">Cambios en el logo</a></li>
+                    <li><a href="paleta_colores.html">Paleta de Colores</a></li>
+                    <li><a href="fuentes.html">Fuentes</a></li>
+                    <li><a href="mockup.html">Mock Up</a></li>
+                    <li><a href="flayers.html">Flayers</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="drivers.html">Drivers</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+        </ul>
+        <div class="nav-extra">
+            <a href="mis_pedidos.php"><i class="fas fa-shopping-cart"></i> Mis Pedidos</a>
+        </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-container">
+        <div class="center-content visible" id="hero-content">
+            <img src="assets/images/Nvidia Logo idea1.png" alt="NVIDIA Logo" class="hero-logo" id="hero-logo">
+            <h1 class="hero-title">EL MOTOR DE LA IA</h1>
+            <p style="font-size: 1.2rem; margin-top: 20px; color: #ddd; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Impulsando la próxima revolución industrial con computación acelerada, gráficos avanzados y sistemas inteligentes.
+            </p>
+            <a href="catalogo.php" class="cta-btn">Ver Catálogo de Productos</a>
+        </div>
+    </div>
+
+    <!-- Sección de Información -->
+    <div class="home-section">
+        <h2 style="text-align: center; color: var(--nvidia-green); font-size: 2.5rem; margin-bottom: 20px;">Nuestras Tecnologías Core</h2>
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px;">Descubre cómo NVIDIA está cambiando el panorama global en diferentes industrias.</p>
+        
+        <div class="grid-3">
+            <div class="feature-card scroll-fade-up delay-1">
+                <i class="fas fa-brain"></i>
+                <h3>Inteligencia Artificial</h3>
+                <p style="margin-top: 15px; color: #bbb;">Nuestras GPUs de la arquitectura Hopper y Blackwell entrenan los modelos de lenguaje más grandes del mundo. Proveemos la infraestructura completa para la revolución de la IA generativa.</p>
+            </div>
+            <div class="feature-card scroll-fade-up delay-2">
+                <i class="fas fa-gamepad"></i>
+                <h3>Gaming y Creación</h3>
+                <p style="margin-top: 15px; color: #bbb;">La serie GeForce RTX 40 con DLSS 3 redefine el rendimiento en juegos. Gráficos fotorrealistas con trazado de rayos completo e impulsados por IA para creadores de contenido.</p>
+            </div>
+            <div class="feature-card scroll-fade-up delay-3">
+                <i class="fas fa-server"></i>
+                <h3>Data Center & Cloud</h3>
+                <p style="margin-top: 15px; color: #bbb;">NVIDIA Omniverse y nuestras soluciones de supercomputación permiten a las empresas simular el mundo real, crear gemelos digitales y acelerar la investigación científica.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-section scroll-fade-up" style="background: rgba(0,0,0,0.8); border-top: 2px solid var(--nvidia-green); border-bottom: 2px solid var(--nvidia-green);">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="color: white; font-size: 2.2rem; margin-bottom: 20px;">Mantente al día con NVIDIA</h2>
+                <p style="color: #ccc; font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">Explora nuestro blog para conocer las últimas noticias sobre descubrimientos en medicina, vehículos autónomos, robótica impulsada por IA (NVIDIA Isaac) y actualizaciones de controladores.</p>
+                <a href="blog.html" class="cta-btn" style="background: transparent; border: 2px solid var(--nvidia-green); color: var(--nvidia-green);">Ir al Blog Oficial</a>
+            </div>
+            <div style="flex: 1; min-width: 300px; text-align: center;">
+                <img src="assets/images/flayer2.png" alt="NVIDIA Noticias" style="max-width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="yt-link">
+                <a href="https://youtu.be/11Y3B33oCLE?si=ZqJsjY-ohoyAka-N" target="_blank">
+                    <i class="fab fa-youtube"></i> Ver Video (¡Muy pronto!)
+                </a>
+            </div>
+            <div class="whatsapp-btn">
+                <a href="https://wa.me/50497580983" target="_blank" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Contacto: 97580983
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 NVIDIA Corporation. Todos los derechos reservados. Proyecto con fines educativos.
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

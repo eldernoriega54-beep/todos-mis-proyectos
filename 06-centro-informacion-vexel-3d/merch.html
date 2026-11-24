@@ -1,0 +1,511 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Merch</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* â”€â”€ Hero â”€â”€ */
+        .merch-hero {
+            min-height: 55vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px 40px;
+            gap: 20px;
+            position: relative;
+        }
+        .merch-hero .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(224,64,251,0.1);
+            border: 1px solid rgba(224,64,251,0.4);
+            border-radius: 50px;
+            padding: 8px 22px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .merch-hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 20%, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        .merch-hero h2 {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* â”€â”€ Container â”€â”€ */
+        .merch-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px 80px;
+        }
+        .merch-section-label {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .merch-section-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+        .merch-section-sub {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 50px;
+        }
+
+        /* â”€â”€ Product Grid â”€â”€ */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 80px;
+        }
+        .product-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px 28px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+            transition: transform 0.4s cubic-bezier(.23,1,.32,1), box-shadow 0.4s, border-color 0.4s;
+        }
+        /* Shimmer effect */
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -60%;
+            width: 40%;
+            height: 300%;
+            background: linear-gradient(
+                105deg,
+                transparent 20%,
+                rgba(255,255,255,0.08) 50%,
+                transparent 80%
+            );
+            transform: skewX(-15deg);
+            transition: left 0.6s ease, top 0.6s ease;
+        }
+        .product-card:hover::before {
+            left: 160%;
+        }
+        .product-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            background: radial-gradient(ellipse at top, rgba(224,64,251,0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 50px rgba(224,64,251,0.25), 0 25px 50px rgba(0,0,0,0.5);
+            border-color: rgba(224,64,251,0.4);
+        }
+        .product-card:hover::after { opacity: 1; }
+        .product-icon-wrap {
+            width: 100px;
+            height: 100px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+            background: rgba(224,64,251,0.12);
+            border: 1px solid rgba(224,64,251,0.25);
+            transition: box-shadow 0.4s;
+        }
+        .product-card:hover .product-icon-wrap {
+            box-shadow: 0 0 35px rgba(224,64,251,0.55);
+        }
+        .product-icon-wrap i {
+            font-size: 3rem;
+            color: var(--accent);
+        }
+        .product-badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            z-index: 2;
+        }
+        .product-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        .product-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .product-price span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        .btn-disenar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(224,64,251,0.15);
+            border: 1px solid rgba(224,64,251,0.5);
+            color: #fff;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+            position: relative;
+            z-index: 2;
+        }
+        .btn-disenar:hover {
+            background: var(--accent);
+            box-shadow: 0 0 25px rgba(224,64,251,0.6);
+            transform: translateY(-2px);
+        }
+
+        /* â”€â”€ CTA Section â”€â”€ */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(224,64,251,0.12), rgba(100,0,150,0.08));
+            border: 1px solid rgba(224,64,251,0.3);
+            border-radius: 28px;
+            padding: 70px 40px;
+            text-align: center;
+            box-shadow: 0 0 60px rgba(224,64,251,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -80px; left: 50%;
+            transform: translateX(-50%);
+            width: 400px; height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(224,64,251,0.15), transparent 70%);
+            pointer-events: none;
+        }
+        .cta-section .cta-icon {
+            font-size: 3.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+        .cta-section p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 36px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 800;
+            padding: 18px 42px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: box-shadow 0.3s, transform 0.3s;
+            box-shadow: 0 0 30px rgba(224,64,251,0.4);
+        }
+        .btn-cta-primary:hover {
+            box-shadow: 0 0 50px rgba(224,64,251,0.7);
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        @media (max-width: 960px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .cta-section { padding: 50px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <img src="app vexel/imagenes de la app/isologo.png" alt="Vexel 3D">
+            <span>Vexel 3D</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="proposito.html">Propósito</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="productos.html" style="color:var(--accent)">Productos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="productos.html">Ver Catálogo</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="obtener.html">Obtener para ti</a></li>
+                </ul>
+            </li>
+            <li><a href="plan_estrategico.html">Plan Estratégico</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="merch-hero">
+        <div class="badge"><i class="fa-solid fa-bag-shopping"></i>&nbsp; Colección Exclusiva</div>
+        <h1>Merch Vexel 3D</h1>
+        <h2>Lleva la tecnología puesta</h2>
+    </section>
+
+    <div class="merch-container">
+
+        <!-- Products Grid -->
+        <section class="scroll-reveal" style="margin-bottom:80px;">
+            <p class="merch-section-label"><i class="fa-solid fa-shirt"></i>&nbsp; Catálogo Actual</p>
+            <h2 class="merch-section-title">Nuestra Colección</h2>
+            <p class="merch-section-sub">Prendas diseñadas con precisión milimétrica y optimizadas por inteligencia artificial.</p>
+
+            <div class="products-grid">
+
+                <!-- Card 1 -->
+                <div class="product-card">
+                    <div class="product-img-wrap"><img src="app vexel/imagenes de la app/minecraft_creeper.png" alt="Producto" style="width:100%; height:auto; border-radius:12px; margin-bottom:15px; box-shadow:0 0 20px rgba(224,64,251,0.2);"></div>
+                    <div class="product-name">Camiseta Vexel Core</div>
+                    <div class="product-desc">Manga Corta Premium. Tela de fibra reforzada de alta densidad, corte ergonómico y sistema anti-humedad integrado. El clásico definitivo de la colección.</div>
+                    <div class="product-price">$299 <span>MXN</span></div>
+                    <a href="app vexel/index.html" class="btn-disenar">
+                        <i class="fa-solid fa-pen-ruler"></i> Diseñar Ahora
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product-card">
+                    <span class="product-badge">â­ Popular</span>
+                    <div class="product-img-wrap"><img src="app vexel/imagenes de la app/minecraft_steve.png" alt="Producto" style="width:100%; height:auto; border-radius:12px; margin-bottom:15px; box-shadow:0 0 20px rgba(224,64,251,0.2);"></div>
+                    <div class="product-name">Camiseta Tech-Alpha</div>
+                    <div class="product-desc">Diseño Exclusivo IA. Patrones generados algorítmicamente para máxima comodidad. Tela transpirable con tratamiento UV+ integrado en la fibra.</div>
+                    <div class="product-price">$349 <span>MXN</span></div>
+                    <a href="app vexel/index.html" class="btn-disenar">
+                        <i class="fa-solid fa-pen-ruler"></i> Diseñar Ahora
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product-card">
+                    <span class="product-badge">Edición Limitada</span>
+                    <div class="product-img-wrap"><img src="app vexel/imagenes de la app/Gemini_Generated_Image_4k2gej4k2gej4k2g.png" alt="Producto" style="width:100%; height:auto; border-radius:12px; margin-bottom:15px; box-shadow:0 0 20px rgba(224,64,251,0.2);"></div>
+                    <div class="product-name">Camiseta Cyber-Neo</div>
+                    <div class="product-desc">Edición Limitada con diseño futurista. Tejido de alto rendimiento con estructura tri-capa y costuras de refuerzo en puntos de tensión críticos.</div>
+                    <div class="product-price">$399 <span>MXN</span></div>
+                    <a href="app vexel/index.html" class="btn-disenar">
+                        <i class="fa-solid fa-pen-ruler"></i> Diseñar Ahora
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-card">
+                    <div class="product-img-wrap"><img src="app vexel/imagenes de la app/Gemini_Generated_Image_6kr4na6kr4na6kr4.png" alt="Producto" style="width:100%; height:auto; border-radius:12px; margin-bottom:15px; box-shadow:0 0 20px rgba(224,64,251,0.2);"></div>
+                    <div class="product-name">Polo Vexel Professional</div>
+                    <div class="product-desc">Manga Larga Corporativa. Tejido polo premium con cuello estructurado y acabado resistente al arrugado. Ideal para ambientes profesionales y formales.</div>
+                    <div class="product-price">$449 <span>MXN</span></div>
+                    <a href="app vexel/index.html" class="btn-disenar">
+                        <i class="fa-solid fa-pen-ruler"></i> Diseñar Ahora
+                    </a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="product-card">
+                    <div class="product-img-wrap"><img src="app vexel/imagenes de la app/Gemini_Generated_Image_exskudexskudexsk.png" alt="Producto" style="width:100%; height:auto; border-radius:12px; margin-bottom:15px; box-shadow:0 0 20px rgba(224,64,251,0.2);"></div>
+                    <div class="product-name">Camiseta Sin Mangas</div>
+                    <div class="product-desc">Urban Line. Diseño aerodinámico sin costuras laterales para máxima libertad de movimiento. Perfecto para uso casual, deportivo o como capa base.</div>
+                    <div class="product-price">$259 <span>MXN</span></div>
+                    <a href="app vexel/index.html" class="btn-disenar">
+                        <i class="fa-solid fa-pen-ruler"></i> Diseñar Ahora
+                    </a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="product-card">
+                    <span class="product-badge">Combo</span>
+                    <div class="product-img-wrap"><img src="app vexel/imagenes de la app/Gemini_Generated_Image_km02blkm02blkm02.png" alt="Producto" style="width:100%; height:auto; border-radius:12px; margin-bottom:15px; box-shadow:0 0 20px rgba(224,64,251,0.2);"></div>
+                    <div class="product-name">Conjunto Deportivo Vexel</div>
+                    <div class="product-desc">Shorts + Camiseta. Kit completo de alto rendimiento con tecnología de compresión inteligente. Diseñado para atletas que exigen lo mejor de cada movimiento.</div>
+                    <div class="product-price">$599 <span>MXN</span></div>
+                    <a href="app vexel/index.html" class="btn-disenar">
+                        <i class="fa-solid fa-pen-ruler"></i> Diseñar Ahora
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section scroll-reveal">
+            <div class="cta-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h2>¿Quieres un diseño personalizado?</h2>
+            <p>Entra al editor 3D de Vexel y crea la prenda exacta que tienes en mente. Sin límites, sin intermediarios â€” tu visión, nuestra tecnología.</p>
+            <a href="app vexel/index.html" class="btn-cta-primary">
+                <i class="fa-solid fa-cube"></i> Abrir Editor 3D
+            </a>
+        </section>
+
+    </div>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 Vexel 3D â€” Innovación Textil y Robótica | <a href="contacto.html" style="color:var(--accent)">Contáctanos</a></p>
+    </footer>
+
+    <canvas id="particle-canvas"></canvas>
+    <script src="landing.js"></script>
+
+    <!-- Modal de Pedido (Web3Forms) -->
+    <div id="merch-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center; backdrop-filter:blur(5px);">
+        <div style="background:#120d24; padding:40px; border-radius:20px; border:1px solid var(--accent); width:90%; max-width:500px; position:relative;">
+            <button onclick="document.getElementById('merch-modal').style.display='none'" style="position:absolute; top:15px; right:20px; background:transparent; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
+            <h2 style="color:#fff; margin-bottom:20px; text-align:center;"><i class="fa-solid fa-cart-shopping" style="color:var(--accent);"></i> Enviar Pedido</h2>
+            <form id="merch-form">
+                <input type="hidden" name="access_key" value="9a936433-b47b-414a-a19c-bdf9621b5d70">
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+                <input type="hidden" name="subject" value="Nuevo Pedido de Merch">
+                
+                <div style="margin-bottom:15px;">
+                    <label style="color:var(--text-secondary); display:block; margin-bottom:5px;">Nombre completo</label>
+                    <input type="text" name="name" required style="width:100%; padding:12px; background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.2); border-radius:8px; color:#fff;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <label style="color:var(--text-secondary); display:block; margin-bottom:5px;">Correo electrónico</label>
+                    <input type="email" name="email" required style="width:100%; padding:12px; background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.2); border-radius:8px; color:#fff;">
+                </div>
+                <div style="margin-bottom:20px;">
+                    <label style="color:var(--text-secondary); display:block; margin-bottom:5px;">Detalles del Pedido (Prenda, Talla, etc.)</label>
+                    <textarea name="message" required rows="4" style="width:100%; padding:12px; background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.2); border-radius:8px; color:#fff;"></textarea>
+                </div>
+                <button type="submit" style="width:100%; padding:15px; background:var(--accent); color:#fff; border:none; border-radius:8px; font-weight:bold; font-size:1.1rem; cursor:pointer;"><i class="fa-solid fa-paper-plane"></i> Confirmar Pedido</button>
+                <div id="merch-result" style="display:none; margin-top:15px; text-align:center; padding:10px; border-radius:8px;"></div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Interceptar clicks en Diseñar Ahora para abrir el formulario
+        document.querySelectorAll('.btn-disenar').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('merch-modal').style.display='flex';
+            });
+        });
+
+        document.getElementById('merch-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const result = document.getElementById('merch-result');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = 'Enviando...';
+            submitBtn.disabled = true;
+            result.style.display = 'none';
+
+            const formData = new FormData(this);
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+                
+                result.style.display = 'block';
+                if(res.ok) {
+                    result.innerHTML = '¡Pedido enviado correctamente!';
+                    result.style.color = '#22c55e';
+                    result.style.background = 'rgba(46, 213, 115, 0.1)';
+                    this.reset();
+                    setTimeout(() => document.getElementById('merch-modal').style.display='none', 3000);
+                } else {
+                    result.innerHTML = data.message;
+                    result.style.color = '#ef4444';
+                    result.style.background = 'rgba(239, 68, 68, 0.1)';
+                }
+            } catch(err) {
+                result.style.display = 'block';
+                result.innerHTML = 'Error al enviar pedido';
+                result.style.color = '#ef4444';
+                result.style.background = 'rgba(239, 68, 68, 0.1)';
+            }
+            
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
+    </script>
+
+</body>
+</html>
+

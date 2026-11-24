@@ -1,0 +1,15 @@
+[
+  {
+    "id": "user-1",
+    "name": "Usuario Vexel",
+    "email": "usuario@vexel3d.app",
+    "password": "12345678",
+    "provider": "local"
+  },
+  {
+    "id": "google-1",
+    "name": "Usuario Google",
+    "email": "googleuser@vexel3d.app",
+    "provider": "google"
+  }
+]

@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Quiénes Somos</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* â”€â”€ Page-specific styles â”€â”€ */
+        .qs-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px 40px;
+            gap: 24px;
+            position: relative;
+        }
+        .qs-hero .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(224, 64, 251, 0.12);
+            border: 1px solid rgba(224, 64, 251, 0.4);
+            border-radius: 50px;
+            padding: 8px 22px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .qs-hero h1 {
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 30%, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        .qs-hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+        .qs-hero .hero-logo-anim {
+            width: 110px;
+            height: 110px;
+            animation: float 4s ease-in-out infinite, pulseGlow 2s infinite alternate;
+        }
+
+        /* â”€â”€ Section wrapper â”€â”€ */
+        .qs-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 30px;
+        }
+        .qs-section-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        /* â”€â”€ Mision / Vision cards â”€â”€ */
+        .mv-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 50px 60px;
+            box-shadow: var(--glass-shadow);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .mv-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(224, 64, 251, 0.18);
+        }
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(224,64,251,0.06), transparent);
+            pointer-events: none;
+        }
+        .mv-icon-wrap {
+            width: 110px;
+            height: 110px;
+            border-radius: 28px;
+            background: rgba(224, 64, 251, 0.12);
+            border: 1px solid rgba(224, 64, 251, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 30px rgba(224,64,251,0.2);
+        }
+        .mv-icon-wrap i {
+            font-size: 3rem;
+            color: var(--accent);
+        }
+        .mv-content h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .mv-content h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 18px;
+        }
+        .mv-content p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+        .mv-content .highlight-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* â”€â”€ Valores Grid â”€â”€ */
+        .valores-title {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .valores-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 50px;
+        }
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .valor-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s, border-color 0.35s;
+        }
+        .valor-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: radial-gradient(circle at 50% 0%, rgba(224,64,251,0.18), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .valor-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 0 40px rgba(224,64,251,0.3), var(--glass-shadow);
+            border-color: rgba(224,64,251,0.5);
+        }
+        .valor-card:hover::after { opacity: 1; }
+        .valor-card .vc-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: rgba(224,64,251,0.12);
+            border: 1px solid rgba(224,64,251,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            transition: box-shadow 0.3s;
+        }
+        .valor-card:hover .vc-icon {
+            box-shadow: 0 0 25px rgba(224,64,251,0.5);
+        }
+        .valor-card .vc-icon i {
+            font-size: 2.2rem;
+            color: var(--accent);
+        }
+        .valor-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .valor-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* â”€â”€ Propósito â”€â”€ */
+        .proposito-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        .proposito-card::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(224,64,251,0.15), transparent 70%);
+            pointer-events: none;
+        }
+        .proposito-top {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 50px;
+        }
+        .proposito-top .mv-icon-wrap { align-self: flex-start; }
+        .proposito-top .mv-content p { margin-bottom: 14px; }
+
+        /* â”€â”€ Counters â”€â”€ */
+        .counters-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .counter-card {
+            background: rgba(224,64,251,0.06);
+            border: 1px solid rgba(224,64,251,0.2);
+            border-radius: 16px;
+            padding: 36px 20px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .counter-card:hover {
+            box-shadow: 0 0 30px rgba(224,64,251,0.25);
+        }
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .counter-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* â”€â”€ Section anchor labels â”€â”€ */
+        .section-anchor-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .section-big-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .mv-card { grid-template-columns: 1fr; padding: 36px 28px; }
+            .mv-icon-wrap { margin: 0 auto; }
+            .valores-grid { grid-template-columns: repeat(2, 1fr); }
+            .counters-row { grid-template-columns: 1fr 1fr; }
+            .proposito-top { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .valores-grid { grid-template-columns: 1fr; }
+            .counters-row { grid-template-columns: 1fr; }
+            .proposito-card { padding: 36px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <img src="app vexel/imagenes de la app/isologo.png" alt="Vexel 3D">
+            <span>Vexel 3D</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html" style="color:var(--accent)">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="proposito.html">Propósito</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="productos.html">Productos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="productos.html">Ver Catálogo</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="obtener.html">Obtener para ti</a></li>
+                </ul>
+            </li>
+            <li><a href="plan_estrategico.html">Plan Estratégico</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="qs-hero">
+        <div class="hero-badge"><i class="fa-solid fa-circle-info"></i> Nuestra Historia</div>
+        <img src="app vexel/imagenes de la app/isotipovexel3d.png" class="hero-logo-anim" alt="Vexel 3D">
+        <h1>Conoce a Vexel 3D</h1>
+        <p>Somos la intersección entre la ingeniería textil avanzada y la tecnología del futuro. Construidos para revolucionar la forma en que el mundo diseña, produce y experimenta la ropa.</p>
+    </section>
+
+    <!-- MISIÃ“N -->
+    <section id="mision" class="qs-section scroll-reveal">
+        <p class="section-anchor-label"><i class="fa-solid fa-crosshairs"></i>&nbsp; Nuestra Misión</p>
+        <div class="mv-card">
+            <div class="mv-icon-wrap">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+            <div class="mv-content">
+                <h2>Misión</h2>
+                <h3>Liderar la Revolución Textil Global</h3>
+                <p>En Vexel 3D nuestra misión es <span class="highlight-text">transformar radicalmente la industria textil</span> mediante la integración de inteligencia artificial, robótica de precisión y software propietario de diseño 3D. Cada prenda que producimos es el resultado de miles de cálculos algorítmicos que garantizan cero desperdicio, máxima resistencia y estética superior.</p>
+                <p style="margin-top:14px;">Creemos que la manufactura del siglo XXI debe ser inteligente, sostenible y accesible. Por eso, desarrollamos herramientas que democratizan el acceso a tecnología de producción de nivel industrial para diseñadores, emprendedores y grandes corporativos por igual.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISIÃ“N -->
+    <section id="vision" class="qs-section scroll-reveal">
+        <p class="section-anchor-label"><i class="fa-solid fa-eye"></i>&nbsp; Nuestra Visión</p>
+        <div class="mv-card">
+            <div class="mv-icon-wrap">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="mv-content">
+                <h2>Visión</h2>
+                <h3>El Estándar Global para 2030</h3>
+                <p>Para el año 2030, Vexel 3D será el <span class="highlight-text">estándar mundial de manufactura textil inteligente</span>. Visualizamos un ecosistema donde cada fábrica textil del planeta opere con nuestra plataforma: desde el diseño digital generado por IA hasta la entrega logística autónoma.</p>
+                <p style="margin-top:14px;">Nos vemos presentes en más de 15 países, con licencias activas en cientos de plantas de producción, y siendo referencia académica en las principales universidades de ingeniería y diseño a nivel global. El futuro de la ropa se diseña hoy con Vexel 3D.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALORES -->
+    <section id="valores" class="qs-section scroll-reveal">
+        <p class="section-anchor-label"><i class="fa-solid fa-star"></i>&nbsp; Lo que nos define</p>
+        <h2 class="valores-title">Nuestros Valores</h2>
+        <p class="valores-subtitle">Los pilares que guían cada decisión, cada línea de código y cada puntada.</p>
+        <div class="valores-grid">
+            <div class="valor-card">
+                <div class="vc-icon"><i class="fa-solid fa-microchip"></i></div>
+                <h4>Innovación Total</h4>
+                <p>Adoptamos tecnologías emergentes sin miedo. La IA, la robótica y el diseño generativo no son el futuro para nosotros â€” son nuestro presente operativo.</p>
+            </div>
+            <div class="valor-card">
+                <div class="vc-icon"><i class="fa-solid fa-leaf"></i></div>
+                <h4>Cero Desperdicio</h4>
+                <p>Nuestros algoritmos de optimización de patrones logran un aprovechamiento de material superior al 97%, eliminando prácticamente el desperdicio textil de la ecuación.</p>
+            </div>
+            <div class="valor-card">
+                <div class="vc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>Precisión y Calidad</h4>
+                <p>Cada diseño pasa por un ciclo de control de calidad automatizado con visión artificial. Milímetros de exactitud en cada costura, cada corte, cada detalle.</p>
+            </div>
+            <div class="valor-card">
+                <div class="vc-icon"><i class="fa-solid fa-handshake"></i></div>
+                <h4>Integridad</h4>
+                <p>Transparencia total con nuestros socios, clientes y colaboradores. Los contratos son claros, los datos son honestos y la comunicación siempre es directa.</p>
+            </div>
+            <div class="valor-card">
+                <div class="vc-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h4>Tecnología Humana</h4>
+                <p>La tecnología es nuestra herramienta, pero las personas son nuestro centro. Diseñamos sistemas que amplifican las capacidades humanas, no que las reemplazan.</p>
+            </div>
+            <div class="valor-card">
+                <div class="vc-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                <h4>Impacto Social</h4>
+                <p>Democratizamos el acceso al diseño avanzado. Desde Guatemala hasta el mundo, queremos que cualquier diseñador pueda crear con herramientas de nivel industrial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPÃ“SITO -->
+    <section id="proposito" class="qs-section scroll-reveal">
+        <p class="section-anchor-label"><i class="fa-solid fa-bullseye"></i>&nbsp; Por qué existimos</p>
+        <div class="proposito-card">
+            <div class="proposito-top">
+                <div class="mv-icon-wrap">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <div class="mv-content">
+                    <h2>Propósito</h2>
+                    <h3>Democratizar el Diseño Textil Avanzado</h3>
+                    <p>Nuestro propósito fundamental es eliminar la brecha entre el diseño textil de nivel artesanal y la manufactura industrial de alta tecnología. Durante décadas, el acceso a maquinaria de precisión, software de diseño avanzado y producción automatizada estuvo reservado para grandes corporaciones con presupuestos millonarios.</p>
+                    <p style="margin-top:14px;"><span class="highlight-text">Vexel 3D rompe esa barrera.</span> Nuestra plataforma de software permite a cualquier creativo â€” independientemente de su escala â€” diseñar prendas en 3D, simular su comportamiento real, y enviar órdenes de producción directamente a sistemas automatizados. Esto no es el futuro; esto ya está pasando.</p>
+                    <p style="margin-top:14px;">Existimos para que el próximo gran diseñador de Guatemala, Latinoamérica y el mundo tenga las mismas herramientas que las grandes casas de moda, sin importar su punto de partida.</p>
+                </div>
+            </div>
+            <!-- Counters -->
+            <div class="counters-row">
+                <div class="counter-card">
+                    <div class="counter-number" data-target="500" data-suffix="+">0</div>
+                    <div class="counter-label">Diseños Creados</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-number" data-target="98" data-suffix="%">0</div>
+                    <div class="counter-label">Satisfacción del Cliente</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-number" data-target="10" data-suffix="">0</div>
+                    <div class="counter-label">Modelos de Prenda</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 Vexel 3D â€” Innovación Textil y Robótica | <a href="contacto.html" style="color:var(--accent)">Contáctanos</a></p>
+    </footer>
+
+    <canvas id="particle-canvas"></canvas>
+    <script src="landing.js"></script>
+    <script>
+        // Counter animation with IntersectionObserver
+        const counters = document.querySelectorAll('.counter-number');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                    entry.target.dataset.animated = 'true';
+                    const target = parseInt(entry.target.dataset.target);
+                    const suffix = entry.target.dataset.suffix || '';
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        entry.target.textContent = Math.floor(current) + suffix;
+                    }, 16);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
+    </script>
+</body>
+</html>
+

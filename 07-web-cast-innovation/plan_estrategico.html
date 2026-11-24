@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Estratégico - CAST Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header { margin-top: 150px; text-align: center; }
+        .timeline {
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+            padding: 0 40px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .timeline-item.visible { opacity: 1; transform: translateY(0); }
+        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+        .timeline-item:nth-child(even) { left: 50%; }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border: 4px solid #fff;
+            border-radius: 50%;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        .timeline-item:nth-child(odd)::before { right: -12px; }
+        .timeline-item:nth-child(even)::before { left: -12px; }
+        .timeline-item:hover::before { background: #fff; border-color: var(--primary-color); transform: scale(1.3); box-shadow: 0 0 20px var(--primary-color); }
+        
+        .timeline-content {
+            background: rgba(20, 24, 30, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover .timeline-content { transform: scale(1.05); border-color: var(--primary-color); }
+        .step-number { font-size: 3rem; font-weight: 900; color: rgba(255,255,255,0.1); position: absolute; top: 10px; right: 20px; }
+        .timeline-item:nth-child(even) .step-number { right: auto; left: 20px; }
+        .timeline-content h3 { color: white; margin-bottom: 10px; font-size: 1.5rem; position: relative; z-index: 2; }
+        .timeline-content p { color: var(--text-muted); line-height: 1.6; position: relative; z-index: 2; }
+    </style>
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprende_programar.html" class="dropdown-item">Aprende a programar</a>
+                <a href="conexiones.html" class="dropdown-item">Conexiones con un robot</a>
+                <a href="union.html" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html" class="dropdown-item">Ver modelos</a>
+                <a href="saber_mas_modelos.html" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="valores.html" class="dropdown-item">Valores</a>
+                <a href="mision_vision.html" class="dropdown-item">Misión y Visión</a>
+                <a href="objetivos.html" class="dropdown-item">Objetivos</a>
+                <a href="plan_estrategico.html" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-background-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_114817.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="background: rgba(13, 15, 18, 0.85);"></div>
+    </div>
+
+    <main class="content-wrapper">
+        <div class="page-header scroll-reveal">
+            <h1 class="main-title">Plan Estratégico</h1>
+            <p class="tagline">Desliza hacia abajo para descubrir los 4 pilares de integración</p>
+        </div>
+
+        <section class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="step-number">1</span>
+                    <h3>Diagnóstico y Diseño</h3>
+                    <p>Ajustamos nuestro ecosistema (Niveles 1, 2 y 3) a la realidad e infraestructura de su centro educativo.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="step-number">2</span>
+                    <h3>Capacitación Inicial</h3>
+                    <p>Proveemos 20 horas intensivas de uso de equipo y manejo de la metodología 4C para docentes.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="step-number">3</span>
+                    <h3>Implementación y Soporte</h3>
+                    <p>Entregamos material didáctico, espacios de trabajo estructurados y brindamos asistencia continua.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="step-number">4</span>
+                    <h3>Evaluación</h3>
+                    <p>Realizamos mediciones semestrales y observamos clases para garantizar resultados en alumnos y maestros.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <footer><p>&copy; 2026 CAST Innovation. Todos los derechos reservados.</p></footer>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll(".timeline-item");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            items.forEach((item) => observer.observe(item));
+        });
+    </script>
+</body>
+</html>

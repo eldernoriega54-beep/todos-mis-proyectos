@@ -1,0 +1,36 @@
+# OS & IDE
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.bak
+*.tmp
+*.log
+
+# Build Caches & Intermediates
+build/
+app/build/
+.gradle/
+.kotlin/
+local.properties
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+env/
+
+# Node
+node_modules/
+
+# Temporary backups
+*.temp
+temp_backup/
+temp_restore/
+backups/

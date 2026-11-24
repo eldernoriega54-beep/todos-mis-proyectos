@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Visión</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <img src="app vexel/imagenes de la app/isologo.png" alt="Vexel 3D">
+            <span>Vexel 3D</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html" class="active">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html" class="active">Visión</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="proposito.html">Propósito</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="productos.html">Productos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="productos.html">Ver Catálogo</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="obtener.html">Obtener para ti</a></li>
+                </ul>
+            </li>
+            <li><a href="plan_estrategico.html">Plan Estratégico</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper mt-80">
+        <section class="about-section glass-panel scroll-reveal">
+            <div style="text-align: center;">
+                <i class="fa-solid fa-eye" style="font-size: 4rem; color: var(--accent); margin-bottom: 20px;"></i>
+                <h1 style="font-size: 3rem; margin-bottom: 20px;">Nuestra Visión</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; line-height: 1.8; margin-bottom: 40px;">
+                    Convertirnos para el año 2030 en el estándar global y la plataforma definitiva para la manufactura textil inteligente. Visualizamos un mundo donde las barreras entre el diseño digital y el producto físico desaparecen, permitiendo a cualquier marca, desde creadores independientes hasta corporaciones globales, fabricar prendas con precisión milimétrica bajo demanda, en instalaciones locales altamente automatizadas que anulan la dependencia de las ineficientes cadenas de suministro globales.
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto; text-align: left;">
+                    <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #E040FB, transparent);"></div>
+                        <i class="fa-solid fa-globe" style="font-size: 2rem; color: #E040FB; margin-bottom: 15px;"></i>
+                        <h3 style="margin-bottom: 15px;">Descentralización de la Producción</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">Llevar fábricas automatizadas modulares a cada gran ciudad del mundo. Si diseñas en México, se imprime y confecciona automáticamente en México el mismo día, eliminando los transportes marítimos masivos y la huella de carbono asociada.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #00d2ff, transparent);"></div>
+                        <i class="fa-solid fa-robot" style="font-size: 2rem; color: #00d2ff; margin-bottom: 15px;"></i>
+                        <h3 style="margin-bottom: 15px;">El Creador en el Centro</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">Nuestra visión es que un niño de 12 años con una idea pueda usar nuestra IA para generar un diseño perfecto en 3D y tener la prenda física en la puerta de su casa 24 horas después. La tecnología debe servir a la imaginación, sin barreras técnicas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer" style="position: absolute; bottom: 0; width: 100%;">
+        <p>&copy; 2026 Vexel 3D â€” Innovación Textil y Robótica | <a href="contacto.html" style="color:var(--accent)">Contáctanos</a></p>
+    </footer>
+
+    <script src="landing.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Productos</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .product-icon-container {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            margin-bottom: 20px;
+        }
+        .icon-alpha { color: #E040FB; filter: drop-shadow(0 0 30px rgba(224,64,251,0.6)); }
+        .icon-cyber { color: #00d2ff; filter: drop-shadow(0 0 30px rgba(0,210,255,0.6)); }
+        .icon-urban { color: #ff007a; filter: drop-shadow(0 0 30px rgba(255,0,122,0.6)); }
+        .icon-corp  { color: #f59e0b; filter: drop-shadow(0 0 30px rgba(245,158,11,0.6)); }
+        
+        .carousel-caption h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .carousel-caption p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <img src="app vexel/imagenes de la app/isologo.png" alt="Vexel 3D">
+            <span>Vexel 3D</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="proposito.html">Propósito</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="productos.html" class="active">Productos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="productos.html">Ver Catálogo</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="obtener.html">Obtener para ti</a></li>
+                </ul>
+            </li>
+            <li><a href="plan_estrategico.html">Plan Estratégico</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper">
+        <section class="products-section glass-panel scroll-reveal mt-80">
+            <h2 style="font-size:3rem;text-align:center;margin-bottom:10px;">Nuestro Catálogo</h2>
+            <p style="text-align:center;color:var(--text-secondary);font-size:1.2rem;margin-bottom:40px;">Diseños premium con precisión milimétrica listos para ser personalizados en Vexel 3D.</p>
+            
+            <div class="carousel-container" style="height: 500px;">
+                <button class="carousel-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <div style="text-align:center; width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <img src="app vexel/imagenes de la app/camisa_1.png" alt="Camisa 1" style="max-height:300px; object-fit:contain; filter:drop-shadow(0 10px 20px rgba(0,0,0,0.5)); margin-bottom:20px;">
+                                <div class="carousel-caption">
+                                    <h3>Línea Urbana Alpha</h3>
+                                    <p>Manga Corta â€” Estructura de fibra reforzada, diseñada para movilidad extrema urbana.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div style="text-align:center; width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <img src="app vexel/imagenes de la app/camisa_2.png" alt="Camisa 2" style="max-height:300px; object-fit:contain; filter:drop-shadow(0 10px 20px rgba(0,0,0,0.5)); margin-bottom:20px;">
+                                <div class="carousel-caption">
+                                    <h3>Edición Cyber-Neo</h3>
+                                    <p>Manga Larga â€” Patrones sin costura optimizados al milímetro mediante IA.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div style="text-align:center; width:100%;">
+                                <div class="product-icon-container"><i class="fa-solid fa-shirt icon-urban"></i></div>
+                                <div class="carousel-caption">
+                                    <h3>Línea Sin Mangas</h3>
+                                    <p>Casual Urban â€” Diseño aerodinámico, hiper-transpirable para máxima libertad.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div style="text-align:center; width:100%;">
+                                <div class="product-icon-container"><i class="fa-solid fa-user-tie icon-corp"></i></div>
+                                <div class="carousel-caption">
+                                    <h3>Serie Professional</h3>
+                                    <p>Polo con Cuello â€” Elegancia, resistencia y tecnología para el entorno corporativo.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="carousel-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Diseño por IA</h3>
+                    <p>Crea gráficos vectoriales únicos mediante prompts en el editor.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-cube"></i>
+                    <h3>Vista 3D Real</h3>
+                    <p>Visualiza cada ángulo de tu diseño en un modelo físico virtual.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-sliders"></i>
+                    <h3>100% Personalizable</h3>
+                    <p>Ajusta dimensiones, colores y capas antes de ordenar.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-30" style="display:flex; gap:20px; justify-content:center;">
+                <a href="app vexel/index.html" class="btn-download d-inline-flex"><i class="fa-solid fa-pen-to-square"></i> Crea tu propio diseño</a>
+                <a href="merch.html" class="btn-download d-inline-flex" style="background:rgba(255,255,255,0.05); border-color:transparent;"><i class="fa-solid fa-tags"></i> Ver Merch Oficial</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 Vexel 3D â€” Innovación Textil y Robótica | <a href="contacto.html" style="color:var(--accent)">Contáctanos</a></p>
+    </footer>
+
+    <script src="landing.js"></script>
+    <script>
+        // Lógica del carrusel mejorada para que funcione bien con los iconos
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next-btn');
+        const prevButton = document.querySelector('.prev-btn');
+
+        if (slides.length > 0) {
+            let currentIndex = 0;
+
+            const updateSlidePosition = () => {
+                slides.forEach((slide, index) => {
+                    slide.style.opacity = index === currentIndex ? '1' : '0';
+                    slide.style.zIndex = index === currentIndex ? '2' : '1';
+                    slide.classList.toggle('current-slide', index === currentIndex);
+                });
+            };
+
+            // Iniciar posiciones
+            updateSlidePosition();
+
+            nextButton.addEventListener('click', e => {
+                currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+                updateSlidePosition();
+            });
+
+            prevButton.addEventListener('click', e => {
+                currentIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+                updateSlidePosition();
+            });
+            
+            // Auto-play
+            setInterval(() => {
+                nextButton.click();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
+

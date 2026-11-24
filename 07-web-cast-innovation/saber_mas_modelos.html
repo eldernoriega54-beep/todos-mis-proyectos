@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saber Más de Modelos - CAST Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header { margin-top: 150px; text-align: center; }
+        .accordion-container {
+            max-width: 800px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .accordion-item {
+            background: rgba(20, 24, 30, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .accordion-header {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background: rgba(255,255,255,0.05);
+        }
+        .accordion-header:hover { background: rgba(255,255,255,0.1); }
+        .accordion-content {
+            max-height: 0;
+            opacity: 0;
+            padding: 0 25px;
+            color: var(--text-muted);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            line-height: 1.6;
+        }
+        .accordion-item.open .accordion-content {
+            max-height: 300px;
+            opacity: 1;
+            padding: 25px;
+            border-top: 1px solid var(--glass-border);
+        }
+        .icon-plus { transition: transform 0.3s; }
+        .accordion-item.open .icon-plus { transform: rotate(45deg); color: #f5a623; }
+    </style>
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprende_programar.html" class="dropdown-item">Aprende a programar</a>
+                <a href="conexiones.html" class="dropdown-item">Conexiones con un robot</a>
+                <a href="union.html" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html" class="dropdown-item">Ver modelos</a>
+                <a href="saber_mas_modelos.html" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="valores.html" class="dropdown-item">Valores</a>
+                <a href="mision_vision.html" class="dropdown-item">Misión y Visión</a>
+                <a href="objetivos.html" class="dropdown-item">Objetivos</a>
+                <a href="plan_estrategico.html" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-background-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_115308.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="background: rgba(13, 15, 18, 0.85);"></div>
+    </div>
+
+    <main class="content-wrapper">
+        <div class="page-header scroll-reveal">
+            <h1 class="main-title">Detalles de Sensores</h1>
+            <p class="tagline">Toca los recuadros para desplegar la información completa</p>
+        </div>
+
+        <section class="bubbles-section scroll-reveal" id="skills" style="margin-top: 50px;">
+            <div class="bubbles-container">
+                <!-- Burbuja 1: Blue-Bot -->
+                <div class="bubble-row left">
+                    <div class="fluid-bubble" onclick="this.classList.toggle('active')">
+                        <div class="bubble-icon">🤖</div>
+                        <div class="bubble-content">
+                            <span class="bubble-title">Robot Burbuja (Blue-Bot)</span>
+                            <div class="bubble-desc">
+                                Es un pequeño robot de piso amigable con forma de escarabajo translúcido. Sirve para que los más pequeños aprendan habilidades de secuenciación y pensamiento lógico. Al presionar los botones en su espalda, los niños programan su ruta sobre tapetes temáticos, uniendo la kinestesia con la lógica temprana.
+                                <br><br><strong>Tecnología:</strong> Teclado de comandos integrado con memoria secuencial y soporte Bluetooth para programar de forma remota.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burbuja 2: SPIKE Prime -->
+                <div class="bubble-row right">
+                    <div class="fluid-bubble" onclick="this.classList.toggle('active')">
+                        <div class="bubble-icon">⚙️</div>
+                        <div class="bubble-content">
+                            <span class="bubble-title">LEGO® Education SPIKE™ Prime</span>
+                            <div class="bubble-desc">
+                                Utilizando el Hub inteligente que tiene un giroscopio integrado de 6 ejes, más un Sensor de Distancia ultrasónico y Sensor de Color. Sirve para competencias clásicas donde el robot debe corregir sus motores automáticamente o mantener trayectorias perfectamente rectas, realizar giros exactos de 90° y detenerse ante obstáculos.
+                                <br><br><strong>Tecnología:</strong> Combinación de ondas de sonido de alta frecuencia, óptica y mediciones inerciales para mapeo espacial y navegación precisa.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burbuja 3: SPIKE Essential -->
+                <div class="bubble-row left">
+                    <div class="fluid-bubble" onclick="this.classList.toggle('active')">
+                        <div class="bubble-icon">🌟</div>
+                        <div class="bubble-content">
+                            <span class="bubble-title">LEGO® Education SPIKE™ Essential Set 45345</span>
+                            <div class="bubble-desc">
+                                Diseñado para estudiantes de educación primaria, este set combina bloques coloridos, un hub de 2 puertos, motores pequeños y una matriz de luces para dar vida a las creaciones. Su enfoque es la narración de historias lúdicas y la resolución de problemas mediante la construcción de modelos interactivos y programación por bloques de íconos o texto.
+                                <br><br><strong>Tecnología:</strong> Hub compacto con conexión Bluetooth, motores de posición absoluta y matriz de colores 3x3 para expresiones interactivas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer><p>&copy; 2026 CAST Innovation. Todos los derechos reservados.</p></footer>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+            }, { threshold: 0.15 });
+            scrollElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

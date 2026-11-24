@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende a Programar - CAST Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header { margin-top: 150px; text-align: center; }
+        
+        .levels-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .level-card {
+            background: rgba(20, 24, 30, 0.6);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 15px 35px rgba(0,0,0,0.3);
+            flex-wrap: wrap;
+        }
+        
+        .level-card.reverse { flex-direction: row-reverse; }
+
+        .robot-img-container {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .robot-img-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            transition: transform 0.3s ease;
+        }
+        
+        .robot-img-container img:hover { transform: scale(1.05); }
+
+        .simulator {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Blocks */
+        .code-block {
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: fit-content;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            position: relative;
+            transition: transform 0.2s, filter 0.2s;
+            cursor: pointer;
+        }
+        .code-block:hover { filter: brightness(1.2); transform: translateX(5px); }
+
+        .code-block::after {
+            content: ''; position: absolute; bottom: -8px; left: 15px; width: 25px; height: 8px; background: inherit; border-radius: 0 0 5px 5px;
+        }
+        .code-block::before {
+            content: ''; position: absolute; top: -8px; left: 15px; width: 25px; height: 8px; background: rgba(0,0,0,0.2); border-radius: 0 0 5px 5px;
+        }
+        
+        /* Blue-Bot Buttons (No connector on top) */
+        .bluebot-btn {
+            background: #f5a623; border-radius: 5px; display: inline-block; padding: 15px; margin: 5px; font-size: 1.5rem; text-align: center; cursor: pointer; transition: transform 0.1s;
+        }
+        .bluebot-btn:active { transform: scale(0.9); background: #e09600; }
+
+        .block-start { background: #ffaa00; margin-bottom: 5px; }
+        .block-action { background: #4c97ff; margin-bottom: 5px; }
+        .block-control { background: #ffbf00; margin-bottom: 5px; }
+        .block-sensor { background: #0fbd8c; margin-bottom: 5px; }
+
+        .robot-preview {
+            margin-top: 20px;
+            height: 80px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .virtual-robot { font-size: 2.5rem; position: absolute; left: 20px; }
+
+        .run-btn {
+            margin-top: 15px; background: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 15px; font-weight: bold; cursor: pointer;
+        }
+        .run-btn:hover { background: #1ebe58; }
+    </style>
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprende_programar.html" class="dropdown-item">Aprende a programar</a>
+                <a href="conexiones.html" class="dropdown-item">Conexiones con un robot</a>
+                <a href="union.html" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html" class="dropdown-item">Ver modelos</a>
+                <a href="saber_mas_modelos.html" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="valores.html" class="dropdown-item">Valores</a>
+                <a href="mision_vision.html" class="dropdown-item">Misión y Visión</a>
+                <a href="objetivos.html" class="dropdown-item">Objetivos</a>
+                <a href="plan_estrategico.html" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-background-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_115623.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="background: rgba(13, 15, 18, 0.85);"></div>
+    </div>
+
+    <main class="content-wrapper" style="padding-top: 100px;">
+        <div class="page-header scroll-reveal">
+            <h1 class="main-title">Aprende a Programar</h1>
+            <p class="tagline">3 niveles de programación para 3 robots diferentes</p>
+        </div>
+
+        <section class="levels-container">
+            
+            <!-- Nivel 1: Blue-Bot -->
+            <div class="level-card scroll-reveal">
+                <div class="robot-img-container">
+                    <img src="imagenes/7147poK3U+L._AC_UF1000,1000_QL80_.png" alt="Blue-Bot">
+                    <h3 style="color: white; margin-top: 15px;">Nivel 1: Botones Físicos</h3>
+                </div>
+                <div class="simulator">
+                    <h2 style="color: white;">Programación Lógica (Blue-Bot)</h2>
+                    <p style="color: var(--text-muted);">Ideal para prescolar. Presiona las flechas para crear la ruta paso a paso.</p>
+                    
+                    <div>
+                        <div class="bluebot-btn" onclick="simularBlueBot('up')">⬆️</div>
+                        <div class="bluebot-btn" onclick="simularBlueBot('down')">⬇️</div>
+                        <div class="bluebot-btn" onclick="simularBlueBot('left')">⬅️</div>
+                        <div class="bluebot-btn" onclick="simularBlueBot('right')">➡️</div>
+                        <div class="bluebot-btn" style="background: #34c759;" onclick="simularBlueBot('go')">GO</div>
+                    </div>
+                    
+                    <div class="robot-preview">
+                        <div class="virtual-robot" id="v-bluebot" style="transition: all 0.5s ease;">🐞</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nivel 2: SPIKE Essential -->
+            <div class="level-card reverse scroll-reveal">
+                <div class="robot-img-container">
+                    <img src="imagenes/spike_essential_new.png" alt="SPIKE Essential">
+                    <h3 style="color: white; margin-top: 15px;">Nivel 2: Bloques Iconográficos</h3>
+                </div>
+                <div class="simulator">
+                    <h2 style="color: white;">Bloques Simples (LEGO® Education SPIKE™ Essential Set 45345)</h2>
+                    <p style="color: var(--text-muted);">Sin lectura compleja. Iconos visuales que dictan el comportamiento de motores y luces.</p>
+                    
+                    <div class="code-block block-start">▶️ Iniciar</div>
+                    <div class="code-block block-action">⚙️ Motor A: Potencia 50%</div>
+                    <div class="code-block block-control">⏱️ Esperar 2 segundos</div>
+                    <div class="code-block block-action" style="background: #ff3b30;">🛑 Detener Motor A</div>
+                    
+                    <button class="run-btn" onclick="simularEssential()">▶️ Ejecutar Simulación</button>
+                    
+                    <div class="robot-preview">
+                        <div class="virtual-robot" id="v-essential" style="transition: all 2s linear;">🚗</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nivel 3: SPIKE Prime -->
+            <div class="level-card scroll-reveal">
+                <div class="robot-img-container">
+                    <img src="imagenes/Captura de pantalla 2026-06-01 201900.png" alt="SPIKE Prime">
+                    <h3 style="color: white; margin-top: 15px;">Nivel 3: Bloques de Texto/Scratch</h3>
+                </div>
+                <div class="simulator">
+                    <h2 style="color: white;">Algoritmos (SPIKE Prime)</h2>
+                    <p style="color: var(--text-muted);">Programación condicional y sensores para retos de ingeniería reales.</p>
+                    
+                    <div class="code-block block-start">🏁 Al presionar Iniciar</div>
+                    <div class="code-block block-control">🔁 Por siempre</div>
+                    <div style="padding-left: 20px; border-left: 5px solid #ffbf00;">
+                        <div class="code-block block-action">➡️ Avanzar derecho</div>
+                        <div class="code-block block-control">❓ Si <span class="block-sensor">👁️ Sensor Ultrasónico &lt; 15cm</span> entonces</div>
+                        <div style="padding-left: 20px; border-left: 5px solid #ffbf00;">
+                            <div class="code-block block-action">🔄 Girar a la derecha 90°</div>
+                        </div>
+                    </div>
+                    
+                    <button class="run-btn" onclick="simularPrime()">▶️ Probar Algoritmo</button>
+                    
+                    <div class="robot-preview">
+                        <div class="virtual-robot" id="v-prime" style="transition: all 0.5s ease-in-out;">🦾</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer><p>&copy; 2026 CAST Innovation.</p></footer>
+    </main>
+
+    <script>
+        // Simulador Blue-Bot
+        let blueBotSteps = [];
+        let blueBotX = 20;
+        function simularBlueBot(action) {
+            const robot = document.getElementById('v-bluebot');
+            if(action === 'go') {
+                robot.style.transform = `translateX(${blueBotX + 50}px)`;
+                blueBotX += 50;
+                if(blueBotX > 250) { blueBotX = 20; setTimeout(()=> robot.style.transform = `translateX(20px)`, 600); }
+            } else {
+                robot.style.transform = `scale(1.2)`;
+                setTimeout(() => robot.style.transform = `scale(1) translateX(${blueBotX}px)`, 200);
+            }
+        }
+
+        // Simulador Essential
+        function simularEssential() {
+            const robot = document.getElementById('v-essential');
+            robot.style.transform = 'translateX(0)';
+            setTimeout(() => {
+                robot.style.transform = 'translateX(200px)';
+                robot.style.filter = 'drop-shadow(0 0 10px #ff3b30)'; // Simulate Stop
+                setTimeout(() => robot.style.filter = 'none', 1000);
+            }, 100);
+        }
+
+        // Simulador Prime
+        function simularPrime() {
+            const robot = document.getElementById('v-prime');
+            robot.style.transform = 'translateX(0) rotate(0deg)';
+            setTimeout(() => {
+                robot.style.transform = 'translateX(180px)'; // Avanza y encuentra pared
+                setTimeout(() => {
+                    robot.style.transform = 'translateX(180px) rotate(90deg)'; // Gira
+                }, 800);
+            }, 100);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
+            }, { threshold: 0.15 });
+            scrollElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

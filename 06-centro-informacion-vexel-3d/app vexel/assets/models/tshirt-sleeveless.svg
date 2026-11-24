@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="400" height="480">
+  <!-- Camisa sin mangas (tank top) -->
+  <path d="
+    M 150,20
+    C 165,14 180,10 200,10
+    C 220,10 235,14 250,20
+    C 250,20 270,24 280,30
+    L 285,60
+    L 285,440
+    L 115,440
+    L 115,60
+    L 120,30
+    C 130,24 150,20 150,20
+    Z
+    M 150,20
+    C 158,38 170,52 200,58
+    C 230,52 242,38 250,20
+  " fill="#f8f8f8" stroke="#e0e0e0" stroke-width="2" stroke-linejoin="round"/>
+</svg>

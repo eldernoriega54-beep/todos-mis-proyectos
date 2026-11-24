@@ -1,0 +1,200 @@
+ORGANIZATION_BLOCK "Main" [OB1]
+TITLE = 'A.T.R.I. - Control Principal'
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+
+VAR_TEMP
+    #nivelActivo : INT;
+END_VAR
+
+BEGIN
+    // ─────────────────────────────────────────────────────────────────
+    // A.T.R.I. - Alerta Temprana por Riesgo de Inundación
+    // PLC: Siemens S7-1214C DC/DC/DC
+    // Autor: Sistema ATRI
+    // ─────────────────────────────────────────────────────────────────
+    //
+    // ENTRADAS (conectadas a los relés del Arduino):
+    //   %I0.0  → Relé Nivel 1  (Alerta Verde)
+    //   %I0.1  → Relé Nivel 2  (Alerta Amarilla)
+    //   %I0.2  → Relé Nivel 3  (Alerta Roja)
+    //
+    // SALIDAS (lámparas del panel de control):
+    //   %Q0.0  → Lámpara Verde
+    //   %Q0.1  → Lámpara Amarilla
+    //   %Q0.2  → Lámpara Roja
+    //
+    // LÓGICA: Prioridad → Rojo > Amarillo > Verde > Apagado
+    // Solo se enciende UNA lámpara a la vez (la de mayor nivel activo)
+    // ─────────────────────────────────────────────────────────────────
+
+    // Apagar todas las salidas primero (reset general)
+    "DB_ATRI".LamparaVerde    := FALSE;
+    "DB_ATRI".LamparaAmarilla := FALSE;
+    "DB_ATRI".LamparaRoja     := FALSE;
+
+    // Actualizar DB con estado de las entradas
+    "DB_ATRI".ReleNivel1 := %I0.0;
+    "DB_ATRI".ReleNivel2 := %I0.1;
+    "DB_ATRI".ReleNivel3 := %I0.2;
+
+    // ── Lógica de prioridad ──────────────────────────────────────────
+    IF "DB_ATRI".ReleNivel3 THEN
+        // NIVEL 3: Alerta Roja (máxima prioridad)
+        "DB_ATRI".LamparaRoja     := TRUE;
+        "DB_ATRI".LamparaAmarilla := FALSE;
+        "DB_ATRI".LamparaVerde    := FALSE;
+        "DB_ATRI".NivelActual     := 3;
+
+    ELSIF "DB_ATRI".ReleNivel2 THEN
+        // NIVEL 2: Alerta Amarilla
+        "DB_ATRI".LamparaRoja     := FALSE;
+        "DB_ATRI".LamparaAmarilla := TRUE;
+        "DB_ATRI".LamparaVerde    := FALSE;
+        "DB_ATRI".NivelActual     := 2;
+
+    ELSIF "DB_ATRI".ReleNivel1 THEN
+        // NIVEL 1: Alerta Verde
+        "DB_ATRI".LamparaRoja     := FALSE;
+        "DB_ATRI".LamparaAmarilla := FALSE;
+        "DB_ATRI".LamparaVerde    := TRUE;
+        "DB_ATRI".NivelActual     := 1;
+
+    ELSE
+        // SIN ALARMA: Todo apagado
+        "DB_ATRI".LamparaRoja     := FALSE;
+        "DB_ATRI".LamparaAmarilla := FALSE;
+        "DB_ATRI".LamparaVerde    := FALSE;
+        "DB_ATRI".NivelActual     := 0;
+    END_IF;
+
+    // ── Escribir salidas físicas desde el DB ─────────────────────────
+    %Q0.0 := "DB_ATRI".LamparaVerde;
+    %Q0.1 := "DB_ATRI".LamparaAmarilla;
+    %Q0.2 := "DB_ATRI".LamparaRoja;
+
+    // ── Llamar al bloque de comunicación TCP ─────────────────────────
+    "FB_EnviarAlerta"(nivel := "DB_ATRI".NivelActual);
+
+END_ORGANIZATION_BLOCK
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DATA BLOCK: DB_ATRI
+// Bloque de datos global compartido entre OB1 y FB_EnviarAlerta
+// ─────────────────────────────────────────────────────────────────────────────
+DATA_BLOCK "DB_ATRI"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+STRUCT
+    // Entradas (relés del Arduino)
+    ReleNivel1    : BOOL;
+    ReleNivel2    : BOOL;
+    ReleNivel3    : BOOL;
+
+    // Salidas (lámparas del panel)
+    LamparaVerde    : BOOL;
+    LamparaAmarilla : BOOL;
+    LamparaRoja     : BOOL;
+
+    // Nivel actual (0=Sin alarma, 1=Verde, 2=Amarillo, 3=Rojo)
+    NivelActual   : INT;
+
+    // Estado de conexión TCP
+    ConexionActiva  : BOOL;
+    ErrorConexion   : BOOL;
+    CodigoError     : WORD;
+END_STRUCT;
+
+BEGIN
+    ReleNivel1    := FALSE;
+    ReleNivel2    := FALSE;
+    ReleNivel3    := FALSE;
+    LamparaVerde    := FALSE;
+    LamparaAmarilla := FALSE;
+    LamparaRoja     := FALSE;
+    NivelActual   := 0;
+    ConexionActiva  := FALSE;
+    ErrorConexion   := FALSE;
+    CodigoError     := 16#0000;
+END_DATA_BLOCK
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FUNCTION BLOCK: FB_EnviarAlerta
+// Envía el nivel de alerta actual por TCP al servidor/app Android
+// IP destino: 192.168.1.7 (tu PC / servidor broker)
+// Puerto destino: 5000
+// ─────────────────────────────────────────────────────────────────────────────
+FUNCTION_BLOCK "FB_EnviarAlerta"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+
+VAR_INPUT
+    nivel : INT;
+END_VAR
+
+VAR
+    // Bloque TSEND_C de comunicación TCP
+    instTSEND_C    : TSEND_C;
+    conexionConfig : TCON_IP_V4;
+    datoEnvio      : ARRAY[0..3] OF BYTE;
+    nivelAnterior  : INT := -1;
+    contadorCiclos : INT := 0;
+END_VAR
+
+VAR_TEMP
+    tempReq : BOOL;
+END_VAR
+
+BEGIN
+    // ── Preparar datos a enviar ──────────────────────────────────────
+    // Protocolo simple: 4 bytes fijos
+    // Byte 0: 0xAT (cabecera A)
+    // Byte 1: 0x52 (cabecera R)
+    // Byte 2: 0x49 (cabecera I)
+    // Byte 3: Nivel (0, 1, 2 ó 3)
+    #datoEnvio[0] := BYTE#16#41; // 'A'
+    #datoEnvio[1] := BYTE#16#54; // 'T'
+    #datoEnvio[2] := BYTE#16#52; // 'R'
+    #datoEnvio[3] := INT_TO_BYTE(#nivel); // Nivel actual
+
+    // ── Configurar conexión TCP ──────────────────────────────────────
+    // PLC IP:    192.168.1.10  (configurar en TIA Portal → ver instrucciones)
+    // Destino:   192.168.1.7   (tu PC - servidor Android)
+    // Puerto local:  2000
+    // Puerto remoto: 5000
+    #conexionConfig.InterfaceId := 64;          // ID interfaz PROFINET (ver nota)
+    #conexionConfig.ID          := CONN_OUC#1;  // ID de conexión
+    #conexionConfig.ConnectionType := BYTE#16#11; // TCP
+    #conexionConfig.ActiveEstablished := TRUE;
+    #conexionConfig.RemoteAddress.ADDR[1] := USINT#192;
+    #conexionConfig.RemoteAddress.ADDR[2] := USINT#168;
+    #conexionConfig.RemoteAddress.ADDR[3] := USINT#1;
+    #conexionConfig.RemoteAddress.ADDR[4] := USINT#7; // Tu PC: 192.168.1.7
+    #conexionConfig.RemotePort  := UINT#5000;
+    #conexionConfig.LocalPort   := UINT#2000;
+
+    // ── Enviar solo cuando el nivel cambia o cada 100 ciclos ─────────
+    #contadorCiclos := #contadorCiclos + 1;
+    IF #contadorCiclos >= 100 THEN
+        #contadorCiclos := 0;
+    END_IF;
+
+    tempReq := (#nivel <> #nivelAnterior) OR (#contadorCiclos = 0);
+    #nivelAnterior := #nivel;
+
+    // ── Ejecutar TSEND_C ─────────────────────────────────────────────
+    #instTSEND_C(
+        REQ  := tempReq,
+        CONT := TRUE,
+        LEN  := UDINT#4,
+        CONNECT := #conexionConfig,
+        DATA := #datoEnvio,
+        DONE => "DB_ATRI".ConexionActiva,
+        ERROR => "DB_ATRI".ErrorConexion,
+        STATUS => "DB_ATRI".CodigoError
+    );
+
+END_FUNCTION_BLOCK

@@ -1,0 +1,295 @@
+/* Variables de color de NVIDIA */
+:root {
+    --nvidia-green: #76b900;
+    --dark-bg: #000000;
+    --light-text: #ffffff;
+    --gray-bg: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--light-text);
+    background-color: transparent;
+}
+
+/* Para que todo el contenido regular de la página esté por encima del fondo */
+.content-wrapper, .container, .catalogo-container, .admin-container, .drivers-container, .blog-container, .content-container, footer, .stats-container, h1, h2 {
+    position: relative;
+    z-index: 10;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo-nav img {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--nvidia-green);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(26, 26, 26, 0.95);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    border-radius: 4px;
+}
+
+.dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-transform: none;
+    font-weight: normal;
+}
+
+.dropdown-content li a:hover {
+    background-color: #333;
+    color: var(--nvidia-green);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-extra a {
+    color: var(--nvidia-green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Video Background Fijo Global */
+.video-bg-global {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.glass-overlay-global {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Mas oscuro para mejor contraste */
+    backdrop-filter: blur(4px); /* Menos borroso para que no moleste */
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+/* Contenedor central (Hero) solo para index */
+.hero-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Navbar necesita estar por encima de todo */
+.navbar {
+    z-index: 1000;
+}
+
+/* Animación Logo */
+.center-content {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.center-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-logo {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* --- ANIMACIONES Y DINAMISMO (SCROLL) --- */
+.scroll-fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-up.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-left.scrolled {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-right.scrolled {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+
+/* Tarjetas dinámicas */
+.animated-card {
+    background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+    border-left: 4px solid var(--nvidia-green);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.4s ease, border-width 0.4s ease;
+}
+
+.animated-card.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animated-card:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    box-shadow: 0 15px 30px rgba(118, 185, 0, 0.2);
+    border-left-width: 8px;
+}
+
+.animated-card h2 {
+    color: var(--nvidia-green);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.animated-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    padding: 30px;
+    text-align: center;
+    border-top: 3px solid var(--nvidia-green);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer-content a:hover {
+    color: var(--nvidia-green);
+}
+
+.btn-wa {
+    color: #25D366 !important;
+}
+
+.btn-wa:hover {
+    color: white !important;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.9rem;
+}

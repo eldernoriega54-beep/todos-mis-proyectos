@@ -1,0 +1,35 @@
+﻿const fs = require('fs');
+const files = fs.readdirSync('D:/desarrollo web nvidia').filter(f => f.endsWith('.html') || f.endsWith('.php'));
+for (const file of files) {
+    const p = 'D:/desarrollo web nvidia/' + file;
+    let c = fs.readFileSync(p, 'utf8');
+    c = c.replace(/QuiÃ“NES/g, 'Quiénes');
+    c = c.replace(/QuiÃ.NES/g, 'Quiénes');
+    c = c.replace(/QuiǸnes/g, 'Quiénes');
+    c = c.replace(/MisiÃ³n/g, 'Misión');
+    c = c.replace(/MisiÃ.n/g, 'Misión');
+    c = c.replace(/Misin/g, 'Misión');
+    c = c.replace(/VisiÃ³n/g, 'Visión');
+    c = c.replace(/VisiÃ.n/g, 'Visión');
+    c = c.replace(/REDISEÃ‘O/g, 'REDISEÑO');
+    c = c.replace(/RediseÃ±o/g, 'Rediseño');
+    c = c.replace(/RediseÃ.o/g, 'Rediseño');
+    c = c.replace(/computaciÃ³n/g, 'computación');
+    c = c.replace(/computaciÃ.n/g, 'computación');
+    c = c.replace(/cÃ¡lculo/g, 'cálculo');
+    c = c.replace(/cÃ.lculo/g, 'cálculo');
+    c = c.replace(/tecnologÃ.as/g, 'tecnologías');
+    c = c.replace(/mÃ¡s/g, 'más');
+    c = c.replace(/desentraÃ±ar/g, 'desentrañar');
+    c = c.replace(/algÃºn/g, 'algún');
+    c = c.replace(/dÃ.a/g, 'día');
+    c = c.replace(/DiseÃ±o/g, 'Diseño');
+    c = c.replace(/&eacute;/g, 'é');
+    c = c.replace(/&oacute;/g, 'ó');
+    c = c.replace(/&Ntilde;/g, 'Ñ');
+    c = c.replace(/&ntilde;/g, 'ñ');
+    c = c.replace(/&aacute;/g, 'á');
+    c = c.replace(/&iacute;/g, 'í');
+    c = c.replace(/&uacute;/g, 'ú');
+    fs.writeFileSync(p, c, 'utf8');
+}

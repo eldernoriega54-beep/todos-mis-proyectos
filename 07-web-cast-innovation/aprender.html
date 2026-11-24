@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender - CAST Innovation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            margin-top: 150px;
+            text-align: center;
+        }
+        .learning-section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .learning-card {
+            background: var(--glass-bg);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            flex-wrap: wrap;
+        }
+        .learning-card.reverse {
+            flex-direction: row-reverse;
+        }
+        .learning-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .learning-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .learning-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .learning-image:hover img {
+            transform: scale(1.05);
+        }
+        .overlay-bg {
+            background: rgba(13, 15, 18, 0.85);
+        }
+        .conexiones-bg {
+            background: #111; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 250px;
+        }
+        .emoji-icon {
+            font-size: 5rem;
+        }
+        .union-bg {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación Global -->
+    <nav class="global-nav">
+        <div class="nav-item">
+            <a href="index.html" class="nav-link">Inicio</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprender.html#programar" class="dropdown-item">Aprende a programar</a>
+                <a href="aprender.html#conexiones" class="dropdown-item">Conexiones con un robot</a>
+                <a href="aprender.html#union" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html#carrusel" class="dropdown-item">Ver modelos</a>
+                <a href="modelos.html#info" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="quienes_somos.html#valores" class="dropdown-item">Valores</a>
+                <a href="quienes_somos.html#mision" class="dropdown-item">Misión y Visión</a>
+                <a href="quienes_somos.html#objetivos" class="dropdown-item">Objetivos</a>
+                <a href="quienes_somos.html#plan" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor del video de fondo general -->
+    <div class="video-background-container">
+        <!-- Reusamos el video inicial pero con una opacidad menor para lectura -->
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_115623.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay overlay-bg"></div>
+    </div>
+
+    <main class="content-wrapper">
+        <div class="page-header scroll-reveal">
+            <h1 class="main-title">Aprender</h1>
+            <p class="tagline">Descubre el fascinante mundo de la programación y robótica</p>
+        </div>
+
+        <section class="learning-section">
+            
+            <!-- Aprende a programar -->
+            <div id="programar" class="learning-card scroll-reveal">
+                <div class="learning-text">
+                    <h2>Aprende a Programar</h2>
+                    <p>La programación es el idioma del futuro. A través de un entorno visual basado en bloques de colores (similar a Scratch y LEGO Spike), los estudiantes pueden dar instrucciones precisas a sus creaciones de forma intuitiva.</p>
+                    <p>Cada bloque representa una acción: avanzar, girar, encender luces o leer sensores. ¡Al unirlos, crean algoritmos complejos con facilidad!</p>
+                </div>
+                <div class="learning-image">
+                    <!-- Usamos la imagen generada por IA -->
+                    <img src="C:/Users/ELDER NORIEGA/.gemini/antigravity/brain/553a4309-07c5-411e-86ba-2c3e36442944/scratch_blocks_1780370741003.png" alt="Ejemplo de programación por bloques">
+                </div>
+            </div>
+
+            <!-- Conexiones con un robot -->
+            <div id="conexiones" class="learning-card reverse scroll-reveal">
+                <div class="learning-text">
+                    <h2>Conexiones con un Robot</h2>
+                    <p>Un robot es la unión perfecta entre hardware (componentes físicos) y software (programa). Aprenderás a identificar el "Cerebro" (Hub), donde se conectan los motores y los sensores mediante cables y puertos específicos.</p>
+                    <p>Además, podrás emparejar tus dispositivos móviles o tablets con el robot utilizando conectividad Bluetooth para enviar tus códigos de manera inalámbrica.</p>
+                </div>
+                <div class="learning-image conexiones-bg">
+                    <span class="emoji-icon">🔌🤖</span>
+                </div>
+            </div>
+
+            <!-- Unión código conexión -->
+            <div id="union" class="learning-card scroll-reveal">
+                <div class="learning-text">
+                    <h2>Unión: Código y Conexión</h2>
+                    <p>La verdadera magia ocurre cuando el código interactúa con el mundo físico. Si programamos "Avanzar si el sensor detecta un obstáculo", el cerebro del robot lee la conexión del sensor y ejecuta la acción en los motores conectados.</p>
+                    <p>Este ciclo de retroalimentación enseña pensamiento computacional y causa-efecto en tiempo real.</p>
+                </div>
+                <div class="learning-image union-bg">
+                    <span class="emoji-icon">🧠⚡</span>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>&copy; 2026 CAST Innovation. Todos los derechos reservados.</p>
+        </footer>
+    </main>
+
+    <script>
+        // Animaciones scroll (igual que index.html)
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            scrollElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

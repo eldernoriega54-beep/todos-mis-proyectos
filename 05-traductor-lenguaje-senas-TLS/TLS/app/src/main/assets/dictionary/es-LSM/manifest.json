@@ -1,0 +1,23 @@
+{
+  "code": "es-LSM",
+  "name": "Español - Lengua de Señas Mexicana (LSM)",
+  "version": "1.0-beta",
+  "totalSigns": 14,
+  "type": "alphabet_letters_only",
+  "signs": [
+    { "id": "A", "label": "A", "type": "vowel", "fingerState": "1,0,0,0,0", "svgPath": "dictionary/es-LSM/A.svg", "description": "Puño cerrado con el pulgar apoyado al costado del índice" },
+    { "id": "B", "label": "B", "type": "letter", "fingerState": "0,1,1,1,1", "svgPath": "dictionary/es-LSM/B.svg", "description": "Cuatro dedos extendidos juntos hacia arriba, pulgar sobre palma" },
+    { "id": "C", "label": "C", "type": "letter", "fingerState": "1,1,0,0,0", "svgPath": "dictionary/es-LSM/C.svg", "description": "Mano curvada de perfil formando el arco de la letra C" },
+    { "id": "D", "label": "D", "type": "letter", "fingerState": "0,1,0,0,0", "svgPath": "dictionary/es-LSM/D.svg", "description": "Dedo índice extendido hacia arriba y círculo en la base" },
+    { "id": "E", "label": "E", "type": "vowel", "fingerState": "0,0,0,0,0", "svgPath": "dictionary/es-LSM/E.svg", "description": "Dedos doblados hacia la palma mostrando las uñas" },
+    { "id": "F", "label": "F", "type": "letter", "fingerState": "0,0,1,1,1", "svgPath": "dictionary/es-LSM/F.svg", "description": "Pulgar e índice en círculo, 3 dedos arriba" },
+    { "id": "G", "label": "G", "type": "letter", "fingerState": "1,1,0,0,0", "svgPath": "dictionary/es-LSM/G.svg", "description": "Índice y pulgar extendidos hacia el lado" },
+    { "id": "I", "label": "I", "type": "vowel", "fingerState": "0,0,0,0,1", "svgPath": "dictionary/es-LSM/I.svg", "description": "Solo dedo meñique levantado hacia arriba" },
+    { "id": "L", "label": "L", "type": "letter", "fingerState": "1,1,0,0,0", "svgPath": "dictionary/es-LSM/L.svg", "description": "Pulgar e índice en ángulo recto formando una L" },
+    { "id": "M", "label": "M", "type": "letter", "fingerState": "0,0,0,0,0", "svgPath": "dictionary/es-LSM/M.svg", "description": "Tres dedos doblados sobre el pulgar" },
+    { "id": "O", "label": "O", "type": "vowel", "fingerState": "0,0,0,0,0", "svgPath": "dictionary/es-LSM/O.svg", "description": "Todos los dedos curvados formando un círculo O" },
+    { "id": "P", "label": "P", "type": "letter", "fingerState": "1,1,1,0,0", "svgPath": "dictionary/es-LSM/P.svg", "description": "Índice hacia el frente y medio hacia abajo con pulgar" },
+    { "id": "U", "label": "U", "type": "vowel", "fingerState": "0,1,1,0,0", "svgPath": "dictionary/es-LSM/U.svg", "description": "Dedos índice y medio extendidos juntos hacia arriba" },
+    { "id": "V", "label": "V", "type": "letter", "fingerState": "0,1,1,0,0", "svgPath": "dictionary/es-LSM/V.svg", "description": "Dedos índice y medio extendidos separados en V" }
+  ]
+}

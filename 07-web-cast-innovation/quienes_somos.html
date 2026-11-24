@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - CAST Innovation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header { margin-top: 150px; text-align: center; }
+        .about-section-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .about-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .about-card:hover {
+            transform: scale(1.02);
+        }
+        .about-card h2 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-main);
+        }
+        .about-card p, .about-card ul {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+        .about-card ul {
+            padding-left: 20px;
+        }
+        .about-card li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprender.html#programar" class="dropdown-item">Aprende a programar</a>
+                <a href="aprender.html#conexiones" class="dropdown-item">Conexiones con un robot</a>
+                <a href="aprender.html#union" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html#carrusel" class="dropdown-item">Ver modelos</a>
+                <a href="modelos.html#info" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="quienes_somos.html#valores" class="dropdown-item">Valores</a>
+                <a href="quienes_somos.html#mision" class="dropdown-item">Misión y Visión</a>
+                <a href="quienes_somos.html#objetivos" class="dropdown-item">Objetivos</a>
+                <a href="quienes_somos.html#plan" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-background-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_114817.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="background: rgba(13, 15, 18, 0.85);"></div>
+    </div>
+
+    <main class="content-wrapper">
+        <div class="page-header scroll-reveal">
+            <h1 class="main-title">Quiénes Somos</h1>
+            <p class="tagline">La esencia detrás de la innovación educativa</p>
+        </div>
+
+        <section class="about-section-container">
+            
+            <!-- Valores -->
+            <div id="valores" class="about-card scroll-reveal" style="border-color: #f5a623;">
+                <h2>💎 Nuestros Valores</h2>
+                <ul>
+                    <li><strong>Innovación Real:</strong> Incorporamos tecnología con verdadero sentido educativo, evitando el uso superficial.</li>
+                    <li><strong>Colaboración:</strong> Fomentamos el trabajo en equipo y el diálogo constructivo.</li>
+                    <li><strong>Responsabilidad:</strong> Orientamos a los jóvenes para el aprovechamiento positivo y ético de la tecnología.</li>
+                    <li><strong>Resiliencia:</strong> Promovemos la gestión de la frustración a través de la experimentación y el diseño iterativo.</li>
+                </ul>
+            </div>
+
+            <!-- Misión y Visión -->
+            <div id="mision" class="about-card scroll-reveal" style="border-color: #34c759;">
+                <h2>👁️ Misión y Visión</h2>
+                <p><strong>Nuestra Misión:</strong> Empoderar a instituciones educativas, docentes y alumnos proporcionando un ecosistema integral de robótica y programación, desplazando la educación tradicional hacia el desarrollo del pensamiento crítico y la creatividad STEM.</p>
+                <p><strong>Nuestra Visión:</strong> Ser el principal puente metodológico y tecnológico de la región, formando a las próximas generaciones con las competencias necesarias para liderar el futuro digitalizado con confianza y valores humanos.</p>
+            </div>
+
+            <!-- Objetivos -->
+            <div id="objetivos" class="about-card scroll-reveal" style="border-color: #007aff;">
+                <h2>🎯 Objetivos Institucionales</h2>
+                <ul>
+                    <li>Aumentar la retención y motivación estudiantil mediante el aprendizaje práctico.</li>
+                    <li>Proporcionar formación y acompañamiento continuo sin costo adicional a los docentes para asegurar el éxito del programa.</li>
+                    <li>Diferenciar las propuestas educativas de los centros escolares ofreciendo currículos alineados al siglo XXI.</li>
+                </ul>
+            </div>
+
+            <!-- Plan Estratégico -->
+            <div id="plan" class="about-card scroll-reveal" style="border-color: #a259ff;">
+                <h2>🗺️ Plan Estratégico Integral</h2>
+                <p>En CAST Innovation no solo entregamos equipos, diseñamos una integración sostenible. Nuestro plan se divide en 4 pilares:</p>
+                <ol style="color: var(--text-muted); line-height: 1.8; margin-top: 10px; padding-left: 20px;">
+                    <li><strong>Diagnóstico y Diseño:</strong> Ajustamos nuestro ecosistema (Niveles 1, 2 y 3) a la realidad e infraestructura de su centro educativo.</li>
+                    <li><strong>Capacitación Inicial:</strong> Proveemos 20 horas intensivas de uso de equipo y manejo de la metodología 4C para docentes.</li>
+                    <li><strong>Implementación y Soporte:</strong> Entregamos material didáctico, espacios de trabajo estructurados y brindamos asistencia continua.</li>
+                    <li><strong>Acompañamiento y Evaluación:</strong> Realizamos mediciones semestrales y observamos clases con fichas de supervisión para garantizar resultados en alumnos y maestros.</li>
+                </ol>
+            </div>
+
+        </section>
+        
+        <footer><p>&copy; 2026 CAST Innovation. Todos los derechos reservados.</p></footer>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+            }, { threshold: 0.15 });
+            scrollElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

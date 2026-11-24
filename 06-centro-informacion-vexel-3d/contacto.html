@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Contáctanos</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .info-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(224, 64, 251, 0.3);
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .submit-btn:hover {
+            box-shadow: 0 0 20px rgba(224, 64, 251, 0.6);
+            transform: translateY(-2px);
+        }
+        #form-success {
+            display: none;
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px solid #2ed573;
+            color: #2ed573;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <img src="app vexel/imagenes de la app/isologo.png" alt="Vexel 3D">
+            <span>Vexel 3D</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="proposito.html">Propósito</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="productos.html">Productos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="productos.html">Ver Catálogo</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="obtener.html">Obtener para ti</a></li>
+                </ul>
+            </li>
+            <li><a href="plan_estrategico.html">Plan Estratégico</a></li>
+            <li><a href="contacto.html" class="active">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper">
+        <section class="hero-section glass-panel scroll-reveal" style="margin-bottom: 20px; padding: 40px 20px;">
+            <h1>Contáctanos</h1>
+            <h2>Estamos aquí para ayudarte y escuchar tus reportes</h2>
+        </section>
+
+        <section class="contact-container scroll-reveal">
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h3>Email Directo</h3>
+                    <p style="color:var(--text-secondary);margin-top:10px;">vexeld4@gmail.com</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Nuestra Ubicación</h3>
+                    <p style="color:var(--text-secondary);margin-top:10px;">El Progreso Yoro, Honduras</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>Horario de Atención</h3>
+                    <p style="color:var(--text-secondary);margin-top:10px;">Lunes a Viernes<br>8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="contact-form">
+                    <input type="hidden" name="access_key" value="9a936433-b47b-414a-a19c-bdf9621b5d70">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <div class="form-group">
+                        <label for="cf-name">Nombre completo</label>
+                        <input type="text" name="name" id="cf-name" class="form-control" placeholder="Tu nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cf-email">Correo electrónico</label>
+                        <input type="email" name="email" id="cf-email" class="form-control" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cf-subject">Asunto</label>
+                        <select name="subject" id="cf-subject" class="form-control" required style="color:white; background:rgba(0,0,0,0.5);">
+                            <option value="Soporte técnico">Soporte técnico</option>
+                            <option value="Reportar un problema" selected>Reportar un problema</option>
+                            <option value="Consulta de productos">Consulta de productos</option>
+                            <option value="Propuesta de negocio">Propuesta de negocio</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cf-message">Mensaje</label>
+                        <textarea name="message" id="cf-message" class="form-control" rows="5" placeholder="Escribe tu mensaje, reporte de error o consulta aquí..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+
+                    <div id="form-success">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>¡Preparando tu correo! Serás redirigido para enviar a vexeld4@gmail.com</span>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 Vexel 3D â€” Innovación Textil y Robótica | <a href="contacto.html" style="color:var(--accent)">Contáctanos</a></p>
+    </footer>
+
+    <script src="landing.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const result = document.getElementById('form-success');
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+    submitBtn.disabled = true;
+    result.style.display = 'none';
+
+    const formData = new FormData(this);
+    try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await res.json();
+        
+        result.style.display = 'flex';
+        if(res.ok) {
+            result.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Enviado correctamente!';
+            result.style.color = '#22c55e';
+            result.style.borderColor = '#22c55e';
+            result.style.background = 'rgba(46, 213, 115, 0.1)';
+            this.reset();
+        } else {
+            result.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + data.message;
+            result.style.color = '#ef4444';
+            result.style.borderColor = '#ef4444';
+            result.style.background = 'rgba(239, 68, 68, 0.1)';
+        }
+    } catch(err) {
+        result.style.display = 'flex';
+        result.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Error al enviar';
+        result.style.color = '#ef4444';
+        result.style.borderColor = '#ef4444';
+        result.style.background = 'rgba(239, 68, 68, 0.1)';
+    }
+    
+    submitBtn.innerHTML = originalText;
+    submitBtn.disabled = false;
+    
+    setTimeout(()=>{
+        result.style.display='none';
+    }, 5000);
+});
+    </script>
+</body>
+</html>
+

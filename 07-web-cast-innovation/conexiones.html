@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexiones con un Robot - CAST Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header { margin-top: 150px; text-align: center; }
+        .connection-hub {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(20, 24, 30, 0.8);
+            border: 2px solid #4c97ff;
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(76, 151, 255, 0.3);
+            position: relative;
+        }
+        .hub-title { color: white; margin-bottom: 20px; }
+        .ports-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .port {
+            width: 60px;
+            height: 60px;
+            background: #111;
+            border: 2px dashed #666;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+            font-weight: bold;
+        }
+        .port:hover { border-color: #4c97ff; color: #4c97ff; transform: scale(1.1); }
+        .port.connected {
+            background: #4c97ff;
+            border-color: #fff;
+            color: #fff;
+            box-shadow: 0 0 20px #4c97ff;
+        }
+        .cable-anim {
+            width: 0;
+            height: 4px;
+            background: #4c97ff;
+            position: absolute;
+            bottom: -30px;
+            transition: width 0.5s ease;
+        }
+        .instruction {
+            color: var(--text-muted);
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprende_programar.html" class="dropdown-item">Aprende a programar</a>
+                <a href="conexiones.html" class="dropdown-item">Conexiones con un robot</a>
+                <a href="union.html" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html" class="dropdown-item">Ver modelos</a>
+                <a href="saber_mas_modelos.html" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="valores.html" class="dropdown-item">Valores</a>
+                <a href="mision_vision.html" class="dropdown-item">Misión y Visión</a>
+                <a href="objetivos.html" class="dropdown-item">Objetivos</a>
+                <a href="plan_estrategico.html" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-background-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_115623.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="background: rgba(13, 15, 18, 0.85);"></div>
+    </div>
+
+    <main class="content-wrapper" style="padding-top: 100px;">
+        <div class="page-header scroll-reveal">
+            <h1 class="main-title">Conexiones</h1>
+            <p class="tagline">Conoce el "Cerebro" del robot</p>
+        </div>
+
+        <section class="connection-hub scroll-reveal">
+            <h2 class="hub-title">Hub Inteligente</h2>
+            <p style="text-align: center; color: #ccc;">Haz clic en los puertos para conectar los sensores y motores virtuales.</p>
+            
+            <div class="ports-container">
+                <div class="port" onclick="connectPort(this, 'Motor Izquierdo')">A</div>
+                <div class="port" onclick="connectPort(this, 'Motor Derecho')">B</div>
+                <div class="port" onclick="connectPort(this, 'Sensor de Color')">C</div>
+                <div class="port" onclick="connectPort(this, 'Sensor Ultrasónico')">D</div>
+            </div>
+            
+            <p class="instruction" id="status-text">Esperando conexiones...</p>
+            <div class="cable-anim" id="cable"></div>
+        </section>
+        
+        <footer><p>&copy; 2026 CAST Innovation.</p></footer>
+    </main>
+
+    <script>
+        function connectPort(el, device) {
+            if(!el.classList.contains('connected')) {
+                el.classList.add('connected');
+                document.getElementById('status-text').innerText = `✅ ${device} conectado correctamente al puerto ${el.innerText}.`;
+                document.getElementById('status-text').style.color = "#25d366";
+                document.getElementById('cable').style.width = "100%";
+                setTimeout(() => { document.getElementById('cable').style.width = "0"; }, 1000);
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
+            }, { threshold: 0.15 });
+            scrollElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

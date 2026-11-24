@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores - CAST Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header { margin-top: 150px; text-align: center; }
+        .tilt-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        .tilt-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            width: 300px;
+            height: 400px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            cursor: pointer;
+            position: relative;
+        }
+        .tilt-content {
+            pointer-events: none;
+        }
+        .tilt-icon { font-size: 4rem; margin-bottom: 20px; }
+        .tilt-title { color: var(--text-main); margin-bottom: 15px; font-size: 1.5rem; }
+        .tilt-desc { color: var(--text-muted); line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <!-- Menu -->
+    <nav class="global-nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprende_programar.html" class="dropdown-item">Aprende a programar</a>
+                <a href="conexiones.html" class="dropdown-item">Conexiones con un robot</a>
+                <a href="union.html" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html" class="dropdown-item">Ver modelos</a>
+                <a href="saber_mas_modelos.html" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="valores.html" class="dropdown-item">Valores</a>
+                <a href="mision_vision.html" class="dropdown-item">Misión y Visión</a>
+                <a href="objetivos.html" class="dropdown-item">Objetivos</a>
+                <a href="plan_estrategico.html" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-background-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_115623.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="background: rgba(13, 15, 18, 0.85);"></div>
+    </div>
+
+    <main class="content-wrapper">
+        <div class="page-header scroll-reveal">
+            <h1 class="main-title">Nuestros Valores</h1>
+            <p class="tagline">Mueve tu ratón sobre las tarjetas para interactuar (Efecto 3D Tilt)</p>
+        </div>
+
+        <section class="tilt-container scroll-reveal">
+            <div class="tilt-card" onmousemove="tilt(event, this)" onmouseleave="resetTilt(this)">
+                <div class="tilt-content">
+                    <div class="tilt-icon">🚀</div>
+                    <h2 class="tilt-title">Innovación Real</h2>
+                    <p class="tilt-desc">Tecnología con verdadero sentido educativo, evitando el uso superficial.</p>
+                </div>
+            </div>
+            
+            <div class="tilt-card" onmousemove="tilt(event, this)" onmouseleave="resetTilt(this)">
+                <div class="tilt-content">
+                    <div class="tilt-icon">🤝</div>
+                    <h2 class="tilt-title">Colaboración</h2>
+                    <p class="tilt-desc">Fomentamos el trabajo en equipo y el diálogo constructivo entre estudiantes.</p>
+                </div>
+            </div>
+
+            <div class="tilt-card" onmousemove="tilt(event, this)" onmouseleave="resetTilt(this)">
+                <div class="tilt-content">
+                    <div class="tilt-icon">🛡️</div>
+                    <h2 class="tilt-title">Responsabilidad</h2>
+                    <p class="tilt-desc">Orientamos a los jóvenes hacia un uso ético y positivo de la tecnología moderna.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer><p>&copy; 2026 CAST Innovation. Todos los derechos reservados.</p></footer>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+            }, { threshold: 0.15 });
+            scrollElements.forEach((el) => observer.observe(el));
+        });
+
+        // 3D Tilt Logic
+        function tilt(e, el) {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element.
+            const y = e.clientY - rect.top;  // y position within the element.
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -15; // Max 15 deg
+            const rotateY = ((x - centerX) / centerX) * 15;
+
+            el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        }
+
+        function resetTilt(el) {
+            el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        }
+    </script>
+</body>
+</html>

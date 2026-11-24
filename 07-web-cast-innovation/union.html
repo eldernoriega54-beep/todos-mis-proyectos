@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unión Código Conexión - CAST Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header { margin-top: 150px; text-align: center; }
+        .union-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            max-width: 900px;
+            margin: 50px auto;
+            flex-wrap: wrap;
+        }
+        .code-side, .robot-side {
+            background: rgba(20, 24, 30, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .signal-arrow {
+            font-size: 3rem;
+            color: var(--text-muted);
+            transition: color 0.3s, transform 0.3s;
+        }
+        .signal-arrow.active {
+            color: #25d366;
+            animation: pulse-arrow 0.5s infinite alternate;
+        }
+        @keyframes pulse-arrow {
+            from { transform: translateX(0) scale(1); }
+            to { transform: translateX(10px) scale(1.1); text-shadow: 0 0 15px #25d366; }
+        }
+        .run-btn {
+            margin-top: 20px;
+            background: #007aff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .run-btn:hover { background: #005bb5; transform: scale(1.05); }
+        .robot-bulb {
+            font-size: 5rem;
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+        }
+        .robot-bulb.on {
+            filter: grayscale(0%) drop-shadow(0 0 30px #ffea00);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprende_programar.html" class="dropdown-item">Aprende a programar</a>
+                <a href="conexiones.html" class="dropdown-item">Conexiones con un robot</a>
+                <a href="union.html" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html" class="dropdown-item">Ver modelos</a>
+                <a href="saber_mas_modelos.html" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="valores.html" class="dropdown-item">Valores</a>
+                <a href="mision_vision.html" class="dropdown-item">Misión y Visión</a>
+                <a href="objetivos.html" class="dropdown-item">Objetivos</a>
+                <a href="plan_estrategico.html" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-background-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_115623.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="background: rgba(13, 15, 18, 0.85);"></div>
+    </div>
+
+    <main class="content-wrapper" style="padding-top: 100px;">
+        <div class="page-header scroll-reveal">
+            <h1 class="main-title">Unión Código y Conexión</h1>
+            <p class="tagline">Envía la señal desde el software al hardware físico</p>
+        </div>
+
+        <section class="union-container scroll-reveal">
+            <div class="code-side">
+                <h2 style="color: white; margin-bottom: 20px;">Computadora (Código)</h2>
+                <div style="background: #4c97ff; padding: 10px; border-radius: 10px; color: white; display: inline-block;">Encender Luz LED</div>
+                <br>
+                <button class="run-btn" onclick="sendSignal()">Enviar Señal 📡</button>
+            </div>
+
+            <div class="signal-arrow" id="arrow">〰️〰️▶️</div>
+
+            <div class="robot-side">
+                <h2 style="color: white; margin-bottom: 20px;">Robot Físico (Hardware)</h2>
+                <div class="robot-bulb" id="bulb">💡</div>
+                <p style="margin-top:20px; color: var(--text-muted);" id="status">Esperando instrucción...</p>
+            </div>
+        </section>
+
+        <footer><p>&copy; 2026 CAST Innovation.</p></footer>
+    </main>
+
+    <script>
+        function sendSignal() {
+            const arrow = document.getElementById('arrow');
+            const bulb = document.getElementById('bulb');
+            const status = document.getElementById('status');
+            
+            arrow.classList.add('active');
+            status.innerText = "Recibiendo...";
+            
+            setTimeout(() => {
+                bulb.classList.add('on');
+                status.innerText = "¡Acción ejecutada en el Puerto A!";
+                status.style.color = "#ffea00";
+                setTimeout(() => {
+                    arrow.classList.remove('active');
+                    bulb.classList.remove('on');
+                    status.innerText = "Esperando instrucción...";
+                    status.style.color = "var(--text-muted)";
+                }, 3000);
+            }, 1000);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
+            }, { threshold: 0.15 });
+            scrollElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

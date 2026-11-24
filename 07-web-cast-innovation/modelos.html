@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Robots - CAST Innovation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+        <div class="nav-item">
+            <span class="nav-link">Aprender ▾</span>
+            <div class="dropdown-menu">
+                <a href="aprende_programar.html" class="dropdown-item">Aprende a programar</a>
+                <a href="conexiones.html" class="dropdown-item">Conexiones con un robot</a>
+                <a href="union.html" class="dropdown-item">Unión código conexión</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Modelos ▾</span>
+            <div class="dropdown-menu">
+                <a href="modelos.html" class="dropdown-item">Ver modelos</a>
+                <a href="saber_mas_modelos.html" class="dropdown-item">Saber más de los modelos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Quiénes Somos ▾</span>
+            <div class="dropdown-menu">
+                <a href="valores.html" class="dropdown-item">Valores</a>
+                <a href="mision_vision.html" class="dropdown-item">Misión y Visión</a>
+                <a href="objetivos.html" class="dropdown-item">Objetivos</a>
+                <a href="plan_estrategico.html" class="dropdown-item">Plan Estratégico</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="video-background-container">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="videos/20260418_115308.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" style="background: rgba(13, 15, 18, 0.9);"></div>
+    </div>
+
+    <main class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; min-height: 100vh;">
+        <section class="carousel-3d-container scroll-reveal" style="margin: 0; height: 100vh;">
+            <button class="carousel-nav-btn btn-left" onclick="rotateCarousel(-1)">&#10094;</button>
+            
+            <div class="carousel-3d-item active" id="item-0">
+                <img src="imagenes/7147poK3U+L._AC_UF1000,1000_QL80_.png" alt="Blue-Bot">
+                <h3>Robot Burbuja (Blue-Bot)</h3>
+            </div>
+            
+            <div class="carousel-3d-item next" id="item-1">
+                <img src="imagenes/Captura de pantalla 2026-06-01 201900.png" alt="SPIKE Prime">
+                <h3>LEGO® Education SPIKE™ Prime</h3>
+            </div>
+            
+            <div class="carousel-3d-item prev" id="item-2">
+                <img src="imagenes/spike_essential_new.png" alt="SPIKE Essential">
+                <h3>LEGO® Education SPIKE™ Essential Set 45345</h3>
+            </div>
+
+            <button class="carousel-nav-btn btn-right" onclick="rotateCarousel(1)">&#10095;</button>
+        </section>
+
+        <footer><p>&copy; 2026 CAST Innovation. Todos los derechos reservados.</p></footer>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-reveal");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("visible"); });
+            }, { threshold: 0.15 });
+            scrollElements.forEach(el => observer.observe(el));
+        });
+
+        // 3D Carousel Logic
+        let currentIndex = 0;
+        const totalItems = 3;
+
+        function rotateCarousel(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = totalItems - 1;
+            if (currentIndex >= totalItems) currentIndex = 0;
+
+            // Calculate next and prev
+            const nextIndex = (currentIndex + 1) % totalItems;
+            const prevIndex = (currentIndex - 1 + totalItems) % totalItems;
+
+            // Remove all classes
+            for(let i=0; i<totalItems; i++){
+                const item = document.getElementById(`item-${i}`);
+                item.className = 'carousel-3d-item'; 
+            }
+
+            // Assign new classes
+            document.getElementById(`item-${currentIndex}`).classList.add('active');
+            document.getElementById(`item-${nextIndex}`).classList.add('next');
+            document.getElementById(`item-${prevIndex}`).classList.add('prev');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexel 3D - Plan Estratégico</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* â”€â”€ Hero â”€â”€ */
+        .pe-hero {
+            min-height: 55vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px 40px;
+            gap: 20px;
+        }
+        .pe-hero .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(224,64,251,0.1);
+            border: 1px solid rgba(224,64,251,0.4);
+            border-radius: 50px;
+            padding: 8px 22px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .pe-hero h1 {
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 30%, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        .pe-hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        /* â”€â”€ Page container â”€â”€ */
+        .pe-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px 80px;
+        }
+        .pe-section-label {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .pe-section-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 60px;
+        }
+
+        /* â”€â”€ Timeline â”€â”€ */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin-bottom: 80px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), rgba(224,64,251,0.1));
+        }
+        .tl-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 60px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .tl-item.tl-visible { opacity: 1; transform: translateY(0); }
+        .tl-item:nth-child(odd) {
+            flex-direction: row;
+            padding-right: calc(50% + 40px);
+        }
+        .tl-item:nth-child(even) {
+            flex-direction: row-reverse;
+            padding-left: calc(50% + 40px);
+        }
+        .tl-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 24px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 20px rgba(224,64,251,0.7);
+            border: 3px solid #0a0a0a;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+        .tl-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 32px 36px;
+            box-shadow: var(--glass-shadow);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .tl-card:hover {
+            box-shadow: 0 0 40px rgba(224,64,251,0.2);
+            transform: translateY(-4px);
+        }
+        .tl-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(224,64,251,0.05), transparent);
+            pointer-events: none;
+        }
+        .tl-year {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .tl-card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .tl-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        .tl-icon {
+            font-size: 2rem;
+            color: rgba(224,64,251,0.4);
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* â”€â”€ FODA â”€â”€ */
+        .foda-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+        .foda-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 40px 36px;
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .foda-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .foda-card.fortalezas { border: 1px solid rgba(0, 230, 118, 0.4); }
+        .foda-card.fortalezas::before { background: linear-gradient(135deg, rgba(0,230,118,0.12), transparent); }
+        .foda-card.fortalezas .foda-icon { color: #00e676; }
+        .foda-card.fortalezas .foda-title { color: #00e676; }
+        .foda-card.oportunidades { border: 1px solid rgba(0, 176, 255, 0.4); }
+        .foda-card.oportunidades::before { background: linear-gradient(135deg, rgba(0,176,255,0.12), transparent); }
+        .foda-card.oportunidades .foda-icon { color: #00b0ff; }
+        .foda-card.oportunidades .foda-title { color: #00b0ff; }
+        .foda-card.debilidades { border: 1px solid rgba(255, 193, 7, 0.4); }
+        .foda-card.debilidades::before { background: linear-gradient(135deg, rgba(255,193,7,0.12), transparent); }
+        .foda-card.debilidades .foda-icon { color: #ffc107; }
+        .foda-card.debilidades .foda-title { color: #ffc107; }
+        .foda-card.amenazas { border: 1px solid rgba(244, 67, 54, 0.4); }
+        .foda-card.amenazas::before { background: linear-gradient(135deg, rgba(244,67,54,0.12), transparent); }
+        .foda-card.amenazas .foda-icon { color: #f44336; }
+        .foda-card.amenazas .foda-title { color: #f44336; }
+        .foda-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+        .foda-icon {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+        }
+        .foda-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .foda-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .foda-card ul li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .foda-card ul li:last-child { border-bottom: none; }
+        .foda-card ul li::before {
+            content: 'â–¹';
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .fortalezas ul li::before { color: #00e676; }
+        .oportunidades ul li::before { color: #00b0ff; }
+        .debilidades ul li::before { color: #ffc107; }
+        .amenazas ul li::before { color: #f44336; }
+
+        /* â”€â”€ Progress Bars â”€â”€ */
+        .kpi-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: var(--glass-shadow);
+        }
+        .kpi-section h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .kpi-section > p {
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+        }
+        .kpi-item {
+            margin-bottom: 36px;
+        }
+        .kpi-item:last-child { margin-bottom: 0; }
+        .kpi-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .kpi-label i { color: var(--accent); }
+        .kpi-percent {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .kpi-bar-track {
+            height: 10px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .kpi-bar-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--accent), #ff80ff);
+            box-shadow: 0 0 12px rgba(224,64,251,0.5);
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (max-width: 900px) {
+            .timeline::before { left: 24px; }
+            .tl-item:nth-child(odd),
+            .tl-item:nth-child(even) {
+                flex-direction: row;
+                padding: 0 0 0 60px;
+            }
+            .tl-dot { left: 24px; }
+            .foda-grid { grid-template-columns: 1fr; }
+            .kpi-section { padding: 36px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-logo">
+            <img src="app vexel/imagenes de la app/isologo.png" alt="Vexel 3D">
+            <span>Vexel 3D</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="quienes_somos.html">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="proposito.html">Propósito</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="productos.html">Productos <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="productos.html">Ver Catálogo</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="obtener.html">Obtener para ti</a></li>
+                </ul>
+            </li>
+            <li><a href="plan_estrategico.html" style="color:var(--accent)">Plan Estratégico</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="pe-hero">
+        <div class="badge"><i class="fa-solid fa-chart-line"></i>&nbsp; Hoja de Ruta Corporativa</div>
+        <h1>Plan Estratégico<br>2026 â€“ 2030</h1>
+        <p>Una hoja de ruta ambiciosa, medible y ejecutable para posicionar a Vexel 3D como el estándar global de manufactura textil inteligente en cinco años.</p>
+    </section>
+
+    <div class="pe-container">
+
+        <!-- TIMELINE -->
+        <section class="scroll-reveal">
+            <p class="pe-section-label"><i class="fa-solid fa-timeline"></i>&nbsp; Hitos Clave</p>
+            <h2 class="pe-section-title">Nuestra Línea de Tiempo</h2>
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-year">2026</div>
+                        <h4>Lanzamiento de la Plataforma Vexel 3D</h4>
+                        <p>Debut oficial de la app de diseño textil 3D con sistema de producción automatizado. Primeros usuarios beta en Guatemala y lanzamiento comercial al mercado latinoamericano. Integración inicial con maquinaria de producción asociada.</p>
+                        <i class="fa-solid fa-rocket tl-icon"></i>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-year">2027</div>
+                        <h4>Expansión Regional + 1,000 Usuarios Activos</h4>
+                        <p>Expansión a 3 países latinoamericanos clave (México, Colombia, Chile). Alcance de 1,000 usuarios activos mensuales en la plataforma. Primeras alianzas con distribuidores textiles regionales y apertura de soporte técnico localizado.</p>
+                        <i class="fa-solid fa-globe tl-icon"></i>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-year">2028</div>
+                        <h4>Automatización del 90% de Producción Textil</h4>
+                        <p>Implementación de automatización total en plantas asociadas: el 90% de los procesos de corte, confección y control de calidad operan bajo el sistema Vexel. Reducción del tiempo de producción en un 70% versus métodos tradicionales.</p>
+                        <i class="fa-solid fa-industry tl-icon"></i>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-year">2029</div>
+                        <h4>Licencias de Software + IA de Demanda</h4>
+                        <p>Modelo de negocio basado en licencias SaaS para fábricas textiles. Integración con módulo de IA predictiva de demanda que ajusta órdenes de producción en tiempo real. Primer año con ingresos recurrentes de escala empresarial.</p>
+                        <i class="fa-solid fa-microchip tl-icon"></i>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-year">2030</div>
+                        <h4>Estándar Global de Manufactura Textil Inteligente</h4>
+                        <p>Vexel 3D reconocida como referente mundial en manufactura textil inteligente. Presencia en más de 15 países, licencias activas en cientos de plantas, y adopción académica en universidades de ingeniería y diseño a nivel internacional.</p>
+                        <i class="fa-solid fa-trophy tl-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FODA -->
+        <section class="scroll-reveal" style="margin-bottom:80px;">
+            <p class="pe-section-label"><i class="fa-solid fa-square-poll-vertical"></i>&nbsp; Análisis Estratégico</p>
+            <h2 class="pe-section-title">Análisis FODA</h2>
+            <div class="foda-grid">
+                <div class="foda-card fortalezas">
+                    <div class="foda-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="foda-title">Fortalezas</div>
+                    <ul>
+                        <li>Software propietario de diseño 3D sin competencia directa en LATAM</li>
+                        <li>Integración completa de IA, robótica y plataforma de usuario final</li>
+                        <li>Algoritmo de optimización con 97%+ de aprovechamiento de material</li>
+                        <li>Equipo fundador con dominio técnico y visión empresarial</li>
+                        <li>Producto con identidad de marca sólida y diferenciada</li>
+                    </ul>
+                </div>
+                <div class="foda-card oportunidades">
+                    <div class="foda-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <div class="foda-title">Oportunidades</div>
+                    <ul>
+                        <li>Industria textil global con baja adopción tecnológica = mercado virgen</li>
+                        <li>Crecimiento sostenido del ecommerce de moda personalizada</li>
+                        <li>Políticas de sostenibilidad forzando industria a reducir desperdicio</li>
+                        <li>Ecosistema de startups tecnológicas en LATAM en expansión</li>
+                        <li>Demanda creciente de manufactura local post-pandemia</li>
+                    </ul>
+                </div>
+                <div class="foda-card debilidades">
+                    <div class="foda-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div class="foda-title">Debilidades</div>
+                    <ul>
+                        <li>Empresa en etapa temprana: recursos financieros limitados</li>
+                        <li>Dependencia de hardware especializado de alto costo</li>
+                        <li>Curva de aprendizaje para usuarios sin conocimiento técnico</li>
+                        <li>Red de distribución y ventas aún en construcción</li>
+                        <li>Equipo pequeño con alta carga operativa</li>
+                    </ul>
+                </div>
+                <div class="foda-card amenazas">
+                    <div class="foda-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                    <div class="foda-title">Amenazas</div>
+                    <ul>
+                        <li>Entrada de grandes corporativos tecnológicos al mercado textil</li>
+                        <li>Volatilidad económica en países objetivo de expansión</li>
+                        <li>Cambios regulatorios en comercio e importación de tecnología</li>
+                        <li>Resistencia al cambio en industria textil tradicional</li>
+                        <li>Riesgo de copia o ingeniería inversa del software propietario</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPIs / Progress Bars -->
+        <section class="scroll-reveal">
+            <p class="pe-section-label"><i class="fa-solid fa-gauge-high"></i>&nbsp; Objetivos Medibles</p>
+            <h2 class="pe-section-title" style="margin-bottom:40px;">KPIs Estratégicos</h2>
+            <div class="kpi-section">
+                <h3>Metas de Desempeño para 2030</h3>
+                <p>Indicadores clave de rendimiento que guían cada decisión estratégica de Vexel 3D.</p>
+
+                <div class="kpi-item">
+                    <div class="kpi-header">
+                        <span class="kpi-label"><i class="fa-solid fa-leaf"></i> Reducción de Desperdicio Textil</span>
+                        <span class="kpi-percent" data-target="87">0%</span>
+                    </div>
+                    <div class="kpi-bar-track"><div class="kpi-bar-fill" data-width="87"></div></div>
+                </div>
+                <div class="kpi-item">
+                    <div class="kpi-header">
+                        <span class="kpi-label"><i class="fa-solid fa-robot"></i> Automatización de Procesos</span>
+                        <span class="kpi-percent" data-target="90">0%</span>
+                    </div>
+                    <div class="kpi-bar-track"><div class="kpi-bar-fill" data-width="90"></div></div>
+                </div>
+                <div class="kpi-item">
+                    <div class="kpi-header">
+                        <span class="kpi-label"><i class="fa-solid fa-star"></i> Satisfacción del Cliente</span>
+                        <span class="kpi-percent" data-target="98">0%</span>
+                    </div>
+                    <div class="kpi-bar-track"><div class="kpi-bar-fill" data-width="98"></div></div>
+                </div>
+                <div class="kpi-item">
+                    <div class="kpi-header">
+                        <span class="kpi-label"><i class="fa-solid fa-earth-americas"></i> Expansión de Mercado (países)</span>
+                        <span class="kpi-percent" data-target="65">0%</span>
+                    </div>
+                    <div class="kpi-bar-track"><div class="kpi-bar-fill" data-width="65"></div></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 Vexel 3D â€” Innovación Textil y Robótica | <a href="contacto.html" style="color:var(--accent)">Contáctanos</a></p>
+    </footer>
+
+    <canvas id="particle-canvas"></canvas>
+    <script src="landing.js"></script>
+    <script>
+        // Timeline IntersectionObserver
+        const tlItems = document.querySelectorAll('.tl-item');
+        const tlObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('tl-visible'), i * 150);
+                }
+            });
+        }, { threshold: 0.2 });
+        tlItems.forEach(item => tlObserver.observe(item));
+
+        // KPI Progress Bars
+        const kpiItems = document.querySelectorAll('.kpi-item');
+        const kpiObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bar = entry.target.querySelector('.kpi-bar-fill');
+                    const percent = entry.target.querySelector('.kpi-percent');
+                    const target = parseInt(bar.dataset.width);
+                    const pTarget = parseInt(percent.dataset.target);
+                    if (!bar.dataset.animated) {
+                        bar.dataset.animated = 'true';
+                        setTimeout(() => { bar.style.width = target + '%'; }, 200);
+                        let count = 0;
+                        const step = pTarget / 60;
+                        const timer = setInterval(() => {
+                            count += step;
+                            if (count >= pTarget) { count = pTarget; clearInterval(timer); }
+                            percent.textContent = Math.floor(count) + '%';
+                        }, 25);
+                    }
+                }
+            });
+        }, { threshold: 0.4 });
+        kpiItems.forEach(item => kpiObserver.observe(item));
+    </script>
+</body>
+</html>
+

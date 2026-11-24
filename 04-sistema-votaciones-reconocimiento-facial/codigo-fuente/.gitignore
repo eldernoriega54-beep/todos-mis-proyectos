@@ -1,0 +1,25 @@
+# Git ignore para el proyecto Chevez Votaciones
+
+# Archivos temporales y basura
+*.log
+*.tmp
+*.bak
+Thumbs.db
+.DS_Store
+
+# Archivos de sistema local (NO subir a GitHub)
+dump.php
+base_datos.sql
+base_datos_chevez.sql
+chevez-hosting.zip
+
+# Variables de entorno locales (NUNCA subir al repo)
+.env
+.env.local
+
+# El vendor de Composer NO se sube, Render lo instala con composer install
+api/vendor/
+
+# Logs de apache/php
+error.log
+access.log
