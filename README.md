@@ -1,14 +1,14 @@
 # Portafolio Profesional de Proyectos Técnicos
-### **Elder Adrián Noriega Ortiz**
+### Elder Adrián Noriega Ortiz
 **Bachiller Técnico Profesional en Informática con orientación en Robótica**  
-📍 El Progreso, Yoro, Honduras | ✉️ [eldernoriega54@gmail.com](mailto:eldernoriega54@gmail.com) | 📞 +504 9758-0983  
-🔗 **Repositorio Oficial:** [github.com/eldernoriega54-beep/todos-mis-proyectos](https://github.com/eldernoriega54-beep/todos-mis-proyectos)
+El Progreso, Yoro, Honduras | Correo: [eldernoriega54@gmail.com](mailto:eldernoriega54@gmail.com) | Teléfono: +504 9758-0983  
+**Repositorio Oficial:** [github.com/eldernoriega54-beep/todos-mis-proyectos](https://github.com/eldernoriega54-beep/todos-mis-proyectos)
 
 ---
 
-## 🌟 Resumen de Perfil & Logros Principales
+## Resumen de Perfil y Logros Principales
 
-- **🥈 Subcampeón Nacional en Olimpiadas de Robótica 2026:** Segundo lugar nacional con el desarrollo del *Sistema de Prevención de Accidentes de Tráfico para Motociclistas* (Casco Inteligente con IMU de 10 ejes, GPS Neo-8M, Alerta SOS GSM al 911 y Edge AI).
+- **Subcampeón Nacional en Olimpiadas de Robótica 2026:** Segundo lugar nacional con el desarrollo del *Sistema de Prevención de Accidentes de Tráfico para Motociclistas* (Casco Inteligente con IMU de 10 ejes, GPS Neo-8M, Alerta SOS GSM al 911 y Edge AI).
 - **Competidor Nacional en Tres Olimpiadas Consecutivas:** Primer estudiante de su promoción en representar consecutivamente a la institución en 3 certámenes nacionales de robótica.
 - **Liderazgo Técnico Institucional:** Dirección de proyectos técnicos multidisciplinarios (automatización de timbres para centros educativos, instalación de redes y videovigilancia, tableros eléctricos y sistemas modulares).
 - **Alianza y Marketing Empresarial:** Seleccionado como único estudiante representante para desarrollar el portal y estrategia digital de la empresa de robótica educativa **Cast Innovation**.
@@ -16,17 +16,18 @@
 
 ---
 
-## 🌐 Página Web Interactiva del Portafolio
+## Página Web Interactiva del Portafolio
 
-Este repositorio incluye una interfaz web moderna y responsiva lista para ser explorada localmente o desplegada mediante **GitHub Pages**:
+Este repositorio incluye una interfaz web moderna, responsiva y libre de dependencias externas pesadas, lista para ser explorada localmente o desplegada mediante **GitHub Pages**:
 - Archivo principal: [`index.html`](index.html)
 - Hojas de estilo y diseño: [`style.css`](style.css)
 - Controlador interactivo y modales: [`app.js`](app.js)
 - Galería visual y capturas: [`assets/thumbnails/`](assets/thumbnails/)
+- **Galería de videos directos:** La pestaña de *Marketing & Animaciones Propias* permite reproducir los 7 videos y animaciones directamente en el navegador sin salir a plataformas externas.
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 El repositorio se encuentra organizado de forma modular en carpetas independientes, optimizadas para su despliegue y revisión técnica:
 
@@ -34,7 +35,7 @@ El repositorio se encuentra organizado de forma modular en carpetas independient
 todos-mis-proyectos/
 │
 ├── 01-alerta-temprana-inundacion-ATRI/         # PLC Siemens S7-1200 + Arduino + App Android
-├── 02-sistema-prevencion-accidentes-casco/     # Firmware de Casco Inteligente (🥈 2do Lugar Nacional)
+├── 02-sistema-prevencion-accidentes-casco/     # Firmware de Casco Inteligente (Segundo Lugar Nacional)
 ├── 03-viga-core-app/                           # App Android complementaria para telemetría BLE
 ├── 04-sistema-votaciones-reconocimiento-facial/# Plataforma electoral con biometría facial AWS
 ├── 05-traductor-lenguaje-senas-TLS/            # Edge AI con MediaPipe (21 puntos 3D) en Android
@@ -54,11 +55,11 @@ todos-mis-proyectos/
 
 ---
 
-## 🚀 Detalle de Proyectos Destacados
+## Detalle de Proyectos Destacados
 
 ### 1. Sistema de Prevención de Accidentes de Tráfico para Motociclistas (Casco Inteligente)
 * **Carpeta:** [`02-sistema-prevencion-accidentes-casco/`](02-sistema-prevencion-accidentes-casco/)
-* **Reconocimiento:** 🥈 **Segundo Lugar a Nivel Nacional (Olimpiadas Nacionales 2026)**
+* **Reconocimiento:** **Segundo Lugar a Nivel Nacional (Olimpiadas Nacionales 2026)**
 * **Tecnologías:** ESP32, Arduino C++, PlatformIO, MPU6050, HMC5883L, MS5611, TinyGPS++, SIM800L, TinyML.
 * **Descripción:** Prototipo mecatrónico embebido en el chasis de un casco de protección. Integra una **Unidad de Medición Inercial (IMU) de 10 ejes**, algoritmos dedicados para detección de derrapes violentos (*lowsider*) e impacto, geolocalización satelital con **GPS Neo-8M** y despacho autónomo de mensajes de socorro por **GSM SIM800L** a servicios de emergencia (911) y contactos prioritarios. Cuenta con un modelo local de inferencia TinyML para filtrar vibraciones normales del camino y evitar falsas alarmas.
 > *Nota de confidencialidad:* Proyecto institucional protegido; el código expuesto presenta la arquitectura de diseño sin vulnerar llaves de producción ni datos de contacto privados.
@@ -129,14 +130,14 @@ todos-mis-proyectos/
 
 ---
 
-### 11. Producción Audiovisual & Marketing Digital
+### 11. Producción Audiovisual, Marketing & Animaciones Propias
 * **Carpeta:** [`11-produccion-audiovisual/`](11-produccion-audiovisual/)
 * **Tecnologías:** CapCut Pro, FFmpeg (Codecs H.264 / AAC), Motion Graphics.
-* **Descripción:** Material audiovisual promocional, informativo y técnico editado para presentaciones institucionales y torneos de robótica. Incluye spots para campañas de votación estudiantil, videos de casos de éxito y el reportaje de la carrera técnica de robótica, optimizados para reproducción fluida sin pérdida de fidelidad visual.
+* **Descripción:** Material audiovisual promocional, informativo y técnico editado para presentaciones institucionales y torneos de robótica. Incluye spots para campañas de votación estudiantil, videos de casos de éxito y el reportaje de la carrera técnica de robótica, optimizados para reproducción fluida sin pérdida de fidelidad visual y reproducibles directamente desde la interfaz web del portafolio.
 
 ---
 
-## 🛠️ Competencias Técnicas Principales
+## Competencias Técnicas Principales
 
 | Área | Competencias y Herramientas |
 | :--- | :--- |
@@ -149,7 +150,7 @@ todos-mis-proyectos/
 
 ---
 
-## 📬 Contacto y Disponibilidad
+## Contacto y Disponibilidad
 
 Disponibilidad para incorporarse a oportunidades de práctica profesional, proyectos de ingeniería, desarrollo de software y manufactura robótica.
 

@@ -1,10 +1,19 @@
+// Iconos SVG reutilizables (reemplazan todos los emojis)
+const ICONS = {
+  award: `<svg class="icon-inline" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
+  folder: `<svg class="icon-inline" width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>`,
+  info: `<svg class="icon-inline" width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+  video: `<svg class="icon-inline" width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>`,
+  external: `<svg class="icon-inline" width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>`
+};
+
 const projects = [
   {
     id: "casco-seguridad",
     category: "robotica",
     folder: "02-sistema-prevencion-accidentes-casco",
     title: "Sistema de Prevención de Accidentes de Tráfico",
-    badge: "🥈 2do Lugar Nacional (Olimpiadas 2026)",
+    badge: "Segundo Lugar Nacional (Olimpiadas 2026)",
     isAward: true,
     thumbnail: "assets/thumbnails/viga_logo.png",
     shortDesc: "Prototipo integrado en el chasis de un casco con IMU 10-DOF, GPS Neo-8M, alerta por SMS al 911 con SIM800L ante caídas o lowsider, y modelo Edge AI embebido.",
@@ -234,60 +243,175 @@ const projects = [
   },
   {
     id: "produccion-audiovisual",
-    category: "fabricacion",
+    category: "marketing",
     folder: "11-produccion-audiovisual",
-    title: "Producción Audiovisual & Marketing Digital",
-    badge: "Videos & Animación CapCut",
+    title: "Marketing & Animaciones Propias",
+    badge: "Videos & Galería Reproducible",
     isAward: false,
+    isSpecialVideoCard: true,
     thumbnail: "assets/thumbnails/cast_innovation.png",
-    shortDesc: "Serie de videos promocionales, institucionales y técnicos producidos y editados en CapCut. Cobertura de robótica, casos de éxito, votaciones biométricas y presentaciones.",
-    tags: ["CapCut", "Edición de Video", "Animación", "H.264", "Multimedia"],
+    shortDesc: "Galería completa de 7 videos y animaciones editadas en CapCut: reportajes de robótica, spots de votaciones biométricas, casos de éxito y animaciones listas para ver aquí.",
+    tags: ["CapCut", "Edición de Video", "Animación Propia", "Marketing Digital", "H.264"],
     details: {
-      subtitle: "Comunicación Técnica y Contenido Audiovisual de Alto Impacto",
-      context: "Desarrollo de piezas publicitarias y explicativas para proyectos institucionales, eventos del colegio y torneos de robótica.",
+      subtitle: "Producción Audiovisual, Comunicación Técnica y Animaciones Propias",
+      context: "Colección audiovisual completa para promoción institucional y proyectos de tecnología.",
       architecture: [
-        "Promoción y Explicación de Votaciones Biométricas: Spots publicitarios para concienciación del voto estudiantil.",
-        "Video de la Carrera de Robótica: Resumen visual de la trayectoria, prototipos y competencias nacionales.",
-        "Casos de Éxito y Presentaciones: Edición de ritmo, inserción de motion graphics, sincronización de audio y exportación optimizada en H.264."
+        "Visualiza y reproduce directamente todos los videos desde la pestaña dedicada de Marketing.",
+        "Videos comprimidos y optimizados en H.264 para carga instantánea en navegador.",
+        "Incluye reportaje de robótica, spots de votaciones biométricas, casos de éxito y TES."
       ],
-      hardware: "Estación de trabajo audiovisual.",
-      software: "CapCut Pro, FFmpeg, H.264/AAC Codecs."
+      hardware: "Navegador web (reproducción HTML5 directa).",
+      software: "CapCut, FFmpeg, H.264 Codec."
     }
   }
 ];
 
-// Renderizar tarjetas
+// Lista de videos disponibles para reproducir directamente en la página
+const videoShowcaseList = [
+  {
+    title: "Video de la Carrera de Robótica (Original)",
+    file: "11-produccion-audiovisual/video de la carrera de robotica original (1).mp4",
+    badge: "Reportaje & Torneos",
+    desc: "Recorrido audiovisual completo por los proyectos, prototipos, laboratorios y trayectoria en las Olimpiadas Nacionales de Robótica.",
+    tags: ["Robótica", "Competencias", "Trayectoria"]
+  },
+  {
+    title: "Casos de Éxito en Proyectos Técnicos",
+    file: "11-produccion-audiovisual/video de los casos de exito.mp4",
+    badge: "Casos de Éxito",
+    desc: "Presentación formal de soluciones reales implementadas con impacto en instituciones educativas y la comunidad.",
+    tags: ["Impacto Real", "Automatización", "Liderazgo"]
+  },
+  {
+    title: "Promoción y Explicación Técnica de Proyectos",
+    file: "11-produccion-audiovisual/promocion y explicacion.mp4",
+    badge: "Explicación Técnica",
+    desc: "Demostración guiada con explicación detallada del funcionamiento técnico de los prototipos desarrollados.",
+    tags: ["Demostración", "Ingeniería", "Electrónica"]
+  },
+  {
+    title: "Promoción de Votaciones Biométricas 1",
+    file: "11-produccion-audiovisual/promocion de votaciones 1.mp4",
+    badge: "Campaña Oficial 2026",
+    desc: "Spot publicitario oficial para la concienciación y orientación estudiantil en el uso del sistema electoral con biometría facial.",
+    tags: ["Marketing Institucional", "Biometría", "Spot"]
+  },
+  {
+    title: "Promoción de Votaciones Biométricas 2",
+    file: "11-produccion-audiovisual/promocion votaciones 2.mp4",
+    badge: "Spot Electoral",
+    desc: "Segunda entrega audiovisual para la difusión masiva del sufragio seguro y transparente en el colegio.",
+    tags: ["Animación", "Campaña", "PWA"]
+  },
+  {
+    title: "Resultados de Trabajo Educativo Social (TES)",
+    file: "11-produccion-audiovisual/video de resultados de tes.mp4",
+    badge: "Resultados TES",
+    desc: "Informe audiovisual condensado con métricas, evidencias y logros alcanzados durante el Trabajo Educativo Social.",
+    tags: ["Comunidad", "Educación", "Evidencias"]
+  },
+  {
+    title: "Producción Audiovisual Final Ebenezer",
+    file: "11-produccion-audiovisual/video final evenezer.mp4",
+    badge: "Producción & Montaje",
+    desc: "Montaje audiovisual conmemorativo con animaciones, transiciones y sincronización musical para evento de cierre.",
+    tags: ["Montaje", "Edición Dinámica", "CapCut"]
+  }
+];
+
 const container = document.getElementById("projectsContainer");
+const videoSection = document.getElementById("videoShowcaseSection");
+const videosContainer = document.getElementById("videosContainer");
 
 function renderProjects(filter = "all") {
+  // Manejo de la vista de marketing (videos embebidos directamente)
+  if (filter === "marketing") {
+    container.style.display = "none";
+    videoSection.style.display = "block";
+    renderVideoShowcase();
+    return;
+  } else {
+    container.style.display = "grid";
+    videoSection.style.display = "none";
+  }
+
   container.innerHTML = "";
   const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
 
   filtered.forEach(p => {
     const card = document.createElement("article");
     card.className = "project-card";
+
+    // Si es la tarjeta de marketing vista desde "all", su botón lleva directamente a ver los videos
+    const actionBtn = p.isSpecialVideoCard
+      ? `<button class="btn btn-primary" onclick="switchToMarketing()">
+           ${ICONS.video}
+           Ver y Reproducir Videos Aquí
+         </button>`
+      : `<button class="btn btn-primary" onclick="openModal('${p.id}')">
+           ${ICONS.info}
+           Ver Detalles y Arquitectura
+         </button>`;
+
     card.innerHTML = `
       <div class="card-img-wrapper">
         <img src="${p.thumbnail}" alt="${p.title}" loading="lazy" onerror="this.src='assets/thumbnails/viga_logo.png'">
-        <span class="card-badge ${p.isAward ? 'award-badge' : ''}">${p.badge}</span>
+        <span class="card-badge ${p.isAward ? 'award-badge' : ''}">
+          ${p.isAward ? ICONS.award : ''}
+          ${p.badge}
+        </span>
       </div>
       <div class="card-body">
-        <div class="card-folder">📁 ${p.folder}</div>
+        <div class="card-folder">${ICONS.folder} ${p.folder}</div>
         <h3 class="card-title">${p.title}</h3>
         <p class="card-text">${p.shortDesc}</p>
         <div class="tech-tags">
           ${p.tags.map(t => `<span class="tech-tag">${t}</span>`).join("")}
         </div>
         <div class="card-footer">
-          <button class="btn btn-primary" onclick="openModal('${p.id}')">
-            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            Ver Detalles y Arquitectura
-          </button>
+          ${actionBtn}
         </div>
       </div>
     `;
     container.appendChild(card);
   });
+}
+
+function renderVideoShowcase() {
+  videosContainer.innerHTML = "";
+  videoShowcaseList.forEach((v, index) => {
+    const card = document.createElement("div");
+    card.className = "video-card";
+    card.innerHTML = `
+      <div class="video-player-wrapper">
+        <video controls preload="metadata">
+          <source src="${v.file}" type="video/mp4">
+          Tu navegador no soporta reproducción de video HTML5.
+        </video>
+      </div>
+      <div class="video-card-body">
+        <div class="video-badge">${ICONS.video} ${v.badge}</div>
+        <h3 class="video-card-title">${v.title}</h3>
+        <p class="video-card-desc">${v.desc}</p>
+        <div class="tech-tags">
+          ${v.tags.map(t => `<span class="tech-tag">${t}</span>`).join("")}
+        </div>
+      </div>
+    `;
+    videosContainer.appendChild(card);
+  });
+}
+
+function switchToMarketing() {
+  document.querySelectorAll(".pill").forEach(p => {
+    if (p.getAttribute("data-filter") === "marketing") {
+      p.classList.add("active");
+    } else {
+      p.classList.remove("active");
+    }
+  });
+  renderProjects("marketing");
+  window.scrollTo({ top: document.getElementById("filterPillsContainer").offsetTop - 20, behavior: "smooth" });
 }
 
 // Filtros
@@ -310,7 +434,10 @@ function openModal(id) {
 
   modalBody.innerHTML = `
     <img src="${p.thumbnail}" alt="${p.title}" class="modal-img" onerror="this.style.display='none'">
-    <span class="card-badge ${p.isAward ? 'award-badge' : ''}">${p.badge}</span>
+    <span class="card-badge ${p.isAward ? 'award-badge' : ''}">
+      ${p.isAward ? ICONS.award : ''}
+      ${p.badge}
+    </span>
     <h2 class="modal-title" style="margin-top: 10px;">${p.title}</h2>
     <h4 class="modal-subtitle">${p.details.subtitle}</h4>
     
@@ -324,15 +451,16 @@ function openModal(id) {
       ${p.details.architecture.map(item => `<li>${item}</li>`).join("")}
     </ul>
 
-    <h3 class="modal-section-title">Hardware & Entorno</h3>
+    <h3 class="modal-section-title">Hardware &amp; Entorno</h3>
     <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 12px;">${p.details.hardware}</p>
 
-    <h3 class="modal-section-title">Herramientas & Tecnologías</h3>
+    <h3 class="modal-section-title">Herramientas &amp; Tecnologías</h3>
     <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">${p.details.software}</p>
 
     <div style="text-align: right; margin-top: 24px;">
       <a href="https://github.com/eldernoriega54-beep/todos-mis-proyectos/tree/main/${p.folder}" target="_blank" class="btn btn-primary" style="display: inline-flex;">
-        Ver Carpeta en GitHub &rarr;
+        ${ICONS.external}
+        Ver Carpeta en GitHub
       </a>
     </div>
   `;
