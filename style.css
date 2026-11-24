@@ -277,6 +277,53 @@ body {
   border-color: #f59e0b;
 }
 
+.security-badge {
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.9), rgba(159, 18, 57, 0.9));
+  color: #fff;
+  border: 1px solid #f43f5e;
+  box-shadow: 0 0 10px rgba(244, 63, 94, 0.35);
+}
+
+.card-security-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(225, 29, 72, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  font-size: 0.78rem;
+  color: #fda4af;
+  line-height: 1.4;
+}
+
+.modal-security-box {
+  background: rgba(225, 29, 72, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.modal-security-box h4 {
+  color: #f43f5e;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-security-box p {
+  color: #fecdd3;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
 .card-body {
   padding: 20px;
   display: flex;

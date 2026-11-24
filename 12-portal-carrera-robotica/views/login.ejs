@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Panel BTPIR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #060F1E; color: #E0F7FF; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+    .login-box { background: rgba(10,36,64,0.85); padding: 2.5rem 2rem; border-radius: 12px; border: 1px solid rgba(125,249,255,0.25); text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.5); width: 100%; max-width: 320px; }
+    h2 { color: #7DF9FF; margin-bottom: 1rem; font-size: 1.3rem; }
+    input { width: 100%; padding: 0.8rem; margin: 1rem 0; border: 1px solid rgba(125,249,255,0.4); background: rgba(6,15,38,0.8); color: #7DF9FF; border-radius: 8px; outline: none; box-sizing: border-box; }
+    input:focus { border-color: #7DF9FF; box-shadow: 0 0 8px rgba(125,249,255,0.2); }
+    button { width: 100%; padding: 0.8rem; background: rgba(125,249,255,0.15); border: 1px solid #7DF9FF; color: #7DF9FF; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.2s; box-sizing: border-box; }
+    button:hover { background: #7DF9FF; color: #060F1E; }
+    .err { color: #ff8888; font-size: 0.85rem; margin-top: -0.5rem; margin-bottom: 0.5rem; }
+    a { color: #8aabb8; font-size: 0.8rem; text-decoration: none; display: inline-block; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2><i class="fa-solid fa-lock" style="color: #7DF9FF;"></i> Acceso Restringido</h2>
+    <% if (error) { %>
+      <div class='err'><%= error %></div>
+    <% } %>
+    <form action="/admin/login" method="POST">
+      <input type="password" name="admin_pass" placeholder="Contraseña" required autofocus>
+      <button type="submit">Entrar al Panel</button>
+    </form>
+    <a href="/contacto.html">← Volver a la página</a>
+  </div>
+</body>
+</html>

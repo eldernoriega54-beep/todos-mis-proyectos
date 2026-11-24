@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Aspirantes · BTPIR Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --azul-electrico: #7DF9FF;
+      --azul-oscuro:    #0A2540;
+      --azul-fondo:     #060F1E;
+      --azul-medio:     #1A3A5C;
+      --naranja:        #FF8C42;
+      --blanco:         #E0F7FF;
+      --gris:           #8aabb8;
+      --vidrio:         rgba(10,36,64,0.85);
+      --borde:          rgba(125,249,255,0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--azul-fondo);
+      color: var(--blanco);
+      min-height: 100vh;
+      padding: 0 0 3rem;
+    }
+    header {
+      background: rgba(6,15,38,0.95);
+      border-bottom: 2px solid var(--azul-electrico);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 1.2rem; color: var(--azul-electrico); }
+    header p  { font-size: 0.82rem; color: var(--gris); }
+    .back-link {
+      color: var(--azul-electrico);
+      text-decoration: none;
+      font-size: 0.85rem;
+      border: 1px solid var(--borde);
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .back-link:hover { background: rgba(125,249,255,0.1); }
+    .stats { display: flex; gap: 1rem; padding: 1.2rem 2rem; flex-wrap: wrap; }
+    .stat { background: var(--vidrio); border: 1px solid var(--borde); border-radius: 12px; padding: 0.9rem 1.6rem; text-align: center; min-width: 130px; }
+    .stat-num  { font-size: 2rem; font-weight: 900; color: var(--azul-electrico); }
+    .stat-lbl  { font-size: 0.78rem; color: var(--gris); margin-top: 0.3rem;}
+    .alerta { margin: 0 2rem 1rem; padding: 0.8rem 1.2rem; background: rgba(125,249,255,0.1); border: 1px solid var(--borde); border-radius: 10px; color: var(--azul-electrico); font-size: 0.9rem; }
+    .tabla-wrap { margin: 0 2rem; overflow-x: auto; border-radius: 14px; border: 1px solid var(--borde); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.87rem; }
+    thead th { background: rgba(125,249,255,0.12); padding: 0.85rem 1rem; text-align: left; color: var(--azul-electrico); font-weight: 700; white-space: nowrap; border-bottom: 1px solid var(--borde); }
+    tbody td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(125,249,255,0.07); vertical-align: top; color: var(--blanco); }
+    tbody tr:hover td { background: rgba(125,249,255,0.04); }
+    tbody tr.atendido td { opacity: 0.5; }
+    .link-wa, .link-email, .btn-atender { display: inline-flex; align-items: center; gap: 5px; padding: 0.3rem 0.7rem; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600; white-space: nowrap; transition: background 0.2s; }
+    .link-wa { background: rgba(37,211,102,0.15); border: 1px solid rgba(37,211,102,0.4); color: #25D366; margin-bottom: 0.4rem;}
+    .link-wa:hover { background: rgba(37,211,102,0.28); }
+    .link-email { background: rgba(125,249,255,0.1); border: 1px solid var(--borde); color: var(--azul-electrico); }
+    .link-email:hover { background: rgba(125,249,255,0.2); }
+    .btn-atender { background: rgba(255,140,66,0.15); border: 1px solid rgba(255,140,66,0.4); color: #FF8C42; cursor: pointer; }
+    .btn-atender:hover { background: rgba(255,140,66,0.3); }
+    .badge-pendiente { background: rgba(255,140,66,0.18); color: #FF8C42; border: 1px solid rgba(255,140,66,0.4); padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.72rem; font-weight: 700; }
+    .badge-atendido { background: rgba(125,249,255,0.12); color: var(--azul-electrico); border: 1px solid var(--borde); padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.72rem; font-weight: 700; }
+    .grado-badge { background: rgba(125,249,255,0.1); color: var(--azul-electrico); border: 1px solid var(--borde); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; }
+    .msg-text { max-width: 220px; white-space: pre-wrap; word-break: break-word; color: var(--gris); font-size: 0.82rem; }
+    .fecha { color: var(--gris); font-size: 0.78rem; white-space: nowrap; }
+    .empty { text-align: center; padding: 3rem; color: var(--gris); }
+    .empty .icon { font-size: 3rem; margin-bottom: 0.7rem; color: var(--azul-electrico); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1><i class="fa-solid fa-users-gear" style="color:var(--azul-electrico)"></i> Panel de Aspirantes — BTPIR</h1>
+    <p>CEMG Eduardo Hernández Chévez · Administración de Contactos</p>
+  </div>
+  <div style="display:flex; gap:10px;">
+    <a class="back-link" href="/admin/logout" style="border-color:#ff8888; color:#ff8888;">Cerrar sesión</a>
+    <a class="back-link" href="/contacto.html">Volver a la web</a>
+  </div>
+</header>
+
+<% if (ok) { %>
+<div class="alerta"><i class="fa-solid fa-check"></i> Aspirante marcado como atendido correctamente.</div>
+<% } %>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num"><%= total %></div>
+    <div class="stat-lbl"><i class="fa-solid fa-folder-open"></i> Total de Registros</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num" style="color:var(--naranja)"><%= pendientes %></div>
+    <div class="stat-lbl"><i class="fa-solid fa-clock"></i> Pendientes de Atender</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num"><%= total - pendientes %></div>
+    <div class="stat-lbl"><i class="fa-solid fa-check-circle"></i> Ya Atendidos</div>
+  </div>
+</div>
+
+<!-- Tabla -->
+<div class="tabla-wrap">
+<% if (filas.length === 0) { %>
+  <div class="empty">
+    <div class="icon"><i class="fa-solid fa-inbox"></i></div>
+    <p>Aún no hay registros de aspirantes.</p>
+  </div>
+<% } else { %>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Aspirante</th>
+      <th>Tutor / Padre</th>
+      <th>Contacto</th>
+      <th>Escuela de Origen</th>
+      <th>Grado</th>
+      <th>Consulta</th>
+      <th>Estado</th>
+      <th>Fecha</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% filas.forEach(function(f) { %>
+  <tr class="<%= f.atendido ? 'atendido' : '' %>">
+    <td><%= f.id %></td>
+    <td><strong><%= f.nombre_aspirante %></strong></td>
+    <td><%= f.nombre_tutor || '—' %></td>
+    <td style="min-width:180px;">
+      <% if (f.telefono) { 
+           let num = f.telefono.replace(/[^0-9]/g, '');
+           if (num.length === 8) num = '504' + num;
+      %>
+        <a class="link-wa" href="https://wa.me/<%= num %>" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> <%= f.telefono %>
+        </a><br>
+      <% } %>
+      <% if (f.correo) { %>
+        <a class="link-email" href="mailto:<%= f.correo %>">
+          <i class="fa-regular fa-envelope"></i> <%= f.correo %>
+        </a>
+      <% } %>
+    </td>
+    <td><%= f.escuela_origen || '—' %></td>
+    <td><span class="grado-badge"><%= f.grado_aspira %></span></td>
+    <td>
+      <div class="msg-text">
+        <%- f.mensaje ? f.mensaje.replace(/</g, '&lt;') : '<em style="color:#555">Sin mensaje</em>' %>
+      </div>
+    </td>
+    <td>
+      <% if (f.atendido) { %>
+        <span class="badge-atendido"><i class="fa-solid fa-check"></i> Atendido</span>
+      <% } else { %>
+        <span class="badge-pendiente"><i class="fa-solid fa-hourglass-half"></i> Pendiente</span>
+      <% } %>
+    </td>
+    <td class="fecha">
+      <%= new Date(f.fecha_registro).toLocaleDateString('es-ES') %><br>
+      <span style="opacity:0.6"><%= new Date(f.fecha_registro).toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'}) %></span>
+    </td>
+    <td>
+      <% if (!f.atendido) { %>
+        <a class="btn-atender" href="/admin/atender/<%= f.id %>" onclick="return confirm('¿Marcar como atendido?')">
+          <i class="fa-solid fa-check"></i> Atendido
+        </a>
+      <% } else { %>
+        <span style="color:#555;font-size:0.78rem;">—</span>
+      <% } %>
+    </td>
+  </tr>
+  <% }) %>
+  </tbody>
+</table>
+<% } %>
+</div>
+
+</body>
+</html>

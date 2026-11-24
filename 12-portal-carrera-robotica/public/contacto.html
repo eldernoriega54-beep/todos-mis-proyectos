@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | BTPIR – CEMG Eduardo Hernández Chévez</title>
+  <meta name="description" content="Formulario de contacto para futuros estudiantes del BTPIR. Información de matrícula, requisitos y orientación." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /*  Formulario Glassmorphism  */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+    }
+    @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--azul-electrico);
+      letter-spacing: 0.4px;
+    }
+    .form-label span { color: var(--naranja-acento); margin-left: 2px; }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: rgba(6,20,48,0.7);
+      border: 1px solid rgba(125,249,255,0.25);
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      color: var(--blanco-azul);
+      font-size: 0.92rem;
+      font-family: inherit;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      width: 100%;
+      backdrop-filter: blur(6px);
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--azul-electrico);
+      box-shadow: 0 0 0 3px rgba(125,249,255,0.12);
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: rgba(200,232,240,0.4); }
+    .form-select option { background: #0A2540; color: var(--blanco-azul); }
+    .form-textarea { resize: vertical; min-height: 110px; }
+
+    .form-hint {
+      font-size: 0.75rem;
+      color: rgba(200,232,240,0.5);
+      margin-top: 0.15rem;
+    }
+
+    /*  Alertas de status  */
+    .status-alert {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 1.4rem;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      margin-bottom: 1.8rem;
+    }
+    .status-alert.exito {
+      background: rgba(125,249,255,0.1);
+      border: 1px solid rgba(125,249,255,0.4);
+      color: var(--azul-electrico);
+    }
+    .status-alert.error {
+      background: rgba(255,80,80,0.1);
+      border: 1px solid rgba(255,80,80,0.4);
+      color: #ff8888;
+    }
+    .status-alert.incompleto {
+      background: rgba(255,140,66,0.1);
+      border: 1px solid rgba(255,140,66,0.4);
+      color: var(--naranja-claro);
+    }
+
+    /*  Tarjetas de info lateral  */
+    .info-stack { display: flex; flex-direction: column; gap: 1.1rem; }
+
+    .info-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+    }
+    .info-card-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--azul-electrico);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+
+    /*  Botón de WhatsApp grande  */
+    .wa-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      background: rgba(37,211,102,0.12);
+      border: 1px solid rgba(37,211,102,0.4);
+      border-radius: 12px;
+      padding: 0.85rem 1.2rem;
+      text-decoration: none;
+      color: #25D366;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+      margin-bottom: 0.5rem;
+    }
+    .wa-btn:hover {
+      background: rgba(37,211,102,0.22);
+      transform: translateX(4px);
+    }
+    .wa-icon { font-size: 1.8rem; }
+    .wa-sub  { font-size: 0.76rem; color: rgba(37,211,102,0.75); font-weight: 400; }
+
+    /*  Links de redes sociales  */
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--gris-claro);
+      border: 1px solid rgba(125,249,255,0.15);
+      background: rgba(6,20,48,0.5);
+      transition: all 0.25s;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+    }
+    .social-link:last-child { margin-bottom: 0; }
+    .social-link:hover {
+      border-color: var(--azul-electrico);
+      color: var(--azul-electrico);
+      background: rgba(125,249,255,0.07);
+      transform: translateX(4px);
+    }
+    .social-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .social-name { font-weight: 600; font-size: 0.88rem; }
+    .social-url  { font-size: 0.72rem; opacity: 0.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+
+    /*  Layout principal de contacto  */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+
+    /*  Tabla de campos del formulario (info)  */
+    .field-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .field-table th {
+      background: rgba(125,249,255,0.1);
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      color: var(--azul-electrico);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .field-table td {
+      padding: 0.55rem 0.8rem;
+      border-bottom: 1px solid rgba(125,249,255,0.07);
+      color: var(--gris-claro);
+    }
+    .field-table tr:last-child td { border-bottom: none; }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- FONDO DE VIDEO -->
+  <div id="video-bg-container"></div>
+  <div id="video-overlay"></div>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <a class="nav-brand" href="index.html">
+      <img src="imágenes para la página web/IMG-20260904-WA0002.jpg"
+           onerror="this.style.display='none'" alt="Escudo CEMG" />
+      <div class="nav-brand-text">
+        <div class="title">BTPIR</div>
+        <div class="subtitle">CEMG Eduardo Hernández Chévez</div>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="plan-de-estudios.html">Plan de Estudios</a></li>
+      <li><a href="logros.html">Logros</a></li>
+      <li><a href="objetivos.html">Objetivos</a></li>
+      <li><a href="contacto.html" class="active">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero contact-hero">
+      <span class="hero-badge"><i class="fa-solid fa-robot icon-anim-float fa-accent"></i> Registro & Admisiones</span>
+      <h1>Inscripción y <span>Contacto</span></h1>
+      <p class="tagline">BTPIR · CEMG Eduardo Hernández Chévez</p>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="section" style="padding-top:0;">
+      <div class="contact-layout">
+
+        <!--  FORMULARIO  -->
+        <div>
+
+          <!-- Alerta de estado dinámico (solo cuando se envía) -->
+          <div id="status-container"></div>
+
+          <div class="glass-card" id="form-card">
+            <h2 style="color:var(--blanco); font-size:1.2rem; margin-bottom:0.4rem;">
+               <i class="fa-solid fa-clipboard-list fa-accent"></i> Formulario de Orientación y Registro
+            </h2>
+            <p style="color:var(--gris-claro); font-size:0.88rem; margin-bottom:1.6rem;">
+              Los campos marcados con <span style="color:var(--naranja-acento)">*</span> son obligatorios.
+            </p>
+
+            <form action="/procesar-contacto" method="POST" id="formContacto">
+              <div class="form-grid">
+
+                <!-- Nombre aspirante -->
+                <div class="form-group">
+                  <label class="form-label" for="nombre">
+                    Nombre Completo del Aspirante <span>*</span>
+                  </label>
+                  <input class="form-input" type="text" id="nombre" name="nombre"
+                         placeholder="Ej: Juan Carlos Pérez López" required />
+                </div>
+
+                <!-- Nombre tutor -->
+                <div class="form-group">
+                  <label class="form-label" for="tutor">Nombre del Padre / Tutor</label>
+                  <input class="form-input" type="text" id="tutor" name="tutor"
+                         placeholder="Nombre del responsable legal" />
+                </div>
+
+                <!-- Teléfono -->
+                <div class="form-group">
+                  <label class="form-label" for="telefono">
+                    Teléfono / WhatsApp <span>*</span>
+                  </label>
+                  <input class="form-input" type="tel" id="telefono" name="telefono"
+                         placeholder="Ej: 9999-0000" required />
+                  <span class="form-hint">Con este número te contactaremos directamente.</span>
+                </div>
+
+                <!-- Correo -->
+                <div class="form-group">
+                  <label class="form-label" for="correo">Correo Electrónico</label>
+                  <input class="form-input" type="email" id="correo" name="correo"
+                         placeholder="ejemplo@correo.com" />
+                  <span class="form-hint">Para envío de folletos y confirmaciones.</span>
+                </div>
+
+                <!-- Escuela -->
+                <div class="form-group">
+                  <label class="form-label" for="escuela">Escuela / Instituto de Procedencia</label>
+                  <input class="form-input" type="text" id="escuela" name="escuela"
+                         placeholder="Nombre del centro educativo actual" />
+                </div>
+
+                <!-- Grado -->
+                <div class="form-group">
+                  <label class="form-label" for="grado">Grado al que Aspira <span>*</span></label>
+                  <select class="form-select" id="grado" name="grado" required>
+                    <option value="10mo Grado">10mo Grado (Primer Ingreso)</option>
+                    <option value="Traslado">Traslado desde otra institución</option>
+                  </select>
+                </div>
+
+                <!-- Mensaje -->
+                <div class="form-group full">
+                  <label class="form-label" for="mensaje">Mensaje o Consulta Particular</label>
+                  <textarea class="form-textarea" id="mensaje" name="mensaje"
+                            placeholder="Escribe aquí cualquier duda específica sobre la carrera, requisitos, horarios, etc."></textarea>
+                </div>
+
+              </div><!-- /form-grid -->
+
+              <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+                <button type="submit" class="btn btn-primary" style="flex:1; justify-content:center;">
+                   Enviar Solicitud de Información
+                </button>
+                <button type="reset" class="btn btn-outline">
+                   Limpiar
+                </button>
+              </div>
+            </form>
+          </div><!-- /glass-card -->
+
+          <!-- Tabla informativa de campos -->
+          <div class="glass-card" style="margin-top:1.5rem;" data-aos>
+            <h3 style="color:var(--azul-electrico); font-size:0.95rem; margin-bottom:1rem;">
+               <i class="fa-solid fa-shield-halved fa-accent icon-anim-shine"></i> ¿Qué hacemos con tus datos?
+            </h3>
+            <div class="glass-table-wrap">
+              <table class="field-table">
+                <thead>
+                  <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Propósito</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Nombre del Aspirante</td><td>Texto</td><td>Identificación del futuro alumno</td></tr>
+                  <tr><td>Nombre del Padre/Tutor</td><td>Texto</td><td>Contacto con el responsable legal</td></tr>
+                  <tr><td>Teléfono / WhatsApp</td><td>Numérico</td><td>Contacto directo y rápido</td></tr>
+                  <tr><td>Correo Electrónico</td><td>Email</td><td>Envío de folletos y confirmaciones</td></tr>
+                  <tr><td>Escuela de Procedencia</td><td>Texto</td><td>Estadísticas de procedencia</td></tr>
+                  <tr><td>Grado al que Aspira</td><td>Selección</td><td>Clasificación de matrícula</td></tr>
+                  <tr><td>Mensaje / Consulta</td><td>Texto abierto</td><td>Atención personalizada</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:0.78rem; color:var(--gris-claro); margin-top:0.8rem; opacity:0.7;">
+               Tu información es confidencial y se usa únicamente para orientación académica.
+            </p>
+          </div>
+
+        </div><!-- /columna izquierda -->
+
+        <!--  INFORMACIÓN LATERAL  -->
+        <div class="info-stack">
+
+          <!-- WhatsApp directo -->
+          <div class="info-card" data-aos>
+            <div class="info-card-title"> <i class="fa-brands fa-whatsapp"></i> Información por WhatsApp</div>
+            <a class="wa-btn"
+               href="https://wa.me/50499786365?text=Hola,%20me%20interesa%20información%20sobre%20el%20BTPIR%20del%20CEMG%20Eduardo%20Hernández%20Chévez."
+               target="_blank" rel="noopener">
+              <span class="wa-icon"><i class="fa-brands fa-whatsapp icon-anim-pulse" style="color: #25D366;"></i></span>
+              <div>
+                <div>+504 9978-6365</div>
+                <div class="wa-sub">Haz clic para abrir WhatsApp</div>
+              </div>
+            </a>
+            <p style="font-size:0.78rem; color:var(--gris-claro); opacity:0.7; margin-top:0.5rem;">
+              Escríbenos con tus preguntas sobre la carrera.
+            </p>
+          </div>
+
+          <!-- Redes Sociales -->
+          <div class="info-card" data-aos>
+            <div class="info-card-title"> <i class="fa-solid fa-share-nodes"></i> Síguenos en Redes</div>
+
+            <!-- Facebook -->
+            <a class="social-link"
+               href="https://www.facebook.com/ichevezhn/?locale=es_LA"
+               target="_blank" rel="noopener">
+              <span class="social-icon"><i class="fa-brands fa-facebook" style="color: #1877F2;"></i></span>
+              <div style="overflow:hidden;">
+                <div class="social-name">Facebook Oficial</div>
+                <div class="social-url">facebook.com/ichevezhn</div>
+              </div>
+              <span style="margin-left:auto; font-size:0.8rem; opacity:0.5;">↗</span>
+            </a>
+
+            <!-- Página Web del Instituto -->
+            <a class="social-link"
+               href="https://www.iehchevezhn.com"
+               target="_blank" rel="noopener">
+              <span class="social-icon"><i class="fa-solid fa-globe icon-anim-spin-slow fa-accent"></i></span>
+              <div style="overflow:hidden;">
+                <div class="social-name">Página Oficial del Instituto</div>
+                <div class="social-url">www.iehchevezhn.com</div>
+              </div>
+              <span style="margin-left:auto; font-size:0.8rem; opacity:0.5;">↗</span>
+            </a>
+          </div>
+
+          <!-- Dónde encontrarnos -->
+          <div class="info-card" data-aos>
+            <div class="info-card-title"> <i class="fa-solid fa-location-dot icon-anim-bounce"></i> Visítanos</div>
+            <p style="font-size:0.88rem; color:var(--gris-claro); line-height:1.7;">
+              <strong style="color:var(--blanco);">CEMG Eduardo Hernández Chévez</strong><br/>
+              El Progreso, Yoro<br/>
+              Honduras, C.A.<br/><br/>
+              <span style="color:var(--azul-electrico);">Est. 15 de Febrero 1992</span>
+            </p>
+          </div>
+
+          <!-- Horario de atención -->
+          <div class="info-card" data-aos>
+            <div class="info-card-title"> <i class="fa-solid fa-clock icon-anim-pulse"></i> Horario de Atención</div>
+            <p style="font-size:0.88rem; color:var(--gris-claro); line-height:1.9;">
+              Lunes – Viernes<br/>
+              <strong style="color:var(--blanco);">7:00 a.m. – 12:00 p.m.</strong><br/>
+              <strong style="color:var(--blanco);">1:00 p.m. – 5:00 p.m.</strong>
+            </p>
+          </div>
+
+          <!-- Botón admin -->
+          <a href="admin/" class="btn btn-outline"
+             style="text-align:center; justify-content:center; font-size:0.82rem;">
+             Ver Registros (Admin)
+          </a>
+
+        </div><!-- /info-stack -->
+
+      </div><!-- /contact-layout -->
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <span class="footer-name">BTPIR – CEMG Eduardo Hernández Chévez</span><br/>
+      Bachillerato Técnico Profesional en Informática con Orientación en Robótica<br/>
+      El Progreso, Yoro, Honduras · Est. 15 de Febrero 1992
+    </p>
+    <p style="margin-top:0.8rem; font-size:0.8rem; opacity:0.6;">
+      &copy; 2026 Todos los derechos reservados
+    </p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var status = params.get('status');
+      var container = document.getElementById('status-container');
+      if (!container) return;
+      if (status === 'exito') {
+        container.innerHTML = '<div class="status-alert exito" style="display:flex;"><i class="fa-solid fa-circle-check icon-anim-pulse" style="font-size:1.4rem;"></i> <div><strong>¡Registro recibido con éxito!</strong><br><span style="font-size:0.85rem; opacity:0.9;">Nos pondremos en contacto contigo muy pronto por llamada o WhatsApp.</span></div></div>';
+      } else if (status === 'incompleto') {
+        container.innerHTML = '<div class="status-alert incompleto" style="display:flex;"><i class="fa-solid fa-triangle-exclamation" style="font-size:1.4rem;"></i> <div><strong>Campos obligatorios incompletos</strong><br><span style="font-size:0.85rem;">Por favor ingresa al menos tu <strong>Nombre</strong> y <strong>Teléfono</strong>.</span></div></div>';
+      } else if (status === 'error') {
+        container.innerHTML = '<div class="status-alert error" style="display:flex;"><i class="fa-solid fa-circle-xmark" style="font-size:1.4rem;"></i> <div><strong>No se pudo enviar</strong><br><span style="font-size:0.85rem;">Ocurrió un inconveniente. Intenta de nuevo o contáctanos directamente a nuestro WhatsApp abajo.</span></div></div>';
+      }
+    })();
+  </script>
+
+</body>
+</html>
+

@@ -1,6 +1,8 @@
-// Iconos SVG reutilizables (reemplazan todos los emojis)
+// Iconos SVG reutilizables (sin ningún emoji)
 const ICONS = {
   award: `<svg class="icon-inline" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
+  lock: `<svg class="icon-inline" width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>`,
+  warning: `<svg class="icon-inline" width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>`,
   folder: `<svg class="icon-inline" width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>`,
   info: `<svg class="icon-inline" width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
   video: `<svg class="icon-inline" width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>`,
@@ -13,10 +15,12 @@ const projects = [
     category: "robotica",
     folder: "02-sistema-prevencion-accidentes-casco",
     title: "Sistema de Prevención de Accidentes de Tráfico",
-    badge: "Segundo Lugar Nacional (Olimpiadas 2026)",
+    badge: "Máxima Seguridad - 2do Lugar Nacional",
     isAward: true,
+    isConfidential: true,
+    confidentialNotice: "Proyecto de máxima seguridad y confidencialidad institucional (Campeón / Subcampeón Nacional). Por motivos de protección intelectual y seguridad del colegio, el repositorio no incluye acceso completo a los códigos de producción ni parámetros sensibles; se presenta la arquitectura técnica validada.",
     thumbnail: "assets/thumbnails/viga_logo.png",
-    shortDesc: "Prototipo integrado en el chasis de un casco con IMU 10-DOF, GPS Neo-8M, alerta por SMS al 911 con SIM800L ante caídas o lowsider, y modelo Edge AI embebido.",
+    shortDesc: "Prototipo embebido en chasis de casco con IMU 10-DOF, GPS Neo-8M, alerta por SMS al 911 con SIM800L ante caídas o lowsider, y modelo Edge AI.",
     tags: ["ESP32", "Arduino C++", "IMU 10-DOF", "GPS Neo-8M", "SIM800L", "Edge AI", "BLE"],
     details: {
       subtitle: "Hardware de Máxima Seguridad para Motociclistas & Conducción Inteligente",
@@ -37,10 +41,12 @@ const projects = [
     category: "ia-soft",
     folder: "03-viga-core-app",
     title: "VIGA Core App (Telemetría & Emergencia)",
-    badge: "App Móvil Android",
+    badge: "Confidencial - App Móvil Android",
     isAward: false,
+    isConfidential: true,
+    confidentialNotice: "Aplicación móvil asociada directamente al sistema de seguridad de motociclistas. El acceso a los protocolos internos de cifrado y bases de datos médicas está restringido por confidencialidad institucional.",
     thumbnail: "assets/thumbnails/viga_map.jpg",
-    shortDesc: "Aplicación móvil complementaria para el casco de seguridad. Enlaza vía Bluetooth Low Energy (BLE) para monitorear telemetría, batería, velocidad y datos médicos del piloto.",
+    shortDesc: "Aplicación complementaria para el casco de seguridad. Enlaza vía Bluetooth Low Energy (BLE) para telemetría, estado de batería, velocidad y auxilio médico.",
     tags: ["Android", "Kotlin", "Java", "BLE GATT", "Google Maps", "Telemetría"],
     details: {
       subtitle: "Panel Móvil de Monitoreo en Tiempo Real y Asistencia Médica",
@@ -62,6 +68,7 @@ const projects = [
     title: "Sistema ATRI (Alerta de Inundación)",
     badge: "PLC Siemens S7-1200 + IoT",
     isAward: false,
+    isConfidential: false,
     thumbnail: "assets/thumbnails/atri_logo.png",
     shortDesc: "Sistema de control y alerta temprana ante riesgo inminente de inundación referenciado al Río Ulúa. Integra PLC Siemens S7-1214C, Arduino, servidor TCP en Python y App móvil.",
     tags: ["Siemens S7-1200", "TIA Portal V18", "SCL", "Arduino", "Python TCP", "Android"],
@@ -83,8 +90,10 @@ const projects = [
     category: "ia-soft",
     folder: "05-traductor-lenguaje-senas-TLS",
     title: "Sistema TLS (Traductor de Lenguaje de Señas)",
-    badge: "Edge AI & MediaPipe",
+    badge: "Investigación Confidencial - Edge AI",
     isAward: false,
+    isConfidential: true,
+    confidentialNotice: "Proyecto de investigación en activa colaboración con investigadores universitarios (Elder entrenó la IA de esqueleto). Por acuerdos académicos de confidencialidad, el acceso al dataset privado de entrenamiento y diccionarios lingüísticos completos no está abierto al público; se exhibe la arquitectura y la inferencia móvil de 21 landmarks 3D.",
     thumbnail: "assets/thumbnails/tls_skeleton.png",
     shortDesc: "Traductor de señas a texto y voz en tiempo real con ejecución 100% offline. Utiliza MediaPipe Hand Landmarker para 21 puntos 3D y heurística vectorial sin depender de nube.",
     tags: ["MediaPipe", "TensorFlow Lite", "Android Kotlin", "Edge AI", "Computer Vision"],
@@ -104,12 +113,37 @@ const projects = [
     }
   },
   {
+    id: "portal-carrera-robotica",
+    category: "web",
+    folder: "12-portal-carrera-robotica",
+    title: "Portal Oficial Carrera Técnica de Robótica",
+    badge: "Portal Institucional & Node.js",
+    isAward: false,
+    isConfidential: false,
+    thumbnail: "assets/thumbnails/carrera_robotica.jpg",
+    shortDesc: "Plataforma web oficial para la divulgación de la Carrera Técnica en Informática con orientación en Robótica del CEMG Eduardo Hernández Chevez. Plan de estudios, logros y videos de proyectos.",
+    tags: ["Node.js", "Express", "SQLite", "HTML5/CSS3", "Robótica Educativa"],
+    details: {
+      subtitle: "Plataforma de Divulgación de la Oferta Académica y Proyectos Técnicos",
+      context: "Portal oficial del colegio diseñado para dar a conocer los laboratorios de mecatrónica, el plan de estudios por áreas formativas y las delegaciones de competencias.",
+      architecture: [
+        "Estructura modular con Express y vistas dinámicas para plan de estudios, contacto, objetivos y galería de logros.",
+        "Base de datos SQLite integrada para registro de consultas y estudiantes interesados.",
+        "Galería multimedia con respaldo de videos de fondo y coberturas de olimpiadas nacionales.",
+        "Diseño institucional responsivo adaptado a dispositivos móviles y pantallas de presentación."
+      ],
+      hardware: "Servidor local / Web Hosting.",
+      software: "Node.js, Express, SQLite3, HTML5, CSS3, JavaScript."
+    }
+  },
+  {
     id: "chevez-votaciones",
     category: "web",
     folder: "04-sistema-votaciones-reconocimiento-facial",
     title: "Sistema de Votaciones Biométricas 2026",
     badge: "Visión Facial & PHP/Node",
     isAward: false,
+    isConfidential: false,
     thumbnail: "assets/thumbnails/chevez_votar.png",
     shortDesc: "Sistema oficial de elecciones estudiantiles del CEMG Eduardo Hernández Chevez. Incorpora reconocimiento facial por visión artificial para prevenir suplantaciones y doble voto.",
     tags: ["Visión Artificial", "AWS Rekognition", "PHP", "Node.js", "MySQL", "PWA"],
@@ -133,6 +167,7 @@ const projects = [
     title: "Centro de Información & Diseñador Vexcel 3D",
     badge: "WebGL / Three.js 3D",
     isAward: false,
+    isConfidential: false,
     thumbnail: "assets/thumbnails/smooth_gaaris.png",
     shortDesc: "Plataforma web con motor 3D interactivo para diseño de prendas en tiempo real. Incluye biblioteca de más de 7,000 elementos gráficos y tipografías premium.",
     tags: ["Three.js", "WebGL", "JavaScript", "HTML5/CSS3", "Node.js"],
@@ -156,6 +191,7 @@ const projects = [
     title: "Portal Web & Marketing Cast Innovation",
     badge: "Alianza Empresarial",
     isAward: false,
+    isConfidential: false,
     thumbnail: "assets/thumbnails/cast_innovation.png",
     shortDesc: "Desarrollo del portal institucional y apoyo de marketing digital para Cast Innovation. Presentación de robots educativos Spike Essential, Bee-Bot y contenidos de programación.",
     tags: ["HTML5", "CSS3", "JavaScript", "Marketing Digital", "Robótica Educativa"],
@@ -179,6 +215,7 @@ const projects = [
     title: "Desarrollo Web Nvidia (Gaming & Hardware)",
     badge: "E-Commerce & Branding",
     isAward: false,
+    isConfidential: false,
     thumbnail: "assets/thumbnails/nvidia_mockup.png",
     shortDesc: "Portal temático de hardware y gaming con estética corporativa Nvidia. Catálogo interactivo, animaciones dinámicas, panel administrativo PHP/MySQL y diseño de marca.",
     tags: ["PHP", "MySQL", "JavaScript", "Animaciones CSS", "Illustrator"],
@@ -202,6 +239,7 @@ const projects = [
     title: "Empresa de Robótica MechaPrint 3D",
     badge: "Proyecto de Empresa & 3D",
     isAward: false,
+    isConfidential: false,
     thumbnail: "assets/thumbnails/bridgestone_arena.png",
     shortDesc: "Emprendimiento integral de manufactura aditiva y robótica. Plataforma web de pedidos, catálogo de accesorios 3D (Flipper Zero, stands) y plan estratégico empresarial en PDF.",
     tags: ["Manufactura 3D", "PHP", "MySQL", "Python", "Plan de Negocios"],
@@ -225,6 +263,7 @@ const projects = [
     title: "Manufactura Aditiva & Slicing 3D",
     badge: "Modelado & CNC",
     isAward: false,
+    isConfidential: false,
     thumbnail: "assets/thumbnails/smooth_gaaris.png",
     shortDesc: "Archivos de producción 3D calibrados (.3mf y G-Code) para piezas complejas: modelo arquitectónico Bridgestone Arena, piezas mecánicas Smooth Gaaris y optimización de tiempos.",
     tags: ["Impresión 3D", "G-Code", "3MF Slicer", "PLA", "CNC"],
@@ -248,6 +287,7 @@ const projects = [
     title: "Marketing & Animaciones Propias",
     badge: "Videos & Galería Reproducible",
     isAward: false,
+    isConfidential: false,
     isSpecialVideoCard: true,
     thumbnail: "assets/thumbnails/cast_innovation.png",
     shortDesc: "Galería completa de 7 videos y animaciones editadas en CapCut: reportajes de robótica, spots de votaciones biométricas, casos de éxito y animaciones listas para ver aquí.",
@@ -324,7 +364,6 @@ const videoSection = document.getElementById("videoShowcaseSection");
 const videosContainer = document.getElementById("videosContainer");
 
 function renderProjects(filter = "all") {
-  // Manejo de la vista de marketing (videos embebidos directamente)
   if (filter === "marketing") {
     container.style.display = "none";
     videoSection.style.display = "block";
@@ -353,17 +392,37 @@ function renderProjects(filter = "all") {
            Ver Detalles y Arquitectura
          </button>`;
 
+    // Advertencia en la tarjeta si es confidencial
+    const securityBox = p.isConfidential
+      ? `<div class="card-security-alert">
+           ${ICONS.lock}
+           <div><strong>Confidencial:</strong> Acceso restringido por seguridad institucional / investigación.</div>
+         </div>`
+      : "";
+
+    // Badge con clase según sea premio o confidencial
+    let badgeClass = "card-badge";
+    let badgeIcon = "";
+    if (p.isConfidential) {
+      badgeClass += " security-badge";
+      badgeIcon = ICONS.lock;
+    } else if (p.isAward) {
+      badgeClass += " award-badge";
+      badgeIcon = ICONS.award;
+    }
+
     card.innerHTML = `
       <div class="card-img-wrapper">
         <img src="${p.thumbnail}" alt="${p.title}" loading="lazy" onerror="this.src='assets/thumbnails/viga_logo.png'">
-        <span class="card-badge ${p.isAward ? 'award-badge' : ''}">
-          ${p.isAward ? ICONS.award : ''}
+        <span class="${badgeClass}">
+          ${badgeIcon}
           ${p.badge}
         </span>
       </div>
       <div class="card-body">
         <div class="card-folder">${ICONS.folder} ${p.folder}</div>
         <h3 class="card-title">${p.title}</h3>
+        ${securityBox}
         <p class="card-text">${p.shortDesc}</p>
         <div class="tech-tags">
           ${p.tags.map(t => `<span class="tech-tag">${t}</span>`).join("")}
@@ -379,7 +438,7 @@ function renderProjects(filter = "all") {
 
 function renderVideoShowcase() {
   videosContainer.innerHTML = "";
-  videoShowcaseList.forEach((v, index) => {
+  videoShowcaseList.forEach((v) => {
     const card = document.createElement("div");
     card.className = "video-card";
     card.innerHTML = `
@@ -432,15 +491,35 @@ function openModal(id) {
   const p = projects.find(item => item.id === id);
   if (!p) return;
 
+  // Cuadro de advertencia dentro del modal si es confidencial
+  const modalSecurityBox = p.isConfidential
+    ? `<div class="modal-security-box">
+         <h4>${ICONS.warning} Advertencia de Seguridad y Acceso Restringido</h4>
+         <p>${p.confidentialNotice}</p>
+       </div>`
+    : "";
+
+  let badgeClass = "card-badge";
+  let badgeIcon = "";
+  if (p.isConfidential) {
+    badgeClass += " security-badge";
+    badgeIcon = ICONS.lock;
+  } else if (p.isAward) {
+    badgeClass += " award-badge";
+    badgeIcon = ICONS.award;
+  }
+
   modalBody.innerHTML = `
     <img src="${p.thumbnail}" alt="${p.title}" class="modal-img" onerror="this.style.display='none'">
-    <span class="card-badge ${p.isAward ? 'award-badge' : ''}">
-      ${p.isAward ? ICONS.award : ''}
+    <span class="${badgeClass}">
+      ${badgeIcon}
       ${p.badge}
     </span>
     <h2 class="modal-title" style="margin-top: 10px;">${p.title}</h2>
     <h4 class="modal-subtitle">${p.details.subtitle}</h4>
     
+    ${modalSecurityBox}
+
     <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 14px; margin-bottom: 20px;">
       <p style="font-size: 0.9rem; color: #cbd5e1;"><strong>Ubicación en Repositorio:</strong> <code>/${p.folder}</code></p>
       <p style="font-size: 0.9rem; color: #cbd5e1; margin-top: 6px;"><strong>Contexto:</strong> ${p.details.context}</p>

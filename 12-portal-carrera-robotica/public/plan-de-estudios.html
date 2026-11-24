@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan de Estudios | BTPIR – CEMG Eduardo Hernández Chévez</title>
+  <meta name="description" content="Plan de estudios año por año del BTPIR: 10mo, 11vo y 12vo grado. Materias, competencias y oportunidades en la Olimpiada Nacional de Robótica." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Estilos extra solo para esta página */
+    .grade-tab-bar {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .grade-tab {
+      padding: 0.6rem 1.6rem;
+      border-radius: 50px;
+      border: 1px solid var(--glass-border);
+      background: rgba(10,30,18,0.5);
+      color: var(--gris-claro);
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      backdrop-filter: blur(8px);
+    }
+    .grade-tab.active, .grade-tab:hover {
+      background: var(--azul-medio);
+      border-color: var(--azul-electrico);
+      color: var(--blanco);
+    }
+    .grade-panel { display: none; }
+    .grade-panel.active { display: block; }
+
+    .materias-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.7rem;
+      margin: 1rem 0;
+    }
+    .materias-list li {
+      background: rgba(125,249,255,0.1);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      padding: 0.6rem 1rem;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .materias-list li::before {
+      content: '';
+      color: var(--naranja-acento);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .highlight-box {
+      background: rgba(255,140,66,0.1);
+      border: 1px solid rgba(255,140,66,0.35);
+      border-radius: 14px;
+      padding: 1.4rem 1.8rem;
+      margin: 1.5rem 0;
+    }
+    .highlight-box h4 {
+      color: var(--azul-electrico);
+      font-size: 1rem;
+      margin-bottom: 0.7rem;
+    }
+    .highlight-box p {
+      font-size: 0.9rem;
+      color: var(--gris-claro);
+      line-height: 1.65;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- FONDO DE VIDEO GLOBAL -->
+  <div id="video-bg-container"></div>
+  <div id="video-overlay"></div>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <a class="nav-brand" href="index.html">
+      <img src="imágenes para la página web/IMG-20260904-WA0002.jpg"
+           onerror="this.style.display='none'"
+           alt="Escudo CEMG" />
+      <div class="nav-brand-text">
+        <div class="title">BTPIR</div>
+        <div class="subtitle">CEMG Eduardo Hernández Chévez</div>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="plan-de-estudios.html" class="active">Plan de Estudios</a></li>
+      <li><a href="logros.html">Logros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="objetivos.html">Objetivos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HERO de página -->
+    <section class="hero" style="min-height: 42vh; padding: 3rem 2rem 2rem;">
+      <span class="hero-badge"> Formación Académica</span>
+      <h1><i class="fa-solid fa-book-open-reader icon-anim-pulse fa-accent"></i> Plan de <span>Estudios</span></h1>
+      <p class="tagline">BTPIR · CEMG Eduardo Hernández Chévez</p>
+      <p class="description">
+        Diseñado bajo un enfoque progresivo e integral. A lo largo de tres años, combinamos
+        una sólida base académica con especialización práctica en electrónica, programación,
+        mecatrónica e innovación tecnológica.
+      </p>
+    </section>
+
+    <!-- STATS RESUMIDAS -->
+    <section class="section" style="padding-top: 0;">
+      <div class="stats-row">
+        <div class="stat-box" data-aos>
+          <div class="stat-number">3</div>
+          <div class="stat-label">Años de formación</div>
+        </div>
+        <div class="stat-box" data-aos>
+          <div class="stat-number">14</div>
+          <div class="stat-label">Materias – 10mo y 11vo</div>
+        </div>
+        <div class="stat-box" data-aos>
+          <div class="stat-number">9</div>
+          <div class="stat-label">Materias – 12vo Grado</div>
+        </div>
+        <div class="stat-box" data-aos>
+          <div class="stat-number">IoT</div>
+          <div class="stat-label">Internet de las Cosas</div>
+        </div>
+        <div class="stat-box" data-aos>
+          <div class="stat-number">PLC</div>
+          <div class="stat-label">Automatización Industrial</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABS POR GRADO -->
+    <section class="section" style="padding-top:0;">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Año por Año</span>
+        <h2>Carga Académica <span>por Grado</span></h2>
+        <p>Selecciona el grado para ver el detalle completo de materias y competencias.</p>
+      </div>
+
+      <div style="max-width: 960px; margin: 0 auto;">
+        <!-- TAB BUTTONS -->
+        <div class="grade-tab-bar" data-aos>
+          <button class="grade-tab active" onclick="showGrade('g10', this)"> 10mo Grado</button>
+          <button class="grade-tab" onclick="showGrade('g11', this)">🟡 11vo Grado</button>
+          <button class="grade-tab" onclick="showGrade('g12', this)">🟢 12vo Grado</button>
+        </div>
+
+        <!-- 10mo GRADO -->
+        <div id="g10" class="grade-panel active">
+          <div class="glass-card">
+            <h3 style="color:var(--azul-electrico); font-size:1.3rem; margin-bottom:0.5rem;">
+              10mo Grado
+              <span class="badge badge-green" style="margin-left:0.8rem;">Fundamentos</span>
+            </h3>
+            <p style="color:var(--gris-claro); font-size:0.9rem; margin-bottom:1.4rem;">
+              En el primer año de especialización, los estudiantes cursan un total de
+              <strong>14 materias</strong>: 11 asignaturas del tronco de informática y formación
+              general, junto con 3 materias clave de orientación en robótica.
+            </p>
+
+            <h4 style="color:var(--azul-electrico); margin-bottom:0.6rem;"> Materias Destacadas de Robótica</h4>
+            <ul class="materias-list">
+              <li>Electricidad y Electrónica</li>
+              <li>Diseño Asistido por Computadora (CAD)</li>
+              <li>Introducción a la Programación en Robótica</li>
+            </ul>
+
+            <div class="highlight-box">
+              <h4> Práctica con Kits Tecnológicos</h4>
+              <p>Prácticas guiadas y aprendizaje directo utilizando plataformas como
+                <strong>LEGO Mindstorms</strong> y <strong>LEGO SPIKE Prime</strong>.</p>
+            </div>
+
+            <div class="highlight-box">
+              <h4> Oportunidades de Competición</h4>
+              <p>Preparación y desarrollo de destrezas iniciales para competir y clasificar a
+                la <strong>Olimpiada Nacional de Robótica</strong> y representar al país en
+                olimpiadas internacionales.</p>
+            </div>
+
+            <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); margin-top:1.4rem;">
+              <div class="gallery-item">
+                <img src="imágenes para la página web/10mo robot.jpg" alt="Robot 10mo" loading="lazy"/>
+                <div class="gallery-caption">Robot de 10mo Grado</div>
+              </div>
+              <div class="gallery-item">
+                <img src="imágenes para la página web/codigos de lego.jpg" alt="Códigos LEGO" loading="lazy"/>
+                <div class="gallery-caption">Programación LEGO</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11vo GRADO -->
+        <div id="g11" class="grade-panel">
+          <div class="glass-card">
+            <h3 style="color:var(--azul-electrico); font-size:1.3rem; margin-bottom:0.5rem;">
+              11vo Grado
+              <span class="badge badge-gold" style="margin-left:0.8rem;">Lógica & IoT</span>
+            </h3>
+            <p style="color:var(--gris-claro); font-size:0.9rem; margin-bottom:1.4rem;">
+              Durante el segundo año, la exigencia técnica aumenta con <strong>14 materias</strong>,
+              combinando 11 asignaturas de informática avanzada y 3 materias especializadas en robótica.
+            </p>
+
+            <h4 style="color:var(--azul-electrico); margin-bottom:0.6rem;"> Tronco de Informática (11 Asignaturas)</h4>
+            <ul class="materias-list">
+              <li>Ofimática e Informática</li>
+              <li>Análisis y Diseño de Sistemas</li>
+              <li>Programación I</li>
+              <li>Inglés Técnico</li>
+              <li>Matemática Aplicada</li>
+              <li>Y otras materias generales y técnicas</li>
+            </ul>
+
+            <h4 style="color:var(--azul-electrico); margin-bottom:0.6rem; margin-top:1.2rem;"> Materias Destacadas de Robótica (3 Asignaturas)</h4>
+            <ul class="materias-list">
+              <li>Circuitos Digitales</li>
+              <li>Robótica I</li>
+              <li>Proyectos de Robótica</li>
+            </ul>
+
+            <div class="highlight-box">
+              <h4> Hardware Abierto y Conectividad</h4>
+              <p>Capacitación práctica en microcontroladores, electrónica avanzada, ecosistema
+                <strong>Arduino</strong> e <strong>Internet de las Cosas (IoT)</strong>.
+                Creación e integración de aplicaciones móviles para el control de dispositivos robóticos.</p>
+            </div>
+
+            <div class="highlight-box">
+              <h4> Proyección Nacional</h4>
+              <p>Oportunidad de participar y ganar lugares destacados en la
+                <strong>Olimpiada Nacional de Robótica</strong>.</p>
+            </div>
+
+            <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); margin-top:1.4rem;">
+              <div class="gallery-item">
+                <img src="imágenes para la página web/circuitos.jpg" alt="Circuitos" loading="lazy"/>
+                <div class="gallery-caption">Circuitos Digitales</div>
+              </div>
+              <div class="gallery-item">
+                <img src="imágenes para la página web/placa esp 32.jpeg" alt="ESP32" loading="lazy"/>
+                <div class="gallery-caption">Placa ESP-32 (IoT)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12vo GRADO -->
+        <div id="g12" class="grade-panel">
+          <div class="glass-card">
+            <h3 style="color:var(--azul-electrico); font-size:1.3rem; margin-bottom:0.5rem;">
+              12vo Grado
+              <span class="badge badge-silver" style="margin-left:0.8rem;">Innovación Libre</span>
+            </h3>
+            <p style="color:var(--gris-claro); font-size:0.9rem; margin-bottom:1.4rem;">
+              En el último año, la formación se vuelve totalmente aplicada. Los estudiantes cursan
+              <strong>9 materias</strong>, enfocadas fuertemente en robótica, fabricación industrial
+              y tecnologías web avanzadas.
+            </p>
+
+            <h4 style="color:var(--azul-electrico); margin-bottom:0.6rem;"> Materias de Robótica y Desarrollo Avanzado</h4>
+            <ul class="materias-list">
+              <li>Fabricación Digital (Impresión 3D)</li>
+              <li>Diseño y Fabricación de Microcontroladores (PCB)</li>
+              <li>Robótica II</li>
+              <li>Gestión Empresarial</li>
+              <li>Programación II</li>
+            </ul>
+
+            <h4 style="color:var(--azul-electrico); margin-bottom:0.6rem; margin-top:1.2rem;"> Materias de Informática Acompañantes</h4>
+            <ul class="materias-list">
+              <li>Desarrollo Web y Producciones Digitales</li>
+              <li>Redes Informáticas</li>
+              <li>Mantenimiento y Reparación de PC</li>
+              <li>Gestión Empresarial</li>
+            </ul>
+
+            <div class="highlight-box">
+              <h4> Capacitación Profesional</h4>
+              <p>Experiencia en impresión 3D, operador de maquinaria técnica, creador de circuitos
+                electrónicos y automatización industrial orientada a <strong>PLC
+                (Controladores Lógicos Programables)</strong>.</p>
+            </div>
+
+            <div class="highlight-box">
+              <h4> Escenario de Talentos – Categoría Libre</h4>
+              <p>En 12vo grado, la participación en la Olimpiada Nacional cobra especial relevancia
+                en la <strong>Categoría Libre</strong>. Esta categoría exige la creación de proyectos
+                inéditos e innovaciones tecnológicas nunca antes vistas, donde los mejores talentos
+                del CEMG salen a la luz ante jueces y empresas del sector.</p>
+            </div>
+
+            <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); margin-top:1.4rem;">
+              <div class="gallery-item">
+                <img src="imágenes para la página web/12vo instalando .jpg" alt="12vo instalando" loading="lazy"/>
+                <div class="gallery-caption">12vo – Instalación de Proyecto</div>
+              </div>
+              <div class="gallery-item">
+                <img src="imágenes para la página web/12vo instalando 2.jpg" alt="12vo instalando 2" loading="lazy"/>
+                <div class="gallery-caption">12vo – Trabajo en Equipo</div>
+              </div>
+              <div class="gallery-item">
+                <img src="imágenes para la página web/12vo robotica tes.jpg" alt="12vo robótica" loading="lazy"/>
+                <div class="gallery-caption">12vo – Robótica Avanzada</div>
+              </div>
+              <div class="gallery-item">
+                <img src="imágenes para la página web/instalacion de circuito de proyecto en su carcasa 3d.jpg" alt="Carcasa 3D" loading="lazy"/>
+                <div class="gallery-caption">Carcasa Impresa en 3D</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLA RESUMEN -->
+    <section class="section">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Vista Rápida</span>
+        <h2>Tabla <span>Comparativa</span> por Año</h2>
+      </div>
+
+      <div class="glass-table-wrap" style="max-width:900px; margin: 0 auto;" data-aos>
+        <table class="glass-table">
+          <thead>
+            <tr>
+              <th>Grado</th>
+              <th>Total Materias</th>
+              <th>Materias de Robótica</th>
+              <th>Tecnología Principal</th>
+              <th>Olimpiada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-green">10mo</span></td>
+              <td>14</td>
+              <td>3</td>
+              <td>LEGO, CAD, Circuitos básicos</td>
+              <td>Preparación</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-gold">11vo</span></td>
+              <td>14</td>
+              <td>3</td>
+              <td>Arduino, IoT, Circuitos Digitales</td>
+              <td>Competición</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-silver">12vo</span></td>
+              <td>9</td>
+              <td>5</td>
+              <td>3D, PCB, PLC, Robótica II</td>
+              <td>Categoría Libre</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <span class="footer-name">BTPIR – CEMG Eduardo Hernández Chévez</span><br />
+      Bachillerato Técnico Profesional en Informática con Orientación en Robótica<br />
+      El Progreso, Yoro, Honduras · Est. 15 de Febrero 1992
+    </p>
+    <p style="margin-top:0.8rem; font-size:0.8rem; opacity:0.6;">
+      &copy; 2026 Todos los derechos reservados
+    </p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function showGrade(id, btn) {
+      // Ocultar todos los paneles
+      document.querySelectorAll('.grade-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.grade-tab').forEach(b => b.classList.remove('active'));
+      // Mostrar el seleccionado
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
+
+
+

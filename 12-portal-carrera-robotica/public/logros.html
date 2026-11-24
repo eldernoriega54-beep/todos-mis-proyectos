@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logros | BTPIR – CEMG Eduardo Hernández Chévez</title>
+  <meta name="description" content="Galería de logros e historial en la Olimpiada Nacional de Robótica 2024, 2025 y 2026. Clasificación Internacional y premios en la Feria Científica." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Podio visual */
+    .podium-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+
+    .podium-place {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .podium-medal {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .podium-medal.gold   { background: radial-gradient(circle, #7DF9FF, #1A6B8A); border: 3px solid #7DF9FF; }
+    .podium-medal.silver { background: radial-gradient(circle, #d4d4d4, #888); border: 3px solid #c0c0c0; }
+    .podium-medal.bronze { background: radial-gradient(circle, #cd7f32, #804a00); border: 3px solid #cd7f32; }
+    .podium-medal.fourth { background: radial-gradient(circle, #00D4E8, #0A2540); border: 3px solid #7DF9FF; }
+
+    .podium-base {
+      border-radius: 10px 10px 0 0;
+      width: 110px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 0.5rem;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--blanco);
+    }
+    .podium-base.gold   { background: linear-gradient(to bottom, rgba(255,140,66,0.4), rgba(200,144,10,0.2)); height: 100px; border: 1px solid rgba(255,140,66,0.5); }
+    .podium-base.silver { background: linear-gradient(to bottom, rgba(180,180,180,0.3), rgba(136,136,136,0.1)); height: 80px; border: 1px solid rgba(180,180,180,0.4); }
+    .podium-base.bronze { background: linear-gradient(to bottom, rgba(205,127,50,0.3), rgba(128,74,0,0.1)); height: 65px; border: 1px solid rgba(205,127,50,0.4); }
+    .podium-base.fourth { background: linear-gradient(to bottom, rgba(125,249,255,0.25), rgba(26,77,46,0.1)); height: 55px; border: 1px solid rgba(125,249,255,0.3); }
+
+    .podium-label {
+      font-size: 0.78rem;
+      color: var(--gris-claro);
+      text-align: center;
+      max-width: 110px;
+      line-height: 1.4;
+    }
+
+    /* Card de olimpiada */
+    .olimpiada-year {
+      border-left: 4px solid var(--naranja-acento);
+      padding-left: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .olimpiada-year h3 {
+      font-size: 1.2rem;
+      color: var(--azul-electrico);
+      margin-bottom: 1rem;
+    }
+
+    .logro-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+      padding: 0.9rem 1.1rem;
+      background: rgba(125,249,255,0.08);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+    .logro-emoji { font-size: 1.8rem; flex-shrink: 0; }
+    .logro-info h4 { color: var(--blanco); font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .logro-info p  { color: var(--gris-claro); font-size: 0.85rem; line-height: 1.5; }
+
+    /* Separador especial */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      color: var(--azul-electrico);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--glass-border);
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- FONDO DE VIDEO GLOBAL -->
+  <div id="video-bg-container"></div>
+  <div id="video-overlay"></div>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <a class="nav-brand" href="index.html">
+      <img src="imágenes para la página web/IMG-20260904-WA0002.jpg"
+           onerror="this.style.display='none'"
+           alt="Escudo CEMG" />
+      <div class="nav-brand-text">
+        <div class="title">BTPIR</div>
+        <div class="subtitle">CEMG Eduardo Hernández Chévez</div>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="plan-de-estudios.html">Plan de Estudios</a></li>
+      <li><a href="logros.html" class="active">Logros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="objetivos.html">Objetivos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" style="min-height:45vh; padding:3rem 2rem 2rem;">
+      <span class="hero-badge"> Orgullo Institucional</span>
+      <h1>Galería de <span>Logros</span></h1>
+      <p class="tagline">BTPIR · CEMG Eduardo Hernández Chévez</p>
+      <p class="description">
+        El CEMG Eduardo Hernández Chévez se ha consolidado como una de las instituciones
+        educativas líderes en Honduras en el área tecnológica. Año tras año en el podio nacional.
+      </p>
+    </section>
+
+    <!-- STATS RÁPIDOS -->
+    <section class="section" style="padding-top:0;">
+      <div class="stats-row">
+        <div class="stat-box" data-aos>
+          <div class="stat-number"><i class="fa-solid fa-robot fa-accent"></i> 3</div>
+          <div class="stat-label">Olimpiadas Nacionales</div>
+        </div>
+        <div class="stat-box" data-aos>
+          <div class="stat-number"><i class="fa-solid fa-trophy fa-gold icon-anim-shine"></i></div>
+          <div class="stat-label">1er Lugar 2025</div>
+        </div>
+        <div class="stat-box" data-aos>
+          <div class="stat-number"><i class="fa-solid fa-medal fa-silver icon-anim-float"></i> x3</div>
+          <div class="stat-label">2dos Lugares 2026</div>
+        </div>
+        <div class="stat-box" data-aos>
+          <div class="stat-number"><i class="fa-solid fa-earth-americas fa-accent icon-anim-spin-slow"></i></div>
+          <div class="stat-label">Clasificación Internacional</div>
+        </div>
+        <div class="stat-box" data-aos>
+          <div class="stat-number"><i class="fa-solid fa-award fa-gold icon-anim-pulse"></i></div>
+          <div class="stat-label">1er Lugar Feria Científica</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORIAL OLIMPIADAS -->
+    <section class="section" style="padding-top:0;">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Historial Competitivo</span>
+        <h2><i class="fa-solid fa-robot icon-anim-bounce fa-accent"></i> Olimpiada Nacional de <span>Robótica</span></h2>
+        <p>
+          Nuestra trayectoria refleja el crecimiento, la perseverancia y el talento constante
+          de nuestros estudiantes en las distintas categorías de competencia.
+        </p>
+      </div>
+
+      <div style="max-width: 860px; margin: 0 auto;">
+
+        <!-- 1a OLIMPIADA 2024 -->
+        <div class="glass-card" data-aos>
+          <div class="olimpiada-year">
+            <h3> 1ª Olimpiada Nacional de Robótica (2024)</h3>
+          </div>
+          <div class="logro-item">
+            <div class="logro-emoji"></div>
+            <div class="logro-info">
+              <h4><i class="fa-solid fa-medal fa-bronze icon-anim-float"></i> 3er Lugar Nacional – Categoría Libre <span class="badge badge-silver">Bronce</span></h4>
+              <p>Reconocimiento por la creación e innovación de prototipos inéditos. Primer gran
+                paso en la escena nacional de robótica.</p>
+            </div>
+          </div>
+          <div class="logro-item">
+            <div class="logro-emoji"></div>
+            <div class="logro-info">
+              <h4><i class="fa-solid fa-award fa-accent icon-anim-float"></i> 4to Lugar Nacional – Categoría LEGO</h4>
+              <p>Destacada participación en diseño, ensamblaje y programación analítica con
+                plataformas LEGO. Consolidando posición en el panorama nacional.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider" data-aos>Ascenso al Podio</div>
+
+        <!-- 2a OLIMPIADA 2025 -->
+        <div class="glass-card" data-aos>
+          <div class="olimpiada-year" style="border-color: var(--azul-electrico);">
+            <h3> 2ª Olimpiada Nacional de Robótica (2025)</h3>
+          </div>
+          <div class="logro-item">
+            <div class="logro-emoji"></div>
+            <div class="logro-info">
+              <h4> <i class="fa-solid fa-medal fa-gold icon-anim-float"></i> 1er Lugar Nacional – Categoría Libre <span class="badge badge-gold">¡CAMPEONES!</span></h4>
+              <p>Máximo galardón obtenido por la presentación de un proyecto tecnológico
+                revolucionario. ¡El BTPIR se corona campeón nacional!</p>
+            </div>
+          </div>
+          <div class="logro-item">
+            <div class="logro-emoji"></div>
+            <div class="logro-info">
+              <h4><i class="fa-solid fa-award fa-accent icon-anim-float"></i> 4to Lugar Nacional – Categoría LEGO</h4>
+              <p>Consolidación de posición dentro del top nacional de programación y
+                resolución de retos LEGO.</p>
+            </div>
+          </div>
+
+          <!-- PODIO 2025 -->
+          <div class="podium-row" style="margin-top:1.5rem;">
+            <div class="podium-place">
+              <div class="podium-medal silver"></div>
+              <div class="podium-base silver">2°</div>
+              <div class="podium-label"><i class="fa-solid fa-medal fa-silver icon-anim-float" style="font-size:2rem; display:block; margin-bottom:5px;"></i> 2do Lugar</div>
+            </div>
+            <div class="podium-place">
+              <div class="podium-medal gold"></div>
+              <div class="podium-base gold">1°</div>
+              <div class="podium-label"><i class="fa-solid fa-trophy fa-gold icon-anim-shine" style="font-size:2rem; display:block; margin-bottom:5px;"></i><strong style="color:var(--azul-electrico)">BTPIR<br/>¡Campeones!</strong></div>
+            </div>
+            <div class="podium-place">
+              <div class="podium-medal bronze"></div>
+              <div class="podium-base bronze">3°</div>
+              <div class="podium-label"><i class="fa-solid fa-medal fa-bronze icon-anim-float" style="font-size:2rem; display:block; margin-bottom:5px;"></i> 3er Lugar</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider" data-aos>Clasificación Internacional 2026</div>
+
+        <!-- 3a OLIMPIADA 2026 -->
+        <div class="glass-card" data-aos>
+          <div class="olimpiada-year" style="border-color: var(--azul-electrico);">
+            <h3> 3ª Olimpiada Nacional de Robótica (2026)</h3>
+          </div>
+          <div class="logro-item">
+            <div class="logro-emoji"></div>
+            <div class="logro-info">
+              <h4><i class="fa-solid fa-medal fa-silver icon-anim-float"></i> 2do Lugar Nacional – Categoría LEGO <span class="badge badge-gold">¡Internacional!</span></h4>
+              <p>Subcampeones nacionales y <strong>pase oficial para representar a Honduras
+                en la Olimpiada Internacional de Robótica</strong>. ¡Orgullo de Honduras!</p>
+            </div>
+          </div>
+          <div class="logro-item">
+            <div class="logro-emoji"></div>
+            <div class="logro-info">
+              <h4><i class="fa-solid fa-medal fa-silver icon-anim-float"></i> 2do Lugar Nacional – Categoría Arduino <span class="badge badge-silver">Subcampeones</span></h4>
+              <p>Subcampeones en control de microcontroladores y electrónica abierta.
+                Dominio técnico de la plataforma Arduino a nivel nacional.</p>
+            </div>
+          </div>
+          <div class="logro-item">
+            <div class="logro-emoji"></div>
+            <div class="logro-info">
+              <h4><i class="fa-solid fa-medal fa-silver icon-anim-float"></i> 2do Lugar Nacional – Categoría Libre <span class="badge badge-silver">Subcampeones</span></h4>
+              <p>Presencia continua en los puestos de honor gracias al desarrollo de
+                proyectos de impacto tecnológico y social.</p>
+            </div>
+          </div>
+
+          <!-- FOTOS 12VO 2026 -->
+          <div class="gallery-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); margin-top:1.4rem;">
+            <div class="gallery-item">
+              <img src="imágenes para la página web/12vo foto grupal 2do lugar nacional libre.jpg"
+                   alt="<i class="fa-solid fa-medal fa-silver icon-anim-float"></i> 2do Lugar Nacional Libre" loading="lazy"/>
+              <div class="gallery-caption"><i class="fa-solid fa-medal fa-silver icon-anim-float"></i> 2do Lugar Nacional – Cat. Libre</div>
+            </div>
+            <div class="gallery-item">
+              <img src="imágenes para la página web/foto de la delegacion de la olimpiada grupal.jpg"
+                   alt="Delegación Olimpiada" loading="lazy"/>
+              <div class="gallery-caption">Delegación Olimpiada Nacional</div>
+            </div>
+            <div class="gallery-item">
+              <img src="imágenes para la página web/foto grupal de 10mo olimpiada 2026 clasificacion a internacional.jpg"
+                   alt="10mo Clasificación Internacional" loading="lazy"/>
+              <div class="gallery-caption">10mo – Clasificación Internacional</div>
+            </div>
+            <div class="gallery-item">
+              <img src="imágenes para la página web/proyecto de olimpiada.jpg"
+                   alt="Proyecto Olimpiada" loading="lazy"/>
+              <div class="gallery-caption">Proyecto de Olimpiada</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXCELENCIA INTERNA -->
+    <section class="section">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Logros Internos</span>
+        <h2>Excelencia e <span>Innovación Interna</span></h2>
+        <p>El espíritu competitivo del BTPIR se demuestra también dentro de nuestra casa de estudios.</p>
+      </div>
+
+      <div style="max-width: 860px; margin: 0 auto;">
+        <div class="glass-card" data-aos>
+          <h3 style="color:var(--azul-electrico); margin-bottom:1rem;">
+             Feria Científica y Tecnológica – CEMG Eduardo Hernández Chévez
+          </h3>
+
+          <div class="logro-item">
+            <div class="logro-emoji"></div>
+            <div class="logro-info">
+              <h4><i class="fa-solid fa-medal fa-gold icon-anim-float"></i> 1er Lugar Institucional – Categoría Innovación Tecnológica (11vo de Robótica)
+                <span class="badge badge-gold">Ganadores</span></h4>
+              <p><strong>Proyecto Ganador:</strong> Dispensador Automático de Comida y Agua para Mascotas.</p>
+              <p style="margin-top:0.5rem;">Sistema mecatrónico automatizado desarrollado con <strong>sensores y
+                microcontroladores</strong> para la gestión eficiente de alimentación de mascotas,
+                destacándose por su utilidad práctica, acabado técnico e impacto social.</p>
+            </div>
+          </div>
+
+          <div class="gallery-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-top:1.2rem;">
+            <div class="gallery-item">
+              <img src="imágenes para la página web/soldando componentes a placas.jpg"
+                   alt="Soldando componentes" loading="lazy"/>
+              <div class="gallery-caption">Soldando Componentes</div>
+            </div>
+            <div class="gallery-item">
+              <img src="imágenes para la página web/instalacion de circuito de proyecto en su carcasa 3d.jpg"
+                   alt="Carcasa 3D" loading="lazy"/>
+              <div class="gallery-caption">Carcasa Impresa en 3D</div>
+            </div>
+            <div class="gallery-item">
+              <img src="imágenes para la página web/presentacion de instalacion a direccion.jpg"
+                   alt="Presentación" loading="lazy"/>
+              <div class="gallery-caption">Presentación a Dirección</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEGADO -->
+    <section class="section">
+      <div class="glass-card" style="max-width:800px; margin:0 auto; text-align:center;" data-aos>
+        <span style="font-size:3rem;"></span>
+        <h2 style="color:var(--blanco); margin:1rem 0 0.7rem; font-size:1.6rem;">
+          Un Legado de <span style="color:var(--azul-electrico)">Liderazgo Tecnológico</span>
+        </h2>
+        <p style="color:var(--gris-claro); line-height:1.75; font-size:0.95rem;">
+          Permanecer año tras año en el podio nacional no es fruto de la casualidad, sino del
+          esfuerzo combinado de <strong>estudiantes apasionados</strong>, docentes dedicados y
+          una comunidad educativa unida. El BTPIR del CEMG Eduardo Hernández Chévez reafirma su
+          compromiso de seguir formando profesionales de alto rendimiento capaces de
+          <strong>poner el nombre de Honduras en alto</strong>.
+        </p>
+        <div style="margin-top:1.8rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="objetivos.html" class="btn btn-primary"> Ver Objetivos 2026</a>
+          <a href="plan-de-estudios.html" class="btn btn-outline"> Plan de Estudios</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <span class="footer-name">BTPIR – CEMG Eduardo Hernández Chévez</span><br />
+      Bachillerato Técnico Profesional en Informática con Orientación en Robótica<br />
+      El Progreso, Yoro, Honduras · Est. 15 de Febrero 1992
+    </p>
+    <p style="margin-top:0.8rem; font-size:0.8rem; opacity:0.6;">
+      &copy; 2026 Todos los derechos reservados
+    </p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
