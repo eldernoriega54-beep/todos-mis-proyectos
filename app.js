@@ -309,6 +309,13 @@ const projects = [
 // Lista de videos disponibles para reproducir directamente en la página
 const videoShowcaseList = [
   {
+    title: "Marketing Empresarial Cast Innovation",
+    file: "11-produccion-audiovisual/0530.mp4",
+    badge: "Marketing Empresarial",
+    desc: "Video de marketing producido para Cast Innovation, empresa de robótica e innovación educativa. Elder Noriega fue el único representante estudiantil en colaborar con esta empresa, encargándose íntegramente de la producción audiovisual y estrategia de difusión.",
+    tags: ["Marketing", "Cast Innovation", "Robótica Educativa", "CapCut", "Producción Propia"]
+  },
+  {
     title: "Video de la Carrera de Robótica (Original)",
     file: "11-produccion-audiovisual/video de la carrera de robotica original (1).mp4",
     badge: "Reportaje & Torneos",
